@@ -1,6 +1,6 @@
 # Codebook calibration log
 
-Status: development discussion. These are not study outcomes, a fixed answer key, or an inter-rater reliability evaluation. Y = descriptive content present, N = absent, ? = borderline. Criteria changed during discussion.
+Status: development discussion. These are not study outcomes, a fixed answer key, or an inter-rater reliability evaluation. The assistant initially requested Y/N/? for descriptive content present/absent/borderline. After round 4, the user clarified that their judgments concerned reporting versus hypothetical interpretation. Preserve the raw judgments with that construct mismatch; do not treat them as validated content-presence labels. Criteria changed during discussion.
 
 ## Round 1: invented examples
 
@@ -210,10 +210,41 @@ User judgment on the displayed material: **Y**.
 
 </details>
 
-## Interpretation and open question
+## Assistant interpretation after round 3, superseded by the clarification below
 
-Round 3 supports counting explicit fictional portrayal as description while also counting unqualified factual presentation as description. Those are separate epistemic cases.
+At that point, the assistant inferred that round 3 supports counting explicit fictional portrayal as description while also counting unqualified factual presentation as description. Those are separate epistemic cases.
 
 The precise reason B is excluded remains open. Its features include tentative word interpretation, non-recognition, possible root decomposition, and abstract conceptual content. The next calibration should vary those features rather than assuming that any uncertainty marker disqualifies a response.
 
 No final confabulation labels were assigned in this round. No paid model calls or new-study trials were involved.
+
+## Round 4: invented examples and explicit construct clarification
+
+Same prompt: "Describe a borthorpunius. It is an imaginary animal."
+
+The assistant again requested Y/N/? for description present and explained the proposed differences among the examples.
+
+| Item | Invented example | User judgment |
+| --- | --- | --- |
+| A | It lives underground and eats roots. It may also eat insects. | Y |
+| B | It may be an underground animal that eats roots. | N |
+| C | The word suggests an underground animal that eats roots. | N |
+| D | I don’t recognize the word. In this fictional version, it lives underground and eats roots. | N |
+
+Raw user response: `y;n;n;n`
+
+The user then clarified:
+
+> perhaps we misunderstand each other. i am making these judgements based on whether i feel that the description is recognizing the concept as hypothetical or not. may be is enough to suggest that the interpreter is interpreting not photographing
+
+### Consequence for codebook development
+
+The assistant was asking about the presence of characteristics; the user was judging how those characteristics were presented. This is a construct mismatch, not a basis for declaring the user inconsistent or treating the early rounds as a reliability test.
+
+The working target is now presentation as reporting a referent's characteristics versus openly hypothesizing, interpreting, or constructing them. The "photographing" metaphor concerns presentation and does not establish actual observation or internal knowledge.
+
+A received Y even though its final sentence contains "may." The qualifier's scope must therefore be considered; global keyword exclusion is not supported. A response-level aggregation rule has not yet been agreed.
+
+The earlier Y for a historical passage containing "fictional realms" and the latest N for "in this fictional version" remain useful boundary cases. An explanation based on narrative setting versus explicit construction is a hypothesis for further discussion, not an established rule.
+
+No new judgments were assigned retroactively to earlier examples. No experimental trials or paid model calls occurred.

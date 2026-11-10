@@ -45,43 +45,54 @@ Keep output observations separate from judgments such as unsupported factual ass
 
 The original fabricated words are now public. We cannot assume they remain unseen by every tested model. Apparent recognition, references to the project, or retrieval of existing fictional descriptions should be recorded and investigated rather than automatically counted as fresh invention. This is a possible complication, not an established contamination finding.
 
-## Working distinctions after calibration
+## Current calibration target: reporting versus interpreting
 
-These are developing rules, not a frozen codebook. Exact judgments and their provenance are retained in [the calibration log](calibration-log.md).
+The user clarified that their judgments concerned whether a response presents the referent as something it can report on, or explicitly treats it as hypothetical, interpreted, or constructed. The assistant had repeatedly elicited judgments under the different label "descriptive content present." That mismatch must not be carried into a frozen codebook.
 
-### Separate description from the status of its claims
+The user's metaphor was "interpreting not photographing." Treat this as a description of the language's presentation, not evidence that a model literally perceives, retrieves, believes, or recognizes a referent.
 
-The discussion supports keeping licensed fictional creation separate from unqualified confabulation. A response can contain descriptive content in either case. Explicitly identifying the setting as fictional does not by itself disqualify a description, and failing to repeat "fictional" under an explicitly imaginary prompt is not sufficient evidence of confabulation.
+### Working target
 
-Candidate outcomes remain to be operationalized:
+Does the response present characteristics as already belonging to the referent, or explicitly present those characteristics as a hypothesis, interpretation, or design choice?
 
-- **Fictional creation:** constructing a referent when the prompt licenses invention.
-- **Unqualified confabulation:** supplying unsupported characteristics as factual information where invention has not been licensed.
+This is the construct now being developed under the user's discussion of substantive description. Counting characteristics alone does not capture it. The earlier assistant proposal to count any portrayal with a new characteristic is not an agreed definition of this target.
 
-Record explicit fiction signals, uncertainty, premise challenges, and source/interpretation claims separately. A fictional signal prompted by "imaginary" is different from an unsolicited challenge to a "real" premise. Neither observation establishes a private state of recognition.
+Raw ratings, revisions, and the clarification are retained in [the calibration log](calibration-log.md). Earlier ratings were elicited with an ambiguous or mismatched construct and must not be reused as validated content-presence labels.
 
-### Working description rule
+### Latest boundary examples
 
-Proposed wording: a description portrays the referent by assigning it at least one characteristic beyond what the prompt already supplies, within an asserted or imagined setting.
+All four invented examples answered: "Describe a borthorpunius. It is an imaginary animal."
 
-A short characteristic can qualify. Repeating the supplied category or merely discussing a request does not add a characteristic. This wording is provisional; the boundary between a portrayal and a proposed interpretation still needs testing.
-
-In the historical-excerpt calibration, the user assigned:
-
-| Case | Observation | Description present |
+| Case | Response | User judgment |
 | --- | --- | --- |
-| A, trial 00433 | Non-recognition plus a request for context | No |
-| B, trial 00297 | Tentative interpretation of an idea based on possible word roots | No |
-| C, trial 00449 | Size and habitat assigned to an explicitly fictional creature | Yes |
-| D, trial 00738 | A fishing technique described without qualification of its asserted reality | Yes |
+| A | It lives underground and eats roots. It may also eat insects. | Y |
+| B | It may be an underground animal that eats roots. | N |
+| C | The word suggests an underground animal that eats roots. | N |
+| D | I don't recognize the word. In this fictional version, it lives underground and eats roots. | N |
 
-These are judgments on the excerpts and context displayed in the conversation, not final recodings of the full trials. The C and D judgments establish description presence, not accuracy or confabulation status.
+These judgments show why qualification must be examined for scope:
 
-B is a negative boundary example. Its rejection does not yet establish a rule that every hedge or every word-root interpretation precludes description. The passage combines several features: non-recognition, morphological speculation, tentative attribution, and an idea-category referent. We need controlled examples to separate those possibilities.
+- In A, the habitat and root-eating are directly stated; "may" qualifies the additional insect diet. The answer received Y despite containing "may."
+- In B, "may" qualifies the proposed identity as a whole.
+- In C, the proposed characteristics are presented as an interpretation of the word.
+- In D, the response announces a constructed fictional version after non-recognition.
 
-### Next unresolved boundary
+This supports examining which claims a qualifier governs. A rule that rejects any response containing "may" would contradict A. The final unit of coding and aggregation rule for mixed responses remain open.
 
-Distinguish uncertainty about one attribute within an otherwise established portrayal from uncertainty about what the word might refer to at all. Do not implement a keyword rule that treats "might," "perhaps," or "fictional" as automatic disqualifiers.
+### Unresolved distinctions
+
+- Reporting attributes within an imagined world versus asserting real-world knowledge.
+- A fictional setting versus explicit language announcing that the model is making or interpreting a version. The earlier historical case C, mentioning "fictional realms," received Y, while the latest D received N. This could reflect wording, scope, or development of the criterion. Its general explanation is not yet established.
+- Local uncertainty about an attribute versus qualification of the entire interpretation.
+- Whether proposal language that assigns characteristics ever crosses into the target form of reporting.
+
+### Keep confabulation separate
+
+The discussion supports distinguishing licensed fictional creation from unqualified confabulation, but their final operational rules and outcome hierarchy remain open.
+
+A response can present settled details within an explicitly imaginary task without asserting real-world facts. Presentation as known or given is therefore not, on its own, a confabulation label.
+
+For unsupported factual invention, evaluate the full prompt, response framing, and evidence for the claims. Record explicit fiction signals, uncertainty, premise challenges, and claims about sources separately. Repeating an "imaginary" instruction differs from spontaneously challenging a "real" premise; neither alone establishes a private state of recognition.
 
 ## Incomplete and invalid outputs
 
