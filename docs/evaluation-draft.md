@@ -1,10 +1,10 @@
 # Evaluation and measurement draft
 
-Status: the user prefers fewer mechanically scored measurements and minimal involvement in scoring individual responses. The five interpretive rules below are agreed. The two proposed mechanical measures, their inventories, and the analysis plan are not yet frozen. No new-study responses have been collected or inspected.
+Status: mechanical scoring with minimal user involvement is the preferred direction. The user subsequently requested a broad measurement proposal, erring toward more candidates. The five interpretive rules below are agreed. The expanded measurement battery, inventories, and analysis plan are not yet frozen. No new-study responses have been collected or inspected.
 
 ## Agreed scoring direction
 
-The user wants to keep their own judgment out of routine response scoring as much as possible, regarding their involvement as a potential variable. They prefer fewer measurements done mechanically over many measurements done by hand.
+The user wants to keep their own judgment out of routine response scoring as much as possible, regarding their involvement as a potential variable. They initially preferred fewer mechanical measures to many hand-scored measures, and subsequently asked for a broad proposal. Minimal personal scoring remains the constraint; the candidate measurement count is now deliberately broad.
 
 The operational proposal is fixed, auditable, deterministic code. Routine human annotation is no longer the default plan. The user can continue to set research questions and approve measurement definitions without assigning production labels.
 
@@ -12,9 +12,13 @@ The prior calibration remains part of study-design history, not an independent v
 
 An LLM judge would introduce another source of semantic judgments. It is not part of the current proposal.
 
-## Proposed primary measures: two phrase-based indicators
+## Expanded candidate catalog
 
-These are proposals, not yet approved inventories.
+The [mechanical measurement catalog](measurement-catalog.md) proposes 32 families covering expression inventories, definition forms, cue placement, response structure, repetition, and vocabulary. All are proposals. It also offers six candidate priority families, without treating all derived columns as independent hypotheses.
+
+## Original two-indicator starting proposal
+
+The two indicators below remain candidates within the expanded catalog. They are not an approved limit on the study's measurements, and their inventories are not frozen.
 
 | Candidate measure | Mechanical operation | What it would support |
 | --- | --- | --- |
@@ -111,7 +115,7 @@ The user is not expected to hand-score the corpus or serve as the default adjudi
 
 ## Remaining decisions
 
-- Whether to adopt both proposed expression indicators or a smaller/different mechanically defined set.
+- Which families from the expanded catalog to implement and which outcomes/contrasts to designate primary.
 - Exact expression inventories, preprocessing, match boundaries, and quotation handling.
 - Word-count and completion rules, aggregation denominators, comparisons, and uncertainty calculations.
 - Model lineup, spending cap, and the historical/new sample to include.

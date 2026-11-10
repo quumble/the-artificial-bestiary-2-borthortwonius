@@ -284,3 +284,13 @@ The assistant proposed fixed, auditable code and two candidate phrase-based indi
 The five previously agreed interpretive rules remain in effect. Their full semantic application is not assumed to be mechanically solved. In particular, a response without a listed disclaimer is not automatically confabulation, and a listed phrase does not automatically acknowledge fiction or uncertainty about the referent.
 
 No LLM judge has been chosen. The proposed primary analysis does not require the user to provide individual production labels. The earlier interactive calibration remains documented as design work, not independent validation.
+
+## Request for a broader mechanical measurement proposal
+
+The user asked:
+
+> propose some measurements. i would like to overdo it, if anything
+
+This steers the measurement proposal toward breadth while retaining the preference for minimal personal scoring. The assistant prepared a [32-family candidate catalog](measurement-catalog.md), with explicit operations, questions, limitations, and a proposed six-family priority shortlist.
+
+The list, its inventories, and its priorities are proposals, not accepted study settings. The two-indicator proposal remains part of the broader pool. No measurement implementation or new model trials were performed in preparing the catalog.

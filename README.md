@@ -27,7 +27,7 @@ The [evaluation draft](docs/evaluation-draft.md#agreed-core-rules) now contains 
 
 The [calibration log](docs/calibration-log.md) preserves the judgments, clarification, and explicit agreement.
 
-**Scoring preference:** minimize the user's involvement in scoring individual responses and favor fewer mechanical measurements over many hand-coded dimensions. The current proposal is deterministic phrase-based measurement, with no default human or LLM judge. Two candidate indicators concern listed fiction expressions and listed qualification expressions. Their inventories are not yet agreed, and they must not be represented as an automatic confabulation detector.
+**Scoring preference:** minimize the user's involvement in scoring individual responses and use mechanical measurements. After considering an initial two-indicator proposal, the user requested a broad candidate set. The [measurement catalog](docs/measurement-catalog.md) now proposes 32 families, from literal expression counts and cue placement to text structure and repeated wording. No final battery or inventory has been approved. There is no default human or LLM judge, and the surface measures must not be represented as an automatic confabulation detector.
 
 The five agreed rules remain constraints on interpretation. The [measurement draft](docs/evaluation-draft.md) distinguishes those principles from what fixed code can directly measure. The protocol is not yet frozen or preregistered.
 
