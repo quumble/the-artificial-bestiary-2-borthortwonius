@@ -1,49 +1,49 @@
-# Evaluation draft
+# Evaluation and measurement draft
 
-Status: codebook development. The five core rules below are agreed. Detailed label definitions, validation, and analysis procedures remain in development. No new-study responses have been collected or inspected.
+Status: the user prefers fewer mechanically scored measurements and minimal involvement in scoring individual responses. The five interpretive rules below are agreed. The two proposed mechanical measures, their inventories, and the analysis plan are not yet frozen. No new-study responses have been collected or inspected.
 
-This is not yet a frozen codebook or a preregistration. The calibration log preserves the earlier proposals and revisions.
+## Agreed scoring direction
 
-## Aim
+The user wants to keep their own judgment out of routine response scoring as much as possible, regarding their involvement as a potential variable. They prefer fewer measurements done mechanically over many measurements done by hand.
 
-Measure what a response does before deciding what it means. Preserve enough detail to compare the old and new samples without forcing every response into one inherited, mutually exclusive category.
+The operational proposal is fixed, auditable, deterministic code. Routine human annotation is no longer the default plan. The user can continue to set research questions and approve measurement definitions without assigning production labels.
 
-An output can describe something, acknowledge uncertainty, substitute a familiar word, and offer further help in the same answer. Those observations should be recordable together.
+The prior calibration remains part of study-design history, not an independent validation set or a final answer key. Rule design still involves choices by the user and assistant; deterministic scoring makes those choices explicit and consistently applied rather than removing all judgment.
 
-## Proposed observations
+An LLM judge would introduce another source of semantic judgments. It is not part of the current proposal.
 
-| Dimension | What to record | Working distinction |
+## Proposed primary measures: two phrase-based indicators
+
+These are proposals, not yet approved inventories.
+
+| Candidate measure | Mechanical operation | What it would support |
 | --- | --- | --- |
-| Description | Whether the answer supplies substantive attributes of a proposed referent, with supporting spans | Describing a creature's habitat is different from listing possible sources of an unfamiliar word. Borderline cases need an explicit uncertain code. |
-| Epistemic framing | Explicit invention/fiction signals, non-recognition, referent-level uncertainty, and assertions of established existence | Record each signal separately, its scope, and whether it occurs before, within, or after the description. Contradictory signals can coexist. |
-| Interpretation or substitution | Whether the answer maps the word to a named alternative or decomposes its parts, and whether that interpretation is qualified | A familiar-looking root does not establish that the proposed referent is real. Record the mapping first. Verify real-world referents separately where needed. |
-| Category fit | Whether substantive content fits the requested animal/object/idea category | Allow match, mismatch, mixed/unclear, and not applicable. A fluent creature description can still miss an "idea" request. |
-| Conversational continuation | Requests for context, spelling suggestions, offers to invent, offers to elaborate, and other next steps | Record these whether or not a description is present. An offer and an epistemic disclaimer can occur in the same sentence. |
+| Listed fiction-expression presence | Detect whether a response contains any expression in a frozen fiction/invention inventory. Illustrative candidates include "fictional," "imaginary," and "invented." | Comparisons of how often those listed expressions occur across models and prompt conditions. |
+| Listed qualification-expression presence | Detect whether a response contains any expression in a frozen uncertainty/non-recognition inventory. Illustrative candidates include "might," "may," "could," "I don't recognize," and "not familiar." | Comparisons of how often those listed expressions occur across models and prompt conditions. |
 
-Each nontrivial annotation should have a short evidence span. Absence claims require review of the complete available response.
+Retain exact matched text and locations for audit. The inventory, normalization, boundary matching, and treatment of quoted text must be specified before scoring the main batch.
 
-### A boundary to reconsider explicitly
+These are surface-expression measurements. An occurrence is not automatically a genuine disclaimer, an uncertainty claim about the referent, or a successful correction of a false premise. A phrase can occur inside a quotation, a negation, a question, or a statement about something else. A model can also qualify content with wording absent from the inventory.
 
-Historical example: "Would you like me to expand on any particular aspect of this imaginary object?"
+The measure names and reports must therefore describe the actual operation. Do not relabel literal-expression presence as "recognized fictionality" or "semantic uncertainty," and do not treat absence of a listed expression as proof of confidence, factual knowledge, or confabulation.
 
-The old adjudicated codebook treats this as an offer without fictional flagging. Proposed treatment here:
+The broad confabulation distinction remains conceptually important, but a valid automatic confabulation rate is not delivered by these two indicators. That limitation is explicit, not an invitation to silently restore hand coding.
 
-- Continuation offer: present.
-- Explicit imaginary language referring to the described object: present.
-- Location: closing offer.
-- Whether that signal adequately qualifies earlier factual-sounding assertions: a separate judgment.
+## Supporting metadata
 
-The conversational function does not erase the word "imaginary." Conversely, its presence does not automatically settle how the entire response should be interpreted.
+Keep response word count, token usage, completion status, stop reason, errors, model identifiers, prompt condition, stimulus identity, and attempt provenance. Length and completion information help assess the opportunity to produce a listed phrase and the effect of the 500-token limit. They are supporting information, not an expanding set of primary hypotheses.
 
-## Prompt context and evaluative claims
+The existing free-text prompts remain the basis of the comparison. Do not add self-classification questions or force a structured answer format merely to make scoring easier; that would change the experimental task.
 
-Annotators need the full prompt. Model identity and old/new batch identity can be hidden where practicable.
+## Proposed deterministic workflow
 
-Creating details after being asked for an imaginary animal is licensed invention. Creating the same details as established fact after being told an unfamiliar word names a real animal raises a different issue. A description without repeated fictional language is not, by itself, evidence of hallucination.
+1. Freeze a versioned specification of the selected inventories, text preprocessing, word counting, boundary rules, and missing-data handling before inspecting the main new batch.
+2. Run the same scoring code and inventory on the historical responses chosen for comparison and the new responses.
+3. Store each feature value with its exact matches and scorer version. Keep raw responses unchanged.
+4. Aggregate by model and prompt condition, retaining word and word-set distinctions. Repeated answers to one word do not create additional independent words.
+5. Keep later changes to the scorer identifiable as revised analyses; do not silently replace the original scores.
 
-Keep output observations separate from judgments such as unsupported factual assertion or instruction failure. Define those judgments explicitly in the final codebook. Do not infer private beliefs, awareness, or internal mechanisms from response style.
-
-The original fabricated words are now public. We cannot assume they remain unseen by every tested model. Apparent recognition, references to the project, or retrieval of existing fictional descriptions should be recorded and investigated rather than automatically counted as fresh invention. This is a possible complication, not an established contamination finding.
+A zero means no listed match in the observed text. On an incomplete answer it does not establish that no matching expression would have appeared later. Completion flags must remain visible, and the final analysis must pre-specify denominators and how incomplete outputs contribute to each result.
 
 ## Agreed core rules
 
@@ -85,57 +85,41 @@ Cut-off answers receive an **incomplete** flag.
 
 Neither automatically becomes a no. Preserve the evidence that is available and identify what cannot be determined.
 
-## Measurement target and remaining implementation decisions
+## Role of the agreed rules in a mechanical study
 
-The user's intended distinction concerns whether the response presents characteristics as something it can report or explicitly treats them as hypothetical, interpreted, or constructed. The assistant had initially asked the different question "are characteristics present?" That construct mismatch is documented in the calibration log and must not be hidden by retroactively changing the initial ratings.
+The five rules constrain interpretation. They do not imply that a phrase matcher can resolve disclaimer scope, determine factual support, or classify every mixed response semantically.
 
-The user's metaphor "interpreting not photographing" concerns the language's presentation. It is not evidence of actual observation, retrieval, or internal knowledge.
+In particular:
 
-The five agreed rules resolve the basic treatment of explicit fiction signals, global versus local qualification, mixed answers, unsupported factual invention, and uncertain or incomplete cases. They do not yet specify every field or a complete scoring algorithm.
+- Matching "fictional" and deciding what it qualifies are different operations.
+- "It lives underground. It may eat insects." contains a qualification expression but also an independently stated habitat. A whole-response claim that it is entirely hypothetical would exceed the mechanical observation.
+- A fictional prompt can license confident narration without an extra output-side fictional reminder.
+- Unsupported factual invention requires a support judgment beyond checking for a hedge.
+- Incompletion can be identified from available API status. Semantic ambiguity cannot be exhaustively identified through a word list.
 
-Remaining work:
+The earlier proposed rich semantic dimensions, including category fit, detailed substitutions, and response-wide reporting-versus-interpreting labels, are not default production measurements under the user's preference. Any later use must be separately identified and justified.
 
-- Translate the rules into precise annotation fields with evidence spans and examples, including how assertion and speculation indicators interact with global fictional framing.
-- Define handling of non-recognition, offers without description, substitutions, claims about existing sources, and contradictions.
-- Set a verification procedure for purported real referents and support claims, especially given the public history of the original words.
-- Choose coders, calibration and validation samples, agreement measures, and an adjudication procedure.
-- Specify response-level outcomes and analysis denominators, including the treatment of uncertainty and partial observations.
+## Validation appropriate to these measures
 
-Retain the distinction between reporting details within an explicitly fictional task and presenting them as real-world knowledge. The eventual outcomes must preserve the agreed fiction/confabulation separation.
+First verify the software contract: identical inputs and scorer versions produce identical outputs, and known text fixtures exercise normalization, phrase boundaries, overlapping matches, quotation/negation cases, empty outputs, and incomplete responses.
 
-## Incomplete and invalid outputs
+Check that aggregation preserves the specified denominators and that prompt text or metadata do not accidentally enter response-only matching.
 
-Both providers will receive a 500-token requested output limit.
+These checks establish correct execution of the measurement rules. They do not establish semantic accuracy. Broad semantic claims would require further validation, not just more elaborate regular expressions. The primary reports should remain within what the literal measurements support.
 
-Retain completion status, stop reason, token usage, and the text returned. Keep API errors, empty outputs, and truncations distinct from substantive response behavior.
+The user is not expected to hand-score the corpus or serve as the default adjudicator. No human or model judge has been selected.
 
-For a truncated answer, a flag already present can be recorded as observed. A flag not present in the available text cannot establish that the completed answer would contain none. The final analysis plan must state how such partially observed responses contribute to each outcome and report truncation rates by model and condition. Do not silently drop incomplete trials or relabel them as refusals.
+## Remaining decisions
 
-Record requested and returned model identifiers, generation settings, request timing, trial identifiers, and attempt outcomes. Store no credentials in research records.
+- Whether to adopt both proposed expression indicators or a smaller/different mechanically defined set.
+- Exact expression inventories, preprocessing, match boundaries, and quotation handling.
+- Word-count and completion rules, aggregation denominators, comparisons, and uncertainty calculations.
+- Model lineup, spending cap, and the historical/new sample to include.
 
-## Developing and validating the codebook
+## Provenance
 
-Proposed sequence:
+The [calibration log](calibration-log.md) preserves the changing definitions and the later preference for mechanical scoring. Earlier ratings were elicited under a construct mismatch and are not a fixed answer key.
 
-1. Use a documented subset of historical responses to develop definitions and examples.
-2. Freeze a versioned codebook before inspecting the main new batch. If new-model calibration responses are needed first, label and retain them as a separate development batch.
-3. Reserve historical responses not used in development for validation, and include new-model outputs in subsequent reliability checks.
-4. Where feasible, obtain independent annotations before adjudication. Report who or what annotated, exposure to model metadata, agreement by dimension, and unresolved cases. If only one coder is available, report that limitation directly.
-5. Apply the same finalized scheme to the historical responses used for comparison and to the new batch. Preserve old labels alongside the new annotations.
+Historical source inspected at [`7fec51af5d28b743763225f4dd52ab29a4cb4d60`](https://github.com/quumble/the-artificial-bestiary/tree/7fec51af5d28b743763225f4dd52ab29a4cb4d60). The source [adjudicated coding scheme](https://github.com/quumble/the-artificial-bestiary/blob/7fec51af5d28b743763225f4dd52ab29a4cb4d60/Haiku%20v3%20Retest/Haiku_handcode_adjudicated/coding_scheme.md) and earlier automated labels remain historical artifacts, not the new scorer.
 
-Re-scoring historical raw responses with the new scheme is essential: old labels versus new labels would otherwise mix changes in behavior with changes in measurement. The scope of historical recoding remains to be set.
-
-## Proposed analysis principles
-
-- Start with transparent counts, denominators, and rates for each dimension, separated by model, condition, word, and word set.
-- Treat repeated responses to one word as repeated samples of that stimulus. They do not create additional independent words or justify broad claims about all invented words.
-- Define primary comparisons and uncertainty calculations before inspecting the main new results. The analysis method is not yet chosen.
-- Keep uncertainty flags about an attribute separate from uncertainty about the referent's existence.
-- Preserve observed co-occurrence and mixed responses. Derive summary categories only when they answer a defined question.
-- Treat provider-specific token accounting and unknown historical run settings as comparison limitations, not evidence of model change.
-
-## Historical source
-
-Inspected baseline commit: [`7fec51af5d28b743763225f4dd52ab29a4cb4d60`](https://github.com/quumble/the-artificial-bestiary/tree/7fec51af5d28b743763225f4dd52ab29a4cb4d60).
-
-The boundary example above comes from the [later adjudicated coding scheme](https://github.com/quumble/the-artificial-bestiary/blob/7fec51af5d28b743763225f4dd52ab29a4cb4d60/Haiku%20v3%20Retest/Haiku_handcode_adjudicated/coding_scheme.md). The original README also documents that some early automated REFUSE labels were later interpreted as DEFLECT. Historical code versions must therefore remain identifiable.
+The original fabricated words are now public. Apparent recognition or references to prior fictional descriptions may complicate interpretation; this is a possibility, not an established contamination finding.

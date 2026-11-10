@@ -270,3 +270,17 @@ The rules, as presented:
 These are now agreed rules, superseding earlier provisional interpretations where they conflict. Historical raw ratings above remain an account of development, not a finalized answer key. The new agreement resolves explicit fiction acknowledgment; it does not authorize silently rewriting the earlier binary judgments as if they had been made under the final rules.
 
 Detailed annotation fields, validation, adjudication, and analysis procedures are still to be specified. No new experimental responses were collected during this agreement.
+
+## Scoring preference: fewer measurements, applied mechanically
+
+The user stated:
+
+> id prefer to keep myself out of scoring as much as possible. i am my own variable. id prefer to have fewer measurements, done mechanically, over many done by hand
+
+This establishes a preference to minimize the user's involvement in response-level scoring and to reduce the number of measurements in favor of mechanical application. Routine human scoring and human adjudication are no longer default requirements of the plan.
+
+The assistant proposed fixed, auditable code and two candidate phrase-based indicators: presence of listed fiction expressions and presence of listed qualification expressions. These measures and their exact inventories are proposals, not yet user-approved decisions. Response length and completion status would be supporting metadata.
+
+The five previously agreed interpretive rules remain in effect. Their full semantic application is not assumed to be mechanically solved. In particular, a response without a listed disclaimer is not automatically confabulation, and a listed phrase does not automatically acknowledge fiction or uncertainty about the referent.
+
+No LLM judge has been chosen. The proposed primary analysis does not require the user to provide individual production labels. The earlier interactive calibration remains documented as design work, not independent validation.

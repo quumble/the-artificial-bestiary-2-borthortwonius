@@ -25,14 +25,18 @@ The [evaluation draft](docs/evaluation-draft.md#agreed-core-rules) now contains 
 - Unsupported factual invention is distinguished from licensed fiction.
 - Ambiguity and cut-off responses receive uncertain and incomplete flags, not automatic negative scores.
 
-The [calibration log](docs/calibration-log.md) preserves the judgments, clarification, and explicit agreement. Detailed coding and validation remain in development. The protocol is not yet frozen or preregistered.
+The [calibration log](docs/calibration-log.md) preserves the judgments, clarification, and explicit agreement.
+
+**Scoring preference:** minimize the user's involvement in scoring individual responses and favor fewer mechanical measurements over many hand-coded dimensions. The current proposal is deterministic phrase-based measurement, with no default human or LLM judge. Two candidate indicators concern listed fiction expressions and listed qualification expressions. Their inventories are not yet agreed, and they must not be represented as an automatic confabulation detector.
+
+The five agreed rules remain constraints on interpretation. The [measurement draft](docs/evaluation-draft.md) distinguishes those principles from what fixed code can directly measure. The protocol is not yet frozen or preregistered.
 
 The following remain open:
 
 - Model lineup and exact model identifiers.
 - Spending cap.
 - Which historical stimulus sets and repetition counts to include in the initial batch. The eight-word, 800-trial-per-model design is a proposal, not yet a decision.
-- Detailed annotation fields and edge-case rules, coder selection, validation, adjudication, outcomes, and analysis plan.
+- Final mechanical measures, expression inventories, preprocessing, software validation, outcomes, and analysis plan.
 - Analysis denominators for incomplete or uncertain responses and model-specific generation constraints.
 
 ## Historical reference
