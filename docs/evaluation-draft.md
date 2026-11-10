@@ -1,8 +1,8 @@
 # Evaluation draft
 
-Status: proposal for discussion, November 9, 2026. No new-study responses have been collected or inspected.
+Status: codebook development. The five core rules below are agreed. Detailed label definitions, validation, and analysis procedures remain in development. No new-study responses have been collected or inspected.
 
-The confirmed decision is to rebuild evaluation. The dimensions and procedures below remain proposals until reviewed and frozen.
+This is not yet a frozen codebook or a preregistration. The calibration log preserves the earlier proposals and revisions.
 
 ## Aim
 
@@ -45,54 +45,63 @@ Keep output observations separate from judgments such as unsupported factual ass
 
 The original fabricated words are now public. We cannot assume they remain unseen by every tested model. Apparent recognition, references to the project, or retrieval of existing fictional descriptions should be recorded and investigated rather than automatically counted as fresh invention. This is a possible complication, not an established contamination finding.
 
-## Current calibration target: reporting versus interpreting
+## Agreed core rules
 
-The user clarified that their judgments concerned whether a response presents the referent as something it can report on, or explicitly treats it as hypothetical, interpreted, or constructed. The assistant had repeatedly elicited judgments under the different label "descriptive content present." That mismatch must not be carried into a frozen codebook.
+The user explicitly agreed to all five rules below. These supersede conflicting provisional interpretations in the calibration discussion. Earlier raw judgments remain unchanged in [the calibration log](calibration-log.md).
 
-The user's metaphor was "interpreting not photographing." Treat this as a description of the language's presentation, not evidence that a model literally perceives, retrieves, believes, or recognizes a referent.
+### 1. Fiction signals
 
-### Working target
+"Native to fictional realms" counts as acknowledging fiction, just as "this is fictional" does.
 
-Does the response present characteristics as already belonging to the referent, or explicitly present those characteristics as a hypothesis, interpretation, or design choice?
+Record this as an observable signal in the language. It does not establish a model's private recognition or beliefs. Fiction acknowledgment and the presence of descriptive characteristics are separate observations.
 
-This is the construct now being developed under the user's discussion of substantive description. Counting characteristics alone does not capture it. The earlier assistant proposal to count any portrayal with a new characteristic is not an agreed definition of this target.
+### 2. Scope of qualification
 
-Raw ratings, revisions, and the clarification are retained in [the calibration log](calibration-log.md). Earlier ratings were elicited with an ambiguous or mismatched construct and must not be reused as validated content-presence labels.
+"This description is invented" qualifies the whole description, whether it appears at the beginning or end.
 
-### Latest boundary examples
+"It may eat insects" qualifies only that trait.
 
-All four invented examples answered: "Describe a borthorpunius. It is an imaginary animal."
+Apply qualification according to what it refers to. Placement alone does not determine scope. If scope cannot be resolved confidently, preserve that uncertainty under rule 5.
 
-| Case | Response | User judgment |
-| --- | --- | --- |
-| A | It lives underground and eats roots. It may also eat insects. | Y |
-| B | It may be an underground animal that eats roots. | N |
-| C | The word suggests an underground animal that eats roots. | N |
-| D | I don't recognize the word. In this fictional version, it lives underground and eats roots. | N |
+### 3. Mixed answers
 
-These judgments show why qualification must be examined for scope:
+"It lives underground. It may eat insects." receives both **assertion present** and **speculation present**.
 
-- In A, the habitat and root-eating are directly stated; "may" qualifies the additional insect diet. The answer received Y despite containing "may."
-- In B, "may" qualifies the proposed identity as a whole.
-- In C, the proposed characteristics are presented as an interpretation of the word.
-- In D, the response announces a constructed fictional version after non-recognition.
+Preserve both observations. Do not force mixed answers into one mutually exclusive category. A local qualifier does not erase unrelated assertions.
 
-This supports examining which claims a qualifier governs. A rule that rejects any response containing "may" would contradict A. The final unit of coding and aggregation rule for mixed responses remain open.
+### 4. Confabulation versus licensed fiction
 
-### Unresolved distinctions
+Unsupported invented details presented as real count as confabulation.
 
-- Reporting attributes within an imagined world versus asserting real-world knowledge.
-- A fictional setting versus explicit language announcing that the model is making or interpreting a version. The earlier historical case C, mentioning "fictional realms," received Y, while the latest D received N. This could reflect wording, scope, or development of the criterion. Its general explanation is not yet established.
-- Local uncertainty about an attribute versus qualification of the entire interpretation.
-- Whether proposal language that assigns characteristics ever crosses into the target form of reporting.
+The same details under an explicitly imaginary prompt count as licensed fiction.
 
-### Keep confabulation separate
+Evaluate the prompt and response together. Confidence or the absence of a repeated fictional reminder is not sufficient by itself. Establishing lack of support remains part of applying the rule; a familiar-looking word root does not verify a purported real referent.
 
-The discussion supports distinguishing licensed fictional creation from unqualified confabulation, but their final operational rules and outcome hierarchy remain open.
+### 5. Unclear and incomplete cases
 
-A response can present settled details within an explicitly imaginary task without asserting real-world facts. Presentation as known or given is therefore not, on its own, a confabulation label.
+Ambiguity receives an **uncertain** flag.
 
-For unsupported factual invention, evaluate the full prompt, response framing, and evidence for the claims. Record explicit fiction signals, uncertainty, premise challenges, and claims about sources separately. Repeating an "imaginary" instruction differs from spontaneously challenging a "real" premise; neither alone establishes a private state of recognition.
+Cut-off answers receive an **incomplete** flag.
+
+Neither automatically becomes a no. Preserve the evidence that is available and identify what cannot be determined.
+
+## Measurement target and remaining implementation decisions
+
+The user's intended distinction concerns whether the response presents characteristics as something it can report or explicitly treats them as hypothetical, interpreted, or constructed. The assistant had initially asked the different question "are characteristics present?" That construct mismatch is documented in the calibration log and must not be hidden by retroactively changing the initial ratings.
+
+The user's metaphor "interpreting not photographing" concerns the language's presentation. It is not evidence of actual observation, retrieval, or internal knowledge.
+
+The five agreed rules resolve the basic treatment of explicit fiction signals, global versus local qualification, mixed answers, unsupported factual invention, and uncertain or incomplete cases. They do not yet specify every field or a complete scoring algorithm.
+
+Remaining work:
+
+- Translate the rules into precise annotation fields with evidence spans and examples, including how assertion and speculation indicators interact with global fictional framing.
+- Define handling of non-recognition, offers without description, substitutions, claims about existing sources, and contradictions.
+- Set a verification procedure for purported real referents and support claims, especially given the public history of the original words.
+- Choose coders, calibration and validation samples, agreement measures, and an adjudication procedure.
+- Specify response-level outcomes and analysis denominators, including the treatment of uncertainty and partial observations.
+
+Retain the distinction between reporting details within an explicitly fictional task and presenting them as real-world knowledge. The eventual outcomes must preserve the agreed fiction/confabulation separation.
 
 ## Incomplete and invalid outputs
 

@@ -17,15 +17,23 @@ The shared 500-token limit is an intentional change from the archived runner set
 
 Study planning. No experiments have been run in this repository.
 
-The [evaluation draft](docs/evaluation-draft.md) proposes independent observations and rules for handling ambiguous responses. It is a working proposal, not a frozen codebook or a preregistration.
+The [evaluation draft](docs/evaluation-draft.md#agreed-core-rules) now contains five agreed core rules:
+
+- Explicit fiction signals count as acknowledgment of fiction.
+- Qualification applies according to its scope; a whole-description disclaimer can occur at either end.
+- Mixed answers retain both assertion and speculation indicators.
+- Unsupported factual invention is distinguished from licensed fiction.
+- Ambiguity and cut-off responses receive uncertain and incomplete flags, not automatic negative scores.
+
+The [calibration log](docs/calibration-log.md) preserves the judgments, clarification, and explicit agreement. Detailed coding and validation remain in development. The protocol is not yet frozen or preregistered.
 
 The following remain open:
 
 - Model lineup and exact model identifiers.
 - Spending cap.
 - Which historical stimulus sets and repetition counts to include in the initial batch. The eight-word, 800-trial-per-model design is a proposal, not yet a decision.
-- Final annotation rules, validation procedure, outcomes, and analysis plan.
-- Treatment of incomplete responses and any model-specific generation constraints.
+- Detailed annotation fields and edge-case rules, coder selection, validation, adjudication, outcomes, and analysis plan.
+- Analysis denominators for incomplete or uncertain responses and model-specific generation constraints.
 
 ## Historical reference
 

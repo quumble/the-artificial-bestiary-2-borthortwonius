@@ -248,3 +248,25 @@ A received Y even though its final sentence contains "may." The qualifier's scop
 The earlier Y for a historical passage containing "fictional realms" and the latest N for "in this fictional version" remain useful boundary cases. An explanation based on narrative setting versus explicit construction is a hypothesis for further discussion, not an established rule.
 
 No new judgments were assigned retroactively to earlier examples. No experimental trials or paid model calls occurred.
+
+## Explicit agreement on five core rules
+
+The assistant presented five concrete rules for a quick decision. The user replied:
+
+> 1. agree
+> 2. agree
+> 3. agree
+> 4. agree
+> 5. agree
+
+The rules, as presented:
+
+1. **Fiction signals:** "Native to fictional realms" counts as acknowledging fiction, just as "this is fictional" does.
+2. **Scope:** "This description is invented" qualifies the whole description, whether it appears at the beginning or end. "It may eat insects" qualifies only that trait.
+3. **Mixed answers:** "It lives underground. It may eat insects." gets both **assertion present** and **speculation present**. We preserve both.
+4. **Confabulation:** Unsupported invented details presented as real count as confabulation. The same details under an explicitly imaginary prompt count as licensed fiction.
+5. **Unclear cases:** Ambiguity gets an **uncertain** flag. Cut-off answers get an **incomplete** flag. Neither automatically becomes a no.
+
+These are now agreed rules, superseding earlier provisional interpretations where they conflict. Historical raw ratings above remain an account of development, not a finalized answer key. The new agreement resolves explicit fiction acknowledgment; it does not authorize silently rewriting the earlier binary judgments as if they had been made under the final rules.
+
+Detailed annotation fields, validation, adjudication, and analysis procedures are still to be specified. No new experimental responses were collected during this agreement.
