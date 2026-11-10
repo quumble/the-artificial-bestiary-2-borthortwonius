@@ -45,6 +45,44 @@ Keep output observations separate from judgments such as unsupported factual ass
 
 The original fabricated words are now public. We cannot assume they remain unseen by every tested model. Apparent recognition, references to the project, or retrieval of existing fictional descriptions should be recorded and investigated rather than automatically counted as fresh invention. This is a possible complication, not an established contamination finding.
 
+## Working distinctions after calibration
+
+These are developing rules, not a frozen codebook. Exact judgments and their provenance are retained in [the calibration log](calibration-log.md).
+
+### Separate description from the status of its claims
+
+The discussion supports keeping licensed fictional creation separate from unqualified confabulation. A response can contain descriptive content in either case. Explicitly identifying the setting as fictional does not by itself disqualify a description, and failing to repeat "fictional" under an explicitly imaginary prompt is not sufficient evidence of confabulation.
+
+Candidate outcomes remain to be operationalized:
+
+- **Fictional creation:** constructing a referent when the prompt licenses invention.
+- **Unqualified confabulation:** supplying unsupported characteristics as factual information where invention has not been licensed.
+
+Record explicit fiction signals, uncertainty, premise challenges, and source/interpretation claims separately. A fictional signal prompted by "imaginary" is different from an unsolicited challenge to a "real" premise. Neither observation establishes a private state of recognition.
+
+### Working description rule
+
+Proposed wording: a description portrays the referent by assigning it at least one characteristic beyond what the prompt already supplies, within an asserted or imagined setting.
+
+A short characteristic can qualify. Repeating the supplied category or merely discussing a request does not add a characteristic. This wording is provisional; the boundary between a portrayal and a proposed interpretation still needs testing.
+
+In the historical-excerpt calibration, the user assigned:
+
+| Case | Observation | Description present |
+| --- | --- | --- |
+| A, trial 00433 | Non-recognition plus a request for context | No |
+| B, trial 00297 | Tentative interpretation of an idea based on possible word roots | No |
+| C, trial 00449 | Size and habitat assigned to an explicitly fictional creature | Yes |
+| D, trial 00738 | A fishing technique described without qualification of its asserted reality | Yes |
+
+These are judgments on the excerpts and context displayed in the conversation, not final recodings of the full trials. The C and D judgments establish description presence, not accuracy or confabulation status.
+
+B is a negative boundary example. Its rejection does not yet establish a rule that every hedge or every word-root interpretation precludes description. The passage combines several features: non-recognition, morphological speculation, tentative attribution, and an idea-category referent. We need controlled examples to separate those possibilities.
+
+### Next unresolved boundary
+
+Distinguish uncertainty about one attribute within an otherwise established portrayal from uncertainty about what the word might refer to at all. Do not implement a keyword rule that treats "might," "perhaps," or "fictional" as automatic disqualifiers.
+
 ## Incomplete and invalid outputs
 
 Both providers will receive a 500-token requested output limit.
