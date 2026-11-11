@@ -2,9 +2,9 @@
 
 **Study:** The Artificial Bestiary 2: Borthortwonius
 **Analyst:** Claude Fable 5.2 (Anthropic), working with Bo Chesterton
-**Written:** November 11, 2026, before any study request was sent
+**Written:** November 11, 2026, before any study request was sent. Finalised the same day after the GPT-made words arrived and GPT/Codex's final review (`docs/fable-final-review.md`)
 **Amends:** `prereg/CLAUDE_PREREG.md`, which stays in the repository unchanged
-**Status:** complete except for the fresh word-list hash in section 2, which is filled in when the GPT-made words arrive. No other section depends on those words.
+**Status:** final.
 
 Where this amendment and the original disagree, this amendment governs. Everything not mentioned here stands as written.
 
@@ -26,14 +26,16 @@ The fresh batch is now three sets of eight:
 | --- | --- | --- | --- |
 | `fresh-animal-intent` | 8 | Bo Chesterton, with imaginary animals in mind | animal-intent |
 | `fresh-no-intent-claude` | 8 | Claude Fable 5.2 | no-intent |
-| `fresh-no-intent-gpt` | 8 | a GPT model, named in the sample design | no-intent |
+| `fresh-no-intent-gpt` | 8 | GPT-6, as the product displayed it, in a Temporary Chat | no-intent |
 
 - **My eight** were drawn from my original sixteen with Python's `random.Random("bestiary2-claude-no-intent-draw-20261111").sample(words_in_file_order, 8)`. The other eight are retired and take no part in the study.
-- **GPT's eight** are drawn the same way, with the seed string `bestiary2-gpt-no-intent-draw-20261111`, from the sixteen candidates GPT keeps after dropping its four most loaded of twenty.
+- **GPT's eight** were drawn the same way, with the seed string `bestiary2-gpt-no-intent-draw-20261111`, from sixteen candidates in the order GPT returned them.
+- **How GPT's sixteen differ from the brief.** The brief asked for twenty candidates with the four most loaded dropped. GPT's first sixteen leaned on three repeated endings. The investigator asked once for more variety, and GPT kept four of that batch and replaced twelve. The final sixteen are that revised list. No response to any study prompt informed the request.
+- **Checks on the drawn eight.** None is close to another study word (highest string similarity 0.59). One web search each on November 11 returned no page containing any of the eight. Near-matches were a former town name, a drug brand, a village name, a veterinary product and a game character; none triggered replacement.
 - **Replacement rule.** If a web search shows a drawn word is an existing word, name or brand, it is replaced by the next word from a continued draw under the same seed. Near-matches do not trigger replacement.
 - The original word-list hash no longer applies.
 
-**New fresh word-list SHA-256:** _pending receipt of the GPT-made words_
+**New fresh word-list SHA-256:** `48145fde5437eae91d98a32a1ccb3e5733864cdf7380ab3af39994fd020703b4`
 
 ## 3. Scorer version 1.1
 
@@ -46,7 +48,7 @@ The fresh batch is now three sets of eight:
 
 ## 4. Analysis code
 
-`analyze_claude.py`, SHA-256 `43b549940dae692f1db3242988b27060824eeb46b452616fe16b388883902e28`, with tests in `tests/test_claude_analysis.py`. It implements this amendment exactly and is frozen with the collector before the first study request. This replaces the original's commitment to add it before response text is read.
+`analyze_claude.py`, SHA-256 `b1b8d6d48178cb3e3ce852682248329229dd8bc2c12cf3903afa2d5bfc0e6c6c`, with tests in `tests/test_claude_analysis.py`. It implements this amendment exactly and is frozen with the collector before the first study request. This replaces the original's commitment to add it before response text is read. GPT/Codex added integrity gates that I accept: the script refuses to run until both batches are closed, checks the frozen manifest and file hashes, reads the attempt ledger, and takes the planned word bank and each model's planned slot count from the frozen schedule.
 
 ## 5. Eligibility and denominators
 
@@ -58,7 +60,8 @@ These rules replace section 6 of the original where they differ.
 - **Truncated responses** are excluded from the primary analysis and included in a sensitivity analysis, as before.
 - **Word value for one model:** the mean over the conditions in the stated set of each condition's mean over eligible repetitions. Every condition in the set must have at least one eligible response, and eligible responses must total at least 60% of the planned trials for that word, model and condition set. The 60% is counted after the exclusions that apply to the analysis being run.
 - **Word value for a model group:** the equal-weight mean across the group's models. A word enters a test only if every model in the group has a value for it. Dropped words are counted.
-- **A model belongs to a group** only if at least 60% of its planned slots in the batch are eligible. A model stopped early by the collector falls out of its group, and the result names it. Tests that compare batches need the model in both.
+- **A model belongs to a group** if at least 60% of its planned slots in the batch are eligible, counted against the frozen schedule. This number is the only rule. A model the collector stopped stays in its group if it clears 60%, because slots are run in shuffled order and the ones it missed are a random subset; the result says it was stopped. Below 60% it falls out and the result names it. Tests that compare batches need the model in both.
+- **Words are weighted equally.** A test that averages over fresh words averages the eligible words. With all 24 present that is one third per source. If words drop out, the estimand is the mean over the words that remain, and the count of eligible words per source is reported beside the result. I do not reweight to restore thirds. H3 compares its two arms' means over their eligible words; H4 standardises over intent as section 7 says; H6 compares the two author sets. A test with fewer than two eligible words in an arm is untested.
 - **Empty responses** stay in, scored as no description.
 
 ## 6. H3: what the result can and cannot show
@@ -80,11 +83,11 @@ My prediction stands: the animal-intent set is higher. The sets differ in author
 - **Contrast.** For each fresh no-intent word, N over presupposition plus neutral on the four Anthropic models minus the same on the four OpenAI models. Compare that difference between Claude-made words (8) and GPT-made words (8).
 - **Test:** two-sample permutation by word, two-sided.
 - **Prediction:** negative. Each family gives less bare non-recognition to words its own family made. I hold this weakly.
-- **Limits.** Eight words against eight. Only a large effect would show. The two word sets also differ in which model made them and when, not only in family.
+- **Limits.** Eight words against eight. Only a large effect would show. The two word sets also differ in which model made them and when, not only in family. They differ in shape as well: the GPT-made words are all seven or eight letters with alternating consonants and vowels, and the Claude-made words are mostly longer with consonant clusters. A difference between the sets cannot be separated from that.
 
 ## 9. The confirmatory family
 
-Six tests: H1, H2, H3, H4, H5, H6. Holm correction at 0.05 across the six. A test is called confirmed only if its Holm-adjusted p is below 0.05 and the floor rule does not mark it uninformative. The floor rule applies to H1, H2, H3 and H5, whose arms are rates.
+Six tests: H1, H2, H3, H4, H5, H6. Holm correction at 0.05 across the six. The family is always six: a test that cannot be run keeps its place with p = 1 for the adjustment and is reported as untested, so the remaining tests are not corrected more leniently. A test is called confirmed only if its Holm-adjusted p is below 0.05 and the floor rule does not mark it uninformative. The floor rule applies to H1, H2, H3 and H5, whose arms are rates.
 
 **Scope of error control.** This is one analyst's family. The GPT preregistration has its own family of eight contrasts with its own correction. The two are reported separately and labelled by analyst. No claim of 5% error control across both is made. Where the two families bear on the same question, I will say whether they agree.
 
@@ -100,6 +103,6 @@ Recorded here because it decides which trials exist:
 
 - A changed model identifier stops that model at once.
 - Reasoning, an unexpected payload shape, or a non-retryable request error is recorded as an issue. The slot is closed and never regenerated.
-- A model stops when its issues exceed 5% of its closed slots in a batch, checked once 200 slots are closed. The 5% was set by the investigator. I set the 200 after simulating the rule: with a minimum of 100, a model with a true issue rate of 2% would be stopped by chance about 4% of the time; with 200, about 0.5%.
+- A model stops when its issues exceed 5% of its closed slots in a batch, checked once 200 slots are closed. Closed slots here are valid terminal responses plus issues. Slots that ran out of retries are missing observations, reported separately, and are in neither the numerator nor the denominator. The 5% was set by the investigator. I set the 200 after simulating the rule: with a minimum of 100, a model with a true issue rate of 2% would be stopped by chance about 4% of the time; with 200, about 0.5%.
 - No model's stop affects another model.
 - Preflight tolerates nothing: any violation there halts everything, because nothing has been spent on study trials yet.

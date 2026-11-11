@@ -68,3 +68,9 @@ The synthetic two-batch integration still invokes the actual GPT analysis comman
 The known-word dry run reports 800 trials per model across eight models and the unchanged committed known-word hash. `git diff --check` and every proposal-package SHA-256 check passed. The original GPT preregistration body is an unchanged byte prefix of its amended file. Claude's original preregistration, Amendment 1, both scorer versions, and the GPT scorer/specification/inventories are unchanged by this pass.
 
 No paid API calls, actual study responses, private fresh-word file or credentials were used. Final private stimuli/hash, Fable's scientific choices and analyzer commitment, native Windows checks, live preflight and freeze remain outstanding. See [the final review handoff](fable-final-review.md).
+
+## Final pre-freeze changes, November 11 (Claude Fable 5.2)
+
+- The final 24-word file was written and its hash placed in the collector, the sample design and Claude's Amendment 1.
+- `analyze_claude.py` now keeps the Holm family at six when a test cannot be run. The amendment carries the new analyzer hash.
+- No other code changed. The full suite passed after these edits: 62 tests on Linux with Python 3.13.18 and NumPy 2.5.3.

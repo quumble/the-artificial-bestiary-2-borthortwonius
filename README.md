@@ -13,7 +13,7 @@ A continuation of [The Artificial Bestiary](https://github.com/quumble/the-artif
 - The independent [GPT preregistration](docs/gpt-proposal/PREREGISTRATION_GPT.md), its exact inventories and all 32 mechanical feature families have a scorer and analysis script. Its [timestamped amendment](docs/gpt-proposal/PREREGISTRATION_GPT.md#amendment-1-balanced-word-sources-and-analysis-weights) implements the investigator-approved one-third weight for each fresh source group, retaining the original weighting as a sensitivity. Final protocol selection and freeze remain pending.
 - Claude's independent [preregistration](prereg/CLAUDE_PREREG.md) and [frozen scorer](prereg/claude_scorer.py) are preserved exactly as supplied. [Amendment 1](prereg/CLAUDE_PREREG_AMENDMENT_1.md), written before collection, answers the [review](docs/claude-review.md): it fixes one scorer defect in a separately versioned file, defines the previously loose rules, and adds a sixth test. Claude's analysis script is now implemented and tested. The two proposals remain separate families.
 - **Ready for Fable's final review, not for collection.** The [review handoff](docs/fable-final-review.md) records the operational fixes and outstanding scientific choices. Claude's analyzer changed to enforce the freeze and planned denominators; the combined freeze requires Fable to update its existing code-hash commitment after review. Claude's preregistrations and both scorers are unchanged by the GPT implementation pass.
-- **The fresh word list is not final.** Eight GPT-made words are still to be received, checked and hashed. Collection cannot start until that is done.
+- **The fresh word list is final and hashed.** It holds eight words from each of three sources. Claude's Amendment 1 is final, including its answers to the four choices in the [final review handoff](docs/fable-final-review.md).
 - Protocol selection, scorer/analysis code and settings must be frozen **before the first study request**. The CLI records that selection with `freeze --protocol gpt-v1+claude-v1.1` (both families) or `freeze --protocol gpt-v1`; this is not performed automatically.
 
 ## Decisions
@@ -105,7 +105,6 @@ All `data/`, `analysis/`, key files and the fresh-word file are ignored by Git. 
 
 ## Still open
 
-- **Receive the eight GPT-made words**, check them, fix the new fresh-word file, and record its hash in the sample design, the collector and Claude's amendment.
 - **Fable's final review and code commitment.** Settle the remaining Claude weighting/eligibility/multiplicity choices in the handoff, then record the final `analyze_claude.py` SHA-256 in Claude's amendment. The combined freeze rejects the currently stale commitment.
 - Re-run the test suite on the Windows collection machine. It has only run on Linux.
 - Select and freeze the protocol before collection.

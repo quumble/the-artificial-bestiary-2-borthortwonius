@@ -330,9 +330,12 @@ def confirmatory(data, permutations=PERMUTATIONS, bootstraps=BOOTSTRAPS):
     else:
         untestable("H6", title, "needs both author sets and both providers", miss_a + miss_o)
 
-    adjusted = holm({k: v["p"] for k, v in results.items()})
+    # The family is always the six registered tests. An untestable one keeps its place with p = 1
+    # for the adjustment, so the others are not corrected more leniently because it dropped out.
+    adjusted = holm({k: (v["p"] if v["p"] is not None else 1.0) for k, v in results.items()})
     for k, v in results.items():
-        v["p_holm"] = adjusted.get(k)
+        v["p_holm"] = adjusted.get(k) if v["p"] is not None else None
+        v["holm_family_size"] = len(results)
         v["confirmed_at_0.05"] = bool(v["p_holm"] is not None and v["p_holm"] < 0.05 and not v["uninformative_floor"])
     return dict(sorted(results.items()))
 

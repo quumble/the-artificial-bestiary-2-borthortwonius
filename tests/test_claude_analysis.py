@@ -142,6 +142,10 @@ class ClaudeAnalysisTests(unittest.TestCase):
         self.assertIsNone(res["H4"]["estimate"])
         self.assertIn("untested", res["H4"]["note"])
         self.assertIsNone(res["H4"]["p_holm"])
+        self.assertEqual(res["H1"]["holm_family_size"], 6)          # the untested H4 keeps its place in the family
+        tested = sorted(v["p"] for v in res.values() if v["p"] is not None)
+        smallest = [k for k, v in res.items() if v["p"] == tested[0]][0]
+        self.assertAlmostEqual(res[smallest]["p_holm"], min(1.0, 6 * tested[0]))
 
     def test_truncated_excluded_from_primary_and_kept_in_sensitivity(self):
         res, rows, _ = self.run_family(truncate_imaginary=True)
