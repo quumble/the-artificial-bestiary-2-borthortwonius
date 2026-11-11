@@ -51,7 +51,7 @@ class CollectorTests(unittest.TestCase):
         self.assertTrue(parsed["retryable"])
 
     def test_unknown_schema_and_usage_fail_closed(self):
-        for changes in [dict(status="queued"),dict(output=None),dict(usage={}),dict(model=None)]:
+        for changes in [dict(status="queued"),dict(output=None),dict(usage={}),dict(model=None),dict(model={"id":"gpt-6-sol"})]:
             self.assertFalse(r.parse_response(self.model,200,response(self.model,**changes)[1])["valid"])
 
     def test_empty_and_truncated_not_regenerated(self):
@@ -96,6 +96,68 @@ class CollectorTests(unittest.TestCase):
         with self.assertRaises(r.StudyError):self.collector.one(self.model,"preflight",self.trial)
         self.assertTrue(self.collector.ledger.get("halt"))
         self.assertTrue(all(r.payload(m,"ready").get("max_output_tokens",r.payload(m,"ready").get("max_tokens"))==1024 for m in r.MODELS))
+
+    def test_identity_drift_wins_over_reasoning_and_stops_without_caller_check(self):
+        self.collector.request=lambda model,body,key:response(model,model="gpt-6-luna",
+            usage=dict(input_tokens=1,output_tokens=2,output_tokens_details=dict(reasoning_tokens=1)))
+        self.assertEqual(self.collector.one(self.model,"fresh",self.trial,expected=self.model["id"]),"identity")
+        fields=json.loads(self.collector.ledger.rows("fresh",self.model["id"])[0]["fields"])
+        self.assertEqual(fields["protocol_violation"],"returned_model_changed")
+        self.assertEqual(fields["reasoning_tokens"],1)
+        self.assertFalse(fields["valid"])
+        self.assertEqual(self.collector.ledger.get("lane_stopped:"+self.model["id"])["closed"],1)
+        self.collector.request=lambda *args:self.fail("identity drift must prevent another dispatch")
+        self.assertEqual(self.collector.one(self.model,"fresh",dict(self.trial,trial_id="next")),"lane_stopped")
+
+    def test_identity_drift_in_malformed_payload_still_stops_lane(self):
+        self.collector.request=lambda model,body,key:response(model,model="gpt-6-luna",output=None)
+        self.assertEqual(self.collector.one(self.model,"fresh",self.trial,expected=self.model["id"]),"identity")
+        fields=json.loads(self.collector.ledger.rows("fresh",self.model["id"])[0]["fields"])
+        self.assertEqual(fields["error"],"schema_error")
+        self.assertEqual(fields["issue"],"returned_model_changed")
+        self.assertTrue(self.collector.ledger.get("lane_stopped:"+self.model["id"]))
+
+    def test_issue_threshold_is_checked_when_the_200th_closure_is_valid(self):
+        def request(model,body,key):
+            index=int(body["input"][0]["content"].split()[-1])
+            return response(model,usage=dict(input_tokens=1,output_tokens=2,
+                output_tokens_details=dict(reasoning_tokens=int(index<11))))
+        self.collector.request=request
+        for i in range(200):
+            outcome=self.collector.one(self.model,"fresh",dict(trial_id=str(i),prompt="Fixture "+str(i)))
+            if i<199:
+                self.assertFalse(self.collector.ledger.get("lane_stopped:"+self.model["id"]))
+        self.assertEqual(outcome,"terminal")
+        stop=self.collector.ledger.get("lane_stopped:"+self.model["id"])
+        self.assertEqual((stop["issues"],stop["closed"]),(11,200))
+        self.collector.request=lambda *args:self.fail("threshold stop must prevent another dispatch")
+        self.assertEqual(self.collector.one(self.model,"fresh",dict(trial_id="next",prompt="Fixture next")),"lane_stopped")
+
+    def test_restart_recovers_threshold_crossing_before_later_inflight_completions(self):
+        # Simulate committed results whose in-memory stop update was interrupted.
+        # The final 11/221 rate is below 5%, but the closure-200 decision still binds.
+        with patch.object(self.collector,"observe",return_value=None):
+            for i in range(221):
+                self.collector.request=lambda model,body,key,i=i:response(model,usage=dict(input_tokens=1,
+                    output_tokens=2,output_tokens_details=dict(reasoning_tokens=int(i<11))))
+                self.collector.one(self.model,"fresh",dict(trial_id=str(i),prompt="Fixture"))
+        self.assertFalse(self.collector.ledger.get("lane_stopped:"+self.model["id"]))
+        self.collector.ledger.db.close()
+        self.collector=r.Collector(self.root,keys={"OPENAI_API_KEY":"FAKE"},request=lambda *args:self.fail("must not dispatch after recovery"))
+        stop=self.collector.ledger.get("lane_stopped:"+self.model["id"])
+        self.assertEqual((stop["issues"],stop["closed"]),(11,200))
+        self.assertIn("recovered_utc",stop)
+        self.assertEqual(self.collector.one(self.model,"fresh",dict(trial_id="next",prompt="Fixture")),"lane_stopped")
+
+    def test_restart_recovers_identity_stop_after_committed_result(self):
+        self.collector.request=lambda model,body,key:response(model,model="gpt-6-luna")
+        with patch.object(self.collector,"observe",side_effect=RuntimeError("simulated interruption")):
+            with self.assertRaisesRegex(RuntimeError,"simulated interruption"):
+                self.collector.one(self.model,"fresh",self.trial,expected=self.model["id"])
+        self.collector.ledger.db.close()
+        self.collector=r.Collector(self.root,keys={"OPENAI_API_KEY":"FAKE"},request=lambda *args:self.fail("must not dispatch after recovery"))
+        self.assertEqual(self.collector.ledger.get("lane_stopped:"+self.model["id"])["reason"],"returned model identifier changed")
+        self.assertEqual(self.collector.one(self.model,"fresh",dict(self.trial,trial_id="next")),"lane_stopped")
 
     def test_study_issues_are_flagged_and_lane_stops_past_five_percent(self):
         reasoning=dict(usage=dict(input_tokens=1,output_tokens=2,output_tokens_details=dict(reasoning_tokens=1)))
@@ -208,6 +270,25 @@ class CollectorTests(unittest.TestCase):
     def test_legacy_files_require_migration(self):
         root=self.root/"legacy";path=root/"data/raw/known/test.jsonl";path.parent.mkdir(parents=True);path.write_text('{}\n')
         with self.assertRaises(r.StudyError):r.Ledger(root)
+
+    def test_combined_freeze_requires_matching_registered_claude_analyzer_hash(self):
+        paths=["run_bestiary.py","bestiary_scorer.py","analyze_bestiary.py","requirements-analysis.txt","docs/implementation-protocol.md",
+               "docs/gpt-proposal/PREREGISTRATION_GPT.md","docs/gpt-proposal/MEASUREMENT_SPEC_GPT.md","docs/gpt-proposal/inventories-gpt-v1.json",
+               "prereg/CLAUDE_PREREG.md","prereg/claude_scorer.py"]+r.CLAUDE_FILES
+        for name in paths:
+            target=self.root/name;target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(r.ROOT/name,target)
+        (self.root/"tests").mkdir()
+        (self.root/"tests/test_fixture.py").write_text("# synthetic freeze fixture\n")
+        analyzer=self.root/"analyze_claude.py"
+        analyzer.write_text("# synthetic analyzer fixture\n")
+        amendment=self.root/"prereg/CLAUDE_PREREG_AMENDMENT_1.md"
+        amendment.write_text("`analyze_claude.py`, SHA-256 `"+"0"*64+"`\n")
+        with self.assertRaisesRegex(r.StudyError,"Claude analyzer SHA-256 does not match"):
+            self.collector.freeze("gpt-v1+claude-v1.1")
+        amendment.write_text("`analyze_claude.py`, SHA-256 `"+r.digest(analyzer.read_bytes())+"`\n")
+        # A matching commitment clears that gate and reaches the separate preflight gate.
+        with self.assertRaisesRegex(r.StudyError,"Check all eight models"):
+            self.collector.freeze("gpt-v1+claude-v1.1")
 
     def test_private_trial_order_and_freeze(self):
         for name in ["run_bestiary.py","bestiary_scorer.py","analyze_bestiary.py","requirements-analysis.txt","docs/implementation-protocol.md",

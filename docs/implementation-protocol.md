@@ -2,7 +2,7 @@
 
 Status: pre-collection implementation. No study calls were made while developing this change. The source baseline is `c00aab0e9902ee000b2e9d256dcf09b20c21c823`.
 
-The original GPT proposal and review are preserved unchanged in `docs/gpt-proposal/`. Its literal 32-family scorer and analysis are implemented by `bestiary_scorer.py` and `analyze_bestiary.py`. This file records implementation details and does not claim that the investigator has adopted this protocol over Claude's independent proposal. `freeze --protocol gpt-v1` explicitly selects the implemented proposal and records exact source and test hashes before study collection. No freeze or model request is performed merely by installing or testing this code.
+The original GPT proposal body and review are preserved in `docs/gpt-proposal/`. A timestamped append-only amendment to the preregistration records the investigator-approved equal-source primary weighting. Its literal 32-family scorer and analysis are implemented by `bestiary_scorer.py` and `analyze_bestiary.py`. This file records implementation details. `freeze --protocol gpt-v1` selects the GPT proposal together with its dated amendment and records exact source and test hashes before study collection; the combined protocol additionally selects Claude's amended family. No freeze or model request is performed merely by installing or testing this code.
 
 ## Collector corrections
 
@@ -20,11 +20,11 @@ The original GPT proposal and review are preserved unchanged in `docs/gpt-propos
 
 ## Measurement implementation clarifications
 
-The normative definitions are the unmodified GPT proposal, measurement appendix and inventories. Group measures M26–M28 are emitted at cell/word-pair level, not invented as response-level values. Match records and raw spans remain available. Per-term dictionaries are sparse (absent entry means zero within a usable response); numeric summary tables exclude those sparse dictionaries and retain the full entry counts in response-level data.
+The normative definitions are the GPT proposal and its dated amendment, measurement appendix and inventories. Group measures M26–M28 are emitted at cell/word-pair level, not invented as response-level values. Match records and raw spans remain available. Per-term dictionaries are sparse (absent entry means zero within a usable response); numeric summary tables exclude those sparse dictionaries and retain the full entry counts in response-level data.
 
 Number-plus-unit pairs (M23) do not bridge sentence-like segment boundaries. This is a conservative clarification of the appendix's consecutive-token rule and is recorded before collection. Prefix sensitivity measures cut at the end of the 50th/100th token and retain only responses long enough for that window.
 
-All eight fresh primary estimates use the specified equal model/category/source-set/word weighting. Missing required cells make the corresponding full-panel estimate null. Bounds still cover all planned slots. Bootstrap intervals are paired, stratified word-resampling intervals, not a claim of representative sampling. Only the eight primary fresh contrasts use the adjusted 99.375% intervals. Known-word estimates and the remaining analyses are descriptive. Empty outputs are null behavioral observations, while a usable incomplete prefix has valid observed matches and a preserved incompletion flag.
+All eight fresh primary estimates weight the three eight-word source groups equally, with equal model/category/within-source word weights. Missing required cells make the corresponding full-panel estimate null. Bounds still cover all planned slots with those same weights. Bootstrap intervals resample whole words separately within Bo, Claude and GPT source groups. The original 50/25/25 weights are a descriptive sensitivity using the same draws. Known-word estimates and direct known/fresh contrasts retain the common 50/50 intent standard. Only the eight primary fresh contrasts use adjusted 99.375% intervals. Empty GPT outputs are null behavioral observations, while a usable incomplete prefix has valid observed matches and a preserved incompletion flag.
 
 ## Claude proposal: original files received and reviewed
 
@@ -67,3 +67,16 @@ Made before any study request, at the investigator's direction. No study respons
 - **Progress display.** Every 15 seconds the run prints overall slots closed, time left, spend per provider, and one line per model with a bar, cut-off count, issue count and any stop reason. No response text is printed.
 - **A second selectable protocol.** `freeze --protocol gpt-v1+claude-v1.1` freezes everything `gpt-v1` does, plus `prereg/CLAUDE_PREREG_AMENDMENT_1.md`, `prereg/claude_scorer_v1_1.py` and `analyze_claude.py`. The two analysts' families remain separate.
 - **Not yet done:** the collector still carries the old fresh word-list hash. It is replaced when the GPT-made words are received and the new file is fixed.
+
+## Subsequent GPT implementation pass, November 11, 2026
+
+The investigator approved equal thirds for the GPT fresh primary estimate and authorized the operational fixes. The [GPT amendment](gpt-proposal/PREREGISTRATION_GPT.md#amendment-1-balanced-word-sources-and-analysis-weights) supersedes the earlier statement that its analysis was unaffected. Trial counts, prompt strings, scorers and spending caps are unchanged.
+
+- GPT uses the three source labels for fresh primary aggregation, with paired 8/8/8 word resampling. Primary bounds and other sensitivities use the same one-third weights. The 50/25/25 sensitivity uses the same bootstrap draws, while direct known/fresh comparisons retain common 50/50 intent weights. Output metadata explicitly identifies both weightings.
+- A changed served identifier retains priority if reasoning is also present, including readable identity changes in malformed HTTP-200 payloads. Every valid-or-issue closure checks the stopping rule, including a valid 200th closure. Result recording and stop decisions are serialized against new dispatch. On restart, completion-order replay restores any stop decision interrupted after its result was committed, even if later in-flight results lower the final issue rate.
+- The issue-rate denominator is **valid closures plus issue closures** in the batch. Retry-exhausted slots remain missing and are reported separately. A lane stop is permanent across the registered collection. Already in-flight results and charges are retained.
+- Claude analysis now requires both batch closure records before reading responses, validates the frozen manifest/source/runtime, and audits the attempt-ledger export against planned slots, request payloads and served identities. The same explicit issue exclusion applies in GPT. Both retain the earliest eligible terminal attempt per slot.
+- Claude's model completion denominator and word bank come from the full frozen schedule. A word with no eligible responses cannot disappear from the planned denominator. The six-test statistics, numeric eligibility thresholds, empty-response handling and scorer versions remain unchanged by this pass.
+- The combined freeze checks the explicit `analyze_claude.py` SHA-256 commitment in Claude's Amendment 1 against the current code. It rejects the stale hash until Fable's final review updates that commitment. The original Claude preregistration, Amendment 1 and both scorers were not edited by GPT.
+
+The [Fable handoff](fable-final-review.md) separates these implementation changes from the remaining scientific decisions. Protocol names stay `gpt-v1` and `gpt-v1+claude-v1.1`; the frozen dated documents and exact source hashes identify the amended implementation. No study collection or live provider preflight was performed in this pass.

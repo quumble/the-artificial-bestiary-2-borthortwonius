@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """
 Confirmatory analysis for the Claude Fable 5.2 preregistration, as amended by
-prereg/CLAUDE_PREREG_AMENDMENT_1.md. Standard library only.
+prereg/CLAUDE_PREREG_AMENDMENT_1.md. Uses the frozen analysis runtime.
 
     python analyze_claude.py            # after both batches close
 
-Reads the collector's terminal exports in data/raw/, scores response text with
+Validates the freeze and both batch closures, audits data/attempts.jsonl, then scores response text with
 the frozen scorer (version 1.1, with version 1.0 alongside for comparison), and
 writes analysis/claude/. No response text is written to any output.
 """
@@ -17,6 +17,10 @@ import random
 import statistics
 import sys
 from pathlib import Path
+from collections import Counter
+
+import analyze_bestiary as integrity
+import run_bestiary as collector
 
 ROOT = Path(__file__).resolve().parent
 SEED = 20261110
@@ -38,8 +42,8 @@ OPENAI = ["gpt-5.4-mini", "gpt-5.4-nano", "gpt-6-sol", "gpt-6-luna"]
 ALL = HISTORICAL + CURRENT
 
 
-def load_scorer(name):
-    spec = importlib.util.spec_from_file_location(name.replace(".", "_"), ROOT / "prereg" / name)
+def load_scorer(name, root=ROOT):
+    spec = importlib.util.spec_from_file_location(name.replace(".", "_"), root / "prereg" / name)
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     return module
@@ -51,41 +55,74 @@ def eligible(rec):
                 and not rec.get("protocol_violation") and not rec.get("issue"))
 
 
-def load_rows(root, scorer):
-    """One scored row per slot: the earliest eligible terminal record. Returns rows and an audit count."""
-    rows, audit = [], {"records": 0, "ineligible": 0, "duplicates": 0}
-    for batch in REPS:
-        for path in sorted((root / "data" / "raw" / batch).glob("*.jsonl")):
-            best = {}
-            for line in path.read_text(encoding="utf-8").splitlines():
-                if not line.strip():
-                    continue
-                rec = json.loads(line)          # a malformed export is an error, not something to skip
-                audit["records"] += 1
-                if not eligible(rec):
-                    audit["ineligible"] += 1
-                    continue
-                key = rec["trial_id"]
-                if key in best:
-                    audit["duplicates"] += 1
-                    if rec.get("attempt_ordinal", 0) >= best[key].get("attempt_ordinal", 0):
-                        continue
-                best[key] = rec
-            for rec in best.values():
-                score = scorer.score_text(rec.get("response") or "", rec["word"])
-                rows.append({"batch": batch, "model": rec["model_requested"], "word": rec["word"],
-                             "word_set": rec["word_set"], "source": rec.get("source_set_label") or rec["word_set"],
-                             "condition": rec["condition"], "rep": rec["rep"], "truncated": bool(rec.get("truncated")),
-                             **{k: score[v] for k, v in OUTCOMES.items()}, "n_words": score["n_words"]})
+def load_inputs(root):
+    """Validate before reading any attempt/response text; return audited planned and retained slots."""
+    status = root / "data" / "collection-status.json"
+    closed = json.loads(status.read_text(encoding="utf-8")) if status.exists() else {}
+    if not all(isinstance(closed.get(batch), dict) and closed[batch].get("closed_utc") for batch in REPS):
+        raise ValueError("Both batches must finish or be formally stopped before scoring.")
+    manifest = json.loads((root / "data" / "freeze.json").read_text(encoding="utf-8"))
+    if manifest.get("protocol") != "gpt-v1+claude-v1.1":
+        raise ValueError("Claude analysis requires the frozen gpt-v1+claude-v1.1 protocol.")
+    required = set(collector.CLAUDE_FILES) | {
+        "run_bestiary.py", "bestiary_scorer.py", "analyze_bestiary.py", "requirements-analysis.txt",
+        "docs/gpt-proposal/inventories-gpt-v1.json", "prereg/CLAUDE_PREREG.md", "prereg/claude_scorer.py",
+    }
+    missing = required - set(manifest.get("code_hashes", {}))
+    if missing:
+        raise ValueError("Required sources absent from freeze: " + ", ".join(sorted(missing)))
+    integrity.validate_manifest(manifest, root)
+    if root.resolve() != ROOT.resolve():
+        # --root can locate another copy of the data, but the code actually running
+        # must also match the freeze, including the imported integrity helpers.
+        integrity.validate_manifest(manifest, ROOT)
+    path = root / "data" / "attempts.jsonl"
+    if not path.exists():
+        raise ValueError("The attempt ledger export is missing; regenerate it with run_bestiary.py export.")
+    attempts = integrity.read_jsonl(path)
+    planned, selected, exclusions, _ = integrity.select_records(manifest, attempts)
+    reasons = Counter(item["reason"] for item in exclusions)
+    by_id = {attempt["attempt_id"]: attempt for attempt in attempts}
+    grouped = Counter()
+    for item in exclusions:
+        batch, model, _ = item["slot"]
+        trial = planned.get(tuple(item["slot"])) or by_id[item["attempt_id"]].get("trial") or {}
+        grouped[(batch, model, trial.get("condition"), item["reason"])] += 1
+    audit = {"records": sum(a["phase"] in REPS for a in attempts),
+             "ineligible": len(exclusions) - reasons["duplicate_terminal"],
+             "duplicates": reasons["duplicate_terminal"], "planned_slots": len(planned),
+             "retained_slots": len(selected), "exclusions": exclusions,
+             "exclusions_by_model_condition": [dict(batch=b, model=m, condition=c, reason=why, count=n)
+                                                for (b, m, c, why), n in grouped.items()]}
+    return manifest, planned, selected, audit
+
+
+def load_rows(root, scorer, inputs=None):
+    """Score only the earliest eligible terminal attempt in each validated frozen slot."""
+    _, planned, selected, audit = inputs if inputs is not None else load_inputs(root)
+    rows = []
+    for key, attempt in selected.items():
+        batch, model, _ = key
+        trial, fields = planned[key], attempt["fields"]
+        score = scorer.score_text(fields.get("response") or "", trial["word"])
+        rows.append({"batch": batch, "model": model, "word": trial["word"],
+                     "word_set": trial["word_set"], "source": trial.get("source_set_label") or trial["word_set"],
+                     "condition": trial["condition"], "rep": trial["rep"], "truncated": bool(fields.get("truncated")),
+                     **{k: score[v] for k, v in OUTCOMES.items()}, "n_words": score["n_words"]})
     return rows, audit
 
 
 class Data:
-    def __init__(self, rows, include_truncated=False):
+    def __init__(self, rows, manifest, include_truncated=False):
         self.cells, self.words = {}, {}
-        self.per_model = {}
+        self.per_model, self.planned_per_model = {}, {}
+        for batch, models in manifest["batches"].items():
+            for model, trials in models.items():
+                self.planned_per_model[(batch, model)] = len(trials)
+                for trial in trials:
+                    self.words.setdefault(batch, {})[trial["word"]] = (
+                        trial["word_set"], trial.get("source_set_label") or trial["word_set"])
         for r in rows:
-            self.words.setdefault(r["batch"], {})[r["word"]] = (r["word_set"], r["source"])
             if r["truncated"] and not include_truncated:
                 continue
             self.cells.setdefault((r["batch"], r["model"], r["word"], r["condition"]), []).append(r)
@@ -93,8 +130,15 @@ class Data:
 
     def models_in(self, batch, models):
         """Models with at least MIN_SHARE of the batch's planned slots usable."""
-        planned = len(self.words.get(batch, {})) * 10 * REPS[batch]
-        return [m for m in models if planned and self.per_model.get((batch, m), 0) >= MIN_SHARE * planned]
+        return [m for m in models if self.planned_per_model.get((batch, m), 0)
+                and self.per_model.get((batch, m), 0) >= MIN_SHARE * self.planned_per_model[(batch, m)]]
+
+    def model_eligibility(self):
+        return [dict(batch=batch, model=model, planned=planned,
+                     eligible=self.per_model.get((batch, model), 0), minimum_share=MIN_SHARE,
+                     eligible_share=self.per_model.get((batch, model), 0) / planned if planned else None,
+                     included=model in self.models_in(batch, [model]))
+                for (batch, model), planned in sorted(self.planned_per_model.items())]
 
     def word_model(self, batch, model, word, conditions, outcome):
         means, total = [], 0
@@ -313,20 +357,25 @@ def main():
     ap.add_argument("--bootstraps", type=int, default=BOOTSTRAPS)
     args = ap.parse_args()
     root = Path(args.root)
-    status = root / "data" / "collection-status.json"
-    closed = json.loads(status.read_text(encoding="utf-8")) if status.exists() else {}
-    if not closed.get("fresh"):
-        sys.exit("The fresh batch is not closed. This analysis runs only after collection.")
+    inputs = load_inputs(root)
+    manifest = inputs[0]
     out = root / "analysis" / "claude"
     out.mkdir(parents=True, exist_ok=True)
     report = {"registered": {"permutations": PERMUTATIONS, "bootstraps": BOOTSTRAPS, "seed": SEED},
               "used": {"permutations": args.permutations, "bootstraps": args.bootstraps},
-              "known_batch_closed": bool(closed.get("known"))}
+              "known_batch_closed": True, "protocol": manifest["protocol"],
+              "manifest_sha256": manifest["manifest_sha256"],
+              "attempts_sha256": collector.digest((root / "data" / "attempts.jsonl").read_bytes())}
     for version, filename in (("v1.1", "claude_scorer_v1_1.py"), ("v1.0", "claude_scorer.py")):
-        rows, audit = load_rows(root, load_scorer(filename))
-        block = {"audit": audit,
-                 "primary": confirmatory(Data(rows), args.permutations, args.bootstraps),
-                 "sensitivity_truncated_included": confirmatory(Data(rows, include_truncated=True), args.permutations, args.bootstraps),
+        rows, audit = load_rows(root, load_scorer(filename, root), inputs=inputs)
+        primary = Data(rows, manifest)
+        sensitivity = Data(rows, manifest, include_truncated=True)
+        block = {"audit": audit, "scorer_file": "prereg/" + filename,
+                 "scorer_sha256": collector.digest((root / "prereg" / filename).read_bytes()),
+                 "model_eligibility_primary": primary.model_eligibility(),
+                 "model_eligibility_truncated_included": sensitivity.model_eligibility(),
+                 "primary": confirmatory(primary, args.permutations, args.bootstraps),
+                 "sensitivity_truncated_included": confirmatory(sensitivity, args.permutations, args.bootstraps),
                  "by_model_condition": descriptive(rows)}
         report[version] = block
         with open(out / ("scores_%s.csv" % version), "w", newline="", encoding="utf-8") as f:
