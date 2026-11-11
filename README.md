@@ -11,7 +11,7 @@ A continuation of [The Artificial Bestiary](https://github.com/quumble/the-artif
 - The sample design, model lineup, and generation settings are decided. See [the sample design](docs/sample-design.md).
 - The collector has been repaired after an independent review. Durable attempt accounting, immutable settings, raw-payload preservation and private stimulus verification are implemented. Testing uses synthetic local stand-ins only. No provider API call has been made by this implementation workflow.
 - The independent [GPT preregistration](docs/gpt-proposal/PREREGISTRATION_GPT.md), its exact inventories and all 32 mechanical feature families now have a scorer and analysis script. They remain a proposal until explicitly selected and frozen.
-- Claude reports a separate preregistration and scorer. Their Bestiary-specific files are not yet available here. The [implementation protocol](docs/implementation-protocol.md) reviews the supplied summary and identifies the comparison still needed. The two independent proposals have not been silently merged.
+- Claude's independent [preregistration](prereg/CLAUDE_PREREG.md) and [frozen scorer](prereg/claude_scorer.py) are preserved exactly as supplied. The scorer matches its registered SHA-256. The [review of the actual files](docs/claude-review.md) records remaining analysis and interpretation issues. Claude's five-test analysis script is still outstanding. The two independent proposals have not been merged.
 - Protocol selection, scorer/analysis code and settings must be frozen **before the first study request**. The CLI records that selection with `freeze --protocol gpt-v1`; this is not performed automatically.
 
 ## Decisions
@@ -48,8 +48,11 @@ This project repeats the core design with new words, revised measurement, and st
 | [run_bestiary.py](run_bestiary.py) | The collection runner. Python standard library only |
 | [bestiary_scorer.py](bestiary_scorer.py) | Literal GPT feature battery, with raw match spans and no semantic judge |
 | [analyze_bestiary.py](analyze_bestiary.py) | Word-level primary estimates, bounds, sensitivity analyses and descriptive comparisons |
-| [docs/implementation-protocol.md](docs/implementation-protocol.md) | Collector corrections, implementation clarifications and pending Claude comparison |
+| [docs/implementation-protocol.md](docs/implementation-protocol.md) | Collector corrections, implementation clarifications and protocol-selection status |
 | [docs/gpt-proposal/](docs/gpt-proposal/) | Original independent GPT proposal, inventories, review and baseline reproduction checks |
+| [prereg/CLAUDE_PREREG.md](prereg/CLAUDE_PREREG.md) | Original independent Claude preregistration, unchanged |
+| [prereg/claude_scorer.py](prereg/claude_scorer.py) | Claude's frozen surface scorer, unchanged and hash-verified |
+| [docs/claude-review.md](docs/claude-review.md) | Review of Claude's exact files, synthetic checks and remaining pre-run decisions |
 | [tests/](tests/) | Offline regression, measurement, analysis and end-to-end tests |
 | [docs/validation.md](docs/validation.md) | Test results, synthetic integration scope and remaining live-environment checks |
 | [stimuli/known-words.txt](stimuli/known-words.txt) | The eight known words |
@@ -88,7 +91,7 @@ All `data/`, `analysis/`, key files and the fresh-word file are ignored by Git. 
 
 ## Still open
 
-- Obtain the Bestiary-specific `CLAUDE_PREREG.md` and `claude_scorer.py`, verify their hash and claims, and settle which confirmatory analyses are adopted. A combined multiplicity plan is needed if both analysts' tests are retained as confirmatory.
+- Implement and freeze Claude's five-test analysis if that proposal is retained. Before implementation, clarify H4's equivalence decision, incomplete-data denominators and the interpretation limits in [the review](docs/claude-review.md). Settle which confirmatory analyses are adopted. If both analysts' families are retained, specify whether error control is separate by family or shared across the study.
 - Select and freeze the protocol before collection. The implemented GPT plan specifies inventories, denominators, primary contrasts, missing-data bounds and sensitivity analyses.
 - Verify the private fresh-word file matches the published hash locally. It was not available during this implementation.
 - Run content-neutral preflight on the investigator's accounts. Documentation lists the endpoints, but live access and accepted payloads have not been verified here.

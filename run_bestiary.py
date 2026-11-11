@@ -441,10 +441,11 @@ class Collector:
 
     def freeze(self, protocol):
         if protocol != "gpt-v1":
-            raise StudyError("Only gpt-v1 is implemented; exact Claude files are unavailable.")
+            raise StudyError("Only gpt-v1 is implemented; Claude's hypothesis-analysis script is still outstanding.")
         import numpy
         paths = ["run_bestiary.py", "bestiary_scorer.py", "analyze_bestiary.py", "requirements-analysis.txt", "docs/implementation-protocol.md",
-                 "docs/gpt-proposal/PREREGISTRATION_GPT.md", "docs/gpt-proposal/MEASUREMENT_SPEC_GPT.md", "docs/gpt-proposal/inventories-gpt-v1.json"]
+                 "docs/gpt-proposal/PREREGISTRATION_GPT.md", "docs/gpt-proposal/MEASUREMENT_SPEC_GPT.md", "docs/gpt-proposal/inventories-gpt-v1.json",
+                 "prereg/CLAUDE_PREREG.md", "prereg/claude_scorer.py"]
         test_paths = [str(p.relative_to(self.root)) for p in sorted((self.root/"tests").glob("test_*.py"))]
         if not test_paths:
             raise StudyError("The source test suite must be present before freezing.")

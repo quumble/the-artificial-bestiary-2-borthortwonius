@@ -18,7 +18,8 @@ class IntegrationTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             root=Path(directory)
             for name in ["run_bestiary.py","bestiary_scorer.py","analyze_bestiary.py","requirements-analysis.txt","docs/implementation-protocol.md",
-                         "docs/gpt-proposal/PREREGISTRATION_GPT.md","docs/gpt-proposal/MEASUREMENT_SPEC_GPT.md","docs/gpt-proposal/inventories-gpt-v1.json"]:
+                         "docs/gpt-proposal/PREREGISTRATION_GPT.md","docs/gpt-proposal/MEASUREMENT_SPEC_GPT.md","docs/gpt-proposal/inventories-gpt-v1.json",
+                         "prereg/CLAUDE_PREREG.md","prereg/claude_scorer.py"]:
                 target=root/name;target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(r.ROOT/name,target)
             shutil.copytree(r.ROOT/"tests",root/"tests",ignore=shutil.ignore_patterns("__pycache__"))
             (root/"stimuli").mkdir()

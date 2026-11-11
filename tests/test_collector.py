@@ -159,7 +159,8 @@ class CollectorTests(unittest.TestCase):
 
     def test_private_trial_order_and_freeze(self):
         for name in ["run_bestiary.py","bestiary_scorer.py","analyze_bestiary.py","requirements-analysis.txt","docs/implementation-protocol.md",
-                     "docs/gpt-proposal/PREREGISTRATION_GPT.md","docs/gpt-proposal/MEASUREMENT_SPEC_GPT.md","docs/gpt-proposal/inventories-gpt-v1.json"]:
+                     "docs/gpt-proposal/PREREGISTRATION_GPT.md","docs/gpt-proposal/MEASUREMENT_SPEC_GPT.md","docs/gpt-proposal/inventories-gpt-v1.json",
+                     "prereg/CLAUDE_PREREG.md","prereg/claude_scorer.py"]:
             target=self.root/name;target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(r.ROOT/name,target)
         shutil.copytree(r.ROOT/"tests",self.root/"tests",ignore=shutil.ignore_patterns("__pycache__"))
         (self.root/"stimuli").mkdir(exist_ok=True)
@@ -172,6 +173,8 @@ class CollectorTests(unittest.TestCase):
             doc=self.collector.verify_freeze()
             self.assertEqual(sum(len(t) for t in doc["batches"]["fresh"].values()),9600)
             self.assertEqual(sum(len(t) for t in doc["batches"]["known"].values()),6400)
+            self.assertEqual(doc["code_hashes"]["prereg/claude_scorer.py"],
+                             "7244846fd96c884aa322d5b4d3a5c242dc048c67d825ceb94a03bf1a21fabd95")
             with self.assertRaises(r.StudyError):self.collector.run("known")
             (self.root/"bestiary_scorer.py").write_text("modified")
             with self.assertRaises(r.StudyError):self.collector.verify_freeze()

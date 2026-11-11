@@ -20,4 +20,12 @@ Scoring checks cover normalization and raw-span reconstruction, phrase boundarie
 
 The independently delivered GPT proposal files are preserved byte for byte in `docs/gpt-proposal/`. No private fresh words, credentials, new-study responses or provider calls were used. Git whitespace checks passed. The live repository data directory was not created during development; all test ledgers were temporary.
 
-Still unverified: live API access on the investigator's accounts, the withheld file's bytes, native Windows execution, and Claude's unavailable Bestiary-specific scorer/preregistration. Windows locking is implemented using the standard library, and `.gitattributes` preserves LF file bytes on Windows checkouts, but that is not a Windows test result. Re-run the test command in the actual collection environment before freezing it.
+Still unverified: live API access on the investigator's accounts, the withheld file's bytes, native Windows execution, and independent reproduction of Claude's historical development metrics. Windows locking is implemented using the standard library, and `.gitattributes` preserves LF file bytes on Windows checkouts, but that is not a Windows test result. Re-run the test command in the actual collection environment before freezing it.
+
+## Claude attachment integration
+
+The original Bestiary preregistration and scorer were added on November 11, 2026. Both match the uploaded bytes. The scorer matches the SHA-256 registered in the original document. Their hashes are now included in the pre-run freeze manifest without changing the selected analysis protocol.
+
+Additional offline tests check the immutable attachment hashes, the documented synthetic scorer boundary cases, and the scorer CLI against terminal JSONL exported by the repaired collector. These establish file integrity and basic compatibility, not measurement validity. No historical development dataset or actual study response was used. See `docs/claude-review.md` for the remaining analysis work.
+
+After integration, the full suite passed **40 tests in 50.562 seconds** on the same Linux/Python/NumPy environment, including the synthetic two-batch analysis. The original scorer contains one trailing space; it is retained to preserve the registered hash. Whitespace checks pass for the other changed files.
