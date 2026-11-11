@@ -204,7 +204,7 @@ class ClaudeAnalysisTests(unittest.TestCase):
                 read.assert_not_called()
         save_manifest(self.root, manifest)
         changed = self.root / "prereg/claude_scorer_v1_1.py"
-        changed.write_text(changed.read_text() + "\n# synthetic corruption\n")
+        changed.write_bytes(changed.read_bytes() + b"\n# synthetic corruption\n")
         with self.assertRaisesRegex(ValueError, "Frozen source changed"):
             a.load_inputs(self.root)
         shutil.copyfile(r.ROOT / "prereg/claude_scorer_v1_1.py", changed)
