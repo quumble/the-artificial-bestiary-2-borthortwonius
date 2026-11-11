@@ -294,3 +294,23 @@ The user asked:
 This steers the measurement proposal toward breadth while retaining the preference for minimal personal scoring. The assistant prepared a [32-family candidate catalog](measurement-catalog.md), with explicit operations, questions, limitations, and a proposed six-family priority shortlist.
 
 The list, its inventories, and its priorities are proposals, not accepted study settings. The two-indicator proposal remains part of the broader pool. No measurement implementation or new model trials were performed in preparing the catalog.
+
+## Sample design decisions, November 10, 2026
+
+From this entry on, the assistant is Claude Fable 5.2. Earlier entries were prepared with a different assistant.
+
+The discussion moved from measurement to the sample. Decisions are recorded in the [sample design](sample-design.md); this entry preserves how they were reached.
+
+- **Exposure.** The assistant pointed out that the original words are public together with their raw responses, and proposed adding words that had never been published. The user agreed.
+- **Fresh words from the user.** The user supplied eight new words in one message. The assistant noted that several leaned toward animals. The user replied:
+
+  > i was thinking of nonsense animals, not nonsense words more broadly
+
+  This matches the historical split between words made with imaginary-animal intent and analyst-generated words with no category intent. The eight were kept unedited as the animal-intent set.
+- **Fresh words from the assistant.** The assistant generated twenty candidates with no category in mind and dropped the four it judged most loaded. The user asked for sixteen to be kept, and after seeing the search results said none was too close to an existing term to cut.
+- **Output cap.** The user asked for a specific higher cap. The assistant measured the historical response lengths and proposed 1,024 visible tokens.
+- **Models and budget.** The user set a limit of $20 per provider. The assistant proposed two historical and two current models per provider. The user accepted.
+- **Order.** The user chose to run the fresh words first and the known-word replication afterward.
+- **Preregistration.** The user asked that the repository be brought up to date and then left unchanged while two analysts write preregistrations from it independently.
+
+No experimental responses were collected in reaching these decisions. The runner was exercised only against a local stand-in server.

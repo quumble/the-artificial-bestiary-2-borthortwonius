@@ -1,0 +1,10 @@
+# API keys never go in the repository.
+keys.local
+keys.local.txt
+
+# Withheld until the fresh-word batch is fully collected. Remove these two
+# lines at release and confirm the word list matches the published hash.
+stimuli/fresh-words.txt
+data/raw/fresh/
+
+__pycache__/

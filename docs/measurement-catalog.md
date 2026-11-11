@@ -2,7 +2,7 @@
 
 Status: broad proposal for discussion. No measures in this catalog have been approved as the final battery or implemented. The user asked to err toward a broad proposal while preserving minimal personal scoring.
 
-The earlier two-indicator proposal remains part of this larger pool; it is not a ceiling. The existing free-text prompts and 500-token generation limit stay unchanged. All 32 candidate families below can be computed from saved responses with deterministic text processing and fixed inventories. They require no additional generation calls or per-response semantic judge. Several families yield more than one column; this is not a claim of 32 independent hypotheses.
+The earlier two-indicator proposal remains part of this larger pool; it is not a ceiling. The existing free-text prompts stay unchanged. The output cap is now 1,024 visible tokens (see the [sample design](sample-design.md)). All 32 candidate families below can be computed from saved responses with deterministic text processing and fixed inventories. They require no additional generation calls or per-response semantic judge. Several families yield more than one column; this is not a claim of 32 independent hypotheses.
 
 ## How to read the catalog
 
@@ -399,4 +399,4 @@ These sources inform limitations and established metric families. They do not va
 
 ## Still open
 
-The final battery, expression inventories, patterns, normalization, priority shortlist, exact estimators, model lineup, sample, and budget all require specification. This document expands the proposal; it does not initiate implementation or paid runs.
+The final battery, expression inventories, patterns, normalization, priority shortlist, and exact estimators all require specification. The model lineup, sample, and spending stop are decided in the [sample design](sample-design.md). This document expands the proposal; it does not initiate implementation or paid runs.

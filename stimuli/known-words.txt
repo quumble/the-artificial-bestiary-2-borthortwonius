@@ -1,0 +1,10 @@
+# Known stimulus words: the historical eight-word retest set. Already public.
+# set	word
+known-animal-intent	borthorpunius
+known-animal-intent	halthibinny
+known-animal-intent	purtaneolotomous
+known-animal-intent	wresanthamulf
+known-no-intent	flembrast
+known-no-intent	kovashent
+known-no-intent	plindorf
+known-no-intent	trolnique

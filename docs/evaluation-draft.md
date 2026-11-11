@@ -35,7 +35,7 @@ The broad confabulation distinction remains conceptually important, but a valid 
 
 ## Supporting metadata
 
-Keep response word count, token usage, completion status, stop reason, errors, model identifiers, prompt condition, stimulus identity, and attempt provenance. Length and completion information help assess the opportunity to produce a listed phrase and the effect of the 500-token limit. They are supporting information, not an expanding set of primary hypotheses.
+Keep response word count, token usage, completion status, stop reason, errors, model identifiers, prompt condition, stimulus identity, and attempt provenance. Length and completion information help assess the opportunity to produce a listed phrase and the effect of the output cap (1,024 visible tokens; see the [sample design](sample-design.md)). They are supporting information, not an expanding set of primary hypotheses.
 
 The existing free-text prompts remain the basis of the comparison. Do not add self-classification questions or force a structured answer format merely to make scoring easier; that would change the experimental task.
 
@@ -118,7 +118,7 @@ The user is not expected to hand-score the corpus or serve as the default adjudi
 - Which families from the expanded catalog to implement and which outcomes/contrasts to designate primary.
 - Exact expression inventories, preprocessing, match boundaries, and quotation handling.
 - Word-count and completion rules, aggregation denominators, comparisons, and uncertainty calculations.
-- Model lineup, spending cap, and the historical/new sample to include.
+- Training cutoffs for the models in the lineup. The lineup, spending stop, and sample are decided in the [sample design](sample-design.md).
 
 ## Provenance
 
