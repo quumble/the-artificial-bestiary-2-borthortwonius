@@ -2,6 +2,8 @@
 
 Status: decided on November 10, 2026 unless marked **open**. No experiments have been run. Prepared with Claude Fable 5.2, which takes over as assistant from this document onward.
 
+Implementation update: the [collector review protocol](implementation-protocol.md) supersedes the former automatic settings fallbacks and post-collection scorer-freeze sequence. Model lineup, stimuli, prompts, repetitions and the $20/provider limits remain as decided. No new study responses were collected during the repair.
+
 ## What changed and why
 
 The original fabricated words are public. The historical repository holds roughly 5,000 raw responses, so each original word sits beside hundreds of example answers, both refusals and inventions. Any current model may have seen them. Whether one has is unknown.
@@ -71,7 +73,7 @@ Two historical and two current models per provider, in matched size pairs. Decid
 | OpenAI | gpt-6-sol | Current |
 | OpenAI | gpt-6-luna | Current |
 
-**Why historical models.** These four produced the original data, so they predate its publication and cannot have been trained on it. On them, a difference between known and fresh words is a word-set effect. On a model trained after publication, the same contrast could also include exposure.
+**Why historical models.** These model identifiers were used in the original study. Their earlier served versions predate publication. A current call to an alias must still have its served version verified before treating it as an unchanged historical control. Known/fresh differences combine word-set effects, collection-time differences and any possible exposure; this design does not identify exposure separately.
 
 **Whether a current model was trained after publication is not established.** The original data files date from late April and early May 2026. A reported knowledge cutoff of April 30, 2026 for the GPT-6.1 generation suggests the current OpenAI models may also predate publication. Cutoffs for the lineup are to be recorded from provider documentation before any exposure claim is made.
 
@@ -79,17 +81,17 @@ Two historical and two current models per provider, in matched size pairs. Decid
 
 ### Request settings
 
-The runner's `check` command tries a fixed, ordered list of settings for each model, keeps the first the API accepts, and saves it. Every batch reuses the saved setting. The intended settings:
+The repaired runner's `check` command tries only the compliant payload below, retains a successful preflight immutably and counts its cost. Every batch reuses it. An API rejection requires a documented pre-collection resolution, not a fallback to reasoning-enabled settings. The intended settings:
 
 | Model | Reasoning | Temperature |
 | --- | --- | --- |
 | claude-sonnet-4-6, claude-haiku-4-5 | Off (the API default) | 1.0, sent explicitly |
 | claude-sonnet-5-5 | `thinking: between_tools`, which gives no up-front thinking in a request without tools | Not sent; the API rejects non-default values |
 | claude-haiku-5-5 | `thinking: disabled` | Not sent |
-| gpt-5.4-mini, gpt-5.4-nano | `effort: none` if accepted, otherwise omitted | 1.0, sent explicitly |
+| gpt-5.4-mini, gpt-5.4-nano | `effort: none` | 1.0, sent explicitly |
 | gpt-6-sol, gpt-6-luna | `effort: none` | 1.0, sent explicitly |
 
-Thinking effort is left at each model's default. If a model can only run with reasoning on, the runner raises that model's output limit by 4,096 tokens so reasoning does not consume the visible budget, and marks every such record. The setting actually used is stored with each trial.
+Thinking effort is left at the documented default where not explicitly set above. There is no extra reasoning allowance. A combined 5,120-token limit would not enforce a separate 1,024-token visible limit, so the original fallback has been removed. Complete request payloads and returned model identifiers are retained for every attempt. A later mismatch or observed reasoning causes a halt.
 
 **Token counts are not comparable across generations.** Claude Haiku 5.5 is documented as counting roughly 30% more tokens for the same text than Haiku 4.5. Length comparisons therefore use words, not tokens, and the 1,024-token cap is a little tighter in words on the newer Claude models.
 
@@ -113,14 +115,14 @@ A 500-token cap would have cut 21 of the GPT-5.4-nano responses. The imaginary c
 
 ## Order of work
 
-1. Run `python run_bestiary.py check` and confirm all eight models answer.
-2. Collect the fresh-word batch with `python run_bestiary.py run fresh`. Raw responses are stored unread.
-3. Freeze the scorer specification before any response text is inspected, as the evaluation draft already requires.
-4. Collect the known-word replication batch with `python run_bestiary.py run known`, under the same saved settings.
-5. Publish `stimuli/fresh-words.txt` after collection, and confirm it matches the hash above.
+1. Compare/adopt the preregistration and finish offline validation of its scorer and analysis.
+2. Run `python run_bestiary.py check` and confirm all eight models return valid content-neutral responses under compliant settings. These costs count toward the provider caps.
+3. Place and validate the private fresh file. Explicitly select the adopted implemented protocol, currently `python run_bestiary.py freeze --protocol gpt-v1`. This freezes code, inventories, runtime, settings and the actual trial schedule **before collection**.
+4. Collect fresh, then known, under the same freeze. Raw outputs remain unread. Budget-stopped and exhausted slots remain documented missing observations.
+5. After both batches close, run the frozen analysis. Deliberately publish the fresh file and public-safe outputs afterward, confirming the hash above. The private SQLite ledger and manifest must not be committed accidentally.
 
 ## Still open
 
-- Training cutoffs for each model in the lineup, from provider documentation.
-- Whether all four historical model identifiers are still served. `check` answers this.
-- The measurement battery and analysis plan, as listed in the evaluation draft.
+- Provider cutoff metadata have been checked in the independent GPT review; actual exposure remains unidentified.
+- Live access to the eight model identifiers on the investigator's accounts. No real preflight has been performed during implementation.
+- Receipt and review of Claude's exact Bestiary-specific preregistration/scorer, then explicit selection or reconciliation of the analysis proposals.

@@ -2,9 +2,17 @@
 keys.local
 keys.local.txt
 
-# Withheld until the fresh-word batch is fully collected. Remove these two
-# lines at release and confirm the word list matches the published hash.
+# Withheld until both batches close and release is explicitly approved.
+# Validate the committed word hash before deliberately releasing selected files.
 stimuli/fresh-words.txt
-data/raw/fresh/
+data/
+analysis/
+
+# SQLite state and exports contain private stimuli and responses. Release only
+# by explicit selection after collection; do not force-add the database.
+*.sqlite3
+*.sqlite3-wal
+*.sqlite3-shm
+*.tmp
 
 __pycache__/

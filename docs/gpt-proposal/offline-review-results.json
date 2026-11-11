@@ -1,0 +1,114 @@
+[
+  {
+    "check": "trial construction",
+    "reproduced": true,
+    "observation": {
+      "trials": 200,
+      "unique_ids": 200,
+      "vowel_prompt": "Describe an avelo. It is an imaginary animal."
+    }
+  },
+  {
+    "check": "structured refusal discarded",
+    "reproduced": true,
+    "observation": {
+      "response": "",
+      "stop_reason": "completed",
+      "truncated": false,
+      "input_tokens": 10,
+      "output_tokens": 9,
+      "reasoning_tokens": 0,
+      "thinking_blocks": null,
+      "visible_output_tokens": 9,
+      "model_returned": "gpt-6-sol",
+      "response_id": "synthetic-refusal",
+      "cap_sent": 1024,
+      "est_cost_usd": 0.00011,
+      "error": null
+    }
+  },
+  {
+    "check": "reasoning fallback cap is total 5120",
+    "reproduced": true,
+    "observation": {
+      "model": "gpt-6-sol",
+      "max_output_tokens": 5120,
+      "store": false,
+      "input": [
+        {
+          "role": "user",
+          "content": "synthetic prompt"
+        }
+      ],
+      "reasoning": {
+        "effort": "low"
+      }
+    }
+  },
+  {
+    "check": "HTTP 200 failed status marked error-free",
+    "reproduced": true,
+    "observation": {
+      "response": "",
+      "stop_reason": "failed",
+      "truncated": false,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "reasoning_tokens": 0,
+      "thinking_blocks": null,
+      "visible_output_tokens": 0,
+      "model_returned": "gpt-6-sol",
+      "response_id": "synthetic-failed",
+      "cap_sent": 1024,
+      "est_cost_usd": 0.0,
+      "error": null
+    }
+  },
+  {
+    "check": "append after torn tail hides next record",
+    "reproduced": true,
+    "observation": {
+      "parsed_records": []
+    }
+  },
+  {
+    "check": "wrong fresh hash and composition accepted",
+    "reproduced": true,
+    "observation": {
+      "words": [
+        [
+          "unrecognized-set",
+          "changedword"
+        ]
+      ],
+      "sha256": "e7f1f7c5f75fed104ad3c29fd0ddb689457aa736fcebda50b43430b5e6eb2514"
+    }
+  },
+  {
+    "check": "preflight cost absent from ledger",
+    "reproduced": true,
+    "observation": {
+      "anthropic": 0.0,
+      "openai": 0.0
+    }
+  },
+  {
+    "check": "resume skips records with stale prompt and settings",
+    "reproduced": true,
+    "observation": {
+      "new_calls": 0
+    }
+  },
+  {
+    "check": "check overwrites settings despite existing study files",
+    "reproduced": true,
+    "observation": {
+      "gpt-6-sol": {
+        "variant": "reasoning-none+temperature-1.0",
+        "checked_utc": "2026-11-11T04:43:05Z",
+        "model_returned": "gpt-6-sol",
+        "reasoning_observed": false
+      }
+    }
+  }
+]

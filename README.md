@@ -9,9 +9,10 @@ A continuation of [The Artificial Bestiary](https://github.com/quumble/the-artif
 **Pre-run. No experiments have been run in this repository.**
 
 - The sample design, model lineup, and generation settings are decided. See [the sample design](docs/sample-design.md).
-- The collection runner is written. It has been tested against a local stand-in server only. It has not yet called a real API.
-- The measurement battery and analysis plan are **not frozen**. They must be frozen before any response text is inspected.
-- Preregistrations are to be written independently by two analysts, Claude Fable 5.2 and a GPT model, from this state of the repository. Collection starts after that.
+- The collector has been repaired after an independent review. Durable attempt accounting, immutable settings, raw-payload preservation and private stimulus verification are implemented. Testing uses synthetic local stand-ins only. No provider API call has been made by this implementation workflow.
+- The independent [GPT preregistration](docs/gpt-proposal/PREREGISTRATION_GPT.md), its exact inventories and all 32 mechanical feature families now have a scorer and analysis script. They remain a proposal until explicitly selected and frozen.
+- Claude reports a separate preregistration and scorer. Their Bestiary-specific files are not yet available here. The [implementation protocol](docs/implementation-protocol.md) reviews the supplied summary and identifies the comparison still needed. The two independent proposals have not been silently merged.
+- Protocol selection, scorer/analysis code and settings must be frozen **before the first study request**. The CLI records that selection with `freeze --protocol gpt-v1`; this is not performed automatically.
 
 ## Decisions
 
@@ -45,29 +46,53 @@ This project repeats the core design with new words, revised measurement, and st
 | [docs/measurement-catalog.md](docs/measurement-catalog.md) | 32 candidate measurement families. A proposal; no battery is approved |
 | [docs/calibration-log.md](docs/calibration-log.md) | How the rules and scoring preference were arrived at |
 | [run_bestiary.py](run_bestiary.py) | The collection runner. Python standard library only |
+| [bestiary_scorer.py](bestiary_scorer.py) | Literal GPT feature battery, with raw match spans and no semantic judge |
+| [analyze_bestiary.py](analyze_bestiary.py) | Word-level primary estimates, bounds, sensitivity analyses and descriptive comparisons |
+| [docs/implementation-protocol.md](docs/implementation-protocol.md) | Collector corrections, implementation clarifications and pending Claude comparison |
+| [docs/gpt-proposal/](docs/gpt-proposal/) | Original independent GPT proposal, inventories, review and baseline reproduction checks |
+| [tests/](tests/) | Offline regression, measurement, analysis and end-to-end tests |
+| [docs/validation.md](docs/validation.md) | Test results, synthetic integration scope and remaining live-environment checks |
 | [stimuli/known-words.txt](stimuli/known-words.txt) | The eight known words |
 | `stimuli/fresh-words.txt` | The 24 fresh words. Not in the repository until collection is complete |
-| `data/raw/` | Raw responses, one file per model and batch. Created by the runner |
+| `data/state.sqlite3` | Authoritative private attempt/cost ledger; SQLite sidecars must stay with it while running |
+| `data/attempts.jsonl` | Export of every attempt, including request body, complete provider payload and uncertain liabilities |
+| `data/raw/` | Derived terminal-response exports, one file per model and batch |
+| `data/freeze.json` | Private frozen schedule, exact settings, code/runtime hashes and fresh words |
+| `analysis/` | Post-collection feature tables, primary estimates, sensitivities, audits and descriptive comparisons |
 
 ## Running the collection
 
 API keys go in the environment as `ANTHROPIC_API_KEY` and `OPENAI_API_KEY`, or in a file named `keys.local` beside the runner. That file is ignored by git.
 
-```
-python run_bestiary.py check        # one small call per model; saves request settings
-python run_bestiary.py run fresh    # the fresh-word batch
-python run_bestiary.py run known    # the known-word replication batch
-python run_bestiary.py status       # counts, truncation, and spend on disk
+```text
+python -m pip install -r requirements-analysis.txt
+python -m unittest discover -s tests -v
+python run_bestiary.py run known --dry-run   # no requests, no response or private prompt text
+
+# After protocol review and placement of the private fresh-word file and keys:
+python run_bestiary.py check                 # paid content-neutral preflight
+python run_bestiary.py freeze --protocol gpt-v1
+python run_bestiary.py run fresh
+python run_bestiary.py run known
+python run_bestiary.py status
+python analyze_bestiary.py                  # only after both batches close
 ```
 
-`check` must be run first. It keeps the first request setting each API accepts and every batch reuses it. A run can be stopped and restarted; finished trials are skipped. Response text is written to disk and never printed, so collecting does not mean reading.
+The collector works in native Windows Python and uses no WSL. NumPy is required for the frozen analysis and its tests, not for HTTP collection. The exact Python/NumPy versions are recorded at freeze and enforced on resume. Windows process-lock code is included; development tests were run on Linux, not a Windows host.
+
+`check` uses only the compliant settings in the model table and retains the first successful check. It never switches to reasoning-on settings. Existing successful checks are reused without another paid request. Any unexpected served-model change or observed reasoning pauses collection. A run can be interrupted and resumed under identical frozen code/settings. Completed refusals, empty outputs and truncated answers are retained rather than regenerated.
+
+The $20/provider accounting includes preflight and retries. Charges uncertain after a network failure keep a conservative reservation. See the implementation protocol for documented billing reconciliation. A registered budget stop can leave missing slots and is not reopened automatically. The console shows operational counts and estimated/reserved spend, never response text.
+
+All `data/`, `analysis/`, key files and the fresh-word file are ignored by Git. The database and manifest contain the withheld words. Do not upload them before deliberate release. If a JSONL export is damaged, `python run_bestiary.py export` recreates it from the database. Existing data from the old runner require explicit migration, not automatic merging.
 
 ## Still open
 
-- The final mechanical measures, expression inventories, preprocessing, software validation, outcomes, and analysis plan.
-- Analysis denominators for incomplete or uncertain responses.
-- Training cutoffs for each model in the lineup. Whether any current model was trained after the original words were published is not established.
-- Whether all four historical model identifiers are still served. `check` answers this.
+- Obtain the Bestiary-specific `CLAUDE_PREREG.md` and `claude_scorer.py`, verify their hash and claims, and settle which confirmatory analyses are adopted. A combined multiplicity plan is needed if both analysts' tests are retained as confirmatory.
+- Select and freeze the protocol before collection. The implemented GPT plan specifies inventories, denominators, primary contrasts, missing-data bounds and sensitivity analyses.
+- Verify the private fresh-word file matches the published hash locally. It was not available during this implementation.
+- Run content-neutral preflight on the investigator's accounts. Documentation lists the endpoints, but live access and accepted payloads have not been verified here.
+- Provider cutoff metadata are recorded in the [review](docs/gpt-proposal/REVIEW_GPT.md). They do not establish exposure to the original repository; known/fresh differences cannot isolate contamination.
 
 ## Historical reference
 

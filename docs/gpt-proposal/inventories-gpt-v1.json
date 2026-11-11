@@ -1,0 +1,41 @@
+{
+  "version": "gpt-bestiary-2-v1.0",
+  "status": "independent proposed freeze; not a validated semantic classifier",
+  "M01": ["fiction", "fictional", "fictitious", "imaginary", "imagined", "invented", "made up", "make believe", "fantasy", "hypothetical"],
+  "M02": {
+    "modal": ["may", "might", "could"],
+    "hedge": ["perhaps", "possibly", "probably", "likely", "unlikely", "seems", "seem", "appears", "appear", "suggests", "suggest", "potentially", "presumably", "apparently", "not sure", "uncertain", "i think", "i suspect", "i guess"]
+  },
+  "M03": ["i don't recognize", "i do not recognize", "i don't recognise", "i do not recognise", "i don't know", "i do not know", "i'm not familiar with", "i am not familiar with", "not familiar with", "unfamiliar to me", "i'm unfamiliar with", "i am unfamiliar with", "no record of", "no records of", "no known", "not a recognized", "not a recognised", "not an established", "not a standard", "i can't find", "i cannot find", "i couldn't find", "i could not find", "i don't have information", "i do not have information", "i don't have reliable information", "i do not have reliable information", "doesn't appear to be", "does not appear to be"],
+  "M04": ["let's imagine", "let us imagine", "let's invent", "let us invent", "let's create", "let us create", "we could create", "we can invent", "we could invent", "i can invent", "i'll imagine", "i will imagine", "in this fictional version", "here's an imagined", "here is an imagined", "i picture", "i imagine", "let's make", "let us make"],
+  "M05": ["the name suggests", "the word suggests", "based on the word", "based on the name", "could mean", "might mean", "sounds like", "an interpretation", "my interpretation", "interpreting the name", "interpreting the word"],
+  "M06": {
+    "realness": ["a real", "an actual", "is real", "actually exists", "is known as", "are known as", "well documented", "well established", "scientifically recognized", "scientifically recognised"],
+    "certainty": ["certainly", "definitely", "undoubtedly", "without doubt", "without a doubt", "in fact", "clearly", "indeed"]
+  },
+  "M07": ["could you provide", "can you provide", "please provide", "provide some context", "provide more context", "provide additional context", "share more context", "share some context", "where did you encounter", "where you encountered", "where did you hear", "what do you mean", "could you clarify", "can you clarify", "please clarify"],
+  "M08": ["i can help", "i could help", "i'd be happy to", "i would be happy to", "would you like me to", "would you like", "we can create", "we could create", "i can create", "i could create", "i can describe", "i could describe"],
+  "M09_suffixes": ["is", "are", "was", "were", "refers to", "denotes", "means", "can be described as"],
+  "M10": ["it has", "it lives", "it eats", "it feeds", "it inhabits", "it grows", "it measures", "it weighs", "it uses", "it consists", "it resembles", "it produces", "they have", "they live", "they eat", "they feed", "they inhabit", "they grow", "they measure", "they weigh", "they use", "they consist", "they resemble", "they produce", "its body", "its skin", "its fur", "its wings", "its tail", "its habitat", "its diet", "its purpose", "its function"],
+  "M21": {
+    "first": ["i", "me", "my", "mine", "myself", "we", "us", "our", "ours", "ourselves", "i'm", "i've", "i'll", "i'd", "we're", "we've", "we'll", "we'd", "let's"],
+    "second": ["you", "your", "yours", "yourself", "yourselves", "you're", "you've", "you'll", "you'd"]
+  },
+  "M22_function_words": ["a", "an", "the", "is", "it", "of", "describe"],
+  "M23_number_words": ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "twenty", "thirty", "forty", "fifty", "hundred", "thousand", "million"],
+  "M23_units": ["mm", "cm", "m", "km", "millimeter", "millimeters", "millimetre", "millimetres", "centimeter", "centimeters", "centimetre", "centimetres", "meter", "meters", "metre", "metres", "kilometer", "kilometers", "kilometre", "kilometres", "inch", "inches", "foot", "feet", "mile", "miles", "g", "kg", "gram", "grams", "kilogram", "kilograms", "pound", "pounds", "lb", "lbs", "ounce", "ounces", "second", "seconds", "minute", "minutes", "hour", "hours", "day", "days", "year", "years"],
+  "M24_attribution": ["according to", "research shows", "studies show", "research suggests", "studies suggest", "documented by", "described by", "reported by", "first described", "first documented"],
+  "M30": {
+    "color": ["red", "orange", "yellow", "green", "blue", "purple", "violet", "black", "white", "gray", "grey", "brown", "pink", "silver", "silvery", "gold", "golden", "amber", "emerald"],
+    "light": ["iridescent", "iridescence", "luminous", "luminescent", "bioluminescent", "glowing", "glow", "glows", "shimmering", "shimmer", "shimmers"],
+    "sound": ["chirp", "chirps", "chirping", "hum", "hums", "humming", "whistle", "whistles", "whistling", "bleat", "bleats", "bleating", "chime", "chimes", "click", "clicks", "clicking"],
+    "burrow": ["burrow", "burrows", "burrowing", "underground", "tunnel", "tunnels", "tunneling", "tunnelling"],
+    "size_comparison": ["size of", "sized", "as large as", "as small as", "smaller than", "larger than"]
+  },
+  "M31": {
+    "animal": ["animal", "animals", "creature", "creatures", "species", "mammal", "mammals", "bird", "birds", "reptile", "reptiles", "insect", "insects", "fur", "feather", "feathers", "wing", "wings", "tail", "tails", "leg", "legs", "claw", "claws", "habitat", "diet", "predator", "predators", "prey", "nocturnal", "herbivore", "carnivore"],
+    "object": ["object", "objects", "tool", "tools", "device", "devices", "instrument", "instruments", "machine", "machines", "material", "materials", "metal", "wood", "glass", "handle", "handles", "mechanism", "mechanisms", "component", "components", "constructed", "manufactured", "portable", "function"],
+    "idea": ["idea", "ideas", "concept", "concepts", "principle", "principles", "theory", "theories", "belief", "beliefs", "philosophy", "philosophical", "abstract", "abstraction", "framework", "frameworks", "notion", "notions", "ethics", "ethical", "meaning", "cognition", "cognitive", "argument", "arguments"]
+  },
+  "M32": ["did you mean", "do you mean", "perhaps you mean", "maybe you mean", "misspelling", "misspelled", "misspelt", "typo", "typographical error", "alternative spelling", "alternate spelling", "spelling error", "spelled incorrectly", "spelt incorrectly"]
+}

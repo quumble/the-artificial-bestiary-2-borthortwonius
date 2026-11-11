@@ -1,0 +1,21 @@
+{
+  "repository": "https://github.com/quumble/the-artificial-bestiary-2-borthortwonius",
+  "commit": "c00aab0e9902ee000b2e9d256dcf09b20c21c823",
+  "archive_sha256": "63f87e2ee2d7e1250d97a97cebc34db4885a775df135394e03426ed5d3d5a317",
+  "github_direct_byte_comparisons": [
+    "run_bestiary.py",
+    "docs/sample-design.md"
+  ],
+  "fresh_file_inspected": false,
+  "study_api_calls_made": 0,
+  "source_sha256": {
+    ".gitignore": "1d8a27dd55565d85fe54b82345a86ee22ee2cea1135380edae82d6dec2139f4f",
+    "README.md": "9ad3926df050e2a943417a7bd5d0ca033bab08423a8036d4a4bda65abeb2c9f1",
+    "docs/calibration-log.md": "32dbeff5b0172d58fc148d179a9ecf15a147a0df9f344138c4c79d381f76f834",
+    "docs/evaluation-draft.md": "9896a9027a7385cad9927f26e6e56c2077cea31ebbe77622223ed1bcb56ee3b2",
+    "docs/measurement-catalog.md": "34a55d7ed146fd0bb90af023f6c655d32d963482c5e1780db2fd8e2756b354d2",
+    "docs/sample-design.md": "523130757c443bb6e8b7284d329f1a1c7c7599465cd4e2da383a028f58a88ed3",
+    "run_bestiary.py": "0e13d1a26a70ba4de12bf265406fc1fb88a0a5ec21f66010114f3a6daecbc4a1",
+    "stimuli/known-words.txt": "ee338d944aa0c6e2de68ce18c8a38af1eb3de34790ab87828f2afe6f9eb0dfe2"
+  }
+}
