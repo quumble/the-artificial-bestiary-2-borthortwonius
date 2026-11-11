@@ -10,8 +10,9 @@ A continuation of [The Artificial Bestiary](https://github.com/quumble/the-artif
 
 - The sample design, model lineup, and generation settings are decided. See [the sample design](docs/sample-design.md).
 - The collector has been repaired after an independent review. Durable attempt accounting, immutable settings, raw-payload preservation and private stimulus verification are implemented. Testing uses synthetic local stand-ins only. No provider API call has been made by this implementation workflow.
-- The independent [GPT preregistration](docs/gpt-proposal/PREREGISTRATION_GPT.md), its exact inventories and all 32 mechanical feature families now have a scorer and analysis script. They remain a proposal until explicitly selected and frozen.
+- The independent [GPT preregistration](docs/gpt-proposal/PREREGISTRATION_GPT.md), its exact inventories and all 32 mechanical feature families have a scorer and analysis script. Its [timestamped amendment](docs/gpt-proposal/PREREGISTRATION_GPT.md#amendment-1-balanced-word-sources-and-analysis-weights) implements the investigator-approved one-third weight for each fresh source group, retaining the original weighting as a sensitivity. Final protocol selection and freeze remain pending.
 - Claude's independent [preregistration](prereg/CLAUDE_PREREG.md) and [frozen scorer](prereg/claude_scorer.py) are preserved exactly as supplied. [Amendment 1](prereg/CLAUDE_PREREG_AMENDMENT_1.md), written before collection, answers the [review](docs/claude-review.md): it fixes one scorer defect in a separately versioned file, defines the previously loose rules, and adds a sixth test. Claude's analysis script is now implemented and tested. The two proposals remain separate families.
+- **Ready for Fable's final review, not for collection.** The [review handoff](docs/fable-final-review.md) records the operational fixes and outstanding scientific choices. Claude's analyzer changed to enforce the freeze and planned denominators; the combined freeze requires Fable to update its existing code-hash commitment after review. Claude's preregistrations and both scorers are unchanged by the GPT implementation pass.
 - **The fresh word list is not final.** Eight GPT-made words are still to be received, checked and hashed. Collection cannot start until that is done.
 - Protocol selection, scorer/analysis code and settings must be frozen **before the first study request**. The CLI records that selection with `freeze --protocol gpt-v1+claude-v1.1` (both families) or `freeze --protocol gpt-v1`; this is not performed automatically.
 
@@ -41,6 +42,7 @@ A continuation of [The Artificial Bestiary](https://github.com/quumble/the-artif
 - **Word authorship is balanced.** Eight of the sixteen Claude-made words are replaced by eight GPT-made words, chosen by the same procedure. The fresh batch is three sets of eight. Trial counts are unchanged.
 - **Stopping is per model.** A model stops when its issues exceed 5% of its closed slots in a batch, or at once if its served identifier changes. One model's stop does not affect the others.
 - **Both analysts' families are kept, separately.** Each is corrected within itself. No joint error-control claim is made.
+- **GPT fresh primary weights are one-third per source.** The original 50% Bo / 25% Claude / 25% GPT weighting is a sensitivity. Bootstrap resampling preserves all three source groups. Known/fresh comparisons retain common 50/50 intent weighting.
 
 This project repeats the core design with new words, revised measurement, and standardized settings. It should not be described as an exact reproduction of every historical setting.
 
@@ -63,6 +65,7 @@ This project repeats the core design with new words, revised measurement, and st
 | [prereg/claude_scorer_v1_1.py](prereg/claude_scorer_v1_1.py) | Scorer version 1.1, with the offer-filter defect fixed |
 | [analyze_claude.py](analyze_claude.py) | Claude's six confirmatory tests, with both scorer versions side by side |
 | [docs/claude-review.md](docs/claude-review.md) | Review of Claude's exact files, synthetic checks and remaining pre-run decisions |
+| [docs/fable-final-review.md](docs/fable-final-review.md) | Current final-review handoff: implemented fixes, analyzer hash and decisions for Fable |
 | [tests/](tests/) | Offline regression, measurement, analysis and end-to-end tests |
 | [docs/validation.md](docs/validation.md) | Test results, synthetic integration scope and remaining live-environment checks |
 | [stimuli/known-words.txt](stimuli/known-words.txt) | The eight known words |
@@ -103,7 +106,7 @@ All `data/`, `analysis/`, key files and the fresh-word file are ignored by Git. 
 ## Still open
 
 - **Receive the eight GPT-made words**, check them, fix the new fresh-word file, and record its hash in the sample design, the collector and Claude's amendment.
-- A dated note in the GPT preregistration that the no-intent set is now eight Claude-made and eight GPT-made words. Its analysis does not change.
+- **Fable's final review and code commitment.** Settle the remaining Claude weighting/eligibility/multiplicity choices in the handoff, then record the final `analyze_claude.py` SHA-256 in Claude's amendment. The combined freeze rejects the currently stale commitment.
 - Re-run the test suite on the Windows collection machine. It has only run on Linux.
 - Select and freeze the protocol before collection.
 - Verify the private fresh-word file matches the published hash locally.

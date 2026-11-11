@@ -43,3 +43,28 @@ New coverage:
 A simulated full-size fresh batch (9,600 slots, in-memory stand-in) was also run to look at the progress display and the stopping rule. It is not part of the suite. With the minimum then set at 100, a stand-in model with a 2% issue rate was stopped by chance; that observation is why the minimum is 200.
 
 Still unverified: everything listed above as unverified, plus the new code on Windows.
+
+## GPT amendment and operational fixes, November 11, 2026
+
+The complete offline suite passed **62 tests in 67.888 seconds** on Linux, Python **3.12.14** and the pinned **NumPy 2.3.5**:
+
+```text
+python -m unittest discover -s tests -v
+Ran 62 tests
+OK
+```
+
+New checks demonstrate:
+
+- One-third source weights despite unequal eligible repetition counts; 50/25/25 sensitivity; both sets of missing bounds; fixed source composition under paired bootstrap; no reweighting away a missing source or required cell; matching weights in completion/inventory sensitivities.
+- A deliberately constructed known/fresh example where the raw batch means differ solely because of intent composition, while the common-intent comparison correctly remains zero.
+- Immediate identity stops when reasoning or malformed payloads occur simultaneously; stopping at a valid 200th closure; restart recovery of identity and threshold stops even after later in-flight successes lower the final issue fraction.
+- Rejection of open-batch analysis before response access; selected-protocol, source/runtime and manifest checks; audits for wrong metadata, payloads, identities, issue flags and duplicate attempts.
+- Claude model eligibility against the full frozen schedule when whole words have no eligible responses, plus report provenance and planned denominators.
+- Combined-freeze rejection of a missing/stale Claude analyzer hash and acceptance of a matching synthetic commitment.
+
+The synthetic two-batch integration still invokes the actual GPT analysis command with 50,000 bootstrap draws. Claude's entry point is exercised on synthetic data with explicitly reduced resampling counts recorded in its test report. No synthetic output is a study result or validation of the scorers' semantic interpretation.
+
+The known-word dry run reports 800 trials per model across eight models and the unchanged committed known-word hash. `git diff --check` and every proposal-package SHA-256 check passed. The original GPT preregistration body is an unchanged byte prefix of its amended file. Claude's original preregistration, Amendment 1, both scorer versions, and the GPT scorer/specification/inventories are unchanged by this pass.
+
+No paid API calls, actual study responses, private fresh-word file or credentials were used. Final private stimuli/hash, Fable's scientific choices and analyzer commitment, native Windows checks, live preflight and freeze remain outstanding. See [the final review handoff](fable-final-review.md).

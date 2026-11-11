@@ -10,8 +10,9 @@ import bestiary_scorer as s
 
 
 def fixture():
-    words=[("fresh-animal-intent","zuvema","human"),("fresh-animal-intent","zuvemb","human")]
-    words += [("fresh-no-intent","fepal"+suffix,"model") for suffix in "abcd"]
+    words=[("fresh-animal-intent","zuvema","fresh-animal-intent"),("fresh-animal-intent","zuvemb","fresh-animal-intent")]
+    words += [("fresh-no-intent","fepal"+suffix,"fresh-no-intent-claude") for suffix in "ab"]
+    words += [("fresh-no-intent","fepal"+suffix,"fresh-no-intent-gpt") for suffix in "cd"]
     manifest=dict(batches={"fresh":{}},settings={})
     planned={};selected={};counts={}
     ordinal=0
@@ -37,12 +38,38 @@ class AnalysisTests(unittest.TestCase):
         manifest,_,_,_,cells,_=fixture()
         result=a.summarize_primary(cells,"fresh",manifest,draws=100)
         first=result["contrasts"][0]
-        self.assertAlmostEqual(first["effect"],.5)
-        self.assertAlmostEqual(first["alternative_word_count_weight"],1/3)
+        self.assertAlmostEqual(first["effect"],1/3)
+        self.assertAlmostEqual(first["alternative_equal_intent_weighting"]["effect"],.5)
+        self.assertEqual(result["weights"],{s:1/3 for s in r.FRESH_SETS})
+        self.assertEqual(result["alternative_equal_intent_weights"],{
+            "fresh-animal-intent":.5,"fresh-no-intent-claude":.25,"fresh-no-intent-gpt":.25})
         self.assertTrue(first["bootstrap_degenerate"])
         self.assertFalse(first["confirmatory_direction"])
-        self.assertAlmostEqual(first["bounds"][0],.1)
-        self.assertAlmostEqual(first["bounds"][1],.9)
+        self.assertAlmostEqual(first["bounds"][0],-.2)
+        self.assertAlmostEqual(first["bounds"][1],13/15)
+        self.assertAlmostEqual(first["alternative_equal_intent_weighting"]["bounds"][0],.1)
+        self.assertAlmostEqual(first["alternative_equal_intent_weighting"]["bounds"][1],.9)
+
+    def test_bootstrap_preserves_each_model_author_group(self):
+        manifest,_,_,_,cells,_=fixture()
+        # Each Claude word has effect 1 and each GPT/human word effect 0.
+        # Mixing Claude and GPT in one resampling pool would create spurious
+        # variation despite every word within each fixed source agreeing.
+        for cell in cells.values():
+            cell["primary"]["M01"]=int(cell["source_set_label"]=="fresh-no-intent-claude" and cell["condition"].startswith("imaginary_"))
+        result=a.summarize_primary(cells,"fresh",manifest,draws=100)["contrasts"][0]
+        self.assertAlmostEqual(result["effect"],1/3)
+        self.assertEqual(result["ci95"],[1/3,1/3])
+        self.assertTrue(result["bootstrap_degenerate"])
+        self.assertEqual(result["alternative_equal_intent_weighting"]["ci95"],[.25,.25])
+        self.assertFalse(result["confirmatory_direction"])
+
+    def test_missing_source_is_not_reweighted_away(self):
+        manifest,_,_,_,cells,_=fixture()
+        for model,trials in manifest["batches"]["fresh"].items():
+            manifest["batches"]["fresh"][model]=[t for t in trials if t["source_set_label"]!="fresh-no-intent-gpt"]
+        with self.assertRaisesRegex(ValueError,"required word-source groups"):
+            a.summarize_primary(cells,"fresh",manifest,draws=100)
 
     def test_missing_required_cell_nulls_pool_but_bounds_remain(self):
         manifest,_,_,_,cells,_=fixture()
@@ -51,6 +78,8 @@ class AnalysisTests(unittest.TestCase):
         result=a.summarize_primary(cells,"fresh",manifest,draws=100)["contrasts"][0]
         self.assertIsNone(result["effect"])
         self.assertIsNone(result["ci95"])
+        self.assertIsNone(result["alternative_equal_intent_weighting"]["effect"])
+        self.assertIsNone(result["alternative_equal_intent_weighting"]["ci95"])
         self.assertEqual(len(result["bounds"]),2)
 
     def test_bounds_and_complete_only_eligibility(self):
@@ -65,6 +94,8 @@ class AnalysisTests(unittest.TestCase):
         eligibility=sensitivity["complete_only"]["eligibility"]
         item=next(e for e in eligibility if (e["batch"],e["model"],e["word"],e["condition"])==(key[0],key[1],planned[key]["word"],planned[key]["condition"]))
         self.assertEqual(item["eligible"],4)
+        self.assertAlmostEqual(sensitivity["complete_only"]["effects"]["fresh"][0],1/3)
+        self.assertAlmostEqual(sensitivity["M01_without_imaginary"]["effects"]["fresh"][0],1/3)
 
     def test_audit_duplicate_and_wrong_request(self):
         model=r.MODELS[-1];trial=r.build_trials("fresh",[("fresh-animal-intent","zuvem","human")])[0]
@@ -74,10 +105,37 @@ class AnalysisTests(unittest.TestCase):
                  request_hash=r.digest(r.canonical(body).encode()),fields=dict(valid=True,terminal=True,model_returned=model["id"],error=None,response="Blue."))
         second=copy.deepcopy(rec);second.update(id=2,attempt_id="second")
         wrong=copy.deepcopy(rec);wrong.update(id=3,attempt_id="wrong");wrong["request"]["temperature"]=0
-        _,selected,audit,counts=a.select_records(manifest,[wrong,second,rec])
+        issue=copy.deepcopy(rec);issue.update(id=4,attempt_id="issue");issue["fields"]["issue"]="schema_error"
+        _,selected,audit,counts=a.select_records(manifest,[wrong,second,rec,issue])
         self.assertEqual(next(iter(selected.values()))["attempt_id"],"first")
-        self.assertEqual({x["reason"] for x in audit},{"duplicate_terminal","request_mismatch"})
-        self.assertEqual(next(iter(counts.values())),3)
+        self.assertEqual({x["reason"] for x in audit},{"duplicate_terminal","request_mismatch","invalid_terminal"})
+        self.assertEqual(next(iter(counts.values())),4)
+
+    def test_known_fresh_comparison_keeps_common_intent_weights(self):
+        manifest,_,_,_,cells,_=fixture()
+        words=[("known-animal-intent","kanima","known-animal-intent"),
+               ("known-animal-intent","kanimb","known-animal-intent"),
+               ("known-no-intent","knonea","known-no-intent"),
+               ("known-no-intent","knoneb","known-no-intent")]
+        manifest["batches"]["known"]={}
+        for model in r.MODELS:
+            mid=model["id"]
+            manifest["batches"]["known"][mid]=r.build_trials("known",words)
+            for intent,word,source in words:
+                template="zuvema" if intent.endswith("animal-intent") else "fepala"
+                for condition in {k[3] for k in cells if k[0]=="fresh"}:
+                    c=copy.deepcopy(cells[("fresh",mid,template,condition)])
+                    c.update(batch="known",word=word,word_set=intent,source_set_label=source)
+                    cells[("known",mid,word,condition)]=c
+        # The underlying within-intent effects match exactly. Raw batch
+        # averages differ because fresh has 1/3 animal-intent and known 1/2.
+        fresh=a.summarize_primary(cells,"fresh",manifest,draws=100)["contrasts"][0]["effect"]
+        known=a.summarize_primary(cells,"known",manifest,draws=100)["contrasts"][0]["effect"]
+        self.assertAlmostEqual(known-fresh,1/6)
+        secondary=a.planned_secondary_contrasts(cells,manifest)
+        comparisons=[x for x in secondary["contrasts"] if x["kind"]=="known_minus_fresh" and x["word_set"]=="equal_intent" and x["condition"].startswith("imaginary_") and x["outcome"]=="M01"]
+        self.assertTrue(comparisons)
+        self.assertTrue(all(x["effect"]==0 for x in comparisons))
 
     def test_jsonl_corruption_is_not_silently_dropped(self):
         with tempfile.TemporaryDirectory() as directory:

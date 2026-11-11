@@ -249,7 +249,8 @@ def parse_response(model, status_code, raw):
                     raise ValueError()
         out["response"] = "\n".join(b["text"] for b in out["visible_blocks"])
         if out["terminal"]:
-            if out["input_tokens"] is None or out["output_tokens"] is None or not out.get("model_returned"):
+            if (out["input_tokens"] is None or out["output_tokens"] is None
+                    or not isinstance(out.get("model_returned"), str) or not out["model_returned"]):
                 raise ValueError()
             out.update(valid=True, error=None)
     except (AttributeError, TypeError, ValueError):
@@ -388,28 +389,45 @@ class Collector:
         self.keys = keys if keys is not None else load_keys(root)
         self.ledger, self.stop = Ledger(root), threading.Event()
         self.wait = wait if wait is not None else self.stop.wait
-        self.counts, self.count_lock = {}, threading.Lock()
+        self.counts, self.count_lock = {}, threading.RLock()
+        for batch in REPS:
+            self.load_counts(batch)
 
     def tally(self, phase, model_id):
         return self.counts.setdefault((phase, model_id), dict(good=0, issues=0, cut=0, gave_up=0, new=0))
 
     def load_counts(self, batch):
-        """Rebuild the per-model counters for one batch from the durable ledger."""
+        """Replay closed slots in completion order, recovering a stop lost after a committed result."""
         with self.count_lock:
             for model in MODELS:
                 self.counts[(batch, model["id"])] = dict(good=0, issues=0, cut=0, gave_up=0, new=0)
             slots = {}
             for row in self.ledger.rows(batch):
-                slots.setdefault((row["model"], row["trial_id"]), []).append(json.loads(row["fields"]) if row["fields"] else {})
+                fields = json.loads(row["fields"]) if row["fields"] else {}
+                slots.setdefault((row["model"], row["trial_id"]), []).append((row, fields))
+            events = []
             for (model_id, _), attempts in slots.items():
-                c = self.tally(batch, model_id)
-                if any(f.get("issue") for f in attempts):
-                    c["issues"] += 1
-                elif any(f.get("terminal") and f.get("valid") for f in attempts):
-                    c["good"] += 1
-                    c["cut"] += any(f.get("terminal") and f.get("truncated") for f in attempts)
+                closed = [(row, fields) for row, fields in attempts
+                          if fields.get("issue") or (fields.get("terminal") and fields.get("valid"))]
+                if closed:
+                    row, fields = min(closed, key=lambda pair: (pair[0]["finished"] or pair[0]["started"], pair[0]["id"]))
+                    outcome = ("identity" if fields["issue"] == "returned_model_changed" else "issue") if fields.get("issue") else "terminal"
                 elif len(attempts) >= 6:
+                    row, fields = attempts[-1]
+                    outcome = "exhausted"
+                else:
+                    continue
+                events.append((row["finished"] or row["started"], row["id"], model_id, outcome, fields))
+            for closed_at, _, model_id, outcome, fields in sorted(events):
+                c = self.tally(batch, model_id)
+                if outcome in {"issue", "identity"}:
+                    c["issues"] += 1
+                elif outcome == "terminal":
+                    c["good"] += 1
+                    c["cut"] += bool(fields.get("truncated"))
+                else:
                     c["gave_up"] += 1
+                self.lane_should_stop({"id": model_id}, batch, outcome, closed_at=closed_at)
 
     def observe(self, model, phase, outcome, fields):
         if phase == "preflight":
@@ -424,9 +442,17 @@ class Collector:
             else:
                 c["good"] += 1
                 c["cut"] += bool(fields.get("truncated"))
+            # The 200th qualifying closure may be valid, so check every closure.
+            self.lane_should_stop(model, phase, outcome)
 
-    def lane_should_stop(self, model, phase, outcome):
-        """Identity change stops the lane at once. Other issues stop it past ISSUE_RATE of closed slots."""
+    def lane_should_stop(self, model, phase, outcome, closed_at=None):
+        """Stop on identity drift or ISSUE_RATE after ISSUE_MIN valid-or-issue closures.
+
+        Exhausted retries are reported separately and are excluded from this
+        issue-rate denominator, preserving the registered implementation.
+        """
+        if self.ledger.get("lane_stopped:"+model["id"]):
+            return True
         with self.count_lock:
             c = dict(self.tally(phase, model["id"]))
         closed = c["good"] + c["issues"]
@@ -438,7 +464,10 @@ class Collector:
             return False
         with self.ledger.lock, self.ledger.db:
             if not self.ledger.get("lane_stopped:"+model["id"]):
-                self.ledger.put("lane_stopped:"+model["id"], dict(reason=reason, phase=phase, stopped_utc=now(), issues=c["issues"], closed=closed))
+                record = dict(reason=reason, phase=phase, stopped_utc=closed_at or now(), issues=c["issues"], closed=closed)
+                if closed_at is not None:
+                    record["recovered_utc"] = now()
+                self.ledger.put("lane_stopped:"+model["id"], record)
         return True
 
     def progress(self, batch, doc, started, final=False):
@@ -489,38 +518,44 @@ class Collector:
                 fields = parse_response(model, status, raw)
             except (OSError, TimeoutError, UnicodeError) as exc:
                 fields = dict(valid=False, terminal=False, retryable=True, error="transport:"+type(exc).__name__)
-            if fields.get("valid"):
-                returned = fields.get("model_returned", "")
-                if not expected and not (returned == model["id"] or re.fullmatch(re.escape(model["id"])+r"-(?:\d{8}|\d{4}-\d{2}-\d{2})", returned)):
-                    fields["protocol_violation"] = "unexpected_preflight_model"
-                if expected and fields.get("model_returned") != expected:
+            if fields.get("valid") or status == 200:
+                returned = fields.get("model_returned")
+                has_identifier = isinstance(returned, str) and bool(returned)
+                # A reported identity change takes priority even if the rest of
+                # the successful HTTP payload is malformed or contains reasoning.
+                if expected and has_identifier and returned != expected:
                     fields["protocol_violation"] = "returned_model_changed"
-                if (fields.get("reasoning_tokens") or 0) > 0 or fields.get("thinking_blocks", 0):
+                elif not expected and has_identifier and not (returned == model["id"] or re.fullmatch(re.escape(model["id"])+r"-(?:\d{8}|\d{4}-\d{2}-\d{2})", returned)):
+                    fields["protocol_violation"] = "unexpected_preflight_model"
+                elif (fields.get("reasoning_tokens") or 0) > 0 or fields.get("thinking_blocks", 0):
                     fields["protocol_violation"] = "reasoning_observed_in_reasoning_off_run"
             if phase != "preflight" and not fields.get("protocol_violation"):
                 if fields.get("terminal") and not fields.get("valid"):
                     fields["issue"] = "schema_error"            # unexpected content type or payload shape
                 elif not fields.get("terminal") and not fields.get("retryable") and status not in {401, 403}:
                     fields["issue"] = "hard_error:"+str(fields.get("error", "unknown"))
-            self.ledger.finish(aid, model, status, raw, headers, fields, time.monotonic()-t0)
-            violation = fields.get("protocol_violation")
-            if violation and (phase == "preflight" or violation == "usage_exceeded_reservation"):
-                raise StudyError("Protocol mismatch recorded: "+violation)
-            if fields.get("issue"):                              # recorded, slot closed, not regenerated
-                outcome = "identity" if fields["issue"] == "returned_model_changed" else "issue"
-                self.observe(model, phase, outcome, fields)
-                return outcome
-            if fields.get("terminal"):
-                if not fields.get("valid"):
-                    raise StudyError("Terminal schema requires review; raw payload preserved.")
-                self.observe(model, phase, "terminal", fields)
-                return "terminal"
-            if not fields.get("retryable"):
-                raise StudyError("Request failed without changing settings: "+fields.get("error", "unknown"))
-            count = len(self.ledger.rows(phase, model["id"], trial["trial_id"]))
-            if count >= maximum:
-                self.observe(model, phase, "exhausted", fields)
-                return "exhausted"
+            # Serialize completion and its stop decision against other dispatches.
+            # If the process dies between their commits, load_counts replays it.
+            with self.count_lock, self.ledger.lock:
+                self.ledger.finish(aid, model, status, raw, headers, fields, time.monotonic()-t0)
+                violation = fields.get("protocol_violation")
+                if violation and (phase == "preflight" or violation == "usage_exceeded_reservation"):
+                    raise StudyError("Protocol mismatch recorded: "+violation)
+                if fields.get("issue"):                              # recorded, slot closed, not regenerated
+                    outcome = "identity" if fields["issue"] == "returned_model_changed" else "issue"
+                    self.observe(model, phase, outcome, fields)
+                    return outcome
+                if fields.get("terminal"):
+                    if not fields.get("valid"):
+                        raise StudyError("Terminal schema requires review; raw payload preserved.")
+                    self.observe(model, phase, "terminal", fields)
+                    return "terminal"
+                if not fields.get("retryable"):
+                    raise StudyError("Request failed without changing settings: "+fields.get("error", "unknown"))
+                count = len(self.ledger.rows(phase, model["id"], trial["trial_id"]))
+                if count >= maximum:
+                    self.observe(model, phase, "exhausted", fields)
+                    return "exhausted"
             retry = next((v for k, v in headers.items() if k.lower() == "retry-after"), None)
             try:
                 delay = min(120, max(0, float(retry)))
@@ -560,6 +595,11 @@ class Collector:
             raise StudyError("The source test suite must be present before freezing.")
         paths += test_paths
         hashes = {p: digest((self.root/p).read_bytes()) for p in paths}
+        if "analyze_claude.py" in PROTOCOLS[protocol]:
+            amendment = (self.root/"prereg/CLAUDE_PREREG_AMENDMENT_1.md").read_text(encoding="utf-8")
+            committed = re.findall(r"`analyze_claude\.py`, SHA-256 `([0-9a-f]{64})`", amendment)
+            if len(committed) != 1 or committed[0] != hashes["analyze_claude.py"]:
+                raise StudyError("Claude analyzer SHA-256 does not match CLAUDE_PREREG_AMENDMENT_1.md. Review and update the amendment before freezing.")
         settings = {m["id"]: self.ledger.get("settings:"+m["id"]) for m in MODELS}
         if not all(settings.values()):
             raise StudyError("Check all eight models before freezing.")

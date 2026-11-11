@@ -70,7 +70,7 @@ def select_records(manifest, attempts):
                 reason = "request_mismatch"
             elif not fields.get("terminal"):
                 reason = "nonterminal_attempt"
-            elif not fields.get("valid") or fields.get("error") or fields.get("protocol_violation"):
+            elif not fields.get("valid") or fields.get("error") or fields.get("protocol_violation") or fields.get("issue"):
                 reason = "invalid_terminal"
             elif fields.get("model_returned") != config["model_returned"]:
                 reason = "returned_model_mismatch"
@@ -99,7 +99,8 @@ def make_cells(planned, selected, counts):
     cells = {}
     for key,rows in groups.items():
         usable = [r for r in rows if r["scoring"]["usable"]]
-        cell = dict(batch=key[0],model=key[1],word=key[2],condition=key[3],word_set=rows[0]["word_set"],planned=len(rows),
+        cell = dict(batch=key[0],model=key[1],word=key[2],condition=key[3],word_set=rows[0]["word_set"],
+                    source_set_label=rows[0]["source_set_label"],planned=len(rows),
                     attempts=sum(r["attempt_count"] for r in rows),terminal=sum(r["terminal"] for r in rows),usable=len(usable),
                     complete_usable=sum(r["complete"] for r in usable),cap_truncated=sum(r["truncated"] and r["terminal"] for r in rows),
                     other_incomplete=sum(r["terminal"] and not r["complete"] and not r["truncated"] for r in rows),
@@ -140,37 +141,68 @@ def contrasts(cells,batch,models,word_sets,field="primary"):
     return per_model,per_word
 
 
+def primary_word_sets(manifest,batch):
+    """Use the planned source bank, never the words surviving outcome exclusions."""
+    bank = defaultdict(set)
+    word_labels = {}
+    for trials in manifest["batches"][batch].values():
+        for trial in trials:
+            label = trial["source_set_label"] if batch == "fresh" else trial["word_set"]
+            if trial["word"] in word_labels and word_labels[trial["word"]] != label:
+                raise ValueError("Word has inconsistent source labels in the frozen schedule.")
+            word_labels[trial["word"]] = label
+            bank[label].add(trial["word"])
+    expected = set(collector.FRESH_SETS) if batch == "fresh" else {"known-animal-intent","known-no-intent"}
+    if set(bank) != expected:
+        raise ValueError("Frozen schedule is missing the required word-source groups: "+batch)
+    return {source:sorted(words) for source,words in sorted(bank.items())}
+
+
+def source_weights(word_sets,batch,equal_intent=False):
+    if batch == "fresh" and equal_intent:
+        return {source:0.5 if source == "fresh-animal-intent" else 0.25 for source in word_sets}
+    return {source:1/len(word_sets) for source in word_sets}
+
+
+def weighted_mean(values,weights):
+    if any(values.get(source) is None for source in weights):
+        return None
+    return float(sum(weights[source]*values[source] for source in weights))
+
+
 def summarize_primary(cells,batch,manifest,draws=50000):
     models = list(manifest["batches"][batch])
-    bank = defaultdict(set)
-    for trials in manifest["batches"][batch].values():
-        for t in trials:
-            bank[t["word_set"]].add(t["word"])
-    word_sets = {s:sorted(words) for s,words in sorted(bank.items())}
+    word_sets = primary_word_sets(manifest,batch)
+    weights = source_weights(word_sets,batch)
+    intent_weights = source_weights(word_sets,batch,equal_intent=True)
     per_model,per_word = contrasts(cells,batch,models,word_sets)
     arrays = {s:np.array(v,dtype=float) for s,v in per_word.items()}
     rng = np.random.Generator(np.random.PCG64(20261111 if batch=="fresh" else 20261112))
     bootstrap = np.zeros((draws,8))
+    intent_bootstrap = np.zeros((draws,8))
     index_bank={s:np.empty((draws,len(arr)),dtype=int) for s,arr in arrays.items()}
     for draw in range(draws):
         for source,arr in arrays.items():
             index_bank[source][draw]=rng.integers(0,len(arr),size=len(arr))
     for source,arr in arrays.items():
         indices = index_bank[source]
-        bootstrap += arr[indices].mean(axis=1)/2
+        sampled_means = arr[indices].mean(axis=1)
+        bootstrap += sampled_means*weights[source]
+        intent_bootstrap += sampled_means*intent_weights[source]
     result = []
     for j,(family,frame) in enumerate((f,r) for f in PRIMARY for r in FRAMES):
-        estimates = [mean([v[j] for v in per_word[s]]) for s in word_sets]
-        effect = mean(estimates)
+        estimates = {s:mean([v[j] for v in per_word[s]]) for s in word_sets}
+        effect = weighted_mean(estimates,weights)
+        intent_effect = weighted_mean(estimates,intent_weights)
         valid_boot = np.isfinite(bootstrap[:,j]).all()
         ci95 = np.quantile(bootstrap[:,j],[.025,.975],method="linear").tolist() if valid_boot else None
         adjusted = np.quantile(bootstrap[:,j],[.003125,.996875],method="linear").tolist() if valid_boot and batch=="fresh" else None
         degenerate = bool(valid_boot and np.ptp(bootstrap[:,j])==0)
-        bounds = {}
+        bounds, intent_bounds = {}, {}
         for field in ["bounds","completion_bounds"]:
-            model_bounds = []
+            model_bounds, intent_model_bounds = [], []
             for model in models:
-                set_bounds = []
+                set_bounds = {}
                 for source,words in word_sets.items():
                     word_bounds=[]
                     for word in words:
@@ -180,27 +212,34 @@ def summarize_primary(cells,batch,manifest,draws=50000):
                             b=cells[(batch,model,word,"real_"+category)][field][family]
                             values.append([a[0]-b[1],a[1]-b[0]])
                         word_bounds.append(np.mean(values,axis=0))
-                    set_bounds.append(np.mean(word_bounds,axis=0))
-                model_bounds.append(np.mean(set_bounds,axis=0))
+                    set_bounds[source] = np.mean(word_bounds,axis=0)
+                model_bounds.append(sum(weights[s]*set_bounds[s] for s in word_sets))
+                intent_model_bounds.append(sum(intent_weights[s]*set_bounds[s] for s in word_sets))
             bounds[field]=np.mean(model_bounds,axis=0).tolist()
+            intent_bounds[field]=np.mean(intent_model_bounds,axis=0).tolist()
         component={m:{s:mean([v[j] for v in per_model[m][s]]) for s in word_sets} for m in models}
-        combined=np.concatenate(list(arrays.values()),axis=0)[:,j]
-        alternative=float(combined.mean()) if np.isfinite(combined).all() else None
+        intent_valid = np.isfinite(intent_bootstrap[:,j]).all()
+        alternative = dict(effect=intent_effect,
+                           ci95=np.quantile(intent_bootstrap[:,j],[.025,.975],method="linear").tolist() if intent_valid else None,
+                           bootstrap_degenerate=bool(intent_valid and np.ptp(intent_bootstrap[:,j])==0),
+                           status="descriptive sensitivity; same paired source-stratified resamples; no additional confirmatory test",
+                           **intent_bounds)
         leave_one_out={}
         for source,words in word_sets.items():
             for i,word in enumerate(words):
-                values=[]
+                values={}
                 for s,arr in arrays.items():
                     subset=np.delete(arr[:,j],i) if s==source else arr[:,j]
-                    values.append(float(subset.mean()) if np.isfinite(subset).all() and len(subset) else None)
-                leave_one_out[word]=mean(values)
+                    values[s]=float(subset.mean()) if np.isfinite(subset).all() and len(subset) else None
+                leave_one_out[word]=weighted_mean(values,weights)
         confirm=bool(batch=="fresh" and adjusted and not degenerate and (adjusted[0]>0 or adjusted[1]<0) and draws==50000)
         result.append(dict(outcome=family,contrast=frame+"-real",effect=effect,ci95=ci95,
             simultaneous_ci99375=adjusted,bootstrap_degenerate=degenerate,confirmatory_direction=confirm,
             conditional_on_observed=bool(bounds["bounds"][0]<=0<=bounds["bounds"][1]),
-            model_set_components=component,alternative_word_count_weight=alternative,leave_one_word_out=leave_one_out,**bounds))
+            model_set_components=component,alternative_equal_intent_weighting=alternative,leave_one_word_out=leave_one_out,**bounds))
     return dict(batch=batch,scale="proportions; multiply by 100 for percentage points",bootstrap_draws=draws,
-                resampling="paired whole words within source sets; models fixed",word_sets=word_sets,contrasts=result)
+                resampling="paired whole words within each planned source group; models fixed",
+                weights=weights,alternative_equal_intent_weights=intent_weights,word_sets=word_sets,contrasts=result)
 
 
 def scalar_features(value,prefix=""):
@@ -231,7 +270,7 @@ def secondary_tables(response_rows,cells):
     tables=[]
     for key,cell in cells.items():
         names=feature_cells[key]
-        tables.append(dict(batch=key[0],model=key[1],word=key[2],condition=key[3],word_set=cell["word_set"],
+        tables.append(dict(batch=key[0],model=key[1],word=key[2],condition=key[3],word_set=cell["word_set"],source_set_label=cell["source_set_label"],
             features={name:dict(mean=mean(values),eligible=len(values),planned=cell["planned"],usable=cell["usable"]) for name,values in names.items()},
             M13_states={state:states[key].count(state)/len(states[key]) if states[key] else None for state in ["definition_first","cue_first","tie","definition_only","cue_only","neither"]}))
     reuse_tables=[dict(batch=k[0],model=k[1],condition=k[2],M28=scorer.reuse_features(v)) for k,v in sorted(reuse.items())]
@@ -279,12 +318,10 @@ def sensitivities(response_rows,base_cells,manifest):
             cell["primary"]={f:mean(values[key][f]) for f in PRIMARY}
         summaries={}
         for batch in manifest["batches"]:
-            bank=defaultdict(set)
-            for trials in manifest["batches"][batch].values():
-                for t in trials:bank[t["word_set"]].add(t["word"])
-            word_sets={s:sorted(v) for s,v in sorted(bank.items())}
+            word_sets=primary_word_sets(manifest,batch)
+            weights=source_weights(word_sets,batch)
             _,pw=contrasts(cells,batch,list(manifest["batches"][batch]),word_sets)
-            summaries[batch]=[mean([mean([v[j] for v in pw[s]]) for s in pw]) for j in range(8)]
+            summaries[batch]=[weighted_mean({s:mean([v[j] for v in pw[s]]) for s in pw},weights) for j in range(8)]
         versions[name]=dict(contrast_order=[f+":"+r+"-real" for f in PRIMARY for r in FRAMES],effects=summaries,
                            eligibility=[dict(batch=k[0],model=k[1],word=k[2],condition=k[3],eligible=eligible[k],planned=c["planned"]) for k,c in cells.items()])
     return versions
@@ -293,19 +330,24 @@ def sensitivities(response_rows,base_cells,manifest):
 def planned_secondary_contrasts(cells,manifest):
     """Fixed endpoint/frame/category/word-set comparisons, descriptive only."""
     rates={}
-    banks={}
+    banks,source_banks,report_banks={},{},{}
     for batch,models in manifest["batches"].items():
         bank=defaultdict(set)
         for trials in models.values():
             for t in trials:bank[t["word_set"]].add(t["word"])
         banks[batch]={s:sorted(v) for s,v in bank.items()}
+        source_banks[batch]=primary_word_sets(manifest,batch)
+        report_banks[batch]={**banks[batch],**source_banks[batch]}
+        weights=source_weights(source_banks[batch],batch)
         conditions=sorted({c[3] for c in cells if c[0]==batch})
         for model in models:
             for condition in conditions:
                 for family in PRIMARY:
-                    for source,words in banks[batch].items():
+                    for source,words in report_banks[batch].items():
                         rates[(batch,model,source,condition,family)]=mean([cells[(batch,model,w,condition)]["primary"][family] for w in words])
-                    rates[(batch,model,"equal_sets",condition,family)]=mean([rates[(batch,model,s,condition,family)] for s in banks[batch]])
+                    rates[(batch,model,"equal_intent",condition,family)]=mean([rates[(batch,model,s,condition,family)] for s in banks[batch]])
+                    rates[(batch,model,"primary_weighting",condition,family)]=weighted_mean(
+                        {s:rates[(batch,model,s,condition,family)] for s in source_banks[batch]},weights)
     out=[]
     def difference(a,b):return a-b if a is not None and b is not None else None
     pairings=[("claude-sonnet-5-5","claude-sonnet-4-6"),("claude-haiku-5-5","claude-haiku-4-5"),
@@ -314,7 +356,7 @@ def planned_secondary_contrasts(cells,manifest):
     for batch,models in manifest["batches"].items():
         for model in models:
             for family in PRIMARY:
-                for source in list(banks[batch])+["equal_sets"]:
+                for source in list(report_banks[batch])+["equal_intent","primary_weighting"]:
                     frames={frame:mean([rates[(batch,model,source,frame+"_"+c,family)] for c in collector.CATEGORIES]) for frame in ["real","imaginary","type_of"]}
                     for frame,value in frames.items():
                         out.append(dict(kind="frame_minus_neutral",batch=batch,model=model,word_set=source,outcome=family,
@@ -337,19 +379,19 @@ def planned_secondary_contrasts(cells,manifest):
             for family in PRIMARY:
                 for frame in FRAMES:
                     out.append(dict(kind="generation_frame_interaction",batch=batch,models=[current,historical],outcome=family,contrast=frame+"-real",
-                                    effect=difference(frame_effects[(batch,current,"equal_sets",frame,family)],frame_effects[(batch,historical,"equal_sets",frame,family)])))
+                                    weighting="primary_weighting",effect=difference(frame_effects[(batch,current,"primary_weighting",frame,family)],frame_effects[(batch,historical,"primary_weighting",frame,family)])))
                 for condition in sorted({key[3] for key in rates if key[0]==batch}):
                     out.append(dict(kind="generation_condition_difference",batch=batch,models=[current,historical],outcome=family,condition=condition,
-                                    effect=difference(rates[(batch,current,"equal_sets",condition,family)],rates[(batch,historical,"equal_sets",condition,family)])))
+                                    weighting="primary_weighting",effect=difference(rates[(batch,current,"primary_weighting",condition,family)],rates[(batch,historical,"primary_weighting",condition,family)])))
     if "fresh" in banks and "known" in banks:
         batch_effects={}
         shared=set(manifest["batches"]["fresh"]) & set(manifest["batches"]["known"])
         for model in sorted(shared):
             for family in PRIMARY:
                 for condition in sorted({key[3] for key in rates if key[0]=="fresh"}):
-                    for label in ["animal-intent","no-intent","equal_sets"]:
-                        sa=label if label=="equal_sets" else "known-"+label
-                        sb=label if label=="equal_sets" else "fresh-"+label
+                    for label in ["animal-intent","no-intent","equal_intent"]:
+                        sa=label if label=="equal_intent" else "known-"+label
+                        sb=label if label=="equal_intent" else "fresh-"+label
                         effect=difference(rates[("known",model,sa,condition,family)],rates[("fresh",model,sb,condition,family)])
                         out.append(dict(kind="known_minus_fresh",model=model,outcome=family,condition=condition,word_set=label,effect=effect))
                         batch_effects[(model,family,condition,label)]=effect
@@ -359,7 +401,10 @@ def planned_secondary_contrasts(cells,manifest):
                 if key[0]==current:
                     other=batch_effects[(historical,)+key[1:]]
                     out.append(dict(kind="generation_batch_interaction",models=[current,historical],outcome=key[1],condition=key[2],word_set=key[3],effect=difference(effect,other)))
-    return dict(status="prespecified descriptive; no confirmatory p-values or exposure attribution",contrasts=out)
+    return dict(status="prespecified descriptive; no confirmatory p-values or exposure attribution",
+                primary_weights={batch:source_weights(bank,batch) for batch,bank in source_banks.items()},
+                cross_batch_weighting="equal_intent: one-half animal-intent and one-half no-intent in both batches",
+                contrasts=out)
 
 
 def repetition_summaries(cells):
