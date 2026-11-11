@@ -314,3 +314,12 @@ The discussion moved from measurement to the sample. Decisions are recorded in t
 - **Preregistration.** The user asked that the repository be brought up to date and then left unchanged while two analysts write preregistrations from it independently.
 
 No experimental responses were collected in reaching these decisions. The runner was exercised only against a local stand-in server.
+
+## Pre-run decisions, November 11, 2026
+
+Recorded by Claude Fable 5.2. No study response had been collected.
+
+- **GPT-made words.** The investigator asked whether GPT should supply some of the nonsense words "to balance it out." The assistant proposed replacing eight of its own sixteen so that cost stayed the same and authorship became a crossed factor. The investigator chose the swap.
+- **Stopping rule.** The investigator asked for something more relaxed than halting on a single anomaly: "what if we require a certain percentage to be issues to stop the model." The assistant proposed 5% per model. The investigator replied that 5% "was exactly the number i had in mind." The assistant set the minimum count at 200 after simulating false stops.
+- **Budget.** The investigator accepted that the provider budget stop decides how much of the known-word batch is collected.
+- **Review of the Claude preregistration.** GPT/Codex reviewed it and found a scorer defect and underspecified analysis rules. The assistant accepted the findings and wrote Amendment 1.

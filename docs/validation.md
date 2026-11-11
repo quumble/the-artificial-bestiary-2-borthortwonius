@@ -29,3 +29,17 @@ The original Bestiary preregistration and scorer were added on November 11, 2026
 Additional offline tests check the immutable attachment hashes, the documented synthetic scorer boundary cases, and the scorer CLI against terminal JSONL exported by the repaired collector. These establish file integrity and basic compatibility, not measurement validity. No historical development dataset or actual study response was used. See `docs/claude-review.md` for the remaining analysis work.
 
 After integration, the full suite passed **40 tests in 50.562 seconds** on the same Linux/Python/NumPy environment, including the synthetic two-batch analysis. The original scorer contains one trailing space; it is retained to preserve the registered hash. Whitespace checks pass for the other changed files.
+
+## November 11 changes (Claude Fable 5.2)
+
+After the per-model stopping rule, three-set word loader, progress display, Claude's scorer 1.1 and `analyze_claude.py` were added, the full suite passed **48 tests** on Linux with Python 3.13.18 and NumPy 2.5.3. That NumPy is newer than the pinned 2.3.5; the pinned version was not re-tested in this environment.
+
+New coverage:
+
+- Study-phase issues are flagged and their slots closed without regeneration; an early issue does not stop a model; a model stops at the first point its issues pass 5% once 200 slots are closed; a changed identifier stops only that model; preflight still halts on any violation; an authentication failure still stops the run.
+- The old 8 + 16 word layout is rejected and the three-label layout is accepted, with both model-made sets analysed as no-intent and the author label kept.
+- Claude's analysis: all six tests on synthetic data with planted effects of known sign, Holm adjustment, determinism under the fixed seed, a missing model named beside the result, the known-word test left untested when that batch is absent, truncated responses excluded from the primary and kept in the sensitivity run, flagged records excluded, and the earliest duplicate kept.
+
+A simulated full-size fresh batch (9,600 slots, in-memory stand-in) was also run to look at the progress display and the stopping rule. It is not part of the suite. With the minimum then set at 100, a stand-in model with a 2% issue rate was stopped by chance; that observation is why the minimum is 200.
+
+Still unverified: everything listed above as unverified, plus the new code on Windows.

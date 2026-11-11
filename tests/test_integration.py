@@ -25,7 +25,7 @@ class IntegrationTests(unittest.TestCase):
             (root/"stimuli").mkdir()
             shutil.copyfile(r.ROOT/"stimuli/known-words.txt",root/"stimuli/known-words.txt")
             fresh=root/"stimuli/fresh-words.txt"
-            fresh.write_text(''.join(('human' if i<8 else 'model')+' zuvem'+chr(97+i)+'\n' for i in range(24)))
+            fresh.write_text(''.join(('fresh-animal-intent','fresh-no-intent-claude','fresh-no-intent-gpt')[i//8]+' zuvem'+chr(97+i)+'\n' for i in range(24)))
             def request(model,body,key):
                 prompt=(body.get("input") or body.get("messages"))[0]["content"]
                 text="This is fictional. It has blue fur." if "imaginary" in prompt else "I don't recognize that word."

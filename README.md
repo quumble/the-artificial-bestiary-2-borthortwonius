@@ -11,8 +11,9 @@ A continuation of [The Artificial Bestiary](https://github.com/quumble/the-artif
 - The sample design, model lineup, and generation settings are decided. See [the sample design](docs/sample-design.md).
 - The collector has been repaired after an independent review. Durable attempt accounting, immutable settings, raw-payload preservation and private stimulus verification are implemented. Testing uses synthetic local stand-ins only. No provider API call has been made by this implementation workflow.
 - The independent [GPT preregistration](docs/gpt-proposal/PREREGISTRATION_GPT.md), its exact inventories and all 32 mechanical feature families now have a scorer and analysis script. They remain a proposal until explicitly selected and frozen.
-- Claude's independent [preregistration](prereg/CLAUDE_PREREG.md) and [frozen scorer](prereg/claude_scorer.py) are preserved exactly as supplied. The scorer matches its registered SHA-256. The [review of the actual files](docs/claude-review.md) records remaining analysis and interpretation issues. Claude's five-test analysis script is still outstanding. The two independent proposals have not been merged.
-- Protocol selection, scorer/analysis code and settings must be frozen **before the first study request**. The CLI records that selection with `freeze --protocol gpt-v1`; this is not performed automatically.
+- Claude's independent [preregistration](prereg/CLAUDE_PREREG.md) and [frozen scorer](prereg/claude_scorer.py) are preserved exactly as supplied. [Amendment 1](prereg/CLAUDE_PREREG_AMENDMENT_1.md), written before collection, answers the [review](docs/claude-review.md): it fixes one scorer defect in a separately versioned file, defines the previously loose rules, and adds a sixth test. Claude's analysis script is now implemented and tested. The two proposals remain separate families.
+- **The fresh word list is not final.** Eight GPT-made words are still to be received, checked and hashed. Collection cannot start until that is done.
+- Protocol selection, scorer/analysis code and settings must be frozen **before the first study request**. The CLI records that selection with `freeze --protocol gpt-v1+claude-v1.1` (both families) or `freeze --protocol gpt-v1`; this is not performed automatically.
 
 ## Decisions
 
@@ -35,6 +36,12 @@ A continuation of [The Artificial Bestiary](https://github.com/quumble/the-artif
 - **Five repetitions per word and condition for the fresh batch, ten for the known batch.** 1,200 and 800 trials per model.
 - **A spending stop of $20 per provider** across both batches.
 
+### Agreed November 11, 2026
+
+- **Word authorship is balanced.** Eight of the sixteen Claude-made words are replaced by eight GPT-made words, chosen by the same procedure. The fresh batch is three sets of eight. Trial counts are unchanged.
+- **Stopping is per model.** A model stops when its issues exceed 5% of its closed slots in a batch, or at once if its served identifier changes. One model's stop does not affect the others.
+- **Both analysts' families are kept, separately.** Each is corrected within itself. No joint error-control claim is made.
+
 This project repeats the core design with new words, revised measurement, and standardized settings. It should not be described as an exact reproduction of every historical setting.
 
 ## What is in this repository
@@ -52,6 +59,9 @@ This project repeats the core design with new words, revised measurement, and st
 | [docs/gpt-proposal/](docs/gpt-proposal/) | Original independent GPT proposal, inventories, review and baseline reproduction checks |
 | [prereg/CLAUDE_PREREG.md](prereg/CLAUDE_PREREG.md) | Original independent Claude preregistration, unchanged |
 | [prereg/claude_scorer.py](prereg/claude_scorer.py) | Claude's frozen surface scorer, unchanged and hash-verified |
+| [prereg/CLAUDE_PREREG_AMENDMENT_1.md](prereg/CLAUDE_PREREG_AMENDMENT_1.md) | Pre-collection amendment: word sets, scorer 1.1, exact denominators, six-test family |
+| [prereg/claude_scorer_v1_1.py](prereg/claude_scorer_v1_1.py) | Scorer version 1.1, with the offer-filter defect fixed |
+| [analyze_claude.py](analyze_claude.py) | Claude's six confirmatory tests, with both scorer versions side by side |
 | [docs/claude-review.md](docs/claude-review.md) | Review of Claude's exact files, synthetic checks and remaining pre-run decisions |
 | [tests/](tests/) | Offline regression, measurement, analysis and end-to-end tests |
 | [docs/validation.md](docs/validation.md) | Test results, synthetic integration scope and remaining live-environment checks |
@@ -74,16 +84,17 @@ python run_bestiary.py run known --dry-run   # no requests, no response or priva
 
 # After protocol review and placement of the private fresh-word file and keys:
 python run_bestiary.py check                 # paid content-neutral preflight
-python run_bestiary.py freeze --protocol gpt-v1
+python run_bestiary.py freeze --protocol gpt-v1+claude-v1.1
 python run_bestiary.py run fresh
 python run_bestiary.py run known
 python run_bestiary.py status
 python analyze_bestiary.py                  # only after both batches close
+python analyze_claude.py
 ```
 
 The collector works in native Windows Python and uses no WSL. NumPy is required for the frozen analysis and its tests, not for HTTP collection. The exact Python/NumPy versions are recorded at freeze and enforced on resume. Windows process-lock code is included; development tests were run on Linux, not a Windows host.
 
-`check` uses only the compliant settings in the model table and retains the first successful check. It never switches to reasoning-on settings. Existing successful checks are reused without another paid request. Any unexpected served-model change or observed reasoning pauses collection. A run can be interrupted and resumed under identical frozen code/settings. Completed refusals, empty outputs and truncated answers are retained rather than regenerated.
+`check` uses only the compliant settings in the model table and retains the first successful check. It never switches to reasoning-on settings. Existing successful checks are reused without another paid request. During a run, a changed served model stops that model, and reasoning or malformed payloads are recorded as issues; a model stops if issues pass 5% of its closed slots. Progress prints every 15 seconds with one line per model. A run can be interrupted and resumed under identical frozen code/settings. Completed refusals, empty outputs and truncated answers are retained rather than regenerated.
 
 The $20/provider accounting includes preflight and retries. Charges uncertain after a network failure keep a conservative reservation. See the implementation protocol for documented billing reconciliation. A registered budget stop can leave missing slots and is not reopened automatically. The console shows operational counts and estimated/reserved spend, never response text.
 
@@ -91,9 +102,11 @@ All `data/`, `analysis/`, key files and the fresh-word file are ignored by Git. 
 
 ## Still open
 
-- Implement and freeze Claude's five-test analysis if that proposal is retained. Before implementation, clarify H4's equivalence decision, incomplete-data denominators and the interpretation limits in [the review](docs/claude-review.md). Settle which confirmatory analyses are adopted. If both analysts' families are retained, specify whether error control is separate by family or shared across the study.
-- Select and freeze the protocol before collection. The implemented GPT plan specifies inventories, denominators, primary contrasts, missing-data bounds and sensitivity analyses.
-- Verify the private fresh-word file matches the published hash locally. It was not available during this implementation.
+- **Receive the eight GPT-made words**, check them, fix the new fresh-word file, and record its hash in the sample design, the collector and Claude's amendment.
+- A dated note in the GPT preregistration that the no-intent set is now eight Claude-made and eight GPT-made words. Its analysis does not change.
+- Re-run the test suite on the Windows collection machine. It has only run on Linux.
+- Select and freeze the protocol before collection.
+- Verify the private fresh-word file matches the published hash locally.
 - Run content-neutral preflight on the investigator's accounts. Documentation lists the endpoints, but live access and accepted payloads have not been verified here.
 - Provider cutoff metadata are recorded in the [review](docs/gpt-proposal/REVIEW_GPT.md). They do not establish exposure to the original repository; known/fresh differences cannot isolate contamination.
 

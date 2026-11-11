@@ -82,13 +82,57 @@ class CollectorTests(unittest.TestCase):
     def test_snapshot_alias_then_drift(self):
         self.collector.request=lambda model,body,key:response(model,model=model["id"]+"-2026-09-01")
         self.collector.one(self.model,"preflight",self.trial)
-        with self.assertRaises(r.StudyError):self.collector.one(self.model,"fresh",self.trial,expected=self.model["id"])
+        # In a study phase a changed identifier closes the slot and stops that lane only.
+        self.assertEqual(self.collector.one(self.model,"fresh",self.trial,expected=self.model["id"]),"identity")
+        self.assertTrue(self.collector.lane_should_stop(self.model,"fresh","identity"))
+        self.assertFalse(self.collector.ledger.get("halt"))
+        self.assertEqual(self.collector.one(self.model,"fresh",dict(trial_id="next",prompt="Describe a zuvem."),expected=self.model["id"]),"lane_stopped")
+        other=r.BY_ID["gpt-6-luna"]
+        self.collector.request=lambda model,body,key:response(model)
+        self.assertEqual(self.collector.one(other,"fresh",self.trial,expected=other["id"]),"terminal")
 
     def test_reasoning_is_persistent_halt_and_no_fallback(self):
         self.collector.request=lambda model,body,key:response(model,usage=dict(input_tokens=1,output_tokens=2,output_tokens_details=dict(reasoning_tokens=1)))
-        with self.assertRaises(r.StudyError):self.collector.one(self.model,"fresh",self.trial)
+        with self.assertRaises(r.StudyError):self.collector.one(self.model,"preflight",self.trial)
         self.assertTrue(self.collector.ledger.get("halt"))
         self.assertTrue(all(r.payload(m,"ready").get("max_output_tokens",r.payload(m,"ready").get("max_tokens"))==1024 for m in r.MODELS))
+
+    def test_study_issues_are_flagged_and_lane_stops_past_five_percent(self):
+        reasoning=dict(usage=dict(input_tokens=1,output_tokens=2,output_tokens_details=dict(reasoning_tokens=1)))
+        bad=set(range(0,200,25))                                  # 8 of the first 200 = 4%, under the rule
+        state=dict(n=0)
+        def request(model,body,key):
+            i=state["n"];state["n"]+=1
+            return response(model,**reasoning) if i in bad or i>=200 else response(model)
+        self.collector.request=request
+        outcomes=[]
+        for i in range(260):
+            trial=dict(trial_id="t%03d"%i,prompt="Describe a zuvem.")
+            outcome=self.collector.one(self.model,"fresh",trial)
+            outcomes.append(outcome)
+            if outcome in {"issue","identity"} and self.collector.lane_should_stop(self.model,"fresh",outcome):
+                break
+        self.assertFalse(self.collector.ledger.get("halt"))
+        self.assertEqual(outcomes[:200].count("issue"),8)          # tolerated, run continued
+        self.assertEqual(outcomes[0],"issue")                      # an early issue does not stop a lane
+        closed=len(outcomes);issues=outcomes.count("issue")
+        self.assertTrue(issues>0.05*closed and (issues-1)<=0.05*(closed-1))   # stopped at the first crossing
+        stop=self.collector.ledger.get("lane_stopped:"+self.model["id"])
+        self.assertIn("5%",stop["reason"])
+        calls=state["n"]
+        self.assertEqual(self.collector.one(self.model,"fresh",dict(trial_id="t000",prompt="Describe a zuvem.")),"lane_stopped")
+        self.assertEqual(state["n"],calls)                         # nothing regenerated
+        flagged=[json.loads(row["fields"]) for row in self.collector.ledger.rows("fresh",self.model["id"],"t000")]
+        self.assertEqual(flagged[0]["issue"],"reasoning_observed_in_reasoning_off_run")
+        self.assertFalse(flagged[0]["valid"])
+
+    def test_issue_slot_is_closed_across_restart_and_other_errors_count(self):
+        self.collector.request=lambda model,body,key:(400,json.dumps({"error":{"message":"bad"}}),{})
+        self.assertEqual(self.collector.one(self.model,"fresh",self.trial),"issue")
+        self.collector.request=lambda model,body,key:response(model)
+        self.assertEqual(self.collector.one(self.model,"fresh",self.trial),"issue_closed")
+        self.collector.request=lambda model,body,key:(401,json.dumps({"error":{"message":"key"}}),{})
+        with self.assertRaises(r.StudyError):self.collector.one(self.model,"fresh",dict(trial_id="auth",prompt="Describe a zuvem."))
 
     def test_timeout_reservation_and_retry_limit_survive_restart(self):
         self.collector.request=lambda *args: (_ for _ in ()).throw(TimeoutError())
@@ -145,6 +189,14 @@ class CollectorTests(unittest.TestCase):
         with self.assertRaises(r.StudyError):r.load_words(self.root,"fresh")
         with patch.dict(r.EXPECTED_HASH,{"fresh":r.digest(path.read_bytes())}):
             with self.assertRaises(r.StudyError):r.load_words(self.root,"fresh")
+        path.write_text(''.join(('human' if i<8 else 'model')+' zuvem'+chr(97+i)+'\n' for i in range(24)))   # the old 8/16 layout
+        with patch.dict(r.EXPECTED_HASH,{"fresh":r.digest(path.read_bytes())}):
+            with self.assertRaises(r.StudyError):r.load_words(self.root,"fresh")
+        path.write_text(''.join(('fresh-animal-intent','fresh-no-intent-claude','fresh-no-intent-gpt')[i//8]+' zuvem'+chr(97+i)+'\n' for i in range(24)))
+        with patch.dict(r.EXPECTED_HASH,{"fresh":r.digest(path.read_bytes())}):
+            words,_=r.load_words(self.root,"fresh")
+        self.assertEqual([w[0] for w in words].count("fresh-no-intent"),16)
+        self.assertEqual({w[2] for w in words},set(r.FRESH_SETS))
 
     def test_process_lock_rejects_second_process(self):
         script="from pathlib import Path; import run_bestiary as r;\nwith r.process_lock(Path(__import__('sys').argv[1])): pass"
@@ -166,7 +218,7 @@ class CollectorTests(unittest.TestCase):
         (self.root/"stimuli").mkdir(exist_ok=True)
         shutil.copyfile(r.ROOT/"stimuli/known-words.txt",self.root/"stimuli/known-words.txt")
         fresh=self.root/"stimuli/fresh-words.txt"
-        fresh.write_text(''.join(('human' if i<8 else 'model')+' zuvem'+chr(97+i)+'\n' for i in range(24)))
+        fresh.write_text(''.join(('fresh-animal-intent','fresh-no-intent-claude','fresh-no-intent-gpt')[i//8]+' zuvem'+chr(97+i)+'\n' for i in range(24)))
         with patch.dict(r.EXPECTED_HASH,{"fresh":r.digest(fresh.read_bytes())}),contextlib.redirect_stdout(io.StringIO()):
             self.collector.check(r.MODELS)
             self.collector.freeze("gpt-v1")

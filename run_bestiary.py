@@ -28,6 +28,8 @@ EXPECTED_HASH = {"fresh": "ba900e410b907a8dc02cab7835a3aaace5473eea72402d40b5f4b
 REALITIES, CATEGORIES = ["real", "imaginary", "type of"], ["animal", "object", "idea"]
 RETRY_STATUS = {408, 409, 425, 429, 500, 502, 503, 504, 529}
 PREFLIGHT = "Reply with the single word: ready."
+ISSUE_RATE, ISSUE_MIN = 0.05, 200   # a model lane stops when issues exceed 5% of its closed slots, once 200 are closed
+FRESH_SETS = {"fresh-animal-intent": "fresh-animal-intent", "fresh-no-intent-claude": "fresh-no-intent", "fresh-no-intent-gpt": "fresh-no-intent"}
 MODELS = [
     dict(id="claude-sonnet-4-6", provider="anthropic", role="historical", price_in=3, price_out=15, params={"temperature": 1.0}),
     dict(id="claude-haiku-4-5", provider="anthropic", role="historical", price_in=1, price_out=5, params={"temperature": 1.0}),
@@ -39,6 +41,9 @@ MODELS = [
     dict(id="gpt-6-luna", provider="openai", role="current", price_in=.1, price_out=.5, params={"reasoning": {"effort": "none"}, "temperature": 1.0}),
 ]
 BY_ID = {m["id"]: m for m in MODELS}
+# Extra files frozen for each selectable protocol. Both keep the GPT analysis; the second adds Claude's amended family.
+CLAUDE_FILES = ["prereg/CLAUDE_PREREG_AMENDMENT_1.md", "prereg/claude_scorer_v1_1.py", "analyze_claude.py"]
+PROTOCOLS = {"gpt-v1": [], "gpt-v1+claude-v1.1": CLAUDE_FILES}
 KEY_NAMES = {"openai": "OPENAI_API_KEY", "anthropic": "ANTHROPIC_API_KEY"}
 
 
@@ -132,10 +137,10 @@ def load_words(root, batch):
         raise StudyError("Duplicate normalized stimulus.")
     counts = {s: sum(s == t for t, _ in words) for s, _ in words}
     if batch == "fresh":
-        if sorted(counts.values()) != [8, 16]:
-            raise StudyError("Fresh stimuli require exactly two sets of 8 and 16.")
-        # Private committed bytes fix membership: eight is human animal-intent.
-        mapping = {s: "fresh-animal-intent" if n == 8 else "fresh-no-intent" for s, n in counts.items()}
+        if counts != {label: 8 for label in FRESH_SETS}:
+            raise StudyError("Fresh stimuli require eight words under each of: " + ", ".join(FRESH_SETS))
+        # Both model-authored sets are analysed as no-intent; the original label keeps the author.
+        mapping = dict(FRESH_SETS)
     else:
         if counts != {"known-animal-intent": 4, "known-no-intent": 4}:
             raise StudyError("Known stimuli require the committed four/four labels.")
@@ -317,10 +322,14 @@ class Ledger:
         with self.lock, self.db:
             if self.get("halt"):
                 raise StudyError("Persistent protocol halt: "+self.get("halt"))
+            if phase != "preflight" and self.get("lane_stopped:"+model["id"]):
+                return None, "lane_stopped"
             old = self.rows(phase, model["id"], trial["trial_id"])
             h = digest(canonical(body).encode())
             if any(r["request_hash"] != h or r["trial"] != canonical(trial) for r in old):
                 raise StudyError("Stored trial/request differs from frozen trial.")
+            if any(r["fields"] and json.loads(r["fields"]).get("issue") for r in old):
+                return None, "issue_closed"
             terminal = [r for r in old if r["fields"] and json.loads(r["fields"]).get("terminal")]
             if terminal:
                 if not json.loads(terminal[0]["fields"]).get("valid"):
@@ -352,9 +361,13 @@ class Ledger:
             liability = token_cost(model, fields["input_tokens"], fields["output_tokens"]) if known else row["reservation"]
             if known and (fields["input_tokens"] > row["input_bound"] or liability > row["reservation"]):
                 fields["protocol_violation"] = "usage_exceeded_reservation"
-            if fields.get("protocol_violation"):
-                self.put("halt", fields["protocol_violation"])
+            violation = fields.get("protocol_violation")
+            if violation:
                 fields["valid"] = False
+                if row["phase"] == "preflight" or violation == "usage_exceeded_reservation":
+                    self.put("halt", violation)
+                else:
+                    fields["issue"] = fields.get("issue") or violation
             safe = {k: v for k, v in headers.items() if k.lower() in {"request-id", "x-request-id", "retry-after"}}
             self.db.execute('''UPDATE attempts SET finished=?,liability=?,state=?,http_status=?,raw=?,response_headers=?,
                 fields=?,latency=? WHERE attempt_id=?''', (now(), liability, "finished" if known else "ambiguous",
@@ -375,6 +388,90 @@ class Collector:
         self.keys = keys if keys is not None else load_keys(root)
         self.ledger, self.stop = Ledger(root), threading.Event()
         self.wait = wait if wait is not None else self.stop.wait
+        self.counts, self.count_lock = {}, threading.Lock()
+
+    def tally(self, phase, model_id):
+        return self.counts.setdefault((phase, model_id), dict(good=0, issues=0, cut=0, gave_up=0, new=0))
+
+    def load_counts(self, batch):
+        """Rebuild the per-model counters for one batch from the durable ledger."""
+        with self.count_lock:
+            for model in MODELS:
+                self.counts[(batch, model["id"])] = dict(good=0, issues=0, cut=0, gave_up=0, new=0)
+            slots = {}
+            for row in self.ledger.rows(batch):
+                slots.setdefault((row["model"], row["trial_id"]), []).append(json.loads(row["fields"]) if row["fields"] else {})
+            for (model_id, _), attempts in slots.items():
+                c = self.tally(batch, model_id)
+                if any(f.get("issue") for f in attempts):
+                    c["issues"] += 1
+                elif any(f.get("terminal") and f.get("valid") for f in attempts):
+                    c["good"] += 1
+                    c["cut"] += any(f.get("terminal") and f.get("truncated") for f in attempts)
+                elif len(attempts) >= 6:
+                    c["gave_up"] += 1
+
+    def observe(self, model, phase, outcome, fields):
+        if phase == "preflight":
+            return
+        with self.count_lock:
+            c = self.tally(phase, model["id"])
+            c["new"] += 1
+            if outcome in {"issue", "identity"}:
+                c["issues"] += 1
+            elif outcome == "exhausted":
+                c["gave_up"] += 1
+            else:
+                c["good"] += 1
+                c["cut"] += bool(fields.get("truncated"))
+
+    def lane_should_stop(self, model, phase, outcome):
+        """Identity change stops the lane at once. Other issues stop it past ISSUE_RATE of closed slots."""
+        with self.count_lock:
+            c = dict(self.tally(phase, model["id"]))
+        closed = c["good"] + c["issues"]
+        if outcome == "identity":
+            reason = "returned model identifier changed"
+        elif closed >= ISSUE_MIN and c["issues"] > ISSUE_RATE * closed:
+            reason = "issues exceeded %d%% of closed slots (%d of %d)" % (round(ISSUE_RATE*100), c["issues"], closed)
+        else:
+            return False
+        with self.ledger.lock, self.ledger.db:
+            if not self.ledger.get("lane_stopped:"+model["id"]):
+                self.ledger.put("lane_stopped:"+model["id"], dict(reason=reason, phase=phase, stopped_utc=now(), issues=c["issues"], closed=closed))
+        return True
+
+    def progress(self, batch, doc, started, final=False):
+        def clock(seconds):
+            seconds = int(max(0, seconds))
+            return "%dh%02dm" % (seconds//3600, seconds % 3600//60) if seconds >= 3600 else "%dm%02ds" % (seconds//60, seconds % 60)
+        with self.count_lock:
+            counts = {m["id"]: dict(self.tally(batch, m["id"])) for m in MODELS}
+        planned = {m["id"]: len(doc["batches"][batch][m["id"]]) for m in MODELS}
+        closed = {k: c["good"]+c["issues"]+c["gave_up"] for k, c in counts.items()}
+        stopped = {m["id"]: self.ledger.get("lane_stopped:"+m["id"]) for m in MODELS}
+        budget = {p: self.ledger.get("budget_stopped:"+p) for p in KEY_NAMES}
+        live = [k for k in planned if not stopped[k] and not budget[BY_ID[k]["provider"]]]
+        total, done, new = sum(planned.values()), sum(closed.values()), sum(c["new"] for c in counts.values())
+        elapsed = time.monotonic() - started
+        left = sum(planned[k]-closed[k] for k in live)
+        eta = clock(left*elapsed/new) if new and left and not final else "--"
+        print("[%s] %s: %d/%d slots closed (%.0f%%)   running %s   time left %s"
+              % (time.strftime("%H:%M:%S"), batch, done, total, 100*done/total if total else 100, clock(elapsed), eta))
+        print("           " + "   ".join("%s $%.2f of $%d" % (p, self.ledger.total(p)/USD, BUDGET//USD) for p in KEY_NAMES))
+        for model in MODELS:
+            k, c = model["id"], counts[model["id"]]
+            filled = int(20*closed[k]/planned[k]) if planned[k] else 20
+            note = ""
+            if stopped[k]:
+                note = "   STOPPED: " + stopped[k]["reason"]
+            elif budget[model["provider"]]:
+                note = "   STOPPED: budget"
+            elif closed[k] >= planned[k]:
+                note = "   done"
+            print("  %-18s [%s] %5d/%-5d cut off %-3d issues %-3d gave up %-3d%s"
+                  % (k, "#"*filled + "-"*(20-filled), closed[k], planned[k], c["cut"], c["issues"], c["gave_up"], note))
+        print(flush=True)
 
     def one(self, model, phase, trial, expected=None):
         key = self.keys.get(KEY_NAMES[model["provider"]])
@@ -400,17 +497,29 @@ class Collector:
                     fields["protocol_violation"] = "returned_model_changed"
                 if (fields.get("reasoning_tokens") or 0) > 0 or fields.get("thinking_blocks", 0):
                     fields["protocol_violation"] = "reasoning_observed_in_reasoning_off_run"
+            if phase != "preflight" and not fields.get("protocol_violation"):
+                if fields.get("terminal") and not fields.get("valid"):
+                    fields["issue"] = "schema_error"            # unexpected content type or payload shape
+                elif not fields.get("terminal") and not fields.get("retryable") and status not in {401, 403}:
+                    fields["issue"] = "hard_error:"+str(fields.get("error", "unknown"))
             self.ledger.finish(aid, model, status, raw, headers, fields, time.monotonic()-t0)
-            if fields.get("protocol_violation"):
-                raise StudyError("Protocol mismatch recorded: "+fields["protocol_violation"])
+            violation = fields.get("protocol_violation")
+            if violation and (phase == "preflight" or violation == "usage_exceeded_reservation"):
+                raise StudyError("Protocol mismatch recorded: "+violation)
+            if fields.get("issue"):                              # recorded, slot closed, not regenerated
+                outcome = "identity" if fields["issue"] == "returned_model_changed" else "issue"
+                self.observe(model, phase, outcome, fields)
+                return outcome
             if fields.get("terminal"):
                 if not fields.get("valid"):
                     raise StudyError("Terminal schema requires review; raw payload preserved.")
+                self.observe(model, phase, "terminal", fields)
                 return "terminal"
             if not fields.get("retryable"):
                 raise StudyError("Request failed without changing settings: "+fields.get("error", "unknown"))
             count = len(self.ledger.rows(phase, model["id"], trial["trial_id"]))
             if count >= maximum:
+                self.observe(model, phase, "exhausted", fields)
                 return "exhausted"
             retry = next((v for k, v in headers.items() if k.lower() == "retry-after"), None)
             try:
@@ -440,12 +549,12 @@ class Collector:
         self.export()
 
     def freeze(self, protocol):
-        if protocol != "gpt-v1":
-            raise StudyError("Only gpt-v1 is implemented; Claude's hypothesis-analysis script is still outstanding.")
+        if protocol not in PROTOCOLS:
+            raise StudyError("Unknown protocol: "+protocol)
         import numpy
         paths = ["run_bestiary.py", "bestiary_scorer.py", "analyze_bestiary.py", "requirements-analysis.txt", "docs/implementation-protocol.md",
                  "docs/gpt-proposal/PREREGISTRATION_GPT.md", "docs/gpt-proposal/MEASUREMENT_SPEC_GPT.md", "docs/gpt-proposal/inventories-gpt-v1.json",
-                 "prereg/CLAUDE_PREREG.md", "prereg/claude_scorer.py"]
+                 "prereg/CLAUDE_PREREG.md", "prereg/claude_scorer.py"] + PROTOCOLS[protocol]
         test_paths = [str(p.relative_to(self.root)) for p in sorted((self.root/"tests").glob("test_*.py"))]
         if not test_paths:
             raise StudyError("The source test suite must be present before freezing.")
@@ -474,7 +583,7 @@ class Collector:
     def verify_freeze(self):
         doc = self.ledger.get("freeze")
         if not doc:
-            raise StudyError("Review protocol, then freeze --protocol gpt-v1 before collection.")
+            raise StudyError("Review protocol, then freeze --protocol <name> before collection.")
         import numpy
         if doc["python"] != sys.version or doc["numpy"] != numpy.__version__:
             raise StudyError("Runtime differs from frozen manifest.")
@@ -497,6 +606,8 @@ class Collector:
         if self.ledger.get("collection_closed:"+batch):
             print(batch, "already closed; no requests")
             return
+        self.load_counts(batch)
+        started = time.monotonic()
         def lane(model):
             queue, lock = iter(doc["batches"][batch][model["id"]]), threading.Lock()
             def worker():
@@ -505,7 +616,10 @@ class Collector:
                         trial = next(queue, None)
                     if trial is None:
                         return
-                    if self.one(model, batch, trial, doc["settings"][model["id"]]["model_returned"]) in {"budget", "stopped"}:
+                    outcome = self.one(model, batch, trial, doc["settings"][model["id"]]["model_returned"])
+                    if outcome in {"budget", "stopped", "lane_stopped"}:
+                        return
+                    if outcome in {"issue", "identity"} and self.lane_should_stop(model, batch, outcome):
                         return
             with futures.ThreadPoolExecutor(max_workers=2) as pool:
                 tasks = [pool.submit(worker) for _ in range(2)]
@@ -524,7 +638,7 @@ class Collector:
                     done, pending = futures.wait(pending, timeout=15, return_when=futures.FIRST_EXCEPTION)
                     for task in done:
                         task.result()
-                    self.status()
+                    self.progress(batch, doc, started)
             except BaseException as exc:
                 failure = exc
                 self.stop.set()
@@ -534,6 +648,8 @@ class Collector:
         with self.ledger.lock, self.ledger.db:
             self.ledger.put("collection_closed:"+batch, dict(closed_utc=now()))
         self.export()
+        print("---- %s closed ----" % batch)
+        self.progress(batch, doc, started, final=True)
         self.status()
 
     def export(self):
@@ -570,7 +686,12 @@ class Collector:
         for batch in REPS:
             fields = [json.loads(r["fields"]) for r in rows if r["phase"] == batch and r["fields"]]
             print(batch, "valid terminal:", sum(f.get("valid", False) and f.get("terminal", False) for f in fields),
-                  "cap-truncated:", sum(f.get("truncated", False) for f in fields), "attempts:", sum(r["phase"] == batch for r in rows))
+                  "cap-truncated:", sum(f.get("truncated", False) for f in fields), "issues:", sum(bool(f.get("issue")) for f in fields),
+                  "attempts:", sum(r["phase"] == batch for r in rows))
+        for model in MODELS:
+            lane = self.ledger.get("lane_stopped:"+model["id"])
+            if lane:
+                print(model["id"], "lane stopped:", lane["reason"])
 
 
 def main():
@@ -579,7 +700,7 @@ def main():
     check = sub.add_parser("check", help="paid content-neutral preflight, immutable compliant settings")
     check.add_argument("--models", nargs="+", choices=list(BY_ID))
     freeze = sub.add_parser("freeze", help="explicit protocol selection, code/settings/private stimulus freeze")
-    freeze.add_argument("--protocol", required=True, choices=["gpt-v1"])
+    freeze.add_argument("--protocol", required=True, choices=list(PROTOCOLS))
     run = sub.add_parser("run")
     run.add_argument("batch", choices=list(REPS))
     run.add_argument("--dry-run", action="store_true")
