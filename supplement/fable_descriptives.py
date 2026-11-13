@@ -4,7 +4,8 @@
 Produces the descriptive summaries listed in section 7 of prereg/CLAUDE_PREREG.md
 that the frozen analyzer (analyze_claude.py) did not generate.
 
-Status: written on November 12, 2026, AFTER the confirmatory results were known.
+Status: written on November 12, 2026; reporting revision November 13, 2026.
+Both versions were written AFTER the confirmatory results were known.
 The list of summaries was registered before collection; this code was not frozen.
 Nothing here is confirmatory and no p-values are computed. Intervals are 95%
 percentile intervals from a word bootstrap (10,000 draws, whole words resampled
@@ -15,7 +16,7 @@ Usage:
 `--orig` is a checkout of quumble/the-artificial-bestiary (commit 7fec51a) and is
 only needed for the historical stability check. Requires NumPy.
 """
-import argparse, collections, csv, importlib.util, json, re, statistics, sys
+import argparse, collections, csv, importlib.util, json, re, sys
 from pathlib import Path
 
 import numpy as np
@@ -23,6 +24,7 @@ import numpy as np
 ROOT = Path(__file__).resolve().parent.parent
 SCORER = ROOT / "prereg" / "claude_scorer_v1_1.py"
 DRAWS, SEED = 10000, 20261112
+REVISION = "2 (2026-11-13)"
 MODELS = ["claude-sonnet-4-6", "claude-haiku-4-5", "claude-sonnet-5-5", "claude-haiku-5-5",
           "gpt-5.4-mini", "gpt-5.4-nano", "gpt-6-sol", "gpt-6-luna"]
 HISTORICAL = MODELS[:2] + MODELS[4:6]
@@ -35,6 +37,7 @@ IMAG = [c for c in CONDS if c.startswith("imaginary_")]
 PRESUP = REAL + TYPE
 OUT = {"U": "unmarked_description", "N": "nonrec_no_description", "E": "desc_form"}
 EXPOSURE = re.compile(r"bestiary|chesterton", re.I)
+ORDERS = ("definition_first", "cue_first", "definition_only", "cue_only", "neither")
 
 
 def frame(cond):
@@ -96,24 +99,77 @@ class Boot:
 
     def mean(self, values_by_group):
         """values_by_group: list of 1-D arrays, one per source group; words weighted equally."""
+        return self.contrast([(1.0, values_by_group)])
+
+    def mean_draws(self, values_by_group):
         allv = np.concatenate(values_by_group)
         draws = np.zeros(DRAWS)
         for v in values_by_group:
             idx = self.rng.integers(0, len(v), size=(DRAWS, len(v)))
             draws += v[idx].sum(axis=1)
         draws /= len(allv)
-        return est(allv.mean(), draws)
+        return float(allv.mean()), draws
 
     def diff(self, a, b):
-        """Two independent word sets: mean(a) - mean(b)."""
-        da = a[self.rng.integers(0, len(a), size=(DRAWS, len(a)))].mean(axis=1)
-        db = b[self.rng.integers(0, len(b), size=(DRAWS, len(b)))].mean(axis=1)
-        return est(a.mean() - b.mean(), da - db)
+        """Independent word sets, each supplied as a list of source-group arrays."""
+        return self.contrast([(1.0, a), (-1.0, b)])
+
+    def contrast(self, terms):
+        """Weighted means of independent banks; preserve each bank's source counts."""
+        point, draws = 0.0, np.zeros(DRAWS)
+        for weight, groups in terms:
+            value, sample = self.mean_draws(groups)
+            point += weight * value
+            draws += weight * sample
+        return est(point, draws)
+
+    def weights(self, groups):
+        """Whole-word multiplicities, with the original word count in every source."""
+        return np.concatenate([self.rng.multinomial(len(g), np.full(len(g), 1 / len(g)), size=DRAWS)
+                               for g in groups], axis=1)
+
+    def median(self, groups):
+        """Response-level median, resampling complete words, including cue-free words.
+
+        Each group contains one response-value array per word. Empty arrays are
+        retained for conditional cue medians. Undefined draws are counted, not
+        replaced by zero; intervals condition on draws with at least one value.
+        """
+        words = [np.asarray(v) for g in groups for v in g]
+        values = np.concatenate(words)
+        if not len(values):
+            return conditional_est(None, [])
+        owner = np.repeat(np.arange(len(words)), [len(v) for v in words])
+        order = np.argsort(values)
+        values, owner = values[order], owner[order]
+        cumulative = np.cumsum(self.weights(groups)[:, owner], axis=1)
+        total = cumulative[:, -1]
+        valid = total > 0
+        cumulative, total = cumulative[valid], total[valid]
+        low = (cumulative > ((total - 1) // 2)[:, None]).argmax(axis=1)
+        high = (cumulative > (total // 2)[:, None]).argmax(axis=1)
+        draws = (values[low] + values[high]) / 2
+        return conditional_est(float(np.median(values)), draws)
+
+    def ratio(self, groups):
+        """Ratio of totals from paired per-word numerator/denominator columns."""
+        values = np.concatenate(groups)
+        if not values[:, 1].sum():
+            return conditional_est(None, [])
+        totals = self.weights(groups) @ values
+        valid = totals[:, 1] > 0
+        return conditional_est(values[:, 0].sum() / values[:, 1].sum(),
+                               totals[valid, 0] / totals[valid, 1])
 
 
 def est(point, draws):
     lo, hi = np.percentile(draws, [2.5, 97.5])
     return {"estimate": round(float(point), 4), "ci95": [round(float(lo), 4), round(float(hi), 4)]}
+
+
+def conditional_est(point, draws):
+    result = est(point, draws) if len(draws) else {"estimate": point, "ci95": None}
+    return {**result, "undefined_draws": DRAWS - len(draws)}
 
 
 class Cells:
@@ -161,12 +217,13 @@ def build(rows, original):
         row = {"model": mod}
         row["H1 E imaginary-real"] = m("fresh", lambda w: v(w, IMAG, "E") - v(w, REAL, "E"))
         row["H2 N type_of-real"] = m("fresh", lambda w: v(w, TYPE, "N") - v(w, REAL, "N"))
-        g = lambda srcs, conds, k, b="fresh": np.concatenate(c.groups(b, lambda w: v(w, conds, k, b), srcs))
+        g = lambda srcs, conds, k, b="fresh": c.groups(b, lambda w: v(w, conds, k, b), srcs)
         row["H3 U animal-no_intent"] = boot.diff(g({animal}, PRESUP, "U"), g({claude, gpt}, PRESUP, "U"))
         pn = PRESUP + ["neutral"]
-        strata = [boot.diff(g({ks}, pn, "N", "known"), g(fs, pn, "N"))
-                  for ks, fs in (("known-animal-intent", {animal}), ("known-no-intent", {claude, gpt}))]
-        row["H4 N known-fresh (intent-standardised; point only)"] = {"estimate": round((strata[0]["estimate"] + strata[1]["estimate"]) / 2, 4)}
+        terms = []
+        for ks, fs in (("known-animal-intent", {animal}), ("known-no-intent", {claude, gpt})):
+            terms += [(0.5, g({ks}, pn, "N", "known")), (-0.5, g(fs, pn, "N"))]
+        row["H4 N known-fresh (intent-standardised)"] = boot.contrast(terms)
         row["H5 U presupposition (level)"] = m("fresh", lambda w: v(w, PRESUP, "U"))
         row["H6 N claude_made-gpt_made"] = boot.diff(g({claude}, pn, "N"), g({gpt}, pn, "N"))
         t.append(row)
@@ -178,14 +235,21 @@ def build(rows, original):
     for r in rows:
         by[(r["batch"], r["model"], frame(r["condition"]))].append(r)
     for (b, mod, f), rs in sorted(by.items(), key=lambda kv: (kv[0][0], MODELS.index(kv[0][1]), FRAMES.index(kv[0][2]))):
-        order = collections.Counter(r["def_cue_order"] for r in rs)
-        fracs = [r["first_cue_frac"] for r in rs if r["first_cue_frac"] != ""]
+        by_word = collections.defaultdict(list)
+        for r in rs:
+            by_word[r["word"]].append(r)
+        def response_groups(key, conditional=False):
+            groups = collections.defaultdict(list)
+            for w, src in sorted(c.words[b].items()):
+                groups[src].append(np.array([r[key] for r in by_word[w]
+                                             if not conditional or r[key] != ""]))
+            return [v for _, v in sorted(groups.items())]
         conds = [x for x in CONDS if frame(x) == f]
         t.append({"batch": b, "model": mod, "frame": f, "n": len(rs),
-                  "order": {k: round(order[k] / len(rs), 4) for k in ("definition_first", "cue_first", "definition_only", "cue_only", "neither")},
-                  "first_cue_frac_median": round(statistics.median(fracs), 4) if fracs else None,
+                  "order": {k: m(b, lambda w, k=k: np.mean([r["def_cue_order"] == k for r in by_word[w]])) for k in ORDERS},
+                  "first_cue_frac_median": boot.median(response_groups("first_cue_frac", conditional=True)),
                   "words_mean": m(b, lambda w: c.value(b, mod, w, conds, "n_words")),
-                  "words_median": statistics.median(r["n_words"] for r in rs),
+                  "words_median": boot.median(response_groups("n_words")),
                   "context_request": m(b, lambda w: c.value(b, mod, w, conds, "any_context")),
                   "offer": m(b, lambda w: c.value(b, mod, w, conds, "any_offer"))})
     res["form"] = t
@@ -198,7 +262,14 @@ def build(rows, original):
             u = [r for r in rs if r["U"]]
             h = [r for r in u if r["any_reality"]]
             hits += [{"batch": b, "model": mod, "trial_id": r["trial_id"]} for r in h]
-            t.append({"batch": b, "model": mod, "real_trials": len(rs), "unmarked": len(u), "with_reality_wording": len(h)})
+            by_word = collections.defaultdict(list)
+            for r in rs:
+                by_word[r["word"]].append(r)
+            counts = c.groups(b, lambda w: [sum(r["U"] and r["any_reality"] for r in by_word[w]),
+                                            sum(r["U"] for r in by_word[w])])
+            t.append({"batch": b, "model": mod, "real_trials": len(rs), "unmarked": len(u), "with_reality_wording": len(h),
+                      "unmarked_words": len({r["word"] for r in u}),
+                      "reality_given_unmarked": boot.ratio(counts)})
     res["reality_wording"] = {"table": t, "trials": hits}
 
     # 7. Exposure strings
@@ -225,18 +296,23 @@ def build(rows, original):
                     words = sorted(o.words["original"])
                     old = np.array([o.value("original", mod, w, conds, k) for w in words])
                     new = np.array([c.value("known", mod, w, conds, k) for w in words])
+                    differences = dict(zip(words, new - old))
                     t.append({"model": mod, "frame": f, "outcome": k, "original": round(float(old.mean()), 4),
-                              "known_batch": round(float(new.mean()), 4), "change": boot.mean([new - old])})
+                              "known_batch": round(float(new.mean()), 4),
+                              "change": boot.mean(c.groups("known", lambda w: differences[w]))})
         res["historical_stability"] = t
     return res
 
 
-def fmt(e, signed=False):
-    if e is None:
-        return ""
-    s = ("{:+.2f}" if signed else "{:.2f}").format(e["estimate"])
-    if "ci95" in e:
-        s += (" [{:+.2f}, {:+.2f}]" if signed else " [{:.2f}, {:.2f}]").format(*e["ci95"])
+def fmt(e, signed=False, digits=2):
+    if e is None or e["estimate"] is None:
+        return "not estimable"
+    form = "{:" + ("+" if signed else "") + "." + str(digits) + "f}"
+    s = form.format(e["estimate"])
+    if e.get("ci95") is not None:
+        s += (" [" + form + ", " + form + "]").format(*e["ci95"])
+    if e.get("undefined_draws", 0):
+        s += "*"
     return s
 
 
@@ -250,57 +326,76 @@ def markdown(res, check):
          "**Post hoc. Not confirmatory.** These are the descriptive summaries listed in section 7 of "
          "`prereg/CLAUDE_PREREG.md`. The frozen analyzer did not produce them, so they were generated on "
          "November 12, 2026 by `supplement/fable_descriptives.py`, after the confirmatory results were known. "
-         "The list of summaries was registered before collection. The code that makes them was not frozen.\n",
+          "The list of summaries was registered before collection. The code that makes them was not frozen. "
+          "Reporting revision " + REVISION + " adds missing intervals and corrects resampling and exposure wording. "
+          "See [the revision record](../REPORTING_REVISION.md).\n",
          "- Scorer: `prereg/claude_scorer_v1_1.py`, unchanged. " + check,
          "- U is a description form with no matched cue. N is nonrecognition with no description form. E is any description form. "
          "They are surface measures, not accuracy judgments.",
-         "- Brackets are unadjusted 95% word-bootstrap intervals (10,000 draws, words resampled within source group). No tests are run.",
+          "- Brackets are unadjusted 95% word-bootstrap intervals (10,000 draws). Fresh words are resampled within their three source groups; "
+          "known words within their two intent groups. A sampled word retains all its responses. Historical changes keep the old/new pair together. "
+          "H4 combines known-minus-fresh differences with equal intent weights in every draw. No tests are run.",
+          "- Cue-position medians condition on responses with a matched cue; reality-wording rates condition on U. "
+          "Word clusters with no qualifying response are retained in resampling. An asterisk marks intervals conditional on defined draws; "
+          "the number of undefined draws is in the JSON. If the observed denominator is zero, the result is not estimable, not zero. "
+          "Observed match counts are census totals of this corpus, not population estimates.",
          "- Per-model intervals rest on 24 fresh or 8 known words and are wide. Absolute U rates are not comparable across providers.",
          "- Full per-condition and per-category tables are in `descriptives.json`.\n"]
+    p.append("## 1. U, N and E by model and framing\n")
     for b, title in (("fresh", "Fresh words"), ("known", "Previously published words")):
-        p.append("## 1. U, N and E by model and framing: " + title + "\n")
+        p.append("### " + title + "\n")
         body = []
         for r in res["rates"]:
             if r["batch"] == b and r["cell"].startswith("frame:"):
                 body.append([r["model"], r["cell"][6:]] + [fmt(r[k]) for k in OUT])
         p.append(table(["Model", "Framing", "U", "N", "E"], body))
     p.append("## 2. Confirmatory contrasts, model by model\n")
-    p.append("Fresh batch, except H4, which uses both. H4 and H5 are contrasts between model groups, so each model's "
-             "contribution is shown: for H4 the known-minus-fresh difference in N, for H5 the level of U.\n")
+    p.append("Fresh batch, except H4, which uses both. H4, H5 and H6 compare model groups, so each model's "
+             "component is shown: for H4 the intent-standardised known-minus-fresh difference in N, for H5 the level of U, "
+             "and for H6 the Claude-origin-minus-GPT-origin difference in N. These components are not separate confirmatory tests.\n")
     keys = [k for k in res["contrasts_by_model"][0] if k != "model"]
     p.append(table(["Model"] + keys, [[r["model"]] + [fmt(r[k], signed=not k.startswith("H5")) for k in keys] for r in res["contrasts_by_model"]]))
     p.append("## 3. Definition and cue order, length, context requests and offers: fresh words\n")
-    p.append("Order columns are shares of responses. \"First cue\" is the median position of the first cue as a fraction of the response, among responses with a cue.\n")
-    body = []
+    p.append("Order columns are shares of responses, using an unnegated exact-target definition match. E can also be triggered by attribute matches, "
+             "so \"cue only\" need not mean E = 0. \"First cue\" is the median first-cue character position divided by normalised response length, "
+             "among responses with a cue. All summaries below include word-bootstrap intervals.\n")
+    body, form_body = [], []
     for r in res["form"]:
         if r["batch"] == "fresh":
             o = r["order"]
-            body.append([r["model"], r["frame"]] + ["{:.2f}".format(o[k]) for k in o]
-                        + ["" if r["first_cue_frac_median"] is None else "{:.2f}".format(r["first_cue_frac_median"]),
-                           "{:.0f}".format(r["words_mean"]["estimate"]), "{:.0f}".format(r["words_median"]), fmt(r["context_request"]), fmt(r["offer"])])
-    p.append(table(["Model", "Framing", "Def. first", "Cue first", "Def. only", "Cue only", "Neither", "First cue",
-                    "Words, mean", "Words, median", "Context request", "Offer"], body))
+            body.append([r["model"], r["frame"]] + [fmt(o[k]) for k in o])
+            form_body.append([r["model"], r["frame"], fmt(r["first_cue_frac_median"]), fmt(r["words_mean"], digits=1),
+                              fmt(r["words_median"], digits=1), fmt(r["context_request"]), fmt(r["offer"])])
+    p.append(table(["Model", "Framing", "Def. first", "Cue first", "Def. only", "Cue only", "Neither"], body))
+    p.append(table(["Model", "Framing", "First cue", "Words, mean", "Words, median", "Context request", "Offer"], form_body))
     p.append("The known-batch version of this table is in `descriptives.json`.\n")
     p.append("## 4. Reality-assertion wording in unmarked descriptions under real framings\n")
-    p.append(table(["Batch", "Model", "Real-framed trials", "Unmarked descriptions", "With reality wording"],
-                   [[r["batch"], r["model"], r["real_trials"], r["unmarked"], r["with_reality_wording"]] for r in res["reality_wording"]["table"]]))
+    p.append("The conditional rate uses U responses as its denominator. Sparse U can leave very few contributing words; "
+             "a collapsed bootstrap interval then describes the observed support and does not establish population-level precision.\n")
+    p.append(table(["Batch", "Model", "Real-framed trials", "Unmarked descriptions", "Words with U", "With reality wording", "Reality wording given U"],
+                    [[r["batch"], r["model"], r["real_trials"], r["unmarked"], r["unmarked_words"], r["with_reality_wording"], fmt(r["reality_given_unmarked"])]
+                     for r in res["reality_wording"]["table"]]))
     e = res["exposure_strings"]
     p.append("## 5. Exposure strings\n")
     p.append("Responses containing \"bestiary\" or \"chesterton\", any case: **{} of {}**.\n".format(e["hits"], e["responses_searched"]))
     if e["trials"]:
         p.append(table(["Batch", "Model", "Term", "Responses"], [[x["batch"], x["model"], x["term"], x["responses"]] for x in e["by_batch_model_term"]]))
         fresh = sum(h["batch"] == "fresh" for h in e["trials"])
-        p.append("The preregistration said any hit would be direct evidence of exposure. That was wrong about \"bestiary\", which is an "
-                 "ordinary word for a book of creatures. {} of the {} hits are on fresh words, which were unpublished and cannot reflect "
-                 "exposure to the original study. No response contains \"chesterton\". Every hit is listed with its surrounding text in "
-                 "`descriptives.json`. On my reading of all of them, after the fact, each uses the word generically (for example, an offer "
-                 "to write \"a fantasy bestiary entry\") and none refers to the original study. These hits are not evidence of exposure.\n"
+        p.append("Section 10 of the [precollection amendment](../../prereg/CLAUDE_PREREG_AMENDMENT_1.md) already replaced the original "
+                  "preregistration's direct-exposure interpretation: these strings flag responses for contextual review and do not by themselves "
+                  "establish exposure. {} of the {} hits occur on fresh words. Fresh-word prompts do not rule out a model's prior exposure to "
+                  "the original study. No response contains \"chesterton\". Every hit is listed with surrounding text in `descriptives.json`. "
+                  "Fable's post hoc contextual reading of the original supplement classified all hits as generic uses of \"bestiary\" "
+                  "(for example, an offer to write \"a fantasy bestiary entry\"), with no explicit reference to the original study. "
+                  "That contextual assessment is not an independently validated annotation. The reviewed matches do not establish exposure; "
+                  "neither this search nor the fresh/known comparison establishes its absence.\n"
                  .format(fresh, len(e["trials"])) if not any("chesterton" in h["matches"] for h in e["trials"]) else
                  "At least one response contains \"chesterton\". Read the listed trials in `descriptives.json` before interpreting.\n")
     if "historical_stability" in res:
         p.append("## 6. Historical models: known batch against the original study\n")
         p.append("Same eight words, same scorer, ten responses per word and condition in each run. The original runs used lower output caps (400 Anthropic, 700 OpenAI) and earlier dates. "
-                 "This is a stability check, not a controlled comparison. Change is known batch minus original, with an interval over the eight words.\n")
+                  "This is a stability check, not a controlled comparison. Change is known batch minus original, with a paired interval over "
+                  "the eight words, stratified by intent.\n")
         body = []
         for mod in HISTORICAL:
             for f in FRAMES:
@@ -331,8 +426,10 @@ def main():
         check = "U, N and E here match the released `scores_v1.1.csv` on all 16,000 responses."
     original = load_original(a.orig, scorer) if a.orig else None
     res = build(rows, original)
-    res = {"status": "post hoc descriptive supplement; not confirmatory; code not frozen", "scorer": scorer.SCORER_VERSION,
-           "bootstrap": {"draws": DRAWS, "seed": SEED, "unit": "word, within source group"}, **res}
+    res = {"status": "post hoc descriptive supplement; not confirmatory; code not frozen", "revision": REVISION,
+            "schema_version": 2, "scorer": scorer.SCORER_VERSION,
+            "bootstrap": {"draws": DRAWS, "seed": SEED, "unit": "word, within fresh source or known intent group",
+                          "conditional_intervals": "defined draws only; undefined_draws reported; zero observed denominator is not estimable"}, **res}
     a.out.mkdir(parents=True, exist_ok=True)
     (a.out / "descriptives.json").write_text(json.dumps(res, indent=1) + "\n", encoding="utf-8", newline="\n")
     (a.out / "summary.md").write_text(markdown(res, check), encoding="utf-8", newline="\n")
