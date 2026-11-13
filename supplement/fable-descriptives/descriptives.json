@@ -1,0 +1,12012 @@
+{
+ "status": "post hoc descriptive supplement; not confirmatory; code not frozen",
+ "scorer": "claude-fable-5-2/1.1",
+ "bootstrap": {
+  "draws": 10000,
+  "seed": 20261112,
+  "unit": "word, within source group"
+ },
+ "rates": [
+  {
+   "batch": "fresh",
+   "model": "claude-sonnet-4-6",
+   "cell": "neutral",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.9917,
+    "ci95": [
+     0.975,
+     1.0
+    ]
+   },
+   "E": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-sonnet-4-6",
+   "cell": "real_animal",
+   "U": {
+    "estimate": 0.0083,
+    "ci95": [
+     0.0,
+     0.025
+    ]
+   },
+   "N": {
+    "estimate": 0.9083,
+    "ci95": [
+     0.8583,
+     0.95
+    ]
+   },
+   "E": {
+    "estimate": 0.0167,
+    "ci95": [
+     0.0,
+     0.0417
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-sonnet-4-6",
+   "cell": "real_object",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.9167,
+    "ci95": [
+     0.875,
+     0.9583
+    ]
+   },
+   "E": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-sonnet-4-6",
+   "cell": "real_idea",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.7333,
+    "ci95": [
+     0.6167,
+     0.8417
+    ]
+   },
+   "E": {
+    "estimate": 0.0083,
+    "ci95": [
+     0.0,
+     0.025
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-sonnet-4-6",
+   "cell": "type_of_animal",
+   "U": {
+    "estimate": 0.025,
+    "ci95": [
+     0.0,
+     0.0667
+    ]
+   },
+   "N": {
+    "estimate": 0.9333,
+    "ci95": [
+     0.8829,
+     0.9833
+    ]
+   },
+   "E": {
+    "estimate": 0.05,
+    "ci95": [
+     0.0,
+     0.1
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-sonnet-4-6",
+   "cell": "type_of_object",
+   "U": {
+    "estimate": 0.0083,
+    "ci95": [
+     0.0,
+     0.025
+    ]
+   },
+   "N": {
+    "estimate": 0.9833,
+    "ci95": [
+     0.9583,
+     1.0
+    ]
+   },
+   "E": {
+    "estimate": 0.0167,
+    "ci95": [
+     0.0,
+     0.0417
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-sonnet-4-6",
+   "cell": "type_of_idea",
+   "U": {
+    "estimate": 0.1917,
+    "ci95": [
+     0.0833,
+     0.3083
+    ]
+   },
+   "N": {
+    "estimate": 0.7583,
+    "ci95": [
+     0.6167,
+     0.8917
+    ]
+   },
+   "E": {
+    "estimate": 0.2417,
+    "ci95": [
+     0.1083,
+     0.3833
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-sonnet-4-6",
+   "cell": "imaginary_animal",
+   "U": {
+    "estimate": 0.75,
+    "ci95": [
+     0.6083,
+     0.875
+    ]
+   },
+   "N": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "E": {
+    "estimate": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-sonnet-4-6",
+   "cell": "imaginary_object",
+   "U": {
+    "estimate": 0.4667,
+    "ci95": [
+     0.3167,
+     0.6083
+    ]
+   },
+   "N": {
+    "estimate": 0.0167,
+    "ci95": [
+     0.0,
+     0.05
+    ]
+   },
+   "E": {
+    "estimate": 0.9667,
+    "ci95": [
+     0.925,
+     1.0
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-sonnet-4-6",
+   "cell": "imaginary_idea",
+   "U": {
+    "estimate": 0.1333,
+    "ci95": [
+     0.0417,
+     0.2417
+    ]
+   },
+   "N": {
+    "estimate": 0.225,
+    "ci95": [
+     0.1,
+     0.3583
+    ]
+   },
+   "E": {
+    "estimate": 0.775,
+    "ci95": [
+     0.6417,
+     0.8917
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-sonnet-4-6",
+   "cell": "frame:neutral",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.9917,
+    "ci95": [
+     0.975,
+     1.0
+    ]
+   },
+   "E": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-sonnet-4-6",
+   "cell": "frame:real",
+   "U": {
+    "estimate": 0.0028,
+    "ci95": [
+     0.0,
+     0.0083
+    ]
+   },
+   "N": {
+    "estimate": 0.8528,
+    "ci95": [
+     0.8,
+     0.9083
+    ]
+   },
+   "E": {
+    "estimate": 0.0083,
+    "ci95": [
+     0.0,
+     0.0167
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-sonnet-4-6",
+   "cell": "frame:type_of",
+   "U": {
+    "estimate": 0.075,
+    "ci95": [
+     0.0306,
+     0.1278
+    ]
+   },
+   "N": {
+    "estimate": 0.8917,
+    "ci95": [
+     0.825,
+     0.9556
+    ]
+   },
+   "E": {
+    "estimate": 0.1028,
+    "ci95": [
+     0.0444,
+     0.1667
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-sonnet-4-6",
+   "cell": "frame:imaginary",
+   "U": {
+    "estimate": 0.45,
+    "ci95": [
+     0.3611,
+     0.5389
+    ]
+   },
+   "N": {
+    "estimate": 0.0806,
+    "ci95": [
+     0.0361,
+     0.1278
+    ]
+   },
+   "E": {
+    "estimate": 0.9139,
+    "ci95": [
+     0.8639,
+     0.9583
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-sonnet-4-6",
+   "cell": "category:animal",
+   "U": {
+    "estimate": 0.2611,
+    "ci95": [
+     0.2111,
+     0.3056
+    ]
+   },
+   "N": {
+    "estimate": 0.6139,
+    "ci95": [
+     0.5861,
+     0.6389
+    ]
+   },
+   "E": {
+    "estimate": 0.3556,
+    "ci95": [
+     0.3389,
+     0.3722
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-sonnet-4-6",
+   "cell": "category:object",
+   "U": {
+    "estimate": 0.1583,
+    "ci95": [
+     0.1083,
+     0.2056
+    ]
+   },
+   "N": {
+    "estimate": 0.6389,
+    "ci95": [
+     0.6194,
+     0.6583
+    ]
+   },
+   "E": {
+    "estimate": 0.3278,
+    "ci95": [
+     0.3111,
+     0.3417
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-sonnet-4-6",
+   "cell": "category:idea",
+   "U": {
+    "estimate": 0.1083,
+    "ci95": [
+     0.0528,
+     0.1722
+    ]
+   },
+   "N": {
+    "estimate": 0.5722,
+    "ci95": [
+     0.4722,
+     0.6722
+    ]
+   },
+   "E": {
+    "estimate": 0.3417,
+    "ci95": [
+     0.2639,
+     0.4194
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-haiku-4-5",
+   "cell": "neutral",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.9833,
+    "ci95": [
+     0.9583,
+     1.0
+    ]
+   },
+   "E": {
+    "estimate": 0.0083,
+    "ci95": [
+     0.0,
+     0.025
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-haiku-4-5",
+   "cell": "real_animal",
+   "U": {
+    "estimate": 0.0167,
+    "ci95": [
+     0.0,
+     0.05
+    ]
+   },
+   "N": {
+    "estimate": 0.7,
+    "ci95": [
+     0.5917,
+     0.7917
+    ]
+   },
+   "E": {
+    "estimate": 0.0583,
+    "ci95": [
+     0.0,
+     0.1583
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-haiku-4-5",
+   "cell": "real_object",
+   "U": {
+    "estimate": 0.1333,
+    "ci95": [
+     0.0417,
+     0.2417
+    ]
+   },
+   "N": {
+    "estimate": 0.7833,
+    "ci95": [
+     0.6833,
+     0.8833
+    ]
+   },
+   "E": {
+    "estimate": 0.1833,
+    "ci95": [
+     0.0917,
+     0.2917
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-haiku-4-5",
+   "cell": "real_idea",
+   "U": {
+    "estimate": 0.1333,
+    "ci95": [
+     0.0667,
+     0.2083
+    ]
+   },
+   "N": {
+    "estimate": 0.7333,
+    "ci95": [
+     0.625,
+     0.8333
+    ]
+   },
+   "E": {
+    "estimate": 0.1917,
+    "ci95": [
+     0.1083,
+     0.2833
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-haiku-4-5",
+   "cell": "type_of_animal",
+   "U": {
+    "estimate": 0.025,
+    "ci95": [
+     0.0,
+     0.075
+    ]
+   },
+   "N": {
+    "estimate": 0.9417,
+    "ci95": [
+     0.8583,
+     1.0
+    ]
+   },
+   "E": {
+    "estimate": 0.0583,
+    "ci95": [
+     0.0,
+     0.1417
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-haiku-4-5",
+   "cell": "type_of_object",
+   "U": {
+    "estimate": 0.0417,
+    "ci95": [
+     0.0,
+     0.1083
+    ]
+   },
+   "N": {
+    "estimate": 0.95,
+    "ci95": [
+     0.875,
+     1.0
+    ]
+   },
+   "E": {
+    "estimate": 0.05,
+    "ci95": [
+     0.0,
+     0.125
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-haiku-4-5",
+   "cell": "type_of_idea",
+   "U": {
+    "estimate": 0.4583,
+    "ci95": [
+     0.3583,
+     0.55
+    ]
+   },
+   "N": {
+    "estimate": 0.2833,
+    "ci95": [
+     0.15,
+     0.4417
+    ]
+   },
+   "E": {
+    "estimate": 0.7167,
+    "ci95": [
+     0.5667,
+     0.85
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-haiku-4-5",
+   "cell": "imaginary_animal",
+   "U": {
+    "estimate": 0.725,
+    "ci95": [
+     0.6667,
+     0.7833
+    ]
+   },
+   "N": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "E": {
+    "estimate": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-haiku-4-5",
+   "cell": "imaginary_object",
+   "U": {
+    "estimate": 0.8667,
+    "ci95": [
+     0.8,
+     0.925
+    ]
+   },
+   "N": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "E": {
+    "estimate": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-haiku-4-5",
+   "cell": "imaginary_idea",
+   "U": {
+    "estimate": 0.525,
+    "ci95": [
+     0.4083,
+     0.6417
+    ]
+   },
+   "N": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "E": {
+    "estimate": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-haiku-4-5",
+   "cell": "frame:neutral",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.9833,
+    "ci95": [
+     0.9583,
+     1.0
+    ]
+   },
+   "E": {
+    "estimate": 0.0083,
+    "ci95": [
+     0.0,
+     0.025
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-haiku-4-5",
+   "cell": "frame:real",
+   "U": {
+    "estimate": 0.0944,
+    "ci95": [
+     0.0389,
+     0.1583
+    ]
+   },
+   "N": {
+    "estimate": 0.7389,
+    "ci95": [
+     0.6472,
+     0.8222
+    ]
+   },
+   "E": {
+    "estimate": 0.1444,
+    "ci95": [
+     0.075,
+     0.2278
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-haiku-4-5",
+   "cell": "frame:type_of",
+   "U": {
+    "estimate": 0.175,
+    "ci95": [
+     0.1333,
+     0.2167
+    ]
+   },
+   "N": {
+    "estimate": 0.725,
+    "ci95": [
+     0.6639,
+     0.7861
+    ]
+   },
+   "E": {
+    "estimate": 0.275,
+    "ci95": [
+     0.2139,
+     0.3361
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-haiku-4-5",
+   "cell": "frame:imaginary",
+   "U": {
+    "estimate": 0.7056,
+    "ci95": [
+     0.6472,
+     0.7639
+    ]
+   },
+   "N": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "E": {
+    "estimate": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-haiku-4-5",
+   "cell": "category:animal",
+   "U": {
+    "estimate": 0.2556,
+    "ci95": [
+     0.225,
+     0.2972
+    ]
+   },
+   "N": {
+    "estimate": 0.5472,
+    "ci95": [
+     0.4917,
+     0.5917
+    ]
+   },
+   "E": {
+    "estimate": 0.3722,
+    "ci95": [
+     0.3361,
+     0.4306
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-haiku-4-5",
+   "cell": "category:object",
+   "U": {
+    "estimate": 0.3472,
+    "ci95": [
+     0.3028,
+     0.3944
+    ]
+   },
+   "N": {
+    "estimate": 0.5778,
+    "ci95": [
+     0.5389,
+     0.6167
+    ]
+   },
+   "E": {
+    "estimate": 0.4111,
+    "ci95": [
+     0.375,
+     0.45
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-haiku-4-5",
+   "cell": "category:idea",
+   "U": {
+    "estimate": 0.3722,
+    "ci95": [
+     0.3194,
+     0.425
+    ]
+   },
+   "N": {
+    "estimate": 0.3389,
+    "ci95": [
+     0.275,
+     0.4056
+    ]
+   },
+   "E": {
+    "estimate": 0.6361,
+    "ci95": [
+     0.575,
+     0.6944
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-sonnet-5-5",
+   "cell": "neutral",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.8833,
+    "ci95": [
+     0.7833,
+     0.9667
+    ]
+   },
+   "E": {
+    "estimate": 0.075,
+    "ci95": [
+     0.0167,
+     0.1667
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-sonnet-5-5",
+   "cell": "real_animal",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.825,
+    "ci95": [
+     0.7333,
+     0.9083
+    ]
+   },
+   "E": {
+    "estimate": 0.15,
+    "ci95": [
+     0.075,
+     0.2333
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-sonnet-5-5",
+   "cell": "real_object",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.8333,
+    "ci95": [
+     0.775,
+     0.8917
+    ]
+   },
+   "E": {
+    "estimate": 0.1667,
+    "ci95": [
+     0.1083,
+     0.225
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-sonnet-5-5",
+   "cell": "real_idea",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.95,
+    "ci95": [
+     0.9,
+     0.9917
+    ]
+   },
+   "E": {
+    "estimate": 0.05,
+    "ci95": [
+     0.0083,
+     0.1
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-sonnet-5-5",
+   "cell": "type_of_animal",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.75,
+    "ci95": [
+     0.6583,
+     0.8333
+    ]
+   },
+   "E": {
+    "estimate": 0.25,
+    "ci95": [
+     0.1667,
+     0.3417
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-sonnet-5-5",
+   "cell": "type_of_object",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.85,
+    "ci95": [
+     0.7833,
+     0.9083
+    ]
+   },
+   "E": {
+    "estimate": 0.15,
+    "ci95": [
+     0.0833,
+     0.2167
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-sonnet-5-5",
+   "cell": "type_of_idea",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.8167,
+    "ci95": [
+     0.7333,
+     0.8917
+    ]
+   },
+   "E": {
+    "estimate": 0.1667,
+    "ci95": [
+     0.0917,
+     0.2417
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-sonnet-5-5",
+   "cell": "imaginary_animal",
+   "U": {
+    "estimate": 0.6,
+    "ci95": [
+     0.5,
+     0.7
+    ]
+   },
+   "N": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "E": {
+    "estimate": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-sonnet-5-5",
+   "cell": "imaginary_object",
+   "U": {
+    "estimate": 0.725,
+    "ci95": [
+     0.6333,
+     0.825
+    ]
+   },
+   "N": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "E": {
+    "estimate": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-sonnet-5-5",
+   "cell": "imaginary_idea",
+   "U": {
+    "estimate": 0.8083,
+    "ci95": [
+     0.7417,
+     0.875
+    ]
+   },
+   "N": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "E": {
+    "estimate": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-sonnet-5-5",
+   "cell": "frame:neutral",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.8833,
+    "ci95": [
+     0.7917,
+     0.9667
+    ]
+   },
+   "E": {
+    "estimate": 0.075,
+    "ci95": [
+     0.0167,
+     0.1667
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-sonnet-5-5",
+   "cell": "frame:real",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.8694,
+    "ci95": [
+     0.8278,
+     0.9083
+    ]
+   },
+   "E": {
+    "estimate": 0.1222,
+    "ci95": [
+     0.0861,
+     0.1611
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-sonnet-5-5",
+   "cell": "frame:type_of",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.8056,
+    "ci95": [
+     0.7583,
+     0.8556
+    ]
+   },
+   "E": {
+    "estimate": 0.1889,
+    "ci95": [
+     0.1417,
+     0.2389
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-sonnet-5-5",
+   "cell": "frame:imaginary",
+   "U": {
+    "estimate": 0.7111,
+    "ci95": [
+     0.6472,
+     0.775
+    ]
+   },
+   "N": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "E": {
+    "estimate": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-sonnet-5-5",
+   "cell": "category:animal",
+   "U": {
+    "estimate": 0.2,
+    "ci95": [
+     0.1667,
+     0.2361
+    ]
+   },
+   "N": {
+    "estimate": 0.525,
+    "ci95": [
+     0.4722,
+     0.5694
+    ]
+   },
+   "E": {
+    "estimate": 0.4667,
+    "ci95": [
+     0.4222,
+     0.5194
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-sonnet-5-5",
+   "cell": "category:object",
+   "U": {
+    "estimate": 0.2417,
+    "ci95": [
+     0.2111,
+     0.2722
+    ]
+   },
+   "N": {
+    "estimate": 0.5611,
+    "ci95": [
+     0.5306,
+     0.5917
+    ]
+   },
+   "E": {
+    "estimate": 0.4389,
+    "ci95": [
+     0.4083,
+     0.4694
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-sonnet-5-5",
+   "cell": "category:idea",
+   "U": {
+    "estimate": 0.2694,
+    "ci95": [
+     0.2472,
+     0.2917
+    ]
+   },
+   "N": {
+    "estimate": 0.5889,
+    "ci95": [
+     0.5583,
+     0.6167
+    ]
+   },
+   "E": {
+    "estimate": 0.4056,
+    "ci95": [
+     0.3806,
+     0.4306
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-haiku-5-5",
+   "cell": "neutral",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.95,
+    "ci95": [
+     0.9,
+     0.9917
+    ]
+   },
+   "E": {
+    "estimate": 0.05,
+    "ci95": [
+     0.0083,
+     0.1
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-haiku-5-5",
+   "cell": "real_animal",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.8833,
+    "ci95": [
+     0.8333,
+     0.925
+    ]
+   },
+   "E": {
+    "estimate": 0.1167,
+    "ci95": [
+     0.075,
+     0.1667
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-haiku-5-5",
+   "cell": "real_object",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.925,
+    "ci95": [
+     0.8833,
+     0.9667
+    ]
+   },
+   "E": {
+    "estimate": 0.075,
+    "ci95": [
+     0.0333,
+     0.1167
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-haiku-5-5",
+   "cell": "real_idea",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.975,
+    "ci95": [
+     0.95,
+     0.9917
+    ]
+   },
+   "E": {
+    "estimate": 0.0167,
+    "ci95": [
+     0.0,
+     0.0417
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-haiku-5-5",
+   "cell": "type_of_animal",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.7667,
+    "ci95": [
+     0.7,
+     0.8333
+    ]
+   },
+   "E": {
+    "estimate": 0.2333,
+    "ci95": [
+     0.1667,
+     0.3
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-haiku-5-5",
+   "cell": "type_of_object",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.8667,
+    "ci95": [
+     0.8167,
+     0.9167
+    ]
+   },
+   "E": {
+    "estimate": 0.1333,
+    "ci95": [
+     0.0833,
+     0.1917
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-haiku-5-5",
+   "cell": "type_of_idea",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.9667,
+    "ci95": [
+     0.925,
+     1.0
+    ]
+   },
+   "E": {
+    "estimate": 0.025,
+    "ci95": [
+     0.0,
+     0.05
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-haiku-5-5",
+   "cell": "imaginary_animal",
+   "U": {
+    "estimate": 0.475,
+    "ci95": [
+     0.375,
+     0.5833
+    ]
+   },
+   "N": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "E": {
+    "estimate": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-haiku-5-5",
+   "cell": "imaginary_object",
+   "U": {
+    "estimate": 0.4833,
+    "ci95": [
+     0.35,
+     0.6167
+    ]
+   },
+   "N": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "E": {
+    "estimate": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-haiku-5-5",
+   "cell": "imaginary_idea",
+   "U": {
+    "estimate": 0.2167,
+    "ci95": [
+     0.1083,
+     0.3333
+    ]
+   },
+   "N": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "E": {
+    "estimate": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-haiku-5-5",
+   "cell": "frame:neutral",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.95,
+    "ci95": [
+     0.9,
+     0.9917
+    ]
+   },
+   "E": {
+    "estimate": 0.05,
+    "ci95": [
+     0.0083,
+     0.1
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-haiku-5-5",
+   "cell": "frame:real",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.9278,
+    "ci95": [
+     0.9083,
+     0.9472
+    ]
+   },
+   "E": {
+    "estimate": 0.0694,
+    "ci95": [
+     0.05,
+     0.0889
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-haiku-5-5",
+   "cell": "frame:type_of",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.8667,
+    "ci95": [
+     0.8361,
+     0.8972
+    ]
+   },
+   "E": {
+    "estimate": 0.1306,
+    "ci95": [
+     0.1,
+     0.1611
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-haiku-5-5",
+   "cell": "frame:imaginary",
+   "U": {
+    "estimate": 0.3917,
+    "ci95": [
+     0.3,
+     0.4833
+    ]
+   },
+   "N": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "E": {
+    "estimate": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-haiku-5-5",
+   "cell": "category:animal",
+   "U": {
+    "estimate": 0.1583,
+    "ci95": [
+     0.125,
+     0.1944
+    ]
+   },
+   "N": {
+    "estimate": 0.55,
+    "ci95": [
+     0.5222,
+     0.5778
+    ]
+   },
+   "E": {
+    "estimate": 0.45,
+    "ci95": [
+     0.4222,
+     0.4778
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-haiku-5-5",
+   "cell": "category:object",
+   "U": {
+    "estimate": 0.1611,
+    "ci95": [
+     0.1167,
+     0.2056
+    ]
+   },
+   "N": {
+    "estimate": 0.5972,
+    "ci95": [
+     0.5806,
+     0.6167
+    ]
+   },
+   "E": {
+    "estimate": 0.4028,
+    "ci95": [
+     0.3833,
+     0.4194
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-haiku-5-5",
+   "cell": "category:idea",
+   "U": {
+    "estimate": 0.0722,
+    "ci95": [
+     0.0361,
+     0.1111
+    ]
+   },
+   "N": {
+    "estimate": 0.6472,
+    "ci95": [
+     0.6306,
+     0.6611
+    ]
+   },
+   "E": {
+    "estimate": 0.3472,
+    "ci95": [
+     0.3389,
+     0.3583
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-5.4-mini",
+   "cell": "neutral",
+   "U": {
+    "estimate": 0.0167,
+    "ci95": [
+     0.0,
+     0.0417
+    ]
+   },
+   "N": {
+    "estimate": 0.35,
+    "ci95": [
+     0.2333,
+     0.4667
+    ]
+   },
+   "E": {
+    "estimate": 0.625,
+    "ci95": [
+     0.4917,
+     0.75
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-5.4-mini",
+   "cell": "real_animal",
+   "U": {
+    "estimate": 0.0333,
+    "ci95": [
+     0.0083,
+     0.0667
+    ]
+   },
+   "N": {
+    "estimate": 0.725,
+    "ci95": [
+     0.6333,
+     0.8167
+    ]
+   },
+   "E": {
+    "estimate": 0.2,
+    "ci95": [
+     0.125,
+     0.2833
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-5.4-mini",
+   "cell": "real_object",
+   "U": {
+    "estimate": 0.1167,
+    "ci95": [
+     0.0417,
+     0.2
+    ]
+   },
+   "N": {
+    "estimate": 0.6333,
+    "ci95": [
+     0.525,
+     0.7417
+    ]
+   },
+   "E": {
+    "estimate": 0.2667,
+    "ci95": [
+     0.1583,
+     0.3833
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-5.4-mini",
+   "cell": "real_idea",
+   "U": {
+    "estimate": 0.05,
+    "ci95": [
+     0.0167,
+     0.0833
+    ]
+   },
+   "N": {
+    "estimate": 0.3333,
+    "ci95": [
+     0.25,
+     0.4167
+    ]
+   },
+   "E": {
+    "estimate": 0.6,
+    "ci95": [
+     0.5083,
+     0.6833
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-5.4-mini",
+   "cell": "type_of_animal",
+   "U": {
+    "estimate": 0.05,
+    "ci95": [
+     0.0083,
+     0.1
+    ]
+   },
+   "N": {
+    "estimate": 0.025,
+    "ci95": [
+     0.0,
+     0.0583
+    ]
+   },
+   "E": {
+    "estimate": 0.9667,
+    "ci95": [
+     0.925,
+     1.0
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-5.4-mini",
+   "cell": "type_of_object",
+   "U": {
+    "estimate": 0.0833,
+    "ci95": [
+     0.0417,
+     0.1333
+    ]
+   },
+   "N": {
+    "estimate": 0.0083,
+    "ci95": [
+     0.0,
+     0.025
+    ]
+   },
+   "E": {
+    "estimate": 0.9917,
+    "ci95": [
+     0.975,
+     1.0
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-5.4-mini",
+   "cell": "type_of_idea",
+   "U": {
+    "estimate": 0.25,
+    "ci95": [
+     0.15,
+     0.35
+    ]
+   },
+   "N": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "E": {
+    "estimate": 0.8833,
+    "ci95": [
+     0.8083,
+     0.95
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-5.4-mini",
+   "cell": "imaginary_animal",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "E": {
+    "estimate": 0.975,
+    "ci95": [
+     0.95,
+     1.0
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-5.4-mini",
+   "cell": "imaginary_object",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "E": {
+    "estimate": 0.9833,
+    "ci95": [
+     0.9583,
+     1.0
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-5.4-mini",
+   "cell": "imaginary_idea",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "E": {
+    "estimate": 0.8583,
+    "ci95": [
+     0.8,
+     0.9167
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-5.4-mini",
+   "cell": "frame:neutral",
+   "U": {
+    "estimate": 0.0167,
+    "ci95": [
+     0.0,
+     0.0333
+    ]
+   },
+   "N": {
+    "estimate": 0.35,
+    "ci95": [
+     0.2333,
+     0.4667
+    ]
+   },
+   "E": {
+    "estimate": 0.625,
+    "ci95": [
+     0.5,
+     0.75
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-5.4-mini",
+   "cell": "frame:real",
+   "U": {
+    "estimate": 0.0667,
+    "ci95": [
+     0.0389,
+     0.0972
+    ]
+   },
+   "N": {
+    "estimate": 0.5639,
+    "ci95": [
+     0.5139,
+     0.6167
+    ]
+   },
+   "E": {
+    "estimate": 0.3556,
+    "ci95": [
+     0.3028,
+     0.4083
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-5.4-mini",
+   "cell": "frame:type_of",
+   "U": {
+    "estimate": 0.1278,
+    "ci95": [
+     0.0806,
+     0.1778
+    ]
+   },
+   "N": {
+    "estimate": 0.0111,
+    "ci95": [
+     0.0,
+     0.025
+    ]
+   },
+   "E": {
+    "estimate": 0.9472,
+    "ci95": [
+     0.9222,
+     0.9694
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-5.4-mini",
+   "cell": "frame:imaginary",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "E": {
+    "estimate": 0.9389,
+    "ci95": [
+     0.9167,
+     0.9611
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-5.4-mini",
+   "cell": "category:animal",
+   "U": {
+    "estimate": 0.0278,
+    "ci95": [
+     0.0083,
+     0.05
+    ]
+   },
+   "N": {
+    "estimate": 0.25,
+    "ci95": [
+     0.2167,
+     0.2833
+    ]
+   },
+   "E": {
+    "estimate": 0.7139,
+    "ci95": [
+     0.6806,
+     0.7472
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-5.4-mini",
+   "cell": "category:object",
+   "U": {
+    "estimate": 0.0667,
+    "ci95": [
+     0.0361,
+     0.0972
+    ]
+   },
+   "N": {
+    "estimate": 0.2139,
+    "ci95": [
+     0.175,
+     0.25
+    ]
+   },
+   "E": {
+    "estimate": 0.7472,
+    "ci95": [
+     0.7083,
+     0.7889
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-5.4-mini",
+   "cell": "category:idea",
+   "U": {
+    "estimate": 0.1,
+    "ci95": [
+     0.0639,
+     0.1389
+    ]
+   },
+   "N": {
+    "estimate": 0.1111,
+    "ci95": [
+     0.0833,
+     0.1389
+    ]
+   },
+   "E": {
+    "estimate": 0.7806,
+    "ci95": [
+     0.7361,
+     0.825
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-5.4-nano",
+   "cell": "neutral",
+   "U": {
+    "estimate": 0.1583,
+    "ci95": [
+     0.0667,
+     0.2583
+    ]
+   },
+   "N": {
+    "estimate": 0.35,
+    "ci95": [
+     0.2583,
+     0.4333
+    ]
+   },
+   "E": {
+    "estimate": 0.4,
+    "ci95": [
+     0.2833,
+     0.525
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-5.4-nano",
+   "cell": "real_animal",
+   "U": {
+    "estimate": 0.225,
+    "ci95": [
+     0.1333,
+     0.3083
+    ]
+   },
+   "N": {
+    "estimate": 0.275,
+    "ci95": [
+     0.1833,
+     0.3667
+    ]
+   },
+   "E": {
+    "estimate": 0.6917,
+    "ci95": [
+     0.5833,
+     0.7917
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-5.4-nano",
+   "cell": "real_object",
+   "U": {
+    "estimate": 0.375,
+    "ci95": [
+     0.2833,
+     0.4667
+    ]
+   },
+   "N": {
+    "estimate": 0.275,
+    "ci95": [
+     0.1667,
+     0.3917
+    ]
+   },
+   "E": {
+    "estimate": 0.6083,
+    "ci95": [
+     0.5,
+     0.725
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-5.4-nano",
+   "cell": "real_idea",
+   "U": {
+    "estimate": 0.1667,
+    "ci95": [
+     0.075,
+     0.2667
+    ]
+   },
+   "N": {
+    "estimate": 0.3,
+    "ci95": [
+     0.2,
+     0.4083
+    ]
+   },
+   "E": {
+    "estimate": 0.575,
+    "ci95": [
+     0.4583,
+     0.6917
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-5.4-nano",
+   "cell": "type_of_animal",
+   "U": {
+    "estimate": 0.125,
+    "ci95": [
+     0.0583,
+     0.1917
+    ]
+   },
+   "N": {
+    "estimate": 0.075,
+    "ci95": [
+     0.0167,
+     0.15
+    ]
+   },
+   "E": {
+    "estimate": 0.875,
+    "ci95": [
+     0.8,
+     0.9417
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-5.4-nano",
+   "cell": "type_of_object",
+   "U": {
+    "estimate": 0.1667,
+    "ci95": [
+     0.0833,
+     0.2667
+    ]
+   },
+   "N": {
+    "estimate": 0.1333,
+    "ci95": [
+     0.0667,
+     0.2083
+    ]
+   },
+   "E": {
+    "estimate": 0.8,
+    "ci95": [
+     0.7,
+     0.8917
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-5.4-nano",
+   "cell": "type_of_idea",
+   "U": {
+    "estimate": 0.2083,
+    "ci95": [
+     0.125,
+     0.3
+    ]
+   },
+   "N": {
+    "estimate": 0.225,
+    "ci95": [
+     0.1333,
+     0.3167
+    ]
+   },
+   "E": {
+    "estimate": 0.675,
+    "ci95": [
+     0.55,
+     0.7917
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-5.4-nano",
+   "cell": "imaginary_animal",
+   "U": {
+    "estimate": 0.3417,
+    "ci95": [
+     0.2417,
+     0.45
+    ]
+   },
+   "N": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "E": {
+    "estimate": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-5.4-nano",
+   "cell": "imaginary_object",
+   "U": {
+    "estimate": 0.05,
+    "ci95": [
+     0.0083,
+     0.1083
+    ]
+   },
+   "N": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "E": {
+    "estimate": 0.9917,
+    "ci95": [
+     0.975,
+     1.0
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-5.4-nano",
+   "cell": "imaginary_idea",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.0083,
+    "ci95": [
+     0.0,
+     0.025
+    ]
+   },
+   "E": {
+    "estimate": 0.9667,
+    "ci95": [
+     0.925,
+     1.0
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-5.4-nano",
+   "cell": "frame:neutral",
+   "U": {
+    "estimate": 0.1583,
+    "ci95": [
+     0.0667,
+     0.2583
+    ]
+   },
+   "N": {
+    "estimate": 0.35,
+    "ci95": [
+     0.2583,
+     0.4333
+    ]
+   },
+   "E": {
+    "estimate": 0.4,
+    "ci95": [
+     0.2833,
+     0.525
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-5.4-nano",
+   "cell": "frame:real",
+   "U": {
+    "estimate": 0.2556,
+    "ci95": [
+     0.1917,
+     0.3194
+    ]
+   },
+   "N": {
+    "estimate": 0.2833,
+    "ci95": [
+     0.1972,
+     0.3778
+    ]
+   },
+   "E": {
+    "estimate": 0.625,
+    "ci95": [
+     0.5361,
+     0.7112
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-5.4-nano",
+   "cell": "frame:type_of",
+   "U": {
+    "estimate": 0.1667,
+    "ci95": [
+     0.1083,
+     0.2333
+    ]
+   },
+   "N": {
+    "estimate": 0.1444,
+    "ci95": [
+     0.0861,
+     0.2083
+    ]
+   },
+   "E": {
+    "estimate": 0.7833,
+    "ci95": [
+     0.7,
+     0.8667
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-5.4-nano",
+   "cell": "frame:imaginary",
+   "U": {
+    "estimate": 0.1306,
+    "ci95": [
+     0.0917,
+     0.1722
+    ]
+   },
+   "N": {
+    "estimate": 0.0028,
+    "ci95": [
+     0.0,
+     0.0083
+    ]
+   },
+   "E": {
+    "estimate": 0.9861,
+    "ci95": [
+     0.9694,
+     1.0
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-5.4-nano",
+   "cell": "category:animal",
+   "U": {
+    "estimate": 0.2306,
+    "ci95": [
+     0.175,
+     0.2889
+    ]
+   },
+   "N": {
+    "estimate": 0.1167,
+    "ci95": [
+     0.075,
+     0.1611
+    ]
+   },
+   "E": {
+    "estimate": 0.8556,
+    "ci95": [
+     0.8028,
+     0.9056
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-5.4-nano",
+   "cell": "category:object",
+   "U": {
+    "estimate": 0.1972,
+    "ci95": [
+     0.1417,
+     0.2556
+    ]
+   },
+   "N": {
+    "estimate": 0.1361,
+    "ci95": [
+     0.0833,
+     0.1917
+    ]
+   },
+   "E": {
+    "estimate": 0.8,
+    "ci95": [
+     0.7361,
+     0.8639
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-5.4-nano",
+   "cell": "category:idea",
+   "U": {
+    "estimate": 0.125,
+    "ci95": [
+     0.075,
+     0.1861
+    ]
+   },
+   "N": {
+    "estimate": 0.1778,
+    "ci95": [
+     0.1194,
+     0.2389
+    ]
+   },
+   "E": {
+    "estimate": 0.7389,
+    "ci95": [
+     0.6639,
+     0.8139
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-6-sol",
+   "cell": "neutral",
+   "U": {
+    "estimate": 0.1333,
+    "ci95": [
+     0.05,
+     0.2333
+    ]
+   },
+   "N": {
+    "estimate": 0.7917,
+    "ci95": [
+     0.675,
+     0.9
+    ]
+   },
+   "E": {
+    "estimate": 0.175,
+    "ci95": [
+     0.0833,
+     0.2833
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-6-sol",
+   "cell": "real_animal",
+   "U": {
+    "estimate": 0.0917,
+    "ci95": [
+     0.0333,
+     0.1583
+    ]
+   },
+   "N": {
+    "estimate": 0.9,
+    "ci95": [
+     0.8333,
+     0.9583
+    ]
+   },
+   "E": {
+    "estimate": 0.0917,
+    "ci95": [
+     0.0333,
+     0.15
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-6-sol",
+   "cell": "real_object",
+   "U": {
+    "estimate": 0.025,
+    "ci95": [
+     0.0,
+     0.0667
+    ]
+   },
+   "N": {
+    "estimate": 0.975,
+    "ci95": [
+     0.9333,
+     1.0
+    ]
+   },
+   "E": {
+    "estimate": 0.025,
+    "ci95": [
+     0.0,
+     0.0667
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-6-sol",
+   "cell": "real_idea",
+   "U": {
+    "estimate": 0.0083,
+    "ci95": [
+     0.0,
+     0.025
+    ]
+   },
+   "N": {
+    "estimate": 0.9917,
+    "ci95": [
+     0.975,
+     1.0
+    ]
+   },
+   "E": {
+    "estimate": 0.0083,
+    "ci95": [
+     0.0,
+     0.025
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-6-sol",
+   "cell": "type_of_animal",
+   "U": {
+    "estimate": 0.1417,
+    "ci95": [
+     0.05,
+     0.25
+    ]
+   },
+   "N": {
+    "estimate": 0.7917,
+    "ci95": [
+     0.6667,
+     0.9
+    ]
+   },
+   "E": {
+    "estimate": 0.1917,
+    "ci95": [
+     0.0833,
+     0.3083
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-6-sol",
+   "cell": "type_of_object",
+   "U": {
+    "estimate": 0.25,
+    "ci95": [
+     0.1417,
+     0.3667
+    ]
+   },
+   "N": {
+    "estimate": 0.725,
+    "ci95": [
+     0.6,
+     0.8417
+    ]
+   },
+   "E": {
+    "estimate": 0.2667,
+    "ci95": [
+     0.15,
+     0.3917
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-6-sol",
+   "cell": "type_of_idea",
+   "U": {
+    "estimate": 0.825,
+    "ci95": [
+     0.7333,
+     0.9083
+    ]
+   },
+   "N": {
+    "estimate": 0.0917,
+    "ci95": [
+     0.0083,
+     0.1833
+    ]
+   },
+   "E": {
+    "estimate": 0.8917,
+    "ci95": [
+     0.7917,
+     0.975
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-6-sol",
+   "cell": "imaginary_animal",
+   "U": {
+    "estimate": 0.9917,
+    "ci95": [
+     0.975,
+     1.0
+    ]
+   },
+   "N": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "E": {
+    "estimate": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-6-sol",
+   "cell": "imaginary_object",
+   "U": {
+    "estimate": 0.9,
+    "ci95": [
+     0.8583,
+     0.9417
+    ]
+   },
+   "N": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "E": {
+    "estimate": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-6-sol",
+   "cell": "imaginary_idea",
+   "U": {
+    "estimate": 0.1667,
+    "ci95": [
+     0.0667,
+     0.275
+    ]
+   },
+   "N": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "E": {
+    "estimate": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-6-sol",
+   "cell": "frame:neutral",
+   "U": {
+    "estimate": 0.1333,
+    "ci95": [
+     0.05,
+     0.2333
+    ]
+   },
+   "N": {
+    "estimate": 0.7917,
+    "ci95": [
+     0.675,
+     0.9
+    ]
+   },
+   "E": {
+    "estimate": 0.175,
+    "ci95": [
+     0.0833,
+     0.2833
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-6-sol",
+   "cell": "frame:real",
+   "U": {
+    "estimate": 0.0417,
+    "ci95": [
+     0.0167,
+     0.0667
+    ]
+   },
+   "N": {
+    "estimate": 0.9556,
+    "ci95": [
+     0.9278,
+     0.9806
+    ]
+   },
+   "E": {
+    "estimate": 0.0417,
+    "ci95": [
+     0.0167,
+     0.0667
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-6-sol",
+   "cell": "frame:type_of",
+   "U": {
+    "estimate": 0.4056,
+    "ci95": [
+     0.3444,
+     0.475
+    ]
+   },
+   "N": {
+    "estimate": 0.5361,
+    "ci95": [
+     0.4694,
+     0.6056
+    ]
+   },
+   "E": {
+    "estimate": 0.45,
+    "ci95": [
+     0.3833,
+     0.5194
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-6-sol",
+   "cell": "frame:imaginary",
+   "U": {
+    "estimate": 0.6861,
+    "ci95": [
+     0.6472,
+     0.7278
+    ]
+   },
+   "N": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "E": {
+    "estimate": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-6-sol",
+   "cell": "category:animal",
+   "U": {
+    "estimate": 0.4083,
+    "ci95": [
+     0.3722,
+     0.4472
+    ]
+   },
+   "N": {
+    "estimate": 0.5639,
+    "ci95": [
+     0.5167,
+     0.6083
+    ]
+   },
+   "E": {
+    "estimate": 0.4278,
+    "ci95": [
+     0.3861,
+     0.4722
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-6-sol",
+   "cell": "category:object",
+   "U": {
+    "estimate": 0.3917,
+    "ci95": [
+     0.3389,
+     0.4444
+    ]
+   },
+   "N": {
+    "estimate": 0.5667,
+    "ci95": [
+     0.5194,
+     0.6083
+    ]
+   },
+   "E": {
+    "estimate": 0.4306,
+    "ci95": [
+     0.3861,
+     0.4806
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-6-sol",
+   "cell": "category:idea",
+   "U": {
+    "estimate": 0.3333,
+    "ci95": [
+     0.2889,
+     0.3778
+    ]
+   },
+   "N": {
+    "estimate": 0.3611,
+    "ci95": [
+     0.3333,
+     0.3944
+    ]
+   },
+   "E": {
+    "estimate": 0.6333,
+    "ci95": [
+     0.6,
+     0.6611
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-6-luna",
+   "cell": "neutral",
+   "U": {
+    "estimate": 0.075,
+    "ci95": [
+     0.025,
+     0.1417
+    ]
+   },
+   "N": {
+    "estimate": 0.6833,
+    "ci95": [
+     0.575,
+     0.7917
+    ]
+   },
+   "E": {
+    "estimate": 0.2583,
+    "ci95": [
+     0.15,
+     0.3667
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-6-luna",
+   "cell": "real_animal",
+   "U": {
+    "estimate": 0.1167,
+    "ci95": [
+     0.0583,
+     0.1833
+    ]
+   },
+   "N": {
+    "estimate": 0.775,
+    "ci95": [
+     0.6917,
+     0.8583
+    ]
+   },
+   "E": {
+    "estimate": 0.225,
+    "ci95": [
+     0.1417,
+     0.3083
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-6-luna",
+   "cell": "real_object",
+   "U": {
+    "estimate": 0.175,
+    "ci95": [
+     0.0917,
+     0.275
+    ]
+   },
+   "N": {
+    "estimate": 0.775,
+    "ci95": [
+     0.6667,
+     0.875
+    ]
+   },
+   "E": {
+    "estimate": 0.2167,
+    "ci95": [
+     0.125,
+     0.325
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-6-luna",
+   "cell": "real_idea",
+   "U": {
+    "estimate": 0.1417,
+    "ci95": [
+     0.0833,
+     0.2083
+    ]
+   },
+   "N": {
+    "estimate": 0.4167,
+    "ci95": [
+     0.3,
+     0.5417
+    ]
+   },
+   "E": {
+    "estimate": 0.5667,
+    "ci95": [
+     0.4333,
+     0.6917
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-6-luna",
+   "cell": "type_of_animal",
+   "U": {
+    "estimate": 0.0583,
+    "ci95": [
+     0.0083,
+     0.1333
+    ]
+   },
+   "N": {
+    "estimate": 0.825,
+    "ci95": [
+     0.7,
+     0.9417
+    ]
+   },
+   "E": {
+    "estimate": 0.175,
+    "ci95": [
+     0.0583,
+     0.3
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-6-luna",
+   "cell": "type_of_object",
+   "U": {
+    "estimate": 0.05,
+    "ci95": [
+     0.0,
+     0.125
+    ]
+   },
+   "N": {
+    "estimate": 0.875,
+    "ci95": [
+     0.75,
+     0.975
+    ]
+   },
+   "E": {
+    "estimate": 0.125,
+    "ci95": [
+     0.025,
+     0.25
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-6-luna",
+   "cell": "type_of_idea",
+   "U": {
+    "estimate": 0.175,
+    "ci95": [
+     0.075,
+     0.2833
+    ]
+   },
+   "N": {
+    "estimate": 0.675,
+    "ci95": [
+     0.55,
+     0.8
+    ]
+   },
+   "E": {
+    "estimate": 0.2917,
+    "ci95": [
+     0.175,
+     0.4083
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-6-luna",
+   "cell": "imaginary_animal",
+   "U": {
+    "estimate": 0.9583,
+    "ci95": [
+     0.9167,
+     0.9917
+    ]
+   },
+   "N": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "E": {
+    "estimate": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-6-luna",
+   "cell": "imaginary_object",
+   "U": {
+    "estimate": 0.9083,
+    "ci95": [
+     0.8333,
+     0.975
+    ]
+   },
+   "N": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "E": {
+    "estimate": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-6-luna",
+   "cell": "imaginary_idea",
+   "U": {
+    "estimate": 0.3667,
+    "ci95": [
+     0.25,
+     0.4917
+    ]
+   },
+   "N": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "E": {
+    "estimate": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-6-luna",
+   "cell": "frame:neutral",
+   "U": {
+    "estimate": 0.075,
+    "ci95": [
+     0.025,
+     0.1333
+    ]
+   },
+   "N": {
+    "estimate": 0.6833,
+    "ci95": [
+     0.575,
+     0.7917
+    ]
+   },
+   "E": {
+    "estimate": 0.2583,
+    "ci95": [
+     0.15,
+     0.375
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-6-luna",
+   "cell": "frame:real",
+   "U": {
+    "estimate": 0.1444,
+    "ci95": [
+     0.0972,
+     0.1972
+    ]
+   },
+   "N": {
+    "estimate": 0.6556,
+    "ci95": [
+     0.5667,
+     0.7417
+    ]
+   },
+   "E": {
+    "estimate": 0.3361,
+    "ci95": [
+     0.2472,
+     0.425
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-6-luna",
+   "cell": "frame:type_of",
+   "U": {
+    "estimate": 0.0944,
+    "ci95": [
+     0.0361,
+     0.1667
+    ]
+   },
+   "N": {
+    "estimate": 0.7917,
+    "ci95": [
+     0.675,
+     0.8944
+    ]
+   },
+   "E": {
+    "estimate": 0.1972,
+    "ci95": [
+     0.0972,
+     0.3083
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-6-luna",
+   "cell": "frame:imaginary",
+   "U": {
+    "estimate": 0.7444,
+    "ci95": [
+     0.6889,
+     0.8028
+    ]
+   },
+   "N": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "E": {
+    "estimate": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-6-luna",
+   "cell": "category:animal",
+   "U": {
+    "estimate": 0.3778,
+    "ci95": [
+     0.3444,
+     0.4167
+    ]
+   },
+   "N": {
+    "estimate": 0.5333,
+    "ci95": [
+     0.4861,
+     0.5778
+    ]
+   },
+   "E": {
+    "estimate": 0.4667,
+    "ci95": [
+     0.4222,
+     0.5139
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-6-luna",
+   "cell": "category:object",
+   "U": {
+    "estimate": 0.3778,
+    "ci95": [
+     0.3306,
+     0.4306
+    ]
+   },
+   "N": {
+    "estimate": 0.55,
+    "ci95": [
+     0.5028,
+     0.5944
+    ]
+   },
+   "E": {
+    "estimate": 0.4472,
+    "ci95": [
+     0.4028,
+     0.4972
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-6-luna",
+   "cell": "category:idea",
+   "U": {
+    "estimate": 0.2278,
+    "ci95": [
+     0.1694,
+     0.2889
+    ]
+   },
+   "N": {
+    "estimate": 0.3639,
+    "ci95": [
+     0.3194,
+     0.4083
+    ]
+   },
+   "E": {
+    "estimate": 0.6194,
+    "ci95": [
+     0.5778,
+     0.6611
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-sonnet-4-6",
+   "cell": "neutral",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.9875,
+    "ci95": [
+     0.9625,
+     1.0
+    ]
+   },
+   "E": {
+    "estimate": 0.0125,
+    "ci95": [
+     0.0,
+     0.0375
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-sonnet-4-6",
+   "cell": "real_animal",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   },
+   "E": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-sonnet-4-6",
+   "cell": "real_object",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.9875,
+    "ci95": [
+     0.9625,
+     1.0
+    ]
+   },
+   "E": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-sonnet-4-6",
+   "cell": "real_idea",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.9375,
+    "ci95": [
+     0.85,
+     1.0
+    ]
+   },
+   "E": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-sonnet-4-6",
+   "cell": "type_of_animal",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   },
+   "E": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-sonnet-4-6",
+   "cell": "type_of_object",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   },
+   "E": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-sonnet-4-6",
+   "cell": "type_of_idea",
+   "U": {
+    "estimate": 0.1375,
+    "ci95": [
+     0.0375,
+     0.275
+    ]
+   },
+   "N": {
+    "estimate": 0.8375,
+    "ci95": [
+     0.675,
+     0.9625
+    ]
+   },
+   "E": {
+    "estimate": 0.1625,
+    "ci95": [
+     0.0375,
+     0.325
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-sonnet-4-6",
+   "cell": "imaginary_animal",
+   "U": {
+    "estimate": 0.725,
+    "ci95": [
+     0.4625,
+     0.9375
+    ]
+   },
+   "N": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "E": {
+    "estimate": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-sonnet-4-6",
+   "cell": "imaginary_object",
+   "U": {
+    "estimate": 0.3875,
+    "ci95": [
+     0.15,
+     0.6375
+    ]
+   },
+   "N": {
+    "estimate": 0.075,
+    "ci95": [
+     0.0,
+     0.225
+    ]
+   },
+   "E": {
+    "estimate": 0.925,
+    "ci95": [
+     0.775,
+     1.0
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-sonnet-4-6",
+   "cell": "imaginary_idea",
+   "U": {
+    "estimate": 0.0625,
+    "ci95": [
+     0.0,
+     0.1625
+    ]
+   },
+   "N": {
+    "estimate": 0.3125,
+    "ci95": [
+     0.1,
+     0.5625
+    ]
+   },
+   "E": {
+    "estimate": 0.6875,
+    "ci95": [
+     0.4375,
+     0.9125
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-sonnet-4-6",
+   "cell": "frame:neutral",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.9875,
+    "ci95": [
+     0.9625,
+     1.0
+    ]
+   },
+   "E": {
+    "estimate": 0.0125,
+    "ci95": [
+     0.0,
+     0.0375
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-sonnet-4-6",
+   "cell": "frame:real",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.975,
+    "ci95": [
+     0.9375,
+     1.0
+    ]
+   },
+   "E": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-sonnet-4-6",
+   "cell": "frame:type_of",
+   "U": {
+    "estimate": 0.0458,
+    "ci95": [
+     0.0125,
+     0.0917
+    ]
+   },
+   "N": {
+    "estimate": 0.9458,
+    "ci95": [
+     0.8958,
+     0.9875
+    ]
+   },
+   "E": {
+    "estimate": 0.0542,
+    "ci95": [
+     0.0125,
+     0.1083
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-sonnet-4-6",
+   "cell": "frame:imaginary",
+   "U": {
+    "estimate": 0.3917,
+    "ci95": [
+     0.275,
+     0.5001
+    ]
+   },
+   "N": {
+    "estimate": 0.1292,
+    "ci95": [
+     0.0333,
+     0.25
+    ]
+   },
+   "E": {
+    "estimate": 0.8708,
+    "ci95": [
+     0.7458,
+     0.9667
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-sonnet-4-6",
+   "cell": "category:animal",
+   "U": {
+    "estimate": 0.2417,
+    "ci95": [
+     0.1625,
+     0.3125
+    ]
+   },
+   "N": {
+    "estimate": 0.6667,
+    "ci95": [
+     0.6667,
+     0.6667
+    ]
+   },
+   "E": {
+    "estimate": 0.3333,
+    "ci95": [
+     0.3333,
+     0.3333
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-sonnet-4-6",
+   "cell": "category:object",
+   "U": {
+    "estimate": 0.1292,
+    "ci95": [
+     0.05,
+     0.2125
+    ]
+   },
+   "N": {
+    "estimate": 0.6875,
+    "ci95": [
+     0.6583,
+     0.7375
+    ]
+   },
+   "E": {
+    "estimate": 0.3083,
+    "ci95": [
+     0.2583,
+     0.3333
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-sonnet-4-6",
+   "cell": "category:idea",
+   "U": {
+    "estimate": 0.0667,
+    "ci95": [
+     0.0167,
+     0.1125
+    ]
+   },
+   "N": {
+    "estimate": 0.6958,
+    "ci95": [
+     0.575,
+     0.8208
+    ]
+   },
+   "E": {
+    "estimate": 0.2833,
+    "ci95": [
+     0.1625,
+     0.4
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-haiku-4-5",
+   "cell": "neutral",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   },
+   "E": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-haiku-4-5",
+   "cell": "real_animal",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.8375,
+    "ci95": [
+     0.775,
+     0.9
+    ]
+   },
+   "E": {
+    "estimate": 0.025,
+    "ci95": [
+     0.0,
+     0.05
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-haiku-4-5",
+   "cell": "real_object",
+   "U": {
+    "estimate": 0.1125,
+    "ci95": [
+     0.025,
+     0.2375
+    ]
+   },
+   "N": {
+    "estimate": 0.825,
+    "ci95": [
+     0.6875,
+     0.9375
+    ]
+   },
+   "E": {
+    "estimate": 0.125,
+    "ci95": [
+     0.025,
+     0.25
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-haiku-4-5",
+   "cell": "real_idea",
+   "U": {
+    "estimate": 0.0875,
+    "ci95": [
+     0.0,
+     0.2625
+    ]
+   },
+   "N": {
+    "estimate": 0.7625,
+    "ci95": [
+     0.6,
+     0.9
+    ]
+   },
+   "E": {
+    "estimate": 0.125,
+    "ci95": [
+     0.0125,
+     0.3125
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-haiku-4-5",
+   "cell": "type_of_animal",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.9875,
+    "ci95": [
+     0.9625,
+     1.0
+    ]
+   },
+   "E": {
+    "estimate": 0.0125,
+    "ci95": [
+     0.0,
+     0.0375
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-haiku-4-5",
+   "cell": "type_of_object",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.9875,
+    "ci95": [
+     0.9625,
+     1.0
+    ]
+   },
+   "E": {
+    "estimate": 0.0125,
+    "ci95": [
+     0.0,
+     0.0375
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-haiku-4-5",
+   "cell": "type_of_idea",
+   "U": {
+    "estimate": 0.4,
+    "ci95": [
+     0.1872,
+     0.6
+    ]
+   },
+   "N": {
+    "estimate": 0.5,
+    "ci95": [
+     0.25,
+     0.7625
+    ]
+   },
+   "E": {
+    "estimate": 0.5,
+    "ci95": [
+     0.25,
+     0.75
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-haiku-4-5",
+   "cell": "imaginary_animal",
+   "U": {
+    "estimate": 0.8125,
+    "ci95": [
+     0.6625,
+     0.9375
+    ]
+   },
+   "N": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "E": {
+    "estimate": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-haiku-4-5",
+   "cell": "imaginary_object",
+   "U": {
+    "estimate": 0.85,
+    "ci95": [
+     0.8,
+     0.9
+    ]
+   },
+   "N": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "E": {
+    "estimate": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-haiku-4-5",
+   "cell": "imaginary_idea",
+   "U": {
+    "estimate": 0.5,
+    "ci95": [
+     0.3,
+     0.675
+    ]
+   },
+   "N": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "E": {
+    "estimate": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-haiku-4-5",
+   "cell": "frame:neutral",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   },
+   "E": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-haiku-4-5",
+   "cell": "frame:real",
+   "U": {
+    "estimate": 0.0667,
+    "ci95": [
+     0.0083,
+     0.1667
+    ]
+   },
+   "N": {
+    "estimate": 0.8083,
+    "ci95": [
+     0.6958,
+     0.8958
+    ]
+   },
+   "E": {
+    "estimate": 0.0917,
+    "ci95": [
+     0.025,
+     0.1958
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-haiku-4-5",
+   "cell": "frame:type_of",
+   "U": {
+    "estimate": 0.1333,
+    "ci95": [
+     0.0625,
+     0.2
+    ]
+   },
+   "N": {
+    "estimate": 0.825,
+    "ci95": [
+     0.7375,
+     0.9125
+    ]
+   },
+   "E": {
+    "estimate": 0.175,
+    "ci95": [
+     0.0875,
+     0.2625
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-haiku-4-5",
+   "cell": "frame:imaginary",
+   "U": {
+    "estimate": 0.7208,
+    "ci95": [
+     0.6125,
+     0.8042
+    ]
+   },
+   "N": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "E": {
+    "estimate": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-haiku-4-5",
+   "cell": "category:animal",
+   "U": {
+    "estimate": 0.2708,
+    "ci95": [
+     0.2208,
+     0.3125
+    ]
+   },
+   "N": {
+    "estimate": 0.6083,
+    "ci95": [
+     0.5833,
+     0.6333
+    ]
+   },
+   "E": {
+    "estimate": 0.3458,
+    "ci95": [
+     0.3333,
+     0.3625
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-haiku-4-5",
+   "cell": "category:object",
+   "U": {
+    "estimate": 0.3208,
+    "ci95": [
+     0.2792,
+     0.3667
+    ]
+   },
+   "N": {
+    "estimate": 0.6042,
+    "ci95": [
+     0.55,
+     0.6458
+    ]
+   },
+   "E": {
+    "estimate": 0.3792,
+    "ci95": [
+     0.3417,
+     0.4292
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-haiku-4-5",
+   "cell": "category:idea",
+   "U": {
+    "estimate": 0.3292,
+    "ci95": [
+     0.2292,
+     0.4292
+    ]
+   },
+   "N": {
+    "estimate": 0.4208,
+    "ci95": [
+     0.325,
+     0.5167
+    ]
+   },
+   "E": {
+    "estimate": 0.5417,
+    "ci95": [
+     0.4458,
+     0.6417
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-sonnet-5-5",
+   "cell": "neutral",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.975,
+    "ci95": [
+     0.95,
+     1.0
+    ]
+   },
+   "E": {
+    "estimate": 0.025,
+    "ci95": [
+     0.0,
+     0.05
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-sonnet-5-5",
+   "cell": "real_animal",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.8875,
+    "ci95": [
+     0.85,
+     0.925
+    ]
+   },
+   "E": {
+    "estimate": 0.1125,
+    "ci95": [
+     0.075,
+     0.15
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-sonnet-5-5",
+   "cell": "real_object",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.875,
+    "ci95": [
+     0.8125,
+     0.9375
+    ]
+   },
+   "E": {
+    "estimate": 0.125,
+    "ci95": [
+     0.0625,
+     0.1878
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-sonnet-5-5",
+   "cell": "real_idea",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.95,
+    "ci95": [
+     0.875,
+     1.0
+    ]
+   },
+   "E": {
+    "estimate": 0.05,
+    "ci95": [
+     0.0,
+     0.125
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-sonnet-5-5",
+   "cell": "type_of_animal",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.65,
+    "ci95": [
+     0.5,
+     0.8
+    ]
+   },
+   "E": {
+    "estimate": 0.35,
+    "ci95": [
+     0.1875,
+     0.5
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-sonnet-5-5",
+   "cell": "type_of_object",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.825,
+    "ci95": [
+     0.725,
+     0.9125
+    ]
+   },
+   "E": {
+    "estimate": 0.175,
+    "ci95": [
+     0.075,
+     0.275
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-sonnet-5-5",
+   "cell": "type_of_idea",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.75,
+    "ci95": [
+     0.6625,
+     0.8375
+    ]
+   },
+   "E": {
+    "estimate": 0.2375,
+    "ci95": [
+     0.15,
+     0.325
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-sonnet-5-5",
+   "cell": "imaginary_animal",
+   "U": {
+    "estimate": 0.6125,
+    "ci95": [
+     0.425,
+     0.775
+    ]
+   },
+   "N": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "E": {
+    "estimate": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-sonnet-5-5",
+   "cell": "imaginary_object",
+   "U": {
+    "estimate": 0.825,
+    "ci95": [
+     0.75,
+     0.9125
+    ]
+   },
+   "N": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "E": {
+    "estimate": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-sonnet-5-5",
+   "cell": "imaginary_idea",
+   "U": {
+    "estimate": 0.8,
+    "ci95": [
+     0.6875,
+     0.9125
+    ]
+   },
+   "N": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "E": {
+    "estimate": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-sonnet-5-5",
+   "cell": "frame:neutral",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.975,
+    "ci95": [
+     0.95,
+     1.0
+    ]
+   },
+   "E": {
+    "estimate": 0.025,
+    "ci95": [
+     0.0,
+     0.05
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-sonnet-5-5",
+   "cell": "frame:real",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.9042,
+    "ci95": [
+     0.8667,
+     0.9417
+    ]
+   },
+   "E": {
+    "estimate": 0.0958,
+    "ci95": [
+     0.0625,
+     0.1333
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-sonnet-5-5",
+   "cell": "frame:type_of",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.7417,
+    "ci95": [
+     0.65,
+     0.8167
+    ]
+   },
+   "E": {
+    "estimate": 0.2542,
+    "ci95": [
+     0.1833,
+     0.3458
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-sonnet-5-5",
+   "cell": "frame:imaginary",
+   "U": {
+    "estimate": 0.7458,
+    "ci95": [
+     0.6417,
+     0.8458
+    ]
+   },
+   "N": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "E": {
+    "estimate": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-sonnet-5-5",
+   "cell": "category:animal",
+   "U": {
+    "estimate": 0.2042,
+    "ci95": [
+     0.1375,
+     0.2583
+    ]
+   },
+   "N": {
+    "estimate": 0.5125,
+    "ci95": [
+     0.4583,
+     0.5708
+    ]
+   },
+   "E": {
+    "estimate": 0.4875,
+    "ci95": [
+     0.4292,
+     0.5417
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-sonnet-5-5",
+   "cell": "category:object",
+   "U": {
+    "estimate": 0.275,
+    "ci95": [
+     0.25,
+     0.3042
+    ]
+   },
+   "N": {
+    "estimate": 0.5667,
+    "ci95": [
+     0.525,
+     0.6083
+    ]
+   },
+   "E": {
+    "estimate": 0.4333,
+    "ci95": [
+     0.3917,
+     0.475
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-sonnet-5-5",
+   "cell": "category:idea",
+   "U": {
+    "estimate": 0.2667,
+    "ci95": [
+     0.2292,
+     0.3042
+    ]
+   },
+   "N": {
+    "estimate": 0.5667,
+    "ci95": [
+     0.5333,
+     0.6
+    ]
+   },
+   "E": {
+    "estimate": 0.4292,
+    "ci95": [
+     0.3958,
+     0.4625
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-haiku-5-5",
+   "cell": "neutral",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.975,
+    "ci95": [
+     0.95,
+     1.0
+    ]
+   },
+   "E": {
+    "estimate": 0.025,
+    "ci95": [
+     0.0,
+     0.05
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-haiku-5-5",
+   "cell": "real_animal",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.75,
+    "ci95": [
+     0.6875,
+     0.8125
+    ]
+   },
+   "E": {
+    "estimate": 0.25,
+    "ci95": [
+     0.1875,
+     0.3
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-haiku-5-5",
+   "cell": "real_object",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.925,
+    "ci95": [
+     0.85,
+     0.975
+    ]
+   },
+   "E": {
+    "estimate": 0.075,
+    "ci95": [
+     0.025,
+     0.15
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-haiku-5-5",
+   "cell": "real_idea",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.9875,
+    "ci95": [
+     0.9625,
+     1.0
+    ]
+   },
+   "E": {
+    "estimate": 0.0125,
+    "ci95": [
+     0.0,
+     0.0375
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-haiku-5-5",
+   "cell": "type_of_animal",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.725,
+    "ci95": [
+     0.6375,
+     0.8
+    ]
+   },
+   "E": {
+    "estimate": 0.275,
+    "ci95": [
+     0.2,
+     0.3625
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-haiku-5-5",
+   "cell": "type_of_object",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.9375,
+    "ci95": [
+     0.9,
+     0.975
+    ]
+   },
+   "E": {
+    "estimate": 0.0625,
+    "ci95": [
+     0.025,
+     0.1
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-haiku-5-5",
+   "cell": "type_of_idea",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.9625,
+    "ci95": [
+     0.925,
+     1.0
+    ]
+   },
+   "E": {
+    "estimate": 0.0375,
+    "ci95": [
+     0.0,
+     0.075
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-haiku-5-5",
+   "cell": "imaginary_animal",
+   "U": {
+    "estimate": 0.3375,
+    "ci95": [
+     0.1125,
+     0.6125
+    ]
+   },
+   "N": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "E": {
+    "estimate": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-haiku-5-5",
+   "cell": "imaginary_object",
+   "U": {
+    "estimate": 0.375,
+    "ci95": [
+     0.1375,
+     0.65
+    ]
+   },
+   "N": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "E": {
+    "estimate": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-haiku-5-5",
+   "cell": "imaginary_idea",
+   "U": {
+    "estimate": 0.2,
+    "ci95": [
+     0.0375,
+     0.4
+    ]
+   },
+   "N": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "E": {
+    "estimate": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-haiku-5-5",
+   "cell": "frame:neutral",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.975,
+    "ci95": [
+     0.95,
+     1.0
+    ]
+   },
+   "E": {
+    "estimate": 0.025,
+    "ci95": [
+     0.0,
+     0.05
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-haiku-5-5",
+   "cell": "frame:real",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.8875,
+    "ci95": [
+     0.85,
+     0.9167
+    ]
+   },
+   "E": {
+    "estimate": 0.1125,
+    "ci95": [
+     0.0833,
+     0.15
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-haiku-5-5",
+   "cell": "frame:type_of",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.875,
+    "ci95": [
+     0.8458,
+     0.9042
+    ]
+   },
+   "E": {
+    "estimate": 0.125,
+    "ci95": [
+     0.0958,
+     0.1542
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-haiku-5-5",
+   "cell": "frame:imaginary",
+   "U": {
+    "estimate": 0.3042,
+    "ci95": [
+     0.1167,
+     0.5333
+    ]
+   },
+   "N": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "E": {
+    "estimate": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-haiku-5-5",
+   "cell": "category:animal",
+   "U": {
+    "estimate": 0.1125,
+    "ci95": [
+     0.0375,
+     0.2042
+    ]
+   },
+   "N": {
+    "estimate": 0.4917,
+    "ci95": [
+     0.4708,
+     0.5167
+    ]
+   },
+   "E": {
+    "estimate": 0.5083,
+    "ci95": [
+     0.4833,
+     0.5292
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-haiku-5-5",
+   "cell": "category:object",
+   "U": {
+    "estimate": 0.125,
+    "ci95": [
+     0.0458,
+     0.2125
+    ]
+   },
+   "N": {
+    "estimate": 0.6208,
+    "ci95": [
+     0.6042,
+     0.6375
+    ]
+   },
+   "E": {
+    "estimate": 0.3792,
+    "ci95": [
+     0.3625,
+     0.3958
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-haiku-5-5",
+   "cell": "category:idea",
+   "U": {
+    "estimate": 0.0667,
+    "ci95": [
+     0.0125,
+     0.1333
+    ]
+   },
+   "N": {
+    "estimate": 0.65,
+    "ci95": [
+     0.6333,
+     0.6625
+    ]
+   },
+   "E": {
+    "estimate": 0.35,
+    "ci95": [
+     0.3375,
+     0.3667
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-5.4-mini",
+   "cell": "neutral",
+   "U": {
+    "estimate": 0.025,
+    "ci95": [
+     0.0,
+     0.05
+    ]
+   },
+   "N": {
+    "estimate": 0.325,
+    "ci95": [
+     0.1125,
+     0.55
+    ]
+   },
+   "E": {
+    "estimate": 0.6625,
+    "ci95": [
+     0.45,
+     0.875
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-5.4-mini",
+   "cell": "real_animal",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.75,
+    "ci95": [
+     0.6375,
+     0.875
+    ]
+   },
+   "E": {
+    "estimate": 0.1125,
+    "ci95": [
+     0.0375,
+     0.1625
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-5.4-mini",
+   "cell": "real_object",
+   "U": {
+    "estimate": 0.0125,
+    "ci95": [
+     0.0,
+     0.0375
+    ]
+   },
+   "N": {
+    "estimate": 0.7125,
+    "ci95": [
+     0.6125,
+     0.8125
+    ]
+   },
+   "E": {
+    "estimate": 0.1375,
+    "ci95": [
+     0.075,
+     0.2
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-5.4-mini",
+   "cell": "real_idea",
+   "U": {
+    "estimate": 0.05,
+    "ci95": [
+     0.0,
+     0.15
+    ]
+   },
+   "N": {
+    "estimate": 0.6,
+    "ci95": [
+     0.4875,
+     0.725
+    ]
+   },
+   "E": {
+    "estimate": 0.325,
+    "ci95": [
+     0.2,
+     0.425
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-5.4-mini",
+   "cell": "type_of_animal",
+   "U": {
+    "estimate": 0.0125,
+    "ci95": [
+     0.0,
+     0.0375
+    ]
+   },
+   "N": {
+    "estimate": 0.0375,
+    "ci95": [
+     0.0,
+     0.1125
+    ]
+   },
+   "E": {
+    "estimate": 0.9625,
+    "ci95": [
+     0.8875,
+     1.0
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-5.4-mini",
+   "cell": "type_of_object",
+   "U": {
+    "estimate": 0.0625,
+    "ci95": [
+     0.025,
+     0.1125
+    ]
+   },
+   "N": {
+    "estimate": 0.0625,
+    "ci95": [
+     0.0,
+     0.1875
+    ]
+   },
+   "E": {
+    "estimate": 0.925,
+    "ci95": [
+     0.8,
+     1.0
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-5.4-mini",
+   "cell": "type_of_idea",
+   "U": {
+    "estimate": 0.125,
+    "ci95": [
+     0.0375,
+     0.2375
+    ]
+   },
+   "N": {
+    "estimate": 0.1,
+    "ci95": [
+     0.0,
+     0.2625
+    ]
+   },
+   "E": {
+    "estimate": 0.6875,
+    "ci95": [
+     0.4875,
+     0.875
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-5.4-mini",
+   "cell": "imaginary_animal",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "E": {
+    "estimate": 0.9875,
+    "ci95": [
+     0.9625,
+     1.0
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-5.4-mini",
+   "cell": "imaginary_object",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "E": {
+    "estimate": 0.975,
+    "ci95": [
+     0.925,
+     1.0
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-5.4-mini",
+   "cell": "imaginary_idea",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.025,
+    "ci95": [
+     0.0,
+     0.0625
+    ]
+   },
+   "E": {
+    "estimate": 0.775,
+    "ci95": [
+     0.7,
+     0.85
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-5.4-mini",
+   "cell": "frame:neutral",
+   "U": {
+    "estimate": 0.025,
+    "ci95": [
+     0.0,
+     0.05
+    ]
+   },
+   "N": {
+    "estimate": 0.325,
+    "ci95": [
+     0.1125,
+     0.55
+    ]
+   },
+   "E": {
+    "estimate": 0.6625,
+    "ci95": [
+     0.4375,
+     0.8625
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-5.4-mini",
+   "cell": "frame:real",
+   "U": {
+    "estimate": 0.0208,
+    "ci95": [
+     0.0,
+     0.0625
+    ]
+   },
+   "N": {
+    "estimate": 0.6875,
+    "ci95": [
+     0.6125,
+     0.7667
+    ]
+   },
+   "E": {
+    "estimate": 0.1917,
+    "ci95": [
+     0.1375,
+     0.2292
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-5.4-mini",
+   "cell": "frame:type_of",
+   "U": {
+    "estimate": 0.0667,
+    "ci95": [
+     0.025,
+     0.1125
+    ]
+   },
+   "N": {
+    "estimate": 0.0667,
+    "ci95": [
+     0.0,
+     0.1875
+    ]
+   },
+   "E": {
+    "estimate": 0.8583,
+    "ci95": [
+     0.7333,
+     0.95
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-5.4-mini",
+   "cell": "frame:imaginary",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.0083,
+    "ci95": [
+     0.0,
+     0.0208
+    ]
+   },
+   "E": {
+    "estimate": 0.9125,
+    "ci95": [
+     0.8833,
+     0.9417
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-5.4-mini",
+   "cell": "category:animal",
+   "U": {
+    "estimate": 0.0042,
+    "ci95": [
+     0.0,
+     0.0125
+    ]
+   },
+   "N": {
+    "estimate": 0.2625,
+    "ci95": [
+     0.225,
+     0.3042
+    ]
+   },
+   "E": {
+    "estimate": 0.6875,
+    "ci95": [
+     0.6625,
+     0.7083
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-5.4-mini",
+   "cell": "category:object",
+   "U": {
+    "estimate": 0.025,
+    "ci95": [
+     0.0167,
+     0.0417
+    ]
+   },
+   "N": {
+    "estimate": 0.2583,
+    "ci95": [
+     0.2083,
+     0.3084
+    ]
+   },
+   "E": {
+    "estimate": 0.6792,
+    "ci95": [
+     0.6333,
+     0.7208
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-5.4-mini",
+   "cell": "category:idea",
+   "U": {
+    "estimate": 0.0583,
+    "ci95": [
+     0.0292,
+     0.0875
+    ]
+   },
+   "N": {
+    "estimate": 0.2417,
+    "ci95": [
+     0.1792,
+     0.3167
+    ]
+   },
+   "E": {
+    "estimate": 0.5958,
+    "ci95": [
+     0.5083,
+     0.6792
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-5.4-nano",
+   "cell": "neutral",
+   "U": {
+    "estimate": 0.1,
+    "ci95": [
+     0.0125,
+     0.2125
+    ]
+   },
+   "N": {
+    "estimate": 0.45,
+    "ci95": [
+     0.275,
+     0.625
+    ]
+   },
+   "E": {
+    "estimate": 0.3875,
+    "ci95": [
+     0.2,
+     0.5875
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-5.4-nano",
+   "cell": "real_animal",
+   "U": {
+    "estimate": 0.15,
+    "ci95": [
+     0.1,
+     0.2125
+    ]
+   },
+   "N": {
+    "estimate": 0.4375,
+    "ci95": [
+     0.275,
+     0.55
+    ]
+   },
+   "E": {
+    "estimate": 0.5625,
+    "ci95": [
+     0.45,
+     0.7125
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-5.4-nano",
+   "cell": "real_object",
+   "U": {
+    "estimate": 0.1625,
+    "ci95": [
+     0.1,
+     0.2375
+    ]
+   },
+   "N": {
+    "estimate": 0.4125,
+    "ci95": [
+     0.3125,
+     0.5
+    ]
+   },
+   "E": {
+    "estimate": 0.4875,
+    "ci95": [
+     0.35,
+     0.6125
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-5.4-nano",
+   "cell": "real_idea",
+   "U": {
+    "estimate": 0.0625,
+    "ci95": [
+     0.025,
+     0.1
+    ]
+   },
+   "N": {
+    "estimate": 0.5,
+    "ci95": [
+     0.375,
+     0.625
+    ]
+   },
+   "E": {
+    "estimate": 0.425,
+    "ci95": [
+     0.3,
+     0.575
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-5.4-nano",
+   "cell": "type_of_animal",
+   "U": {
+    "estimate": 0.0625,
+    "ci95": [
+     0.0,
+     0.125
+    ]
+   },
+   "N": {
+    "estimate": 0.175,
+    "ci95": [
+     0.0625,
+     0.3625
+    ]
+   },
+   "E": {
+    "estimate": 0.7625,
+    "ci95": [
+     0.625,
+     0.875
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-5.4-nano",
+   "cell": "type_of_object",
+   "U": {
+    "estimate": 0.0625,
+    "ci95": [
+     0.0125,
+     0.125
+    ]
+   },
+   "N": {
+    "estimate": 0.2375,
+    "ci95": [
+     0.1,
+     0.4375
+    ]
+   },
+   "E": {
+    "estimate": 0.7125,
+    "ci95": [
+     0.5375,
+     0.875
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-5.4-nano",
+   "cell": "type_of_idea",
+   "U": {
+    "estimate": 0.025,
+    "ci95": [
+     0.0,
+     0.0625
+    ]
+   },
+   "N": {
+    "estimate": 0.3,
+    "ci95": [
+     0.1,
+     0.475
+    ]
+   },
+   "E": {
+    "estimate": 0.5375,
+    "ci95": [
+     0.3,
+     0.775
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-5.4-nano",
+   "cell": "imaginary_animal",
+   "U": {
+    "estimate": 0.2375,
+    "ci95": [
+     0.1375,
+     0.3375
+    ]
+   },
+   "N": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "E": {
+    "estimate": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-5.4-nano",
+   "cell": "imaginary_object",
+   "U": {
+    "estimate": 0.0375,
+    "ci95": [
+     0.0,
+     0.075
+    ]
+   },
+   "N": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "E": {
+    "estimate": 0.9875,
+    "ci95": [
+     0.9625,
+     1.0
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-5.4-nano",
+   "cell": "imaginary_idea",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.0125,
+    "ci95": [
+     0.0,
+     0.0375
+    ]
+   },
+   "E": {
+    "estimate": 0.9125,
+    "ci95": [
+     0.825,
+     0.975
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-5.4-nano",
+   "cell": "frame:neutral",
+   "U": {
+    "estimate": 0.1,
+    "ci95": [
+     0.0125,
+     0.2125
+    ]
+   },
+   "N": {
+    "estimate": 0.45,
+    "ci95": [
+     0.275,
+     0.6375
+    ]
+   },
+   "E": {
+    "estimate": 0.3875,
+    "ci95": [
+     0.2,
+     0.5875
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-5.4-nano",
+   "cell": "frame:real",
+   "U": {
+    "estimate": 0.125,
+    "ci95": [
+     0.0875,
+     0.1583
+    ]
+   },
+   "N": {
+    "estimate": 0.45,
+    "ci95": [
+     0.3625,
+     0.5375
+    ]
+   },
+   "E": {
+    "estimate": 0.4917,
+    "ci95": [
+     0.4042,
+     0.5833
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-5.4-nano",
+   "cell": "frame:type_of",
+   "U": {
+    "estimate": 0.05,
+    "ci95": [
+     0.0125,
+     0.0917
+    ]
+   },
+   "N": {
+    "estimate": 0.2375,
+    "ci95": [
+     0.1042,
+     0.4208
+    ]
+   },
+   "E": {
+    "estimate": 0.6708,
+    "ci95": [
+     0.5,
+     0.8292
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-5.4-nano",
+   "cell": "frame:imaginary",
+   "U": {
+    "estimate": 0.0917,
+    "ci95": [
+     0.05,
+     0.1333
+    ]
+   },
+   "N": {
+    "estimate": 0.0042,
+    "ci95": [
+     0.0,
+     0.0125
+    ]
+   },
+   "E": {
+    "estimate": 0.9667,
+    "ci95": [
+     0.9292,
+     0.9917
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-5.4-nano",
+   "cell": "category:animal",
+   "U": {
+    "estimate": 0.15,
+    "ci95": [
+     0.0917,
+     0.2083
+    ]
+   },
+   "N": {
+    "estimate": 0.2042,
+    "ci95": [
+     0.1167,
+     0.3
+    ]
+   },
+   "E": {
+    "estimate": 0.775,
+    "ci95": [
+     0.7,
+     0.8333
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-5.4-nano",
+   "cell": "category:object",
+   "U": {
+    "estimate": 0.0875,
+    "ci95": [
+     0.0458,
+     0.1208
+    ]
+   },
+   "N": {
+    "estimate": 0.2167,
+    "ci95": [
+     0.1417,
+     0.3
+    ]
+   },
+   "E": {
+    "estimate": 0.7292,
+    "ci95": [
+     0.6375,
+     0.8167
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-5.4-nano",
+   "cell": "category:idea",
+   "U": {
+    "estimate": 0.0292,
+    "ci95": [
+     0.0083,
+     0.05
+    ]
+   },
+   "N": {
+    "estimate": 0.2708,
+    "ci95": [
+     0.1917,
+     0.35
+    ]
+   },
+   "E": {
+    "estimate": 0.625,
+    "ci95": [
+     0.5125,
+     0.7333
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-6-sol",
+   "cell": "neutral",
+   "U": {
+    "estimate": 0.0125,
+    "ci95": [
+     0.0,
+     0.0375
+    ]
+   },
+   "N": {
+    "estimate": 0.95,
+    "ci95": [
+     0.85,
+     1.0
+    ]
+   },
+   "E": {
+    "estimate": 0.025,
+    "ci95": [
+     0.0,
+     0.075
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-6-sol",
+   "cell": "real_animal",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   },
+   "E": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-6-sol",
+   "cell": "real_object",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   },
+   "E": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-6-sol",
+   "cell": "real_idea",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   },
+   "E": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-6-sol",
+   "cell": "type_of_animal",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.9875,
+    "ci95": [
+     0.9625,
+     1.0
+    ]
+   },
+   "E": {
+    "estimate": 0.0125,
+    "ci95": [
+     0.0,
+     0.0375
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-6-sol",
+   "cell": "type_of_object",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 0.975,
+    "ci95": [
+     0.925,
+     1.0
+    ]
+   },
+   "E": {
+    "estimate": 0.0125,
+    "ci95": [
+     0.0,
+     0.0375
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-6-sol",
+   "cell": "type_of_idea",
+   "U": {
+    "estimate": 0.7875,
+    "ci95": [
+     0.575,
+     1.0
+    ]
+   },
+   "N": {
+    "estimate": 0.1875,
+    "ci95": [
+     0.0,
+     0.375
+    ]
+   },
+   "E": {
+    "estimate": 0.7875,
+    "ci95": [
+     0.575,
+     1.0
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-6-sol",
+   "cell": "imaginary_animal",
+   "U": {
+    "estimate": 0.9125,
+    "ci95": [
+     0.7375,
+     1.0
+    ]
+   },
+   "N": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "E": {
+    "estimate": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-6-sol",
+   "cell": "imaginary_object",
+   "U": {
+    "estimate": 0.7875,
+    "ci95": [
+     0.6125,
+     0.925
+    ]
+   },
+   "N": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "E": {
+    "estimate": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-6-sol",
+   "cell": "imaginary_idea",
+   "U": {
+    "estimate": 0.1875,
+    "ci95": [
+     0.0625,
+     0.325
+    ]
+   },
+   "N": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "E": {
+    "estimate": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-6-sol",
+   "cell": "frame:neutral",
+   "U": {
+    "estimate": 0.0125,
+    "ci95": [
+     0.0,
+     0.0375
+    ]
+   },
+   "N": {
+    "estimate": 0.95,
+    "ci95": [
+     0.85,
+     1.0
+    ]
+   },
+   "E": {
+    "estimate": 0.025,
+    "ci95": [
+     0.0,
+     0.075
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-6-sol",
+   "cell": "frame:real",
+   "U": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "N": {
+    "estimate": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   },
+   "E": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-6-sol",
+   "cell": "frame:type_of",
+   "U": {
+    "estimate": 0.2625,
+    "ci95": [
+     0.1917,
+     0.3333
+    ]
+   },
+   "N": {
+    "estimate": 0.7167,
+    "ci95": [
+     0.6542,
+     0.7875
+    ]
+   },
+   "E": {
+    "estimate": 0.2708,
+    "ci95": [
+     0.1958,
+     0.3417
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-6-sol",
+   "cell": "frame:imaginary",
+   "U": {
+    "estimate": 0.6292,
+    "ci95": [
+     0.5,
+     0.7542
+    ]
+   },
+   "N": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "E": {
+    "estimate": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-6-sol",
+   "cell": "category:animal",
+   "U": {
+    "estimate": 0.3042,
+    "ci95": [
+     0.2458,
+     0.3333
+    ]
+   },
+   "N": {
+    "estimate": 0.6625,
+    "ci95": [
+     0.6542,
+     0.6667
+    ]
+   },
+   "E": {
+    "estimate": 0.3375,
+    "ci95": [
+     0.3333,
+     0.3458
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-6-sol",
+   "cell": "category:object",
+   "U": {
+    "estimate": 0.2625,
+    "ci95": [
+     0.2042,
+     0.3125
+    ]
+   },
+   "N": {
+    "estimate": 0.6583,
+    "ci95": [
+     0.6417,
+     0.6667
+    ]
+   },
+   "E": {
+    "estimate": 0.3375,
+    "ci95": [
+     0.3333,
+     0.3458
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-6-sol",
+   "cell": "category:idea",
+   "U": {
+    "estimate": 0.325,
+    "ci95": [
+     0.2083,
+     0.4417
+    ]
+   },
+   "N": {
+    "estimate": 0.3958,
+    "ci95": [
+     0.3333,
+     0.4583
+    ]
+   },
+   "E": {
+    "estimate": 0.5958,
+    "ci95": [
+     0.525,
+     0.6667
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-6-luna",
+   "cell": "neutral",
+   "U": {
+    "estimate": 0.05,
+    "ci95": [
+     0.0,
+     0.1125
+    ]
+   },
+   "N": {
+    "estimate": 0.85,
+    "ci95": [
+     0.675,
+     0.9875
+    ]
+   },
+   "E": {
+    "estimate": 0.1375,
+    "ci95": [
+     0.0,
+     0.3
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-6-luna",
+   "cell": "real_animal",
+   "U": {
+    "estimate": 0.0875,
+    "ci95": [
+     0.025,
+     0.15
+    ]
+   },
+   "N": {
+    "estimate": 0.875,
+    "ci95": [
+     0.8,
+     0.95
+    ]
+   },
+   "E": {
+    "estimate": 0.125,
+    "ci95": [
+     0.05,
+     0.2
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-6-luna",
+   "cell": "real_object",
+   "U": {
+    "estimate": 0.15,
+    "ci95": [
+     0.05,
+     0.2625
+    ]
+   },
+   "N": {
+    "estimate": 0.775,
+    "ci95": [
+     0.65,
+     0.8875
+    ]
+   },
+   "E": {
+    "estimate": 0.225,
+    "ci95": [
+     0.1125,
+     0.35
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-6-luna",
+   "cell": "real_idea",
+   "U": {
+    "estimate": 0.15,
+    "ci95": [
+     0.075,
+     0.25
+    ]
+   },
+   "N": {
+    "estimate": 0.5125,
+    "ci95": [
+     0.2875,
+     0.7
+    ]
+   },
+   "E": {
+    "estimate": 0.4875,
+    "ci95": [
+     0.3,
+     0.725
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-6-luna",
+   "cell": "type_of_animal",
+   "U": {
+    "estimate": 0.025,
+    "ci95": [
+     0.0,
+     0.075
+    ]
+   },
+   "N": {
+    "estimate": 0.875,
+    "ci95": [
+     0.6625,
+     1.0
+    ]
+   },
+   "E": {
+    "estimate": 0.125,
+    "ci95": [
+     0.0,
+     0.3375
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-6-luna",
+   "cell": "type_of_object",
+   "U": {
+    "estimate": 0.025,
+    "ci95": [
+     0.0,
+     0.075
+    ]
+   },
+   "N": {
+    "estimate": 0.9,
+    "ci95": [
+     0.7375,
+     1.0
+    ]
+   },
+   "E": {
+    "estimate": 0.1,
+    "ci95": [
+     0.0,
+     0.2625
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-6-luna",
+   "cell": "type_of_idea",
+   "U": {
+    "estimate": 0.1,
+    "ci95": [
+     0.0,
+     0.275
+    ]
+   },
+   "N": {
+    "estimate": 0.8,
+    "ci95": [
+     0.5875,
+     0.9625
+    ]
+   },
+   "E": {
+    "estimate": 0.1625,
+    "ci95": [
+     0.0375,
+     0.325
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-6-luna",
+   "cell": "imaginary_animal",
+   "U": {
+    "estimate": 0.8875,
+    "ci95": [
+     0.7125,
+     1.0
+    ]
+   },
+   "N": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "E": {
+    "estimate": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-6-luna",
+   "cell": "imaginary_object",
+   "U": {
+    "estimate": 0.7875,
+    "ci95": [
+     0.6625,
+     0.875
+    ]
+   },
+   "N": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "E": {
+    "estimate": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-6-luna",
+   "cell": "imaginary_idea",
+   "U": {
+    "estimate": 0.2625,
+    "ci95": [
+     0.0875,
+     0.475
+    ]
+   },
+   "N": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "E": {
+    "estimate": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-6-luna",
+   "cell": "frame:neutral",
+   "U": {
+    "estimate": 0.05,
+    "ci95": [
+     0.0,
+     0.1125
+    ]
+   },
+   "N": {
+    "estimate": 0.85,
+    "ci95": [
+     0.675,
+     0.9875
+    ]
+   },
+   "E": {
+    "estimate": 0.1375,
+    "ci95": [
+     0.0,
+     0.3
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-6-luna",
+   "cell": "frame:real",
+   "U": {
+    "estimate": 0.1292,
+    "ci95": [
+     0.0583,
+     0.2083
+    ]
+   },
+   "N": {
+    "estimate": 0.7208,
+    "ci95": [
+     0.5917,
+     0.825
+    ]
+   },
+   "E": {
+    "estimate": 0.2792,
+    "ci95": [
+     0.175,
+     0.4083
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-6-luna",
+   "cell": "frame:type_of",
+   "U": {
+    "estimate": 0.05,
+    "ci95": [
+     0.0,
+     0.1417
+    ]
+   },
+   "N": {
+    "estimate": 0.8583,
+    "ci95": [
+     0.6542,
+     0.9792
+    ]
+   },
+   "E": {
+    "estimate": 0.1292,
+    "ci95": [
+     0.0208,
+     0.3083
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-6-luna",
+   "cell": "frame:imaginary",
+   "U": {
+    "estimate": 0.6458,
+    "ci95": [
+     0.525,
+     0.7667
+    ]
+   },
+   "N": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "E": {
+    "estimate": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-6-luna",
+   "cell": "category:animal",
+   "U": {
+    "estimate": 0.3333,
+    "ci95": [
+     0.2542,
+     0.3875
+    ]
+   },
+   "N": {
+    "estimate": 0.5833,
+    "ci95": [
+     0.5083,
+     0.6458
+    ]
+   },
+   "E": {
+    "estimate": 0.4167,
+    "ci95": [
+     0.3542,
+     0.4875
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-6-luna",
+   "cell": "category:object",
+   "U": {
+    "estimate": 0.3208,
+    "ci95": [
+     0.2625,
+     0.3792
+    ]
+   },
+   "N": {
+    "estimate": 0.5583,
+    "ci95": [
+     0.5083,
+     0.6125
+    ]
+   },
+   "E": {
+    "estimate": 0.4417,
+    "ci95": [
+     0.3875,
+     0.4917
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-6-luna",
+   "cell": "category:idea",
+   "U": {
+    "estimate": 0.1708,
+    "ci95": [
+     0.075,
+     0.2875
+    ]
+   },
+   "N": {
+    "estimate": 0.4375,
+    "ci95": [
+     0.35,
+     0.5167
+    ]
+   },
+   "E": {
+    "estimate": 0.55,
+    "ci95": [
+     0.4833,
+     0.6292
+    ]
+   }
+  }
+ ],
+ "contrasts_by_model": [
+  {
+   "model": "claude-sonnet-4-6",
+   "H1 E imaginary-real": {
+    "estimate": 0.9056,
+    "ci95": [
+     0.8556,
+     0.95
+    ]
+   },
+   "H2 N type_of-real": {
+    "estimate": 0.0389,
+    "ci95": [
+     -0.0333,
+     0.1083
+    ]
+   },
+   "H3 U animal-no_intent": {
+    "estimate": -0.0521,
+    "ci95": [
+     -0.0938,
+     -0.0167
+    ]
+   },
+   "H4 N known-fresh (intent-standardised; point only)": {
+    "estimate": 0.0563
+   },
+   "H5 U presupposition (level)": {
+    "estimate": 0.0389,
+    "ci95": [
+     0.0153,
+     0.0653
+    ]
+   },
+   "H6 N claude_made-gpt_made": {
+    "estimate": 0.0607,
+    "ci95": [
+     -0.0607,
+     0.1893
+    ]
+   }
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "H1 E imaginary-real": {
+    "estimate": 0.8556,
+    "ci95": [
+     0.775,
+     0.925
+    ]
+   },
+   "H2 N type_of-real": {
+    "estimate": -0.0139,
+    "ci95": [
+     -0.1056,
+     0.0806
+    ]
+   },
+   "H3 U animal-no_intent": {
+    "estimate": -0.0083,
+    "ci95": [
+     -0.1021,
+     0.1
+    ]
+   },
+   "H4 N known-fresh (intent-standardised; point only)": {
+    "estimate": 0.0732
+   },
+   "H5 U presupposition (level)": {
+    "estimate": 0.1347,
+    "ci95": [
+     0.0944,
+     0.1792
+    ]
+   },
+   "H6 N claude_made-gpt_made": {
+    "estimate": 0.0643,
+    "ci95": [
+     -0.0429,
+     0.1786
+    ]
+   }
+  },
+  {
+   "model": "claude-sonnet-5-5",
+   "H1 E imaginary-real": {
+    "estimate": 0.8778,
+    "ci95": [
+     0.8417,
+     0.9139
+    ]
+   },
+   "H2 N type_of-real": {
+    "estimate": -0.0639,
+    "ci95": [
+     -0.1222,
+     -0.0028
+    ]
+   },
+   "H3 U animal-no_intent": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "H4 N known-fresh (intent-standardised; point only)": {
+    "estimate": 0.0143
+   },
+   "H5 U presupposition (level)": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "H6 N claude_made-gpt_made": {
+    "estimate": -0.0429,
+    "ci95": [
+     -0.0964,
+     0.0143
+    ]
+   }
+  },
+  {
+   "model": "claude-haiku-5-5",
+   "H1 E imaginary-real": {
+    "estimate": 0.9306,
+    "ci95": [
+     0.9111,
+     0.95
+    ]
+   },
+   "H2 N type_of-real": {
+    "estimate": -0.0611,
+    "ci95": [
+     -0.0972,
+     -0.025
+    ]
+   },
+   "H3 U animal-no_intent": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "H4 N known-fresh (intent-standardised; point only)": {
+    "estimate": -0.0151
+   },
+   "H5 U presupposition (level)": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "H6 N claude_made-gpt_made": {
+    "estimate": 0.025,
+    "ci95": [
+     -0.0071,
+     0.0607
+    ]
+   }
+  },
+  {
+   "model": "gpt-5.4-mini",
+   "H1 E imaginary-real": {
+    "estimate": 0.5833,
+    "ci95": [
+     0.5278,
+     0.6389
+    ]
+   },
+   "H2 N type_of-real": {
+    "estimate": -0.5528,
+    "ci95": [
+     -0.6056,
+     -0.5028
+    ]
+   },
+   "H3 U animal-no_intent": {
+    "estimate": -0.0146,
+    "ci95": [
+     -0.0729,
+     0.0417
+    ]
+   },
+   "H4 N known-fresh (intent-standardised; point only)": {
+    "estimate": 0.0679
+   },
+   "H5 U presupposition (level)": {
+    "estimate": 0.0972,
+    "ci95": [
+     0.0694,
+     0.1264
+    ]
+   },
+   "H6 N claude_made-gpt_made": {
+    "estimate": -0.0429,
+    "ci95": [
+     -0.1,
+     0.0179
+    ]
+   }
+  },
+  {
+   "model": "gpt-5.4-nano",
+   "H1 E imaginary-real": {
+    "estimate": 0.3611,
+    "ci95": [
+     0.275,
+     0.4528
+    ]
+   },
+   "H2 N type_of-real": {
+    "estimate": -0.1389,
+    "ci95": [
+     -0.2139,
+     -0.0639
+    ]
+   },
+   "H3 U animal-no_intent": {
+    "estimate": -0.0229,
+    "ci95": [
+     -0.1542,
+     0.1083
+    ]
+   },
+   "H4 N known-fresh (intent-standardised; point only)": {
+    "estimate": 0.1125
+   },
+   "H5 U presupposition (level)": {
+    "estimate": 0.2111,
+    "ci95": [
+     0.1556,
+     0.2708
+    ]
+   },
+   "H6 N claude_made-gpt_made": {
+    "estimate": 0.05,
+    "ci95": [
+     -0.075,
+     0.1643
+    ]
+   }
+  },
+  {
+   "model": "gpt-6-sol",
+   "H1 E imaginary-real": {
+    "estimate": 0.9583,
+    "ci95": [
+     0.9333,
+     0.9833
+    ]
+   },
+   "H2 N type_of-real": {
+    "estimate": -0.4194,
+    "ci95": [
+     -0.4917,
+     -0.3444
+    ]
+   },
+   "H3 U animal-no_intent": {
+    "estimate": 0.0021,
+    "ci95": [
+     -0.0854,
+     0.0854
+    ]
+   },
+   "H4 N known-fresh (intent-standardised; point only)": {
+    "estimate": 0.1277
+   },
+   "H5 U presupposition (level)": {
+    "estimate": 0.2236,
+    "ci95": [
+     0.1903,
+     0.2597
+    ]
+   },
+   "H6 N claude_made-gpt_made": {
+    "estimate": -0.1464,
+    "ci95": [
+     -0.2143,
+     -0.0786
+    ]
+   }
+  },
+  {
+   "model": "gpt-6-luna",
+   "H1 E imaginary-real": {
+    "estimate": 0.6639,
+    "ci95": [
+     0.5778,
+     0.7528
+    ]
+   },
+   "H2 N type_of-real": {
+    "estimate": 0.1361,
+    "ci95": [
+     -0.0278,
+     0.2861
+    ]
+   },
+   "H3 U animal-no_intent": {
+    "estimate": -0.0292,
+    "ci95": [
+     -0.1167,
+     0.0563
+    ]
+   },
+   "H4 N known-fresh (intent-standardised; point only)": {
+    "estimate": 0.0768
+   },
+   "H5 U presupposition (level)": {
+    "estimate": 0.1194,
+    "ci95": [
+     0.0819,
+     0.1639
+    ]
+   },
+   "H6 N claude_made-gpt_made": {
+    "estimate": -0.1286,
+    "ci95": [
+     -0.2607,
+     -0.0036
+    ]
+   }
+  }
+ ],
+ "form": [
+  {
+   "batch": "fresh",
+   "model": "claude-sonnet-4-6",
+   "frame": "neutral",
+   "n": 120,
+   "order": {
+    "definition_first": 0.0,
+    "cue_first": 0.0,
+    "definition_only": 0.0,
+    "cue_only": 1.0,
+    "neither": 0.0
+   },
+   "first_cue_frac_median": 0.0372,
+   "words_mean": {
+    "estimate": 88.4167,
+    "ci95": [
+     82.7831,
+     94.2335
+    ]
+   },
+   "words_median": 82.5,
+   "context_request": {
+    "estimate": 0.9917,
+    "ci95": [
+     0.975,
+     1.0
+    ]
+   },
+   "offer": {
+    "estimate": 0.2,
+    "ci95": [
+     0.1083,
+     0.3
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-sonnet-4-6",
+   "frame": "real",
+   "n": 360,
+   "order": {
+    "definition_first": 0.0028,
+    "cue_first": 0.0028,
+    "definition_only": 0.0028,
+    "cue_only": 0.8778,
+    "neither": 0.1139
+   },
+   "first_cue_frac_median": 0.0334,
+   "words_mean": {
+    "estimate": 97.975,
+    "ci95": [
+     94.9444,
+     101.2945
+    ]
+   },
+   "words_median": 98.0,
+   "context_request": {
+    "estimate": 0.9861,
+    "ci95": [
+     0.9639,
+     1.0
+    ]
+   },
+   "offer": {
+    "estimate": 0.0722,
+    "ci95": [
+     0.0361,
+     0.1139
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-sonnet-4-6",
+   "frame": "type_of",
+   "n": 360,
+   "order": {
+    "definition_first": 0.0278,
+    "cue_first": 0.0,
+    "definition_only": 0.075,
+    "cue_only": 0.8972,
+    "neither": 0.0
+   },
+   "first_cue_frac_median": 0.0462,
+   "words_mean": {
+    "estimate": 126.9472,
+    "ci95": [
+     119.5722,
+     134.614
+    ]
+   },
+   "words_median": 118.5,
+   "context_request": {
+    "estimate": 0.8694,
+    "ci95": [
+     0.8,
+     0.9333
+    ]
+   },
+   "offer": {
+    "estimate": 0.3861,
+    "ci95": [
+     0.325,
+     0.4472
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-sonnet-4-6",
+   "frame": "imaginary",
+   "n": 360,
+   "order": {
+    "definition_first": 0.4139,
+    "cue_first": 0.0472,
+    "definition_only": 0.45,
+    "cue_only": 0.0889,
+    "neither": 0.0
+   },
+   "first_cue_frac_median": 0.0345,
+   "words_mean": {
+    "estimate": 197.4083,
+    "ci95": [
+     190.9803,
+     203.3307
+    ]
+   },
+   "words_median": 206.0,
+   "context_request": {
+    "estimate": 0.125,
+    "ci95": [
+     0.0778,
+     0.175
+    ]
+   },
+   "offer": {
+    "estimate": 0.4389,
+    "ci95": [
+     0.3527,
+     0.525
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-haiku-4-5",
+   "frame": "neutral",
+   "n": 120,
+   "order": {
+    "definition_first": 0.0,
+    "cue_first": 0.0,
+    "definition_only": 0.0,
+    "cue_only": 1.0,
+    "neither": 0.0
+   },
+   "first_cue_frac_median": 0.0191,
+   "words_mean": {
+    "estimate": 98.2583,
+    "ci95": [
+     94.6331,
+     102.1417
+    ]
+   },
+   "words_median": 99.0,
+   "context_request": {
+    "estimate": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   },
+   "offer": {
+    "estimate": 0.7333,
+    "ci95": [
+     0.6417,
+     0.8167
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-haiku-4-5",
+   "frame": "real",
+   "n": 360,
+   "order": {
+    "definition_first": 0.0111,
+    "cue_first": 0.0,
+    "definition_only": 0.0778,
+    "cue_only": 0.8056,
+    "neither": 0.1056
+   },
+   "first_cue_frac_median": 0.0074,
+   "words_mean": {
+    "estimate": 116.5694,
+    "ci95": [
+     111.6859,
+     121.8806
+    ]
+   },
+   "words_median": 112.0,
+   "context_request": {
+    "estimate": 0.9028,
+    "ci95": [
+     0.825,
+     0.9667
+    ]
+   },
+   "offer": {
+    "estimate": 0.5528,
+    "ci95": [
+     0.4778,
+     0.6333
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-haiku-4-5",
+   "frame": "type_of",
+   "n": 360,
+   "order": {
+    "definition_first": 0.0806,
+    "cue_first": 0.0028,
+    "definition_only": 0.1667,
+    "cue_only": 0.7417,
+    "neither": 0.0083
+   },
+   "first_cue_frac_median": 0.0167,
+   "words_mean": {
+    "estimate": 132.8361,
+    "ci95": [
+     129.0583,
+     136.6417
+    ]
+   },
+   "words_median": 121.0,
+   "context_request": {
+    "estimate": 0.7528,
+    "ci95": [
+     0.6944,
+     0.8111
+    ]
+   },
+   "offer": {
+    "estimate": 0.5611,
+    "ci95": [
+     0.5194,
+     0.6
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-haiku-4-5",
+   "frame": "imaginary",
+   "n": 360,
+   "order": {
+    "definition_first": 0.2944,
+    "cue_first": 0.0,
+    "definition_only": 0.7028,
+    "cue_only": 0.0,
+    "neither": 0.0028
+   },
+   "first_cue_frac_median": 0.6539,
+   "words_mean": {
+    "estimate": 194.3,
+    "ci95": [
+     192.9916,
+     195.6944
+    ]
+   },
+   "words_median": 195.0,
+   "context_request": {
+    "estimate": 0.0028,
+    "ci95": [
+     0.0,
+     0.0083
+    ]
+   },
+   "offer": {
+    "estimate": 0.1056,
+    "ci95": [
+     0.0778,
+     0.1361
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-sonnet-5-5",
+   "frame": "neutral",
+   "n": 120,
+   "order": {
+    "definition_first": 0.0,
+    "cue_first": 0.0083,
+    "definition_only": 0.0,
+    "cue_only": 0.9833,
+    "neither": 0.0083
+   },
+   "first_cue_frac_median": 0.0434,
+   "words_mean": {
+    "estimate": 159.9833,
+    "ci95": [
+     155.5333,
+     164.475
+    ]
+   },
+   "words_median": 159.0,
+   "context_request": {
+    "estimate": 0.9583,
+    "ci95": [
+     0.9,
+     1.0
+    ]
+   },
+   "offer": {
+    "estimate": 0.9083,
+    "ci95": [
+     0.8583,
+     0.95
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-sonnet-5-5",
+   "frame": "real",
+   "n": 360,
+   "order": {
+    "definition_first": 0.0,
+    "cue_first": 0.0,
+    "definition_only": 0.0,
+    "cue_only": 1.0,
+    "neither": 0.0
+   },
+   "first_cue_frac_median": 0.0133,
+   "words_mean": {
+    "estimate": 184.6694,
+    "ci95": [
+     182.1861,
+     187.0195
+    ]
+   },
+   "words_median": 184.0,
+   "context_request": {
+    "estimate": 0.9917,
+    "ci95": [
+     0.9778,
+     1.0
+    ]
+   },
+   "offer": {
+    "estimate": 0.8389,
+    "ci95": [
+     0.7861,
+     0.8833
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-sonnet-5-5",
+   "frame": "type_of",
+   "n": 360,
+   "order": {
+    "definition_first": 0.0,
+    "cue_first": 0.075,
+    "definition_only": 0.0,
+    "cue_only": 0.925,
+    "neither": 0.0
+   },
+   "first_cue_frac_median": 0.0402,
+   "words_mean": {
+    "estimate": 185.3889,
+    "ci95": [
+     183.7361,
+     187.0667
+    ]
+   },
+   "words_median": 185.0,
+   "context_request": {
+    "estimate": 0.9083,
+    "ci95": [
+     0.8667,
+     0.9444
+    ]
+   },
+   "offer": {
+    "estimate": 0.9528,
+    "ci95": [
+     0.9278,
+     0.975
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-sonnet-5-5",
+   "frame": "imaginary",
+   "n": 360,
+   "order": {
+    "definition_first": 0.2861,
+    "cue_first": 0.0,
+    "definition_only": 0.7111,
+    "cue_only": 0.0028,
+    "neither": 0.0
+   },
+   "first_cue_frac_median": 0.0748,
+   "words_mean": {
+    "estimate": 295.0694,
+    "ci95": [
+     289.8083,
+     300.4169
+    ]
+   },
+   "words_median": 290.0,
+   "context_request": {
+    "estimate": 0.0139,
+    "ci95": [
+     0.0028,
+     0.0278
+    ]
+   },
+   "offer": {
+    "estimate": 0.3361,
+    "ci95": [
+     0.2917,
+     0.3806
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-haiku-5-5",
+   "frame": "neutral",
+   "n": 120,
+   "order": {
+    "definition_first": 0.0,
+    "cue_first": 0.0,
+    "definition_only": 0.0,
+    "cue_only": 1.0,
+    "neither": 0.0
+   },
+   "first_cue_frac_median": 0.0069,
+   "words_mean": {
+    "estimate": 124.025,
+    "ci95": [
+     117.6581,
+     130.1419
+    ]
+   },
+   "words_median": 125.0,
+   "context_request": {
+    "estimate": 0.9833,
+    "ci95": [
+     0.9583,
+     1.0
+    ]
+   },
+   "offer": {
+    "estimate": 0.9167,
+    "ci95": [
+     0.8667,
+     0.9667
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-haiku-5-5",
+   "frame": "real",
+   "n": 360,
+   "order": {
+    "definition_first": 0.0,
+    "cue_first": 0.0028,
+    "definition_only": 0.0,
+    "cue_only": 0.9944,
+    "neither": 0.0028
+   },
+   "first_cue_frac_median": 0.0037,
+   "words_mean": {
+    "estimate": 139.7417,
+    "ci95": [
+     136.511,
+     143.0445
+    ]
+   },
+   "words_median": 141.0,
+   "context_request": {
+    "estimate": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   },
+   "offer": {
+    "estimate": 0.7639,
+    "ci95": [
+     0.7083,
+     0.8167
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-haiku-5-5",
+   "frame": "type_of",
+   "n": 360,
+   "order": {
+    "definition_first": 0.0,
+    "cue_first": 0.0028,
+    "definition_only": 0.0,
+    "cue_only": 0.9972,
+    "neither": 0.0
+   },
+   "first_cue_frac_median": 0.0049,
+   "words_mean": {
+    "estimate": 125.5194,
+    "ci95": [
+     122.9805,
+     128.1862
+    ]
+   },
+   "words_median": 121.0,
+   "context_request": {
+    "estimate": 0.9917,
+    "ci95": [
+     0.9833,
+     1.0
+    ]
+   },
+   "offer": {
+    "estimate": 0.9556,
+    "ci95": [
+     0.9361,
+     0.975
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "claude-haiku-5-5",
+   "frame": "imaginary",
+   "n": 360,
+   "order": {
+    "definition_first": 0.5472,
+    "cue_first": 0.0583,
+    "definition_only": 0.3917,
+    "cue_only": 0.0028,
+    "neither": 0.0
+   },
+   "first_cue_frac_median": 0.0216,
+   "words_mean": {
+    "estimate": 244.9194,
+    "ci95": [
+     238.8167,
+     250.9945
+    ]
+   },
+   "words_median": 244.5,
+   "context_request": {
+    "estimate": 0.0361,
+    "ci95": [
+     0.0139,
+     0.0639
+    ]
+   },
+   "offer": {
+    "estimate": 0.3444,
+    "ci95": [
+     0.2556,
+     0.4361
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-5.4-mini",
+   "frame": "neutral",
+   "n": 120,
+   "order": {
+    "definition_first": 0.25,
+    "cue_first": 0.2667,
+    "definition_only": 0.0083,
+    "cue_only": 0.45,
+    "neither": 0.025
+   },
+   "first_cue_frac_median": 0.021,
+   "words_mean": {
+    "estimate": 111.2,
+    "ci95": [
+     100.4415,
+     122.1
+    ]
+   },
+   "words_median": 113.0,
+   "context_request": {
+    "estimate": 0.1333,
+    "ci95": [
+     0.05,
+     0.2333
+    ]
+   },
+   "offer": {
+    "estimate": 0.6583,
+    "ci95": [
+     0.5583,
+     0.75
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-5.4-mini",
+   "frame": "real",
+   "n": 360,
+   "order": {
+    "definition_first": 0.1278,
+    "cue_first": 0.1361,
+    "definition_only": 0.0667,
+    "cue_only": 0.6333,
+    "neither": 0.0361
+   },
+   "first_cue_frac_median": 0.0253,
+   "words_mean": {
+    "estimate": 104.7,
+    "ci95": [
+     101.611,
+     107.9583
+    ]
+   },
+   "words_median": 93.5,
+   "context_request": {
+    "estimate": 0.5111,
+    "ci95": [
+     0.4556,
+     0.5667
+    ]
+   },
+   "offer": {
+    "estimate": 0.7528,
+    "ci95": [
+     0.7028,
+     0.7972
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-5.4-mini",
+   "frame": "type_of",
+   "n": 360,
+   "order": {
+    "definition_first": 0.5139,
+    "cue_first": 0.2667,
+    "definition_only": 0.1278,
+    "cue_only": 0.0917,
+    "neither": 0.0
+   },
+   "first_cue_frac_median": 0.0222,
+   "words_mean": {
+    "estimate": 142.1194,
+    "ci95": [
+     137.5333,
+     146.8223
+    ]
+   },
+   "words_median": 139.0,
+   "context_request": {
+    "estimate": 0.0056,
+    "ci95": [
+     0.0,
+     0.0139
+    ]
+   },
+   "offer": {
+    "estimate": 0.4667,
+    "ci95": [
+     0.4167,
+     0.5167
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-5.4-mini",
+   "frame": "imaginary",
+   "n": 360,
+   "order": {
+    "definition_first": 0.7444,
+    "cue_first": 0.1167,
+    "definition_only": 0.0,
+    "cue_only": 0.1389,
+    "neither": 0.0
+   },
+   "first_cue_frac_median": 0.0188,
+   "words_mean": {
+    "estimate": 171.9944,
+    "ci95": [
+     168.5527,
+     175.2584
+    ]
+   },
+   "words_median": 167.0,
+   "context_request": {
+    "estimate": 0.0056,
+    "ci95": [
+     0.0,
+     0.0139
+    ]
+   },
+   "offer": {
+    "estimate": 0.4222,
+    "ci95": [
+     0.3917,
+     0.4556
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-5.4-nano",
+   "frame": "neutral",
+   "n": 120,
+   "order": {
+    "definition_first": 0.0833,
+    "cue_first": 0.1,
+    "definition_only": 0.125,
+    "cue_only": 0.4917,
+    "neither": 0.2
+   },
+   "first_cue_frac_median": 0.0204,
+   "words_mean": {
+    "estimate": 105.6417,
+    "ci95": [
+     97.6246,
+     113.7085
+    ]
+   },
+   "words_median": 101.5,
+   "context_request": {
+    "estimate": 0.75,
+    "ci95": [
+     0.6417,
+     0.85
+    ]
+   },
+   "offer": {
+    "estimate": 0.4167,
+    "ci95": [
+     0.3083,
+     0.525
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-5.4-nano",
+   "frame": "real",
+   "n": 360,
+   "order": {
+    "definition_first": 0.1417,
+    "cue_first": 0.0972,
+    "definition_only": 0.1806,
+    "cue_only": 0.45,
+    "neither": 0.1306
+   },
+   "first_cue_frac_median": 0.0325,
+   "words_mean": {
+    "estimate": 140.1889,
+    "ci95": [
+     128.4999,
+     153.3891
+    ]
+   },
+   "words_median": 131.5,
+   "context_request": {
+    "estimate": 0.6722,
+    "ci95": [
+     0.5944,
+     0.7472
+    ]
+   },
+   "offer": {
+    "estimate": 0.4222,
+    "ci95": [
+     0.3694,
+     0.4723
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-5.4-nano",
+   "frame": "type_of",
+   "n": 360,
+   "order": {
+    "definition_first": 0.3861,
+    "cue_first": 0.1778,
+    "definition_only": 0.1472,
+    "cue_only": 0.2389,
+    "neither": 0.05
+   },
+   "first_cue_frac_median": 0.0253,
+   "words_mean": {
+    "estimate": 137.6028,
+    "ci95": [
+     127.2026,
+     149.6756
+    ]
+   },
+   "words_median": 135.0,
+   "context_request": {
+    "estimate": 0.6417,
+    "ci95": [
+     0.5611,
+     0.7194
+    ]
+   },
+   "offer": {
+    "estimate": 0.2722,
+    "ci95": [
+     0.2194,
+     0.3306
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-5.4-nano",
+   "frame": "imaginary",
+   "n": 360,
+   "order": {
+    "definition_first": 0.7806,
+    "cue_first": 0.0361,
+    "definition_only": 0.1194,
+    "cue_only": 0.0528,
+    "neither": 0.0111
+   },
+   "first_cue_frac_median": 0.0134,
+   "words_mean": {
+    "estimate": 265.0111,
+    "ci95": [
+     252.2025,
+     277.9472
+    ]
+   },
+   "words_median": 265.0,
+   "context_request": {
+    "estimate": 0.0333,
+    "ci95": [
+     0.0167,
+     0.0528
+    ]
+   },
+   "offer": {
+    "estimate": 0.2611,
+    "ci95": [
+     0.2194,
+     0.3028
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-6-sol",
+   "frame": "neutral",
+   "n": 120,
+   "order": {
+    "definition_first": 0.0417,
+    "cue_first": 0.0,
+    "definition_only": 0.1333,
+    "cue_only": 0.7917,
+    "neither": 0.0333
+   },
+   "first_cue_frac_median": 0.037,
+   "words_mean": {
+    "estimate": 23.3,
+    "ci95": [
+     21.4167,
+     25.2083
+    ]
+   },
+   "words_median": 20.5,
+   "context_request": {
+    "estimate": 0.3,
+    "ci95": [
+     0.1667,
+     0.4335
+    ]
+   },
+   "offer": {
+    "estimate": 0.1417,
+    "ci95": [
+     0.0583,
+     0.2333
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-6-sol",
+   "frame": "real",
+   "n": 360,
+   "order": {
+    "definition_first": 0.0,
+    "cue_first": 0.0,
+    "definition_only": 0.0389,
+    "cue_only": 0.9556,
+    "neither": 0.0056
+   },
+   "first_cue_frac_median": 0.0235,
+   "words_mean": {
+    "estimate": 30.4028,
+    "ci95": [
+     29.6861,
+     31.1112
+    ]
+   },
+   "words_median": 30.0,
+   "context_request": {
+    "estimate": 0.8333,
+    "ci95": [
+     0.775,
+     0.8861
+    ]
+   },
+   "offer": {
+    "estimate": 0.0333,
+    "ci95": [
+     0.0194,
+     0.0472
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-6-sol",
+   "frame": "type_of",
+   "n": 360,
+   "order": {
+    "definition_first": 0.0417,
+    "cue_first": 0.0,
+    "definition_only": 0.4056,
+    "cue_only": 0.5444,
+    "neither": 0.0083
+   },
+   "first_cue_frac_median": 0.0252,
+   "words_mean": {
+    "estimate": 32.2444,
+    "ci95": [
+     30.6138,
+     34.1751
+    ]
+   },
+   "words_median": 30.0,
+   "context_request": {
+    "estimate": 0.2806,
+    "ci95": [
+     0.2361,
+     0.325
+    ]
+   },
+   "offer": {
+    "estimate": 0.1583,
+    "ci95": [
+     0.1028,
+     0.2167
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-6-sol",
+   "frame": "imaginary",
+   "n": 360,
+   "order": {
+    "definition_first": 0.3139,
+    "cue_first": 0.0,
+    "definition_only": 0.6861,
+    "cue_only": 0.0,
+    "neither": 0.0
+   },
+   "first_cue_frac_median": 0.0714,
+   "words_mean": {
+    "estimate": 53.4444,
+    "ci95": [
+     51.9944,
+     55.0889
+    ]
+   },
+   "words_median": 53.0,
+   "context_request": {
+    "estimate": 0.0028,
+    "ci95": [
+     0.0,
+     0.0083
+    ]
+   },
+   "offer": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-6-luna",
+   "frame": "neutral",
+   "n": 120,
+   "order": {
+    "definition_first": 0.1667,
+    "cue_first": 0.0083,
+    "definition_only": 0.075,
+    "cue_only": 0.7083,
+    "neither": 0.0417
+   },
+   "first_cue_frac_median": 0.0459,
+   "words_mean": {
+    "estimate": 35.7833,
+    "ci95": [
+     32.4831,
+     39.5169
+    ]
+   },
+   "words_median": 33.5,
+   "context_request": {
+    "estimate": 0.575,
+    "ci95": [
+     0.4417,
+     0.7083
+    ]
+   },
+   "offer": {
+    "estimate": 0.175,
+    "ci95": [
+     0.0917,
+     0.2667
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-6-luna",
+   "frame": "real",
+   "n": 360,
+   "order": {
+    "definition_first": 0.1917,
+    "cue_first": 0.0,
+    "definition_only": 0.1444,
+    "cue_only": 0.6583,
+    "neither": 0.0056
+   },
+   "first_cue_frac_median": 0.0216,
+   "words_mean": {
+    "estimate": 46.2889,
+    "ci95": [
+     44.2889,
+     48.4444
+    ]
+   },
+   "words_median": 42.0,
+   "context_request": {
+    "estimate": 0.6722,
+    "ci95": [
+     0.5889,
+     0.7556
+    ]
+   },
+   "offer": {
+    "estimate": 0.4194,
+    "ci95": [
+     0.3389,
+     0.4972
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-6-luna",
+   "frame": "type_of",
+   "n": 360,
+   "order": {
+    "definition_first": 0.0917,
+    "cue_first": 0.0056,
+    "definition_only": 0.0944,
+    "cue_only": 0.8028,
+    "neither": 0.0056
+   },
+   "first_cue_frac_median": 0.0254,
+   "words_mean": {
+    "estimate": 45.0333,
+    "ci95": [
+     42.7417,
+     47.4528
+    ]
+   },
+   "words_median": 42.0,
+   "context_request": {
+    "estimate": 0.6611,
+    "ci95": [
+     0.5528,
+     0.7583
+    ]
+   },
+   "offer": {
+    "estimate": 0.4583,
+    "ci95": [
+     0.3667,
+     0.5528
+    ]
+   }
+  },
+  {
+   "batch": "fresh",
+   "model": "gpt-6-luna",
+   "frame": "imaginary",
+   "n": 360,
+   "order": {
+    "definition_first": 0.2556,
+    "cue_first": 0.0,
+    "definition_only": 0.7444,
+    "cue_only": 0.0,
+    "neither": 0.0
+   },
+   "first_cue_frac_median": 0.0415,
+   "words_mean": {
+    "estimate": 86.475,
+    "ci95": [
+     83.6527,
+     89.2945
+    ]
+   },
+   "words_median": 89.5,
+   "context_request": {
+    "estimate": 0.0028,
+    "ci95": [
+     0.0,
+     0.0083
+    ]
+   },
+   "offer": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-sonnet-4-6",
+   "frame": "neutral",
+   "n": 80,
+   "order": {
+    "definition_first": 0.0,
+    "cue_first": 0.0125,
+    "definition_only": 0.0,
+    "cue_only": 0.9875,
+    "neither": 0.0
+   },
+   "first_cue_frac_median": 0.0398,
+   "words_mean": {
+    "estimate": 81.75,
+    "ci95": [
+     75.325,
+     89.6375
+    ]
+   },
+   "words_median": 78.0,
+   "context_request": {
+    "estimate": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   },
+   "offer": {
+    "estimate": 0.3625,
+    "ci95": [
+     0.25,
+     0.5
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-sonnet-4-6",
+   "frame": "real",
+   "n": 240,
+   "order": {
+    "definition_first": 0.0,
+    "cue_first": 0.0,
+    "definition_only": 0.0,
+    "cue_only": 0.975,
+    "neither": 0.025
+   },
+   "first_cue_frac_median": 0.0336,
+   "words_mean": {
+    "estimate": 91.6667,
+    "ci95": [
+     88.8417,
+     94.3417
+    ]
+   },
+   "words_median": 89.5,
+   "context_request": {
+    "estimate": 0.975,
+    "ci95": [
+     0.9333,
+     1.0
+    ]
+   },
+   "offer": {
+    "estimate": 0.2125,
+    "ci95": [
+     0.1667,
+     0.2667
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-sonnet-4-6",
+   "frame": "type_of",
+   "n": 240,
+   "order": {
+    "definition_first": 0.0083,
+    "cue_first": 0.0,
+    "definition_only": 0.0458,
+    "cue_only": 0.9458,
+    "neither": 0.0
+   },
+   "first_cue_frac_median": 0.1041,
+   "words_mean": {
+    "estimate": 128.8167,
+    "ci95": [
+     117.7167,
+     137.6208
+    ]
+   },
+   "words_median": 126.0,
+   "context_request": {
+    "estimate": 0.8167,
+    "ci95": [
+     0.7333,
+     0.9042
+    ]
+   },
+   "offer": {
+    "estimate": 0.6375,
+    "ci95": [
+     0.5208,
+     0.7542
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-sonnet-4-6",
+   "frame": "imaginary",
+   "n": 240,
+   "order": {
+    "definition_first": 0.4167,
+    "cue_first": 0.0625,
+    "definition_only": 0.3917,
+    "cue_only": 0.1292,
+    "neither": 0.0
+   },
+   "first_cue_frac_median": 0.0389,
+   "words_mean": {
+    "estimate": 200.3708,
+    "ci95": [
+     192.6833,
+     206.975
+    ]
+   },
+   "words_median": 208.0,
+   "context_request": {
+    "estimate": 0.1,
+    "ci95": [
+     0.0333,
+     0.175
+    ]
+   },
+   "offer": {
+    "estimate": 0.3958,
+    "ci95": [
+     0.3,
+     0.5042
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-haiku-4-5",
+   "frame": "neutral",
+   "n": 80,
+   "order": {
+    "definition_first": 0.0,
+    "cue_first": 0.0,
+    "definition_only": 0.0,
+    "cue_only": 1.0,
+    "neither": 0.0
+   },
+   "first_cue_frac_median": 0.0093,
+   "words_mean": {
+    "estimate": 94.1875,
+    "ci95": [
+     88.4625,
+     99.225
+    ]
+   },
+   "words_median": 94.5,
+   "context_request": {
+    "estimate": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   },
+   "offer": {
+    "estimate": 0.7125,
+    "ci95": [
+     0.6,
+     0.8125
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-haiku-4-5",
+   "frame": "real",
+   "n": 240,
+   "order": {
+    "definition_first": 0.0083,
+    "cue_first": 0.0083,
+    "definition_only": 0.0583,
+    "cue_only": 0.8375,
+    "neither": 0.0875
+   },
+   "first_cue_frac_median": 0.0205,
+   "words_mean": {
+    "estimate": 118.025,
+    "ci95": [
+     113.7625,
+     124.2583
+    ]
+   },
+   "words_median": 114.0,
+   "context_request": {
+    "estimate": 0.9375,
+    "ci95": [
+     0.8375,
+     1.0
+    ]
+   },
+   "offer": {
+    "estimate": 0.4958,
+    "ci95": [
+     0.4333,
+     0.575
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-haiku-4-5",
+   "frame": "type_of",
+   "n": 240,
+   "order": {
+    "definition_first": 0.0375,
+    "cue_first": 0.0,
+    "definition_only": 0.1333,
+    "cue_only": 0.8292,
+    "neither": 0.0
+   },
+   "first_cue_frac_median": 0.018,
+   "words_mean": {
+    "estimate": 130.3542,
+    "ci95": [
+     125.8,
+     135.1083
+    ]
+   },
+   "words_median": 120.5,
+   "context_request": {
+    "estimate": 0.8417,
+    "ci95": [
+     0.7583,
+     0.9208
+    ]
+   },
+   "offer": {
+    "estimate": 0.5583,
+    "ci95": [
+     0.5042,
+     0.6375
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-haiku-4-5",
+   "frame": "imaginary",
+   "n": 240,
+   "order": {
+    "definition_first": 0.2708,
+    "cue_first": 0.0083,
+    "definition_only": 0.7208,
+    "cue_only": 0.0,
+    "neither": 0.0
+   },
+   "first_cue_frac_median": 0.5711,
+   "words_mean": {
+    "estimate": 188.9375,
+    "ci95": [
+     186.1792,
+     191.1917
+    ]
+   },
+   "words_median": 188.0,
+   "context_request": {
+    "estimate": 0.0125,
+    "ci95": [
+     0.0,
+     0.025
+    ]
+   },
+   "offer": {
+    "estimate": 0.1,
+    "ci95": [
+     0.0708,
+     0.1292
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-sonnet-5-5",
+   "frame": "neutral",
+   "n": 80,
+   "order": {
+    "definition_first": 0.0,
+    "cue_first": 0.0,
+    "definition_only": 0.0,
+    "cue_only": 1.0,
+    "neither": 0.0
+   },
+   "first_cue_frac_median": 0.0446,
+   "words_mean": {
+    "estimate": 165.5875,
+    "ci95": [
+     162.7875,
+     169.2125
+    ]
+   },
+   "words_median": 165.0,
+   "context_request": {
+    "estimate": 0.9625,
+    "ci95": [
+     0.925,
+     0.9875
+    ]
+   },
+   "offer": {
+    "estimate": 0.9125,
+    "ci95": [
+     0.875,
+     0.9375
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-sonnet-5-5",
+   "frame": "real",
+   "n": 240,
+   "order": {
+    "definition_first": 0.0,
+    "cue_first": 0.0,
+    "definition_only": 0.0,
+    "cue_only": 1.0,
+    "neither": 0.0
+   },
+   "first_cue_frac_median": 0.0405,
+   "words_mean": {
+    "estimate": 190.9833,
+    "ci95": [
+     186.6125,
+     195.2
+    ]
+   },
+   "words_median": 192.0,
+   "context_request": {
+    "estimate": 0.9875,
+    "ci95": [
+     0.9708,
+     1.0
+    ]
+   },
+   "offer": {
+    "estimate": 0.8792,
+    "ci95": [
+     0.8375,
+     0.9208
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-sonnet-5-5",
+   "frame": "type_of",
+   "n": 240,
+   "order": {
+    "definition_first": 0.0,
+    "cue_first": 0.1458,
+    "definition_only": 0.0,
+    "cue_only": 0.8542,
+    "neither": 0.0
+   },
+   "first_cue_frac_median": 0.043,
+   "words_mean": {
+    "estimate": 188.8,
+    "ci95": [
+     185.1583,
+     193.0958
+    ]
+   },
+   "words_median": 187.0,
+   "context_request": {
+    "estimate": 0.85,
+    "ci95": [
+     0.7792,
+     0.9167
+    ]
+   },
+   "offer": {
+    "estimate": 0.9458,
+    "ci95": [
+     0.925,
+     0.9667
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-sonnet-5-5",
+   "frame": "imaginary",
+   "n": 240,
+   "order": {
+    "definition_first": 0.25,
+    "cue_first": 0.0,
+    "definition_only": 0.725,
+    "cue_only": 0.0042,
+    "neither": 0.0208
+   },
+   "first_cue_frac_median": 0.07,
+   "words_mean": {
+    "estimate": 296.2375,
+    "ci95": [
+     285.7708,
+     306.8375
+    ]
+   },
+   "words_median": 288.0,
+   "context_request": {
+    "estimate": 0.0125,
+    "ci95": [
+     0.0042,
+     0.0167
+    ]
+   },
+   "offer": {
+    "estimate": 0.3333,
+    "ci95": [
+     0.2583,
+     0.4167
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-haiku-5-5",
+   "frame": "neutral",
+   "n": 80,
+   "order": {
+    "definition_first": 0.0,
+    "cue_first": 0.0,
+    "definition_only": 0.0,
+    "cue_only": 1.0,
+    "neither": 0.0
+   },
+   "first_cue_frac_median": 0.0111,
+   "words_mean": {
+    "estimate": 122.5625,
+    "ci95": [
+     117.7875,
+     128.9375
+    ]
+   },
+   "words_median": 120.5,
+   "context_request": {
+    "estimate": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   },
+   "offer": {
+    "estimate": 0.8875,
+    "ci95": [
+     0.7625,
+     0.975
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-haiku-5-5",
+   "frame": "real",
+   "n": 240,
+   "order": {
+    "definition_first": 0.0,
+    "cue_first": 0.0,
+    "definition_only": 0.0,
+    "cue_only": 1.0,
+    "neither": 0.0
+   },
+   "first_cue_frac_median": 0.0037,
+   "words_mean": {
+    "estimate": 143.1542,
+    "ci95": [
+     140.5458,
+     145.8792
+    ]
+   },
+   "words_median": 145.5,
+   "context_request": {
+    "estimate": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   },
+   "offer": {
+    "estimate": 0.75,
+    "ci95": [
+     0.6792,
+     0.8042
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-haiku-5-5",
+   "frame": "type_of",
+   "n": 240,
+   "order": {
+    "definition_first": 0.0,
+    "cue_first": 0.0042,
+    "definition_only": 0.0,
+    "cue_only": 0.9958,
+    "neither": 0.0
+   },
+   "first_cue_frac_median": 0.0047,
+   "words_mean": {
+    "estimate": 129.6458,
+    "ci95": [
+     125.4,
+     133.9792
+    ]
+   },
+   "words_median": 127.0,
+   "context_request": {
+    "estimate": 0.9958,
+    "ci95": [
+     0.9875,
+     1.0
+    ]
+   },
+   "offer": {
+    "estimate": 0.9667,
+    "ci95": [
+     0.9417,
+     0.9875
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "claude-haiku-5-5",
+   "frame": "imaginary",
+   "n": 240,
+   "order": {
+    "definition_first": 0.5833,
+    "cue_first": 0.1083,
+    "definition_only": 0.3,
+    "cue_only": 0.0042,
+    "neither": 0.0042
+   },
+   "first_cue_frac_median": 0.0266,
+   "words_mean": {
+    "estimate": 243.5875,
+    "ci95": [
+     236.725,
+     251.3712
+    ]
+   },
+   "words_median": 241.5,
+   "context_request": {
+    "estimate": 0.0458,
+    "ci95": [
+     0.0042,
+     0.1167
+    ]
+   },
+   "offer": {
+    "estimate": 0.4167,
+    "ci95": [
+     0.225,
+     0.5667
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-5.4-mini",
+   "frame": "neutral",
+   "n": 80,
+   "order": {
+    "definition_first": 0.125,
+    "cue_first": 0.475,
+    "definition_only": 0.025,
+    "cue_only": 0.375,
+    "neither": 0.0
+   },
+   "first_cue_frac_median": 0.0214,
+   "words_mean": {
+    "estimate": 108.65,
+    "ci95": [
+     93.1625,
+     124.4
+    ]
+   },
+   "words_median": 104.5,
+   "context_request": {
+    "estimate": 0.1125,
+    "ci95": [
+     0.0375,
+     0.1878
+    ]
+   },
+   "offer": {
+    "estimate": 0.575,
+    "ci95": [
+     0.475,
+     0.7
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-5.4-mini",
+   "frame": "real",
+   "n": 240,
+   "order": {
+    "definition_first": 0.0875,
+    "cue_first": 0.0667,
+    "definition_only": 0.0208,
+    "cue_only": 0.775,
+    "neither": 0.05
+   },
+   "first_cue_frac_median": 0.0275,
+   "words_mean": {
+    "estimate": 96.95,
+    "ci95": [
+     92.3625,
+     101.55
+    ]
+   },
+   "words_median": 87.0,
+   "context_request": {
+    "estimate": 0.5625,
+    "ci95": [
+     0.4792,
+     0.6542
+    ]
+   },
+   "offer": {
+    "estimate": 0.7833,
+    "ci95": [
+     0.7333,
+     0.8333
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-5.4-mini",
+   "frame": "type_of",
+   "n": 240,
+   "order": {
+    "definition_first": 0.3208,
+    "cue_first": 0.3292,
+    "definition_only": 0.0667,
+    "cue_only": 0.2792,
+    "neither": 0.0042
+   },
+   "first_cue_frac_median": 0.0222,
+   "words_mean": {
+    "estimate": 137.7542,
+    "ci95": [
+     131.7953,
+     144.175
+    ]
+   },
+   "words_median": 137.0,
+   "context_request": {
+    "estimate": 0.0167,
+    "ci95": [
+     0.0083,
+     0.025
+    ]
+   },
+   "offer": {
+    "estimate": 0.4458,
+    "ci95": [
+     0.4042,
+     0.4875
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-5.4-mini",
+   "frame": "imaginary",
+   "n": 240,
+   "order": {
+    "definition_first": 0.6542,
+    "cue_first": 0.1542,
+    "definition_only": 0.0,
+    "cue_only": 0.1917,
+    "neither": 0.0
+   },
+   "first_cue_frac_median": 0.0198,
+   "words_mean": {
+    "estimate": 171.9208,
+    "ci95": [
+     163.4417,
+     181.1417
+    ]
+   },
+   "words_median": 172.0,
+   "context_request": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "offer": {
+    "estimate": 0.4792,
+    "ci95": [
+     0.4583,
+     0.4958
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-5.4-nano",
+   "frame": "neutral",
+   "n": 80,
+   "order": {
+    "definition_first": 0.125,
+    "cue_first": 0.1125,
+    "definition_only": 0.05,
+    "cue_only": 0.6125,
+    "neither": 0.1
+   },
+   "first_cue_frac_median": 0.0289,
+   "words_mean": {
+    "estimate": 106.1625,
+    "ci95": [
+     89.6475,
+     125.5375
+    ]
+   },
+   "words_median": 86.0,
+   "context_request": {
+    "estimate": 0.7625,
+    "ci95": [
+     0.6875,
+     0.8375
+    ]
+   },
+   "offer": {
+    "estimate": 0.325,
+    "ci95": [
+     0.2375,
+     0.4625
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-5.4-nano",
+   "frame": "real",
+   "n": 240,
+   "order": {
+    "definition_first": 0.1417,
+    "cue_first": 0.075,
+    "definition_only": 0.0875,
+    "cue_only": 0.6208,
+    "neither": 0.075
+   },
+   "first_cue_frac_median": 0.0284,
+   "words_mean": {
+    "estimate": 133.2,
+    "ci95": [
+     124.0417,
+     148.1042
+    ]
+   },
+   "words_median": 122.0,
+   "context_request": {
+    "estimate": 0.7625,
+    "ci95": [
+     0.6667,
+     0.8583
+    ]
+   },
+   "offer": {
+    "estimate": 0.55,
+    "ci95": [
+     0.4708,
+     0.625
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-5.4-nano",
+   "frame": "type_of",
+   "n": 240,
+   "order": {
+    "definition_first": 0.3042,
+    "cue_first": 0.2625,
+    "definition_only": 0.05,
+    "cue_only": 0.3417,
+    "neither": 0.0417
+   },
+   "first_cue_frac_median": 0.0202,
+   "words_mean": {
+    "estimate": 136.1708,
+    "ci95": [
+     125.675,
+     146.7899
+    ]
+   },
+   "words_median": 135.0,
+   "context_request": {
+    "estimate": 0.7583,
+    "ci95": [
+     0.6583,
+     0.8333
+    ]
+   },
+   "offer": {
+    "estimate": 0.3292,
+    "ci95": [
+     0.2375,
+     0.425
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-5.4-nano",
+   "frame": "imaginary",
+   "n": 240,
+   "order": {
+    "definition_first": 0.7708,
+    "cue_first": 0.0167,
+    "definition_only": 0.075,
+    "cue_only": 0.1208,
+    "neither": 0.0167
+   },
+   "first_cue_frac_median": 0.0143,
+   "words_mean": {
+    "estimate": 266.4583,
+    "ci95": [
+     234.7718,
+     297.9095
+    ]
+   },
+   "words_median": 265.0,
+   "context_request": {
+    "estimate": 0.0292,
+    "ci95": [
+     0.0125,
+     0.0458
+    ]
+   },
+   "offer": {
+    "estimate": 0.2667,
+    "ci95": [
+     0.225,
+     0.3125
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-6-sol",
+   "frame": "neutral",
+   "n": 80,
+   "order": {
+    "definition_first": 0.0125,
+    "cue_first": 0.0,
+    "definition_only": 0.0125,
+    "cue_only": 0.95,
+    "neither": 0.025
+   },
+   "first_cue_frac_median": 0.0345,
+   "words_mean": {
+    "estimate": 20.575,
+    "ci95": [
+     18.8625,
+     22.5503
+    ]
+   },
+   "words_median": 19.0,
+   "context_request": {
+    "estimate": 0.2375,
+    "ci95": [
+     0.1,
+     0.4
+    ]
+   },
+   "offer": {
+    "estimate": 0.125,
+    "ci95": [
+     0.0,
+     0.3375
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-6-sol",
+   "frame": "real",
+   "n": 240,
+   "order": {
+    "definition_first": 0.0,
+    "cue_first": 0.0,
+    "definition_only": 0.0,
+    "cue_only": 1.0,
+    "neither": 0.0
+   },
+   "first_cue_frac_median": 0.0161,
+   "words_mean": {
+    "estimate": 29.225,
+    "ci95": [
+     28.7333,
+     29.9292
+    ]
+   },
+   "words_median": 29.0,
+   "context_request": {
+    "estimate": 0.6792,
+    "ci95": [
+     0.6167,
+     0.7792
+    ]
+   },
+   "offer": {
+    "estimate": 0.0125,
+    "ci95": [
+     0.0042,
+     0.025
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-6-sol",
+   "frame": "type_of",
+   "n": 240,
+   "order": {
+    "definition_first": 0.0042,
+    "cue_first": 0.0042,
+    "definition_only": 0.2625,
+    "cue_only": 0.7167,
+    "neither": 0.0125
+   },
+   "first_cue_frac_median": 0.0155,
+   "words_mean": {
+    "estimate": 30.8792,
+    "ci95": [
+     29.2208,
+     32.7833
+    ]
+   },
+   "words_median": 28.0,
+   "context_request": {
+    "estimate": 0.2958,
+    "ci95": [
+     0.1917,
+     0.4
+    ]
+   },
+   "offer": {
+    "estimate": 0.2375,
+    "ci95": [
+     0.1708,
+     0.2958
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-6-sol",
+   "frame": "imaginary",
+   "n": 240,
+   "order": {
+    "definition_first": 0.3708,
+    "cue_first": 0.0,
+    "definition_only": 0.6292,
+    "cue_only": 0.0,
+    "neither": 0.0
+   },
+   "first_cue_frac_median": 0.083,
+   "words_mean": {
+    "estimate": 53.3,
+    "ci95": [
+     51.0083,
+     56.1125
+    ]
+   },
+   "words_median": 53.0,
+   "context_request": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "offer": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-6-luna",
+   "frame": "neutral",
+   "n": 80,
+   "order": {
+    "definition_first": 0.0875,
+    "cue_first": 0.0,
+    "definition_only": 0.05,
+    "cue_only": 0.85,
+    "neither": 0.0125
+   },
+   "first_cue_frac_median": 0.0284,
+   "words_mean": {
+    "estimate": 33.275,
+    "ci95": [
+     28.2875,
+     38.0625
+    ]
+   },
+   "words_median": 30.5,
+   "context_request": {
+    "estimate": 0.7375,
+    "ci95": [
+     0.525,
+     0.9375
+    ]
+   },
+   "offer": {
+    "estimate": 0.2875,
+    "ci95": [
+     0.125,
+     0.4625
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-6-luna",
+   "frame": "real",
+   "n": 240,
+   "order": {
+    "definition_first": 0.15,
+    "cue_first": 0.0,
+    "definition_only": 0.1292,
+    "cue_only": 0.7208,
+    "neither": 0.0
+   },
+   "first_cue_frac_median": 0.0187,
+   "words_mean": {
+    "estimate": 43.3542,
+    "ci95": [
+     41.4496,
+     45.2458
+    ]
+   },
+   "words_median": 42.0,
+   "context_request": {
+    "estimate": 0.75,
+    "ci95": [
+     0.6333,
+     0.85
+    ]
+   },
+   "offer": {
+    "estimate": 0.5333,
+    "ci95": [
+     0.3583,
+     0.6792
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-6-luna",
+   "frame": "type_of",
+   "n": 240,
+   "order": {
+    "definition_first": 0.0542,
+    "cue_first": 0.0208,
+    "definition_only": 0.05,
+    "cue_only": 0.8625,
+    "neither": 0.0125
+   },
+   "first_cue_frac_median": 0.0255,
+   "words_mean": {
+    "estimate": 44.2,
+    "ci95": [
+     41.0042,
+     46.7958
+    ]
+   },
+   "words_median": 42.0,
+   "context_request": {
+    "estimate": 0.6625,
+    "ci95": [
+     0.4875,
+     0.8125
+    ]
+   },
+   "offer": {
+    "estimate": 0.5417,
+    "ci95": [
+     0.375,
+     0.7083
+    ]
+   }
+  },
+  {
+   "batch": "known",
+   "model": "gpt-6-luna",
+   "frame": "imaginary",
+   "n": 240,
+   "order": {
+    "definition_first": 0.3542,
+    "cue_first": 0.0,
+    "definition_only": 0.6458,
+    "cue_only": 0.0,
+    "neither": 0.0
+   },
+   "first_cue_frac_median": 0.0444,
+   "words_mean": {
+    "estimate": 88.8958,
+    "ci95": [
+     82.725,
+     95.6458
+    ]
+   },
+   "words_median": 90.0,
+   "context_request": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "offer": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   }
+  }
+ ],
+ "reality_wording": {
+  "table": [
+   {
+    "batch": "fresh",
+    "model": "claude-sonnet-4-6",
+    "real_trials": 360,
+    "unmarked": 1,
+    "with_reality_wording": 0
+   },
+   {
+    "batch": "fresh",
+    "model": "claude-haiku-4-5",
+    "real_trials": 360,
+    "unmarked": 34,
+    "with_reality_wording": 1
+   },
+   {
+    "batch": "fresh",
+    "model": "claude-sonnet-5-5",
+    "real_trials": 360,
+    "unmarked": 0,
+    "with_reality_wording": 0
+   },
+   {
+    "batch": "fresh",
+    "model": "claude-haiku-5-5",
+    "real_trials": 360,
+    "unmarked": 0,
+    "with_reality_wording": 0
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "real_trials": 360,
+    "unmarked": 24,
+    "with_reality_wording": 12
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "real_trials": 360,
+    "unmarked": 92,
+    "with_reality_wording": 64
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-6-sol",
+    "real_trials": 360,
+    "unmarked": 15,
+    "with_reality_wording": 0
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-6-luna",
+    "real_trials": 360,
+    "unmarked": 52,
+    "with_reality_wording": 12
+   },
+   {
+    "batch": "known",
+    "model": "claude-sonnet-4-6",
+    "real_trials": 240,
+    "unmarked": 0,
+    "with_reality_wording": 0
+   },
+   {
+    "batch": "known",
+    "model": "claude-haiku-4-5",
+    "real_trials": 240,
+    "unmarked": 16,
+    "with_reality_wording": 2
+   },
+   {
+    "batch": "known",
+    "model": "claude-sonnet-5-5",
+    "real_trials": 240,
+    "unmarked": 0,
+    "with_reality_wording": 0
+   },
+   {
+    "batch": "known",
+    "model": "claude-haiku-5-5",
+    "real_trials": 240,
+    "unmarked": 0,
+    "with_reality_wording": 0
+   },
+   {
+    "batch": "known",
+    "model": "gpt-5.4-mini",
+    "real_trials": 240,
+    "unmarked": 5,
+    "with_reality_wording": 4
+   },
+   {
+    "batch": "known",
+    "model": "gpt-5.4-nano",
+    "real_trials": 240,
+    "unmarked": 30,
+    "with_reality_wording": 19
+   },
+   {
+    "batch": "known",
+    "model": "gpt-6-sol",
+    "real_trials": 240,
+    "unmarked": 0,
+    "with_reality_wording": 0
+   },
+   {
+    "batch": "known",
+    "model": "gpt-6-luna",
+    "real_trials": 240,
+    "unmarked": 31,
+    "with_reality_wording": 8
+   }
+  ],
+  "trials": [
+   {
+    "batch": "fresh",
+    "model": "claude-haiku-4-5",
+    "trial_id": "fresh|trunsavel|real_idea|03"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|ullaprisk|real_idea|02"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|tortisinole|real_object|03"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|mahoggiralf|real_animal|02"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|binjeemi|real_object|03"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|kavanesh|real_animal|04"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|lueyschwale|real_idea|04"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|vubelan|real_idea|02"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|mispaveld|real_object|04"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|lusavon|real_object|01"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|tortisinole|real_object|05"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|kalgarooy|real_animal|04"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|binjeemi|real_idea|04"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|tortisinole|real_object|01"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|hambroqet|real_idea|03"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|trunsavel|real_idea|01"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|trunsavel|real_object|03"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|wenvuto|real_animal|04"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|lusavon|real_animal|05"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|lueyschwale|real_object|05"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|tortisinole|real_animal|04"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|binjeemi|real_idea|02"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|lusavon|real_object|02"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|tavulen|real_object|04"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|crendolf|real_object|01"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|havorik|real_object|02"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|falbrux|real_animal|05"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|binjeemi|real_animal|04"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|tavulen|real_object|02"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|trunsavel|real_object|04"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|hambroqet|real_animal|02"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|tavulen|real_object|01"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|kalgarooy|real_object|04"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|lusavon|real_animal|03"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|vornaketh|real_object|02"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|nevoral|real_idea|03"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|vornaketh|real_object|04"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|lueyschwale|real_animal|02"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|ullaprisk|real_animal|04"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|lueyschwale|real_animal|01"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|vubelan|real_object|05"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|wenvuto|real_animal|01"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|kalgarooy|real_object|05"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|tortisinole|real_animal|05"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|kavanesh|real_object|02"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|wenvuto|real_object|02"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|wenvuto|real_object|01"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|kavanesh|real_idea|04"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|nevoral|real_idea|01"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|kavanesh|real_idea|05"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|kalgarooy|real_object|02"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|lusavon|real_object|03"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|vubelan|real_animal|05"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|brenulo|real_object|04"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|nevoral|real_object|04"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|lusavon|real_animal|01"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|kavanesh|real_idea|01"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|nevoral|real_idea|04"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|nevoral|real_idea|05"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|crendolf|real_animal|04"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|vornaketh|real_object|05"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|binjeemi|real_object|01"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|alfontrosii|real_object|04"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|kavanesh|real_idea|03"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|nevoral|real_animal|04"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|ullaprisk|real_animal|01"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|wenvuto|real_object|04"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|nevoral|real_idea|02"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|alfontrosii|real_object|03"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|falbrux|real_animal|03"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|kalgarooy|real_animal|03"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|ullaprisk|real_animal|05"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|lusavon|real_idea|02"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|mispaveld|real_object|04"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|crendolf|real_animal|02"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|lueyschwale|real_object|04"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|mispaveld|real_object|01"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-6-luna",
+    "trial_id": "fresh|tavulen|real_idea|01"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-6-luna",
+    "trial_id": "fresh|nevoral|real_idea|02"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-6-luna",
+    "trial_id": "fresh|lusavon|real_idea|04"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-6-luna",
+    "trial_id": "fresh|wenvuto|real_idea|04"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-6-luna",
+    "trial_id": "fresh|havorik|real_idea|02"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-6-luna",
+    "trial_id": "fresh|hambroqet|real_idea|03"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-6-luna",
+    "trial_id": "fresh|trunsavel|real_object|04"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-6-luna",
+    "trial_id": "fresh|lusavon|real_animal|04"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-6-luna",
+    "trial_id": "fresh|falbrux|real_idea|05"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-6-luna",
+    "trial_id": "fresh|nevoral|real_idea|04"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-6-luna",
+    "trial_id": "fresh|vubelan|real_animal|03"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-6-luna",
+    "trial_id": "fresh|tortisinole|real_idea|05"
+   },
+   {
+    "batch": "known",
+    "model": "claude-haiku-4-5",
+    "trial_id": "known|trolnique|real_idea|06"
+   },
+   {
+    "batch": "known",
+    "model": "claude-haiku-4-5",
+    "trial_id": "known|trolnique|real_object|08"
+   },
+   {
+    "batch": "known",
+    "model": "gpt-5.4-mini",
+    "trial_id": "known|trolnique|real_idea|03"
+   },
+   {
+    "batch": "known",
+    "model": "gpt-5.4-mini",
+    "trial_id": "known|trolnique|real_idea|10"
+   },
+   {
+    "batch": "known",
+    "model": "gpt-5.4-mini",
+    "trial_id": "known|trolnique|real_idea|05"
+   },
+   {
+    "batch": "known",
+    "model": "gpt-5.4-mini",
+    "trial_id": "known|trolnique|real_object|08"
+   },
+   {
+    "batch": "known",
+    "model": "gpt-5.4-nano",
+    "trial_id": "known|plindorf|real_animal|01"
+   },
+   {
+    "batch": "known",
+    "model": "gpt-5.4-nano",
+    "trial_id": "known|kovashent|real_object|07"
+   },
+   {
+    "batch": "known",
+    "model": "gpt-5.4-nano",
+    "trial_id": "known|kovashent|real_animal|08"
+   },
+   {
+    "batch": "known",
+    "model": "gpt-5.4-nano",
+    "trial_id": "known|plindorf|real_object|08"
+   },
+   {
+    "batch": "known",
+    "model": "gpt-5.4-nano",
+    "trial_id": "known|flembrast|real_animal|08"
+   },
+   {
+    "batch": "known",
+    "model": "gpt-5.4-nano",
+    "trial_id": "known|kovashent|real_animal|05"
+   },
+   {
+    "batch": "known",
+    "model": "gpt-5.4-nano",
+    "trial_id": "known|trolnique|real_animal|10"
+   },
+   {
+    "batch": "known",
+    "model": "gpt-5.4-nano",
+    "trial_id": "known|halthibinny|real_object|02"
+   },
+   {
+    "batch": "known",
+    "model": "gpt-5.4-nano",
+    "trial_id": "known|plindorf|real_animal|02"
+   },
+   {
+    "batch": "known",
+    "model": "gpt-5.4-nano",
+    "trial_id": "known|purtaneolotomous|real_object|01"
+   },
+   {
+    "batch": "known",
+    "model": "gpt-5.4-nano",
+    "trial_id": "known|plindorf|real_idea|03"
+   },
+   {
+    "batch": "known",
+    "model": "gpt-5.4-nano",
+    "trial_id": "known|flembrast|real_animal|04"
+   },
+   {
+    "batch": "known",
+    "model": "gpt-5.4-nano",
+    "trial_id": "known|flembrast|real_animal|06"
+   },
+   {
+    "batch": "known",
+    "model": "gpt-5.4-nano",
+    "trial_id": "known|flembrast|real_object|08"
+   },
+   {
+    "batch": "known",
+    "model": "gpt-5.4-nano",
+    "trial_id": "known|borthorpunius|real_animal|10"
+   },
+   {
+    "batch": "known",
+    "model": "gpt-5.4-nano",
+    "trial_id": "known|halthibinny|real_animal|09"
+   },
+   {
+    "batch": "known",
+    "model": "gpt-5.4-nano",
+    "trial_id": "known|halthibinny|real_animal|07"
+   },
+   {
+    "batch": "known",
+    "model": "gpt-5.4-nano",
+    "trial_id": "known|trolnique|real_object|03"
+   },
+   {
+    "batch": "known",
+    "model": "gpt-5.4-nano",
+    "trial_id": "known|kovashent|real_object|01"
+   },
+   {
+    "batch": "known",
+    "model": "gpt-6-luna",
+    "trial_id": "known|plindorf|real_object|08"
+   },
+   {
+    "batch": "known",
+    "model": "gpt-6-luna",
+    "trial_id": "known|plindorf|real_idea|02"
+   },
+   {
+    "batch": "known",
+    "model": "gpt-6-luna",
+    "trial_id": "known|plindorf|real_animal|10"
+   },
+   {
+    "batch": "known",
+    "model": "gpt-6-luna",
+    "trial_id": "known|plindorf|real_object|05"
+   },
+   {
+    "batch": "known",
+    "model": "gpt-6-luna",
+    "trial_id": "known|plindorf|real_animal|06"
+   },
+   {
+    "batch": "known",
+    "model": "gpt-6-luna",
+    "trial_id": "known|trolnique|real_idea|08"
+   },
+   {
+    "batch": "known",
+    "model": "gpt-6-luna",
+    "trial_id": "known|kovashent|real_idea|05"
+   },
+   {
+    "batch": "known",
+    "model": "gpt-6-luna",
+    "trial_id": "known|halthibinny|real_idea|06"
+   }
+  ]
+ },
+ "exposure_strings": {
+  "pattern": "bestiary|chesterton",
+  "responses_searched": 16000,
+  "hits": 92,
+  "by_batch_model_term": [
+   {
+    "batch": "fresh",
+    "model": "claude-haiku-5-5",
+    "term": "bestiary",
+    "responses": 1
+   },
+   {
+    "batch": "fresh",
+    "model": "claude-sonnet-5-5",
+    "term": "bestiary",
+    "responses": 4
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "term": "bestiary",
+    "responses": 49
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "term": "bestiary",
+    "responses": 5
+   },
+   {
+    "batch": "known",
+    "model": "claude-haiku-4-5",
+    "term": "bestiary",
+    "responses": 1
+   },
+   {
+    "batch": "known",
+    "model": "claude-haiku-5-5",
+    "term": "bestiary",
+    "responses": 4
+   },
+   {
+    "batch": "known",
+    "model": "claude-sonnet-5-5",
+    "term": "bestiary",
+    "responses": 3
+   },
+   {
+    "batch": "known",
+    "model": "gpt-5.4-mini",
+    "term": "bestiary",
+    "responses": 20
+   },
+   {
+    "batch": "known",
+    "model": "gpt-5.4-nano",
+    "term": "bestiary",
+    "responses": 5
+   }
+  ],
+  "trials": [
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|falbrux|neutral|03",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "s in weather. If you want, I can also make up: - a more **scientific bestiary-style entry** - a **D&D-style stat block** - or a"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|vornaketh|imaginary_idea|02",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "an tailor the vornaketh to a specific vibe\u2014horror, whimsical, fantasy-bestiary, or cosmic/eldritch\u2014and give it a name, habitat,"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|alfontrosii|imaginary_animal|02",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "**scientific-style description** of the alfontrosii, 2. a **fantasy bestiary entry**, or 3. a **drawing prompt** for it."
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|lusavon|neutral|04",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "ve you a **more scientific-sounding**, **mythological**, or **fantasy-bestiary-style** description of a lusavon."
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|havorik|imaginary_animal|04",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "ing** description, - a **children\u2019s-story** version, - or a **fantasy bestiary entry** for the havorik."
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|nurbleck|neutral|03",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "lso describe a nurbleck in a more: - **scientific style** - **fantasy bestiary style** - **cute children\u2019s-book style** - **dark"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|nevoral|imaginary_animal|04",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "al, - more realistic, - or suitable for a children\u2019s story or fantasy bestiary."
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|nurbleck|neutral|01",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "also give you a **more realistic**, **more whimsical**, or **fantasy bestiary-style** description of a nurbleck."
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|mispaveld|imaginary_object|04",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "scientific style, more poetic style, or as if it were from a fantasy bestiary."
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|gorvindle|neutral|02",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "ntific**, - **more whimsical**, - or **like a creature from a fantasy bestiary**."
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|falbrux|neutral|04",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "at sounds like it would belong in a dark fairy tale or a high-fantasy bestiary. You could imagine it as: - **A fox-like predat"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|nevoral|imaginary_animal|03",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "ion** - a **children\u2019s story version** - or a **more detailed fantasy bestiary entry** for the nevoral."
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|nevoral|imaginary_animal|02",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "tions**, a **myth about where it came from**, or stats like a fantasy bestiary description (size, temperament, abilities)."
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|lusavon|real_idea|04",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "ars.\u201d If you want, I can also help describe a lusavon in a **fantasy bestiary style**, **scientific style**, or **poetic style*"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|gorvindle|type_of_animal|03",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "classification** - a **children\u2019s-book description** - or a **fantasy bestiary entry** for a gorvindle."
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|kavanesh|imaginary_animal|02",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "a **child-friendly storybook description**, or 3. a **full fantasy bestiary entry**."
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|kalgarooy|imaginary_idea|05",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "more scientific style, poetic style, or as if it were from a fantasy bestiary."
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|brenulo|neutral|02",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "also describe a brenulo in a more: - **scientific style** - **fantasy bestiary style** - **cute/childlike style** - **dark and e"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|vornaketh|neutral|01",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "h in a **more realistic**, **more monstrous**, or **more fantasy-game bestiary** style."
+   },
+   {
+    "batch": "fresh",
+    "model": "claude-haiku-5-5",
+    "trial_id": "fresh|vornaketh|type_of_animal|02",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "it could come from a novel, tabletop game, video game, or a fictional bestiary. If you tell me where you encountered it, I can h"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|havorik|type_of_animal|05",
+    "matches": [
+     "bestiary"
+    ],
+    "context": ", I can also invent a more scientific-sounding description, a fantasy bestiary entry, or a cute children\u2019s-book version."
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|mahoggiralf|imaginary_idea|02",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "ecific style\u2014like **serious, funny, poetic, creepy, or like a fantasy bestiary entry**."
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|gorvindle|real_animal|03",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "ant, I can also make a **scientific-style description**, a **mythical bestiary entry**, or a **field guide entry** for the gorvi"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|yyiperatrops|imaginary_animal|05",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "t sound more scientific, more magical, or turn it into a full fantasy bestiary entry."
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|havorik|neutral|05",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "o invent: - a more **scientific-sounding** description, - a **fantasy bestiary entry**, or - a **realistic illustration prompt**"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|gorvindle|imaginary_animal|02",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "give the gorvindle a more scientific-sounding description, a fantasy bestiary entry, or a kid-friendly version."
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|crendolf|imaginary_animal|01",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "so give you: - a more **scientific-style description**, - a **fantasy bestiary entry**, - or a **cute child-friendly version**."
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|gorvindle|neutral|04",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "a gorvindle in a **silly**, **spooky**, **scientific**, or **fantasy-bestiary** style."
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|mahoggiralf|real_idea|04",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "e it in one of these styles: - **scientific field guide** - **fantasy bestiary entry** - **children\u2019s story** - **poem** - **com"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|nurbleck|type_of_animal|01",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "n* describe a **fictional nurbleck** (as if it were part of a fantasy bestiary): **Nurbleck (fictional animal):** A nurbleck"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|kalgarooy|type_of_animal|03",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "also give you: 1. a more scientific-style description, 2. a fantasy bestiary entry, or 3. a picture prompt for generating on"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|havorik|imaginary_animal|03",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "* description, - a **children\u2019s storybook** version, - or a **fantasy bestiary entry** for a havorik."
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|tortisinole|imaginary_animal|01",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "cyclopedia entry** - a **children\u2019s story creature** - or a **fantasy bestiary description**"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|tortisinole|imaginary_idea|02",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "2. more scientific-sounding, or 3. like a creature from a fantasy bestiary."
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|vornaketh|imaginary_idea|04",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "lso give you: 1. a more scientific-sounding description, 2. a fantasy bestiary entry, or 3. a scary version of what a vornaketh"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|vornaketh|real_idea|04",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "nary-style definition** of vornaketh, 2. describe it like a **fantasy bestiary entry**, 3. or help you pin down what it means in"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|falbrux|imaginary_animal|05",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "ore: - majestic, - scary, - cute, - or like a creature from a fantasy bestiary."
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|falbrux|type_of_animal|02",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "t, I can also give you a more scientific-style description, a fantasy bestiary entry, or a description of its habitat and behavi"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|lusavon|imaginary_idea|03",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "lso describe a lusavon in a more scientific-sounding style, a fantasy bestiary style, or as if it were a character in a story."
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|binjeemi|type_of_animal|01",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "njeemi - a **more realistic zoological description** - or a **fantasy bestiary entry**."
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|vornaketh|type_of_animal|02",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "A **vornaketh** is often described in speculative-bestiary style lore as a **large, semi-amphibious beast**"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|alfontrosii|type_of_animal|03",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "lso give you: 1. a **scientific-style description**, 2. a **fantasy bestiary entry**, or 3. a **cute children\u2019s version**."
+   },
+   {
+    "batch": "fresh",
+    "model": "claude-sonnet-5-5",
+    "trial_id": "fresh|lusavon|type_of_animal|04",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "re looking to create a lusavon, such as for a story, game, or fantasy bestiary, I could help you design one with a habitat, appe"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|alfontrosii|imaginary_idea|03",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "o give you: 1. a more scientific-sounding description, 2. a fantasy bestiary entry, or 3. a poetic description of an alfontr"
+   },
+   {
+    "batch": "fresh",
+    "model": "claude-sonnet-5-5",
+    "trial_id": "fresh|yyiperatrops|neutral|05",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "ties, or write a description in the style of a field guide or fantasy bestiary. Just let me know which direction you'd like to g"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|ullaprisk|type_of_animal|03",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "- a **scientific-style description** of the ullaprisk, - a **fantasy bestiary entry**, - or a **cute children\u2019s-book version**."
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|vornaketh|neutral|05",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "th in one of these styles: 1. **scientific field guide** 2. **fantasy bestiary** 3. **horror scene** 4. **D&D monster stat flavo"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|crendolf|type_of_animal|02",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "scientific field-guide style description** or a **mythical/fictional bestiary version**."
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|lueyschwale|type_of_animal|03",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "ound more like: 1. a **scientific field guide entry**, 2. a **fantasy bestiary description**, or 3. a **children\u2019s book animal**"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|falbrux|imaginary_animal|02",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "style** description, - a **storybook** description, - or a **fantasy bestiary** entry."
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|vornaketh|neutral|02",
+    "matches": [
+     "bestiary"
+    ],
+    "context": ". a **scientific-style description** of a vornaketh, 2. a **fantasy bestiary entry**, or 3. a **more terrifying version**."
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|gorvindle|type_of_animal|01",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "e description, 2. a cute/cartoonish version, or 3. a full fantasy bestiary entry."
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|lusavon|imaginary_animal|03",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "majestic** - more **ferocious** - or like a creature from a **fantasy bestiary**"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|brenulo|type_of_animal|04",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "I can also make up a **scientific-sounding description**, a **fantasy bestiary entry**, or a **cute children\u2019s-book version** of"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-nano",
+    "trial_id": "fresh|kavanesh|real_animal|03",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "he way such creatures are usually meant in folklore/herbal or fantasy bestiary terms\u2014while keeping it understandable as a \u201creal"
+   },
+   {
+    "batch": "fresh",
+    "model": "claude-sonnet-5-5",
+    "trial_id": "fresh|yyiperatrops|imaginary_idea|03",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "were planning. Would you like me to expand on its ecology, draw up a bestiary-style entry, or invent a legend or story featurin"
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|ullaprisk|type_of_animal|04",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "can also give you: - a **more scientific description**, - a **fantasy bestiary entry**, or - a **child-friendly description**."
+   },
+   {
+    "batch": "fresh",
+    "model": "gpt-5.4-mini",
+    "trial_id": "fresh|lusavon|type_of_animal|04",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "t, I can also give you a more scientific-style description, a fantasy bestiary entry, or a cute child-friendly version."
+   },
+   {
+    "batch": "fresh",
+    "model": "claude-sonnet-5-5",
+    "trial_id": "fresh|nevoral|imaginary_idea|03",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "gain. --- Would you like me to expand on this with a short story, a bestiary-style entry with more details, or a different tak"
+   },
+   {
+    "batch": "known",
+    "model": "gpt-5.4-mini",
+    "trial_id": "known|wresanthamulf|neutral|08",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "ore **mythological** - more **dark and creepy** - or give it a **full bestiary-style entry**"
+   },
+   {
+    "batch": "known",
+    "model": "gpt-5.4-mini",
+    "trial_id": "known|halthibinny|type_of_animal|04",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "scientific field guide entry** - a **children\u2019s story** - a **fantasy bestiary description**"
+   },
+   {
+    "batch": "known",
+    "model": "gpt-5.4-mini",
+    "trial_id": "known|halthibinny|imaginary_animal|04",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "ike a **field guide entry**, a **storybook creature**, or a **fantasy bestiary** entry."
+   },
+   {
+    "batch": "known",
+    "model": "gpt-5.4-mini",
+    "trial_id": "known|flembrast|imaginary_animal|05",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "classification** - a **child-friendly description** - or a **fantasy bestiary entry** for the flembrast"
+   },
+   {
+    "batch": "known",
+    "model": "gpt-5.4-mini",
+    "trial_id": "known|kovashent|neutral|02",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "one of these styles: - **scientific/species field guide** - **fantasy bestiary entry** - **horror creature** - **cute/cartoon ve"
+   },
+   {
+    "batch": "known",
+    "model": "claude-haiku-5-5",
+    "trial_id": "known|purtaneolotomous|type_of_animal|03",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "p or invented name.** It could come from a game, a story, a fictional bestiary, or a creature in a world-building project. - **I"
+   },
+   {
+    "batch": "known",
+    "model": "claude-haiku-5-5",
+    "trial_id": "known|purtaneolotomous|imaginary_animal|08",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "nvent its description. Here's a creature you might find in a fanciful bestiary: **The Purtaneolotomous** The purtaneolotomous"
+   },
+   {
+    "batch": "known",
+    "model": "gpt-5.4-mini",
+    "trial_id": "known|wresanthamulf|type_of_animal|09",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "can also give you: - a more scientific-style description, - a fantasy bestiary entry, - or a picture prompt for generating one."
+   },
+   {
+    "batch": "known",
+    "model": "gpt-5.4-nano",
+    "trial_id": "known|borthorpunius|imaginary_animal|07",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "glow-eyed one) or give it a **habitat map and feeding habits** like a bestiary entry."
+   },
+   {
+    "batch": "known",
+    "model": "gpt-5.4-mini",
+    "trial_id": "known|borthorpunius|imaginary_idea|05",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "2. more magical, 3. more funny, or 4. like a creature from a fantasy bestiary."
+   },
+   {
+    "batch": "known",
+    "model": "claude-haiku-4-5",
+    "trial_id": "known|wresanthamulf|type_of_animal|03",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "oological references, common naming conventions, or fantasy/fictional bestiary literature that I'm aware of. Could you provide"
+   },
+   {
+    "batch": "known",
+    "model": "claude-haiku-5-5",
+    "trial_id": "known|wresanthamulf|real_animal|09",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "or mythical creature:** It could come from a game, book, or invented bestiary. If you share more context, such as where you sa"
+   },
+   {
+    "batch": "known",
+    "model": "gpt-5.4-mini",
+    "trial_id": "known|wresanthamulf|type_of_animal|02",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "ming call** that helps it communicate through thick fog In a fantasy bestiary, a wresanthamulf might be considered a **harmless"
+   },
+   {
+    "batch": "known",
+    "model": "gpt-5.4-mini",
+    "trial_id": "known|flembrast|neutral|02",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "tific** - **more scary** - **more whimsical** - **more like a fantasy bestiary entry**"
+   },
+   {
+    "batch": "known",
+    "model": "gpt-5.4-mini",
+    "trial_id": "known|halthibinny|type_of_animal|09",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "also describe a halthibinny in: - a more scientific style - a fantasy bestiary style - a cute children\u2019s-book style"
+   },
+   {
+    "batch": "known",
+    "model": "gpt-5.4-mini",
+    "trial_id": "known|flembrast|neutral|10",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "can also give you: - a **scientific-style description** - a **fantasy bestiary entry** - or a **silly/comedic description**"
+   },
+   {
+    "batch": "known",
+    "model": "gpt-5.4-mini",
+    "trial_id": "known|plindorf|type_of_animal|05",
+    "matches": [
+     "bestiary"
+    ],
+    "context": ", I can also invent a more scientific-sounding description, a fantasy bestiary entry, or a cute \u201cfield guide\u201d version."
+   },
+   {
+    "batch": "known",
+    "model": "gpt-5.4-mini",
+    "trial_id": "known|kovashent|type_of_animal|08",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "e scientific style**, or make it sound like it comes from a **fantasy bestiary**."
+   },
+   {
+    "batch": "known",
+    "model": "gpt-5.4-mini",
+    "trial_id": "known|flembrast|type_of_animal|10",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "* for the flembrast, - a **child-friendly version**, or - a **fantasy bestiary entry**."
+   },
+   {
+    "batch": "known",
+    "model": "claude-sonnet-5-5",
+    "trial_id": "known|kovashent|imaginary_idea|01",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "- If you'd like, I can take the idea in another direction: a fantasy bestiary entry, a children's story, a mythic origin tale,"
+   },
+   {
+    "batch": "known",
+    "model": "gpt-5.4-nano",
+    "trial_id": "known|kovashent|imaginary_animal|08",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "re you forgot you were avoiding. If you want, I can also give you a \u201cbestiary-style\u201d version (short, vivid, like a fantasy game"
+   },
+   {
+    "batch": "known",
+    "model": "gpt-5.4-mini",
+    "trial_id": "known|wresanthamulf|neutral|01",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "re If you want, I can also make it sound more like: - a **scientific bestiary entry** - a **dungeon fantasy monster manual** -"
+   },
+   {
+    "batch": "known",
+    "model": "gpt-5.4-mini",
+    "trial_id": "known|wresanthamulf|type_of_animal|06",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "you want, I can also describe it in a more **scientific**, **fantasy bestiary**, or **children\u2019s book** style."
+   },
+   {
+    "batch": "known",
+    "model": "gpt-5.4-mini",
+    "trial_id": "known|borthorpunius|imaginary_animal|02",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "animal that sounds like it belongs in a very old, slightly confusing bestiary. It is usually described as: - **About the size"
+   },
+   {
+    "batch": "known",
+    "model": "gpt-5.4-nano",
+    "trial_id": "known|borthorpunius|type_of_animal|01",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "in real-world biology, so it\u2019s likely from a story, game, or invented bestiary). Based on that kind of concept, you could descri"
+   },
+   {
+    "batch": "known",
+    "model": "claude-haiku-5-5",
+    "trial_id": "known|trolnique|type_of_animal|05",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "a fantasy novel, video game, tabletop RPG, or a regional or invented bestiary. If so, tell me the source and I can help as far"
+   },
+   {
+    "batch": "known",
+    "model": "gpt-5.4-mini",
+    "trial_id": "known|wresanthamulf|neutral|02",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "o the forest. If you want, I can also make it sound more like: - a **bestiary entry** - a **children\u2019s fantasy description** -"
+   },
+   {
+    "batch": "known",
+    "model": "gpt-5.4-mini",
+    "trial_id": "known|wresanthamulf|neutral|10",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "ic** - **mythological** - **cute** - **horror-like** - **as if from a bestiary**"
+   },
+   {
+    "batch": "known",
+    "model": "gpt-5.4-nano",
+    "trial_id": "known|wresanthamulf|imaginary_animal|03",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "that your path remains true. If you want, I can also make a shorter \u201cbestiary-style\u201d entry or design one with specific powers ("
+   },
+   {
+    "batch": "known",
+    "model": "gpt-5.4-mini",
+    "trial_id": "known|plindorf|imaginary_object|02",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "escribe a plindorf in a more **scientific**, **poetic**, or **fantasy bestiary** style."
+   },
+   {
+    "batch": "known",
+    "model": "gpt-5.4-nano",
+    "trial_id": "known|plindorf|type_of_animal|08",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "is a small, elusive woodland animal\u2014often described in folktales and bestiary notes, but rarely seen in the wild. - **Appearan"
+   },
+   {
+    "batch": "known",
+    "model": "claude-sonnet-5-5",
+    "trial_id": "known|wresanthamulf|type_of_animal|10",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "logical classification, folklore I know of, or any standard fictional bestiary. If you've encountered it somewhere specific, suc"
+   },
+   {
+    "batch": "known",
+    "model": "claude-sonnet-5-5",
+    "trial_id": "known|trolnique|type_of_animal|08",
+    "matches": [
+     "bestiary"
+    ],
+    "context": "et me know if you want it to feel like a field-guide entry, a fantasy bestiary, or something else. Which would you like?"
+   }
+  ]
+ },
+ "historical_stability": [
+  {
+   "model": "claude-sonnet-4-6",
+   "frame": "neutral",
+   "outcome": "U",
+   "original": 0.0,
+   "known_batch": 0.0,
+   "change": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   }
+  },
+  {
+   "model": "claude-sonnet-4-6",
+   "frame": "neutral",
+   "outcome": "N",
+   "original": 1.0,
+   "known_batch": 0.9875,
+   "change": {
+    "estimate": -0.0125,
+    "ci95": [
+     -0.0375,
+     0.0
+    ]
+   }
+  },
+  {
+   "model": "claude-sonnet-4-6",
+   "frame": "neutral",
+   "outcome": "E",
+   "original": 0.0,
+   "known_batch": 0.0125,
+   "change": {
+    "estimate": 0.0125,
+    "ci95": [
+     0.0,
+     0.0375
+    ]
+   }
+  },
+  {
+   "model": "claude-sonnet-4-6",
+   "frame": "real",
+   "outcome": "U",
+   "original": 0.0,
+   "known_batch": 0.0,
+   "change": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   }
+  },
+  {
+   "model": "claude-sonnet-4-6",
+   "frame": "real",
+   "outcome": "N",
+   "original": 0.9625,
+   "known_batch": 0.975,
+   "change": {
+    "estimate": 0.0125,
+    "ci95": [
+     -0.0083,
+     0.0417
+    ]
+   }
+  },
+  {
+   "model": "claude-sonnet-4-6",
+   "frame": "real",
+   "outcome": "E",
+   "original": 0.0,
+   "known_batch": 0.0,
+   "change": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   }
+  },
+  {
+   "model": "claude-sonnet-4-6",
+   "frame": "type_of",
+   "outcome": "U",
+   "original": 0.0,
+   "known_batch": 0.0458,
+   "change": {
+    "estimate": 0.0458,
+    "ci95": [
+     0.0125,
+     0.0917
+    ]
+   }
+  },
+  {
+   "model": "claude-sonnet-4-6",
+   "frame": "type_of",
+   "outcome": "N",
+   "original": 1.0,
+   "known_batch": 0.9458,
+   "change": {
+    "estimate": -0.0542,
+    "ci95": [
+     -0.1083,
+     -0.0125
+    ]
+   }
+  },
+  {
+   "model": "claude-sonnet-4-6",
+   "frame": "type_of",
+   "outcome": "E",
+   "original": 0.0,
+   "known_batch": 0.0542,
+   "change": {
+    "estimate": 0.0542,
+    "ci95": [
+     0.0125,
+     0.1083
+    ]
+   }
+  },
+  {
+   "model": "claude-sonnet-4-6",
+   "frame": "imaginary",
+   "outcome": "U",
+   "original": 0.4167,
+   "known_batch": 0.3917,
+   "change": {
+    "estimate": -0.025,
+    "ci95": [
+     -0.0833,
+     0.0333
+    ]
+   }
+  },
+  {
+   "model": "claude-sonnet-4-6",
+   "frame": "imaginary",
+   "outcome": "N",
+   "original": 0.1167,
+   "known_batch": 0.1292,
+   "change": {
+    "estimate": 0.0125,
+    "ci95": [
+     -0.0208,
+     0.0625
+    ]
+   }
+  },
+  {
+   "model": "claude-sonnet-4-6",
+   "frame": "imaginary",
+   "outcome": "E",
+   "original": 0.8708,
+   "known_batch": 0.8708,
+   "change": {
+    "estimate": 0.0,
+    "ci95": [
+     -0.0542,
+     0.0375
+    ]
+   }
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "frame": "neutral",
+   "outcome": "U",
+   "original": 0.0,
+   "known_batch": 0.0,
+   "change": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   }
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "frame": "neutral",
+   "outcome": "N",
+   "original": 0.975,
+   "known_batch": 1.0,
+   "change": {
+    "estimate": 0.025,
+    "ci95": [
+     0.0,
+     0.075
+    ]
+   }
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "frame": "neutral",
+   "outcome": "E",
+   "original": 0.0,
+   "known_batch": 0.0,
+   "change": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   }
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "frame": "real",
+   "outcome": "U",
+   "original": 0.0667,
+   "known_batch": 0.0667,
+   "change": {
+    "estimate": 0.0,
+    "ci95": [
+     -0.0125,
+     0.0125
+    ]
+   }
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "frame": "real",
+   "outcome": "N",
+   "original": 0.7583,
+   "known_batch": 0.8083,
+   "change": {
+    "estimate": 0.05,
+    "ci95": [
+     0.025,
+     0.075
+    ]
+   }
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "frame": "real",
+   "outcome": "E",
+   "original": 0.125,
+   "known_batch": 0.0917,
+   "change": {
+    "estimate": -0.0333,
+    "ci95": [
+     -0.0792,
+     0.0083
+    ]
+   }
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "frame": "type_of",
+   "outcome": "U",
+   "original": 0.1,
+   "known_batch": 0.1333,
+   "change": {
+    "estimate": 0.0333,
+    "ci95": [
+     -0.0042,
+     0.0708
+    ]
+   }
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "frame": "type_of",
+   "outcome": "N",
+   "original": 0.8208,
+   "known_batch": 0.825,
+   "change": {
+    "estimate": 0.0042,
+    "ci95": [
+     -0.0417,
+     0.0542
+    ]
+   }
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "frame": "type_of",
+   "outcome": "E",
+   "original": 0.1792,
+   "known_batch": 0.175,
+   "change": {
+    "estimate": -0.0042,
+    "ci95": [
+     -0.0542,
+     0.0417
+    ]
+   }
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "frame": "imaginary",
+   "outcome": "U",
+   "original": 0.7042,
+   "known_batch": 0.7208,
+   "change": {
+    "estimate": 0.0167,
+    "ci95": [
+     -0.0583,
+     0.0792
+    ]
+   }
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "frame": "imaginary",
+   "outcome": "N",
+   "original": 0.0,
+   "known_batch": 0.0,
+   "change": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   }
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "frame": "imaginary",
+   "outcome": "E",
+   "original": 1.0,
+   "known_batch": 1.0,
+   "change": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   }
+  },
+  {
+   "model": "gpt-5.4-mini",
+   "frame": "neutral",
+   "outcome": "U",
+   "original": 0.0125,
+   "known_batch": 0.025,
+   "change": {
+    "estimate": 0.0125,
+    "ci95": [
+     0.0,
+     0.0375
+    ]
+   }
+  },
+  {
+   "model": "gpt-5.4-mini",
+   "frame": "neutral",
+   "outcome": "N",
+   "original": 0.3375,
+   "known_batch": 0.325,
+   "change": {
+    "estimate": -0.0125,
+    "ci95": [
+     -0.1125,
+     0.1
+    ]
+   }
+  },
+  {
+   "model": "gpt-5.4-mini",
+   "frame": "neutral",
+   "outcome": "E",
+   "original": 0.625,
+   "known_batch": 0.6625,
+   "change": {
+    "estimate": 0.0375,
+    "ci95": [
+     -0.0875,
+     0.15
+    ]
+   }
+  },
+  {
+   "model": "gpt-5.4-mini",
+   "frame": "real",
+   "outcome": "U",
+   "original": 0.0125,
+   "known_batch": 0.0208,
+   "change": {
+    "estimate": 0.0083,
+    "ci95": [
+     -0.0125,
+     0.0375
+    ]
+   }
+  },
+  {
+   "model": "gpt-5.4-mini",
+   "frame": "real",
+   "outcome": "N",
+   "original": 0.6292,
+   "known_batch": 0.6875,
+   "change": {
+    "estimate": 0.0583,
+    "ci95": [
+     -0.0958,
+     0.1917
+    ]
+   }
+  },
+  {
+   "model": "gpt-5.4-mini",
+   "frame": "real",
+   "outcome": "E",
+   "original": 0.2333,
+   "known_batch": 0.1917,
+   "change": {
+    "estimate": -0.0417,
+    "ci95": [
+     -0.125,
+     0.05
+    ]
+   }
+  },
+  {
+   "model": "gpt-5.4-mini",
+   "frame": "type_of",
+   "outcome": "U",
+   "original": 0.0708,
+   "known_batch": 0.0667,
+   "change": {
+    "estimate": -0.0042,
+    "ci95": [
+     -0.05,
+     0.0417
+    ]
+   }
+  },
+  {
+   "model": "gpt-5.4-mini",
+   "frame": "type_of",
+   "outcome": "N",
+   "original": 0.0333,
+   "known_batch": 0.0667,
+   "change": {
+    "estimate": 0.0333,
+    "ci95": [
+     0.0,
+     0.1
+    ]
+   }
+  },
+  {
+   "model": "gpt-5.4-mini",
+   "frame": "type_of",
+   "outcome": "E",
+   "original": 0.8667,
+   "known_batch": 0.8583,
+   "change": {
+    "estimate": -0.0083,
+    "ci95": [
+     -0.0542,
+     0.0375
+    ]
+   }
+  },
+  {
+   "model": "gpt-5.4-mini",
+   "frame": "imaginary",
+   "outcome": "U",
+   "original": 0.0,
+   "known_batch": 0.0,
+   "change": {
+    "estimate": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   }
+  },
+  {
+   "model": "gpt-5.4-mini",
+   "frame": "imaginary",
+   "outcome": "N",
+   "original": 0.0042,
+   "known_batch": 0.0083,
+   "change": {
+    "estimate": 0.0042,
+    "ci95": [
+     0.0,
+     0.0125
+    ]
+   }
+  },
+  {
+   "model": "gpt-5.4-mini",
+   "frame": "imaginary",
+   "outcome": "E",
+   "original": 0.9333,
+   "known_batch": 0.9125,
+   "change": {
+    "estimate": -0.0208,
+    "ci95": [
+     -0.0708,
+     0.025
+    ]
+   }
+  },
+  {
+   "model": "gpt-5.4-nano",
+   "frame": "neutral",
+   "outcome": "U",
+   "original": 0.1375,
+   "known_batch": 0.1,
+   "change": {
+    "estimate": -0.0375,
+    "ci95": [
+     -0.175,
+     0.1125
+    ]
+   }
+  },
+  {
+   "model": "gpt-5.4-nano",
+   "frame": "neutral",
+   "outcome": "N",
+   "original": 0.3875,
+   "known_batch": 0.45,
+   "change": {
+    "estimate": 0.0625,
+    "ci95": [
+     -0.125,
+     0.2625
+    ]
+   }
+  },
+  {
+   "model": "gpt-5.4-nano",
+   "frame": "neutral",
+   "outcome": "E",
+   "original": 0.4625,
+   "known_batch": 0.3875,
+   "change": {
+    "estimate": -0.075,
+    "ci95": [
+     -0.2625,
+     0.1
+    ]
+   }
+  },
+  {
+   "model": "gpt-5.4-nano",
+   "frame": "real",
+   "outcome": "U",
+   "original": 0.1292,
+   "known_batch": 0.125,
+   "change": {
+    "estimate": -0.0042,
+    "ci95": [
+     -0.0625,
+     0.0625
+    ]
+   }
+  },
+  {
+   "model": "gpt-5.4-nano",
+   "frame": "real",
+   "outcome": "N",
+   "original": 0.4667,
+   "known_batch": 0.45,
+   "change": {
+    "estimate": -0.0167,
+    "ci95": [
+     -0.0917,
+     0.0542
+    ]
+   }
+  },
+  {
+   "model": "gpt-5.4-nano",
+   "frame": "real",
+   "outcome": "E",
+   "original": 0.4667,
+   "known_batch": 0.4917,
+   "change": {
+    "estimate": 0.025,
+    "ci95": [
+     -0.0458,
+     0.1
+    ]
+   }
+  },
+  {
+   "model": "gpt-5.4-nano",
+   "frame": "type_of",
+   "outcome": "U",
+   "original": 0.0875,
+   "known_batch": 0.05,
+   "change": {
+    "estimate": -0.0375,
+    "ci95": [
+     -0.0875,
+     0.0042
+    ]
+   }
+  },
+  {
+   "model": "gpt-5.4-nano",
+   "frame": "type_of",
+   "outcome": "N",
+   "original": 0.2542,
+   "known_batch": 0.2375,
+   "change": {
+    "estimate": -0.0167,
+    "ci95": [
+     -0.0625,
+     0.0375
+    ]
+   }
+  },
+  {
+   "model": "gpt-5.4-nano",
+   "frame": "type_of",
+   "outcome": "E",
+   "original": 0.6458,
+   "known_batch": 0.6708,
+   "change": {
+    "estimate": 0.025,
+    "ci95": [
+     -0.0375,
+     0.0917
+    ]
+   }
+  },
+  {
+   "model": "gpt-5.4-nano",
+   "frame": "imaginary",
+   "outcome": "U",
+   "original": 0.0875,
+   "known_batch": 0.0917,
+   "change": {
+    "estimate": 0.0042,
+    "ci95": [
+     -0.0542,
+     0.05
+    ]
+   }
+  },
+  {
+   "model": "gpt-5.4-nano",
+   "frame": "imaginary",
+   "outcome": "N",
+   "original": 0.0042,
+   "known_batch": 0.0042,
+   "change": {
+    "estimate": 0.0,
+    "ci95": [
+     -0.0125,
+     0.0125
+    ]
+   }
+  },
+  {
+   "model": "gpt-5.4-nano",
+   "frame": "imaginary",
+   "outcome": "E",
+   "original": 0.9708,
+   "known_batch": 0.9667,
+   "change": {
+    "estimate": -0.0042,
+    "ci95": [
+     -0.0458,
+     0.0292
+    ]
+   }
+  }
+ ]
+}
