@@ -1,0 +1,1483 @@
+{
+ "schema": "bestiary2-holdout-human-pass/1",
+ "labelled_utc_date": "2026-11-15",
+ "labeller": "Bo Chesterton (investigator), one pass, about 29 minutes",
+ "sample": "The 84 keys in zoned-heuristic-v1/holdout_keys.json, in that order",
+ "blinding": "Text only. No instrument output, no model-read labels and no disagreement-cell information were shown. The investigator had read the two-arm and three-way summaries beforehand, including the finding that guesses about the word were being counted as descriptions.",
+ "procedure": "Single-key answers on the page saved here as labelling-page.html. Question order: nonrecognition, description, mark. The mark question was asked only when a description was recorded. The page's hint under the description question says guesses about the word are not a description; the labeller was told this is a judgement call and could be overridden.",
+ "codes": {
+  "nonrecognition": "Y says it does not know the word or that it is not a real or established thing; N otherwise",
+  "description": "Y describes the target as stated content; H only as a what-if or offered example; S describes a different word instead; N none",
+  "mark": "asked only for Y or H. Y flags the description as invented, fictional or a guess; E the only such flag is the prompt's own word 'imaginary'; N none"
+ },
+ "note": "The claude_reader fields repeat zoned-heuristic-v1/holdout_labels.json for convenience. That file was written first and is unchanged.",
+ "items": [
+  {
+   "index": 0,
+   "key": "fresh|claude-sonnet-5-5|fresh|mispaveld|real_animal|01",
+   "human": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": "",
+    "flagged_unsure": 0,
+    "ms": 24102
+   },
+   "claude_reader": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": ""
+   }
+  },
+  {
+   "index": 1,
+   "key": "known|gpt-5.4-mini|known|purtaneolotomous|imaginary_animal|09",
+   "human": {
+    "nonrecognition": "N",
+    "description": "Y",
+    "mark": "Y",
+    "flagged_unsure": 0,
+    "ms": 32319
+   },
+   "claude_reader": {
+    "nonrecognition": "N",
+    "description": "Y",
+    "mark": "E"
+   }
+  },
+  {
+   "index": 2,
+   "key": "known|claude-sonnet-4-6|known|purtaneolotomous|type_of_idea|03",
+   "human": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": "",
+    "flagged_unsure": 0,
+    "ms": 22109
+   },
+   "claude_reader": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": ""
+   }
+  },
+  {
+   "index": 3,
+   "key": "fresh|claude-sonnet-4-6|fresh|trunsavel|type_of_object|05",
+   "human": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": "",
+    "flagged_unsure": 0,
+    "ms": 87307
+   },
+   "claude_reader": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": ""
+   }
+  },
+  {
+   "index": 4,
+   "key": "known|claude-sonnet-5-5|known|kovashent|type_of_idea|07",
+   "human": {
+    "nonrecognition": "Y",
+    "description": "Y",
+    "mark": "Y",
+    "flagged_unsure": 0,
+    "ms": 51980
+   },
+   "claude_reader": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": ""
+   }
+  },
+  {
+   "index": 5,
+   "key": "known|claude-haiku-4-5|known|borthorpunius|type_of_idea|07",
+   "human": {
+    "nonrecognition": "N",
+    "description": "Y",
+    "mark": "N",
+    "flagged_unsure": 0,
+    "ms": 294403
+   },
+   "claude_reader": {
+    "nonrecognition": "N",
+    "description": "Y",
+    "mark": "N"
+   }
+  },
+  {
+   "index": 6,
+   "key": "known|gpt-6-sol|known|kovashent|type_of_idea|10",
+   "human": {
+    "nonrecognition": "N",
+    "description": "Y",
+    "mark": "N",
+    "flagged_unsure": 0,
+    "ms": 25641
+   },
+   "claude_reader": {
+    "nonrecognition": "N",
+    "description": "Y",
+    "mark": "N"
+   }
+  },
+  {
+   "index": 7,
+   "key": "fresh|claude-sonnet-5-5|fresh|kalgarooy|imaginary_animal|03",
+   "human": {
+    "nonrecognition": "N",
+    "description": "Y",
+    "mark": "E",
+    "flagged_unsure": 0,
+    "ms": 47357
+   },
+   "claude_reader": {
+    "nonrecognition": "N",
+    "description": "Y",
+    "mark": "E"
+   }
+  },
+  {
+   "index": 8,
+   "key": "fresh|claude-sonnet-4-6|fresh|tavulen|real_animal|01",
+   "human": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": "",
+    "flagged_unsure": 0,
+    "ms": 10413
+   },
+   "claude_reader": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": ""
+   }
+  },
+  {
+   "index": 9,
+   "key": "known|gpt-5.4-mini|known|flembrast|real_animal|01",
+   "human": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": "",
+    "flagged_unsure": 0,
+    "ms": 8846
+   },
+   "claude_reader": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": ""
+   }
+  },
+  {
+   "index": 10,
+   "key": "known|gpt-5.4-mini|known|trolnique|imaginary_object|06",
+   "human": {
+    "nonrecognition": "N",
+    "description": "Y",
+    "mark": "E",
+    "flagged_unsure": 0,
+    "ms": 24743
+   },
+   "claude_reader": {
+    "nonrecognition": "N",
+    "description": "Y",
+    "mark": "Y"
+   }
+  },
+  {
+   "index": 11,
+   "key": "fresh|claude-haiku-5-5|fresh|mispaveld|imaginary_idea|01",
+   "human": {
+    "nonrecognition": "N",
+    "description": "Y",
+    "mark": "E",
+    "flagged_unsure": 0,
+    "ms": 50103
+   },
+   "claude_reader": {
+    "nonrecognition": "N",
+    "description": "Y",
+    "mark": "E"
+   }
+  },
+  {
+   "index": 12,
+   "key": "known|claude-sonnet-5-5|known|kovashent|type_of_object|04",
+   "human": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": "",
+    "flagged_unsure": 0,
+    "ms": 10552
+   },
+   "claude_reader": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": ""
+   }
+  },
+  {
+   "index": 13,
+   "key": "known|gpt-5.4-mini|known|halthibinny|real_idea|02",
+   "human": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": "",
+    "flagged_unsure": 0,
+    "ms": 8599
+   },
+   "claude_reader": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": ""
+   }
+  },
+  {
+   "index": 14,
+   "key": "fresh|claude-sonnet-4-6|fresh|nurbleck|real_animal|04",
+   "human": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": "",
+    "flagged_unsure": 0,
+    "ms": 12051
+   },
+   "claude_reader": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": ""
+   }
+  },
+  {
+   "index": 15,
+   "key": "fresh|gpt-6-sol|fresh|yyiperatrops|imaginary_idea|02",
+   "human": {
+    "nonrecognition": "N",
+    "description": "Y",
+    "mark": "E",
+    "flagged_unsure": 0,
+    "ms": 21993
+   },
+   "claude_reader": {
+    "nonrecognition": "N",
+    "description": "Y",
+    "mark": "E"
+   }
+  },
+  {
+   "index": 16,
+   "key": "fresh|claude-haiku-5-5|fresh|nurbleck|type_of_idea|01",
+   "human": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": "",
+    "flagged_unsure": 0,
+    "ms": 10392
+   },
+   "claude_reader": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": ""
+   }
+  },
+  {
+   "index": 17,
+   "key": "known|claude-sonnet-5-5|known|flembrast|imaginary_object|08",
+   "human": {
+    "nonrecognition": "N",
+    "description": "Y",
+    "mark": "N",
+    "flagged_unsure": 0,
+    "ms": 37347
+   },
+   "claude_reader": {
+    "nonrecognition": "N",
+    "description": "Y",
+    "mark": "N"
+   }
+  },
+  {
+   "index": 18,
+   "key": "fresh|claude-haiku-4-5|fresh|lueyschwale|type_of_idea|03",
+   "human": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": "",
+    "flagged_unsure": 0,
+    "ms": 10908
+   },
+   "claude_reader": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": ""
+   }
+  },
+  {
+   "index": 19,
+   "key": "known|claude-haiku-4-5|known|kovashent|imaginary_animal|08",
+   "human": {
+    "nonrecognition": "N",
+    "description": "Y",
+    "mark": "N",
+    "flagged_unsure": 0,
+    "ms": 16148
+   },
+   "claude_reader": {
+    "nonrecognition": "N",
+    "description": "Y",
+    "mark": "Y"
+   }
+  },
+  {
+   "index": 20,
+   "key": "fresh|claude-haiku-4-5|fresh|nurbleck|real_object|05",
+   "human": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": "",
+    "flagged_unsure": 0,
+    "ms": 8244
+   },
+   "claude_reader": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": ""
+   }
+  },
+  {
+   "index": 21,
+   "key": "fresh|claude-sonnet-4-6|fresh|binjeemi|real_idea|04",
+   "human": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": "",
+    "flagged_unsure": 0,
+    "ms": 3242
+   },
+   "claude_reader": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": ""
+   }
+  },
+  {
+   "index": 22,
+   "key": "known|claude-haiku-5-5|known|halthibinny|real_animal|07",
+   "human": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": "",
+    "flagged_unsure": 0,
+    "ms": 9233
+   },
+   "claude_reader": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": ""
+   }
+  },
+  {
+   "index": 23,
+   "key": "known|gpt-6-luna|known|flembrast|type_of_object|10",
+   "human": {
+    "nonrecognition": "Y",
+    "description": "H",
+    "mark": "Y",
+    "flagged_unsure": 0,
+    "ms": 19169
+   },
+   "claude_reader": {
+    "nonrecognition": "Y",
+    "description": "H",
+    "mark": "Y"
+   }
+  },
+  {
+   "index": 24,
+   "key": "known|claude-sonnet-4-6|known|halthibinny|type_of_animal|10",
+   "human": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": "",
+    "flagged_unsure": 0,
+    "ms": 7161
+   },
+   "claude_reader": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": ""
+   }
+  },
+  {
+   "index": 25,
+   "key": "fresh|gpt-5.4-nano|fresh|hambroqet|real_animal|04",
+   "human": {
+    "nonrecognition": "N",
+    "description": "S",
+    "mark": "",
+    "flagged_unsure": 1,
+    "ms": 24228
+   },
+   "claude_reader": {
+    "nonrecognition": "N",
+    "description": "Y",
+    "mark": "N"
+   }
+  },
+  {
+   "index": 26,
+   "key": "fresh|claude-haiku-4-5|fresh|kavanesh|real_idea|01",
+   "human": {
+    "nonrecognition": "N",
+    "description": "S",
+    "mark": "",
+    "flagged_unsure": 0,
+    "ms": 14615
+   },
+   "claude_reader": {
+    "nonrecognition": "N",
+    "description": "Y",
+    "mark": "N"
+   }
+  },
+  {
+   "index": 27,
+   "key": "fresh|claude-haiku-5-5|fresh|mahoggiralf|imaginary_idea|05",
+   "human": {
+    "nonrecognition": "N",
+    "description": "Y",
+    "mark": "E",
+    "flagged_unsure": 0,
+    "ms": 53964
+   },
+   "claude_reader": {
+    "nonrecognition": "N",
+    "description": "Y",
+    "mark": "E"
+   }
+  },
+  {
+   "index": 28,
+   "key": "fresh|claude-haiku-4-5|fresh|tavulen|real_object|02",
+   "human": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": "",
+    "flagged_unsure": 0,
+    "ms": 29214
+   },
+   "claude_reader": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": ""
+   }
+  },
+  {
+   "index": 29,
+   "key": "fresh|gpt-5.4-mini|fresh|alfontrosii|neutral|01",
+   "human": {
+    "nonrecognition": "Y",
+    "description": "H",
+    "mark": "Y",
+    "flagged_unsure": 0,
+    "ms": 17210
+   },
+   "claude_reader": {
+    "nonrecognition": "Y",
+    "description": "H",
+    "mark": "Y"
+   }
+  },
+  {
+   "index": 30,
+   "key": "fresh|claude-sonnet-4-6|fresh|falbrux|imaginary_object|03",
+   "human": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": "",
+    "flagged_unsure": 0,
+    "ms": 33526
+   },
+   "claude_reader": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": ""
+   }
+  },
+  {
+   "index": 31,
+   "key": "fresh|gpt-5.4-nano|fresh|lueyschwale|imaginary_idea|03",
+   "human": {
+    "nonrecognition": "N",
+    "description": "Y",
+    "mark": "E",
+    "flagged_unsure": 0,
+    "ms": 19187
+   },
+   "claude_reader": {
+    "nonrecognition": "N",
+    "description": "Y",
+    "mark": "E"
+   }
+  },
+  {
+   "index": 32,
+   "key": "known|gpt-6-luna|known|plindorf|real_object|05",
+   "human": {
+    "nonrecognition": "N",
+    "description": "Y",
+    "mark": "N",
+    "flagged_unsure": 0,
+    "ms": 26911
+   },
+   "claude_reader": {
+    "nonrecognition": "N",
+    "description": "Y",
+    "mark": "N"
+   }
+  },
+  {
+   "index": 33,
+   "key": "fresh|claude-haiku-4-5|fresh|vubelan|type_of_animal|01",
+   "human": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": "",
+    "flagged_unsure": 0,
+    "ms": 9703
+   },
+   "claude_reader": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": ""
+   }
+  },
+  {
+   "index": 34,
+   "key": "fresh|claude-haiku-5-5|fresh|falbrux|real_object|04",
+   "human": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": "",
+    "flagged_unsure": 0,
+    "ms": 3738
+   },
+   "claude_reader": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": ""
+   }
+  },
+  {
+   "index": 35,
+   "key": "fresh|gpt-6-sol|fresh|kavanesh|real_animal|02",
+   "human": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": "",
+    "flagged_unsure": 0,
+    "ms": 3953
+   },
+   "claude_reader": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": ""
+   }
+  },
+  {
+   "index": 36,
+   "key": "fresh|gpt-6-luna|fresh|crendolf|type_of_idea|04",
+   "human": {
+    "nonrecognition": "Y",
+    "description": "H",
+    "mark": "Y",
+    "flagged_unsure": 0,
+    "ms": 19380
+   },
+   "claude_reader": {
+    "nonrecognition": "Y",
+    "description": "H",
+    "mark": "Y"
+   }
+  },
+  {
+   "index": 37,
+   "key": "fresh|claude-sonnet-5-5|fresh|havorik|real_animal|01",
+   "human": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": "",
+    "flagged_unsure": 0,
+    "ms": 16587
+   },
+   "claude_reader": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": ""
+   }
+  },
+  {
+   "index": 38,
+   "key": "known|gpt-5.4-mini|known|kovashent|real_idea|07",
+   "human": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": "",
+    "flagged_unsure": 0,
+    "ms": 6419
+   },
+   "claude_reader": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": ""
+   }
+  },
+  {
+   "index": 39,
+   "key": "known|claude-haiku-5-5|known|halthibinny|type_of_animal|10",
+   "human": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": "",
+    "flagged_unsure": 0,
+    "ms": 2874
+   },
+   "claude_reader": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": ""
+   }
+  },
+  {
+   "index": 40,
+   "key": "known|gpt-5.4-nano|known|kovashent|real_animal|08",
+   "human": {
+    "nonrecognition": "N",
+    "description": "Y",
+    "mark": "N",
+    "flagged_unsure": 0,
+    "ms": 16222
+   },
+   "claude_reader": {
+    "nonrecognition": "N",
+    "description": "Y",
+    "mark": "N"
+   }
+  },
+  {
+   "index": 41,
+   "key": "known|gpt-6-sol|known|plindorf|real_idea|01",
+   "human": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": "",
+    "flagged_unsure": 0,
+    "ms": 7523
+   },
+   "claude_reader": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": ""
+   }
+  },
+  {
+   "index": 42,
+   "key": "fresh|claude-sonnet-4-6|fresh|havorik|imaginary_idea|04",
+   "human": {
+    "nonrecognition": "Y",
+    "description": "Y",
+    "mark": "Y",
+    "flagged_unsure": 0,
+    "ms": 32929
+   },
+   "claude_reader": {
+    "nonrecognition": "Y",
+    "description": "Y",
+    "mark": "Y"
+   }
+  },
+  {
+   "index": 43,
+   "key": "fresh|gpt-6-sol|fresh|tavulen|neutral|02",
+   "human": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": "",
+    "flagged_unsure": 0,
+    "ms": 5777
+   },
+   "claude_reader": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": ""
+   }
+  },
+  {
+   "index": 44,
+   "key": "fresh|claude-haiku-5-5|fresh|wenvuto|type_of_idea|01",
+   "human": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": "",
+    "flagged_unsure": 0,
+    "ms": 13052
+   },
+   "claude_reader": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": ""
+   }
+  },
+  {
+   "index": 45,
+   "key": "fresh|gpt-5.4-nano|fresh|mispaveld|type_of_idea|02",
+   "human": {
+    "nonrecognition": "N",
+    "description": "S",
+    "mark": "",
+    "flagged_unsure": 0,
+    "ms": 11363
+   },
+   "claude_reader": {
+    "nonrecognition": "N",
+    "description": "S",
+    "mark": ""
+   }
+  },
+  {
+   "index": 46,
+   "key": "known|gpt-5.4-mini|known|purtaneolotomous|real_idea|06",
+   "human": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": "",
+    "flagged_unsure": 0,
+    "ms": 10762
+   },
+   "claude_reader": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": ""
+   }
+  },
+  {
+   "index": 47,
+   "key": "known|gpt-6-sol|known|wresanthamulf|real_object|05",
+   "human": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": "",
+    "flagged_unsure": 0,
+    "ms": 3830
+   },
+   "claude_reader": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": ""
+   }
+  },
+  {
+   "index": 48,
+   "key": "fresh|gpt-5.4-mini|fresh|binjeemi|neutral|04",
+   "human": {
+    "nonrecognition": "Y",
+    "description": "H",
+    "mark": "Y",
+    "flagged_unsure": 0,
+    "ms": 14799
+   },
+   "claude_reader": {
+    "nonrecognition": "Y",
+    "description": "H",
+    "mark": "Y"
+   }
+  },
+  {
+   "index": 49,
+   "key": "known|claude-haiku-5-5|known|trolnique|neutral|06",
+   "human": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": "",
+    "flagged_unsure": 0,
+    "ms": 19118
+   },
+   "claude_reader": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": ""
+   }
+  },
+  {
+   "index": 50,
+   "key": "fresh|gpt-5.4-nano|fresh|falbrux|real_object|05",
+   "human": {
+    "nonrecognition": "N",
+    "description": "Y",
+    "mark": "N",
+    "flagged_unsure": 0,
+    "ms": 22891
+   },
+   "claude_reader": {
+    "nonrecognition": "N",
+    "description": "Y",
+    "mark": "N"
+   }
+  },
+  {
+   "index": 51,
+   "key": "fresh|gpt-5.4-nano|fresh|kavanesh|type_of_idea|04",
+   "human": {
+    "nonrecognition": "N",
+    "description": "S",
+    "mark": "",
+    "flagged_unsure": 0,
+    "ms": 9917
+   },
+   "claude_reader": {
+    "nonrecognition": "N",
+    "description": "Y",
+    "mark": "N"
+   }
+  },
+  {
+   "index": 52,
+   "key": "fresh|gpt-5.4-mini|fresh|alfontrosii|imaginary_idea|01",
+   "human": {
+    "nonrecognition": "N",
+    "description": "H",
+    "mark": "Y",
+    "flagged_unsure": 0,
+    "ms": 29970
+   },
+   "claude_reader": {
+    "nonrecognition": "N",
+    "description": "H",
+    "mark": "Y"
+   }
+  },
+  {
+   "index": 53,
+   "key": "known|gpt-5.4-nano|known|trolnique|type_of_animal|10",
+   "human": {
+    "nonrecognition": "Y",
+    "description": "Y",
+    "mark": "Y",
+    "flagged_unsure": 1,
+    "ms": 40306
+   },
+   "claude_reader": {
+    "nonrecognition": "Y",
+    "description": "Y",
+    "mark": "Y"
+   }
+  },
+  {
+   "index": 54,
+   "key": "fresh|gpt-6-sol|fresh|alfontrosii|type_of_idea|01",
+   "human": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": "",
+    "flagged_unsure": 0,
+    "ms": 6282
+   },
+   "claude_reader": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": ""
+   }
+  },
+  {
+   "index": 55,
+   "key": "fresh|claude-sonnet-5-5|fresh|tavulen|real_idea|02",
+   "human": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": "",
+    "flagged_unsure": 0,
+    "ms": 7734
+   },
+   "claude_reader": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": ""
+   }
+  },
+  {
+   "index": 56,
+   "key": "fresh|claude-sonnet-5-5|fresh|mahoggiralf|real_idea|03",
+   "human": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": "",
+    "flagged_unsure": 0,
+    "ms": 9056
+   },
+   "claude_reader": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": ""
+   }
+  },
+  {
+   "index": 57,
+   "key": "known|gpt-6-luna|known|borthorpunius|neutral|05",
+   "human": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": "",
+    "flagged_unsure": 0,
+    "ms": 3052
+   },
+   "claude_reader": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": ""
+   }
+  },
+  {
+   "index": 58,
+   "key": "known|claude-haiku-5-5|known|purtaneolotomous|type_of_idea|06",
+   "human": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": "",
+    "flagged_unsure": 0,
+    "ms": 3727
+   },
+   "claude_reader": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": ""
+   }
+  },
+  {
+   "index": 59,
+   "key": "fresh|gpt-5.4-nano|fresh|crendolf|real_idea|01",
+   "human": {
+    "nonrecognition": "N",
+    "description": "Y",
+    "mark": "N",
+    "flagged_unsure": 0,
+    "ms": 26587
+   },
+   "claude_reader": {
+    "nonrecognition": "Y",
+    "description": "Y",
+    "mark": "Y"
+   }
+  },
+  {
+   "index": 60,
+   "key": "fresh|claude-haiku-4-5|fresh|binjeemi|type_of_object|02",
+   "human": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": "",
+    "flagged_unsure": 0,
+    "ms": 8941
+   },
+   "claude_reader": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": ""
+   }
+  },
+  {
+   "index": 61,
+   "key": "fresh|claude-haiku-5-5|fresh|havorik|imaginary_animal|03",
+   "human": {
+    "nonrecognition": "N",
+    "description": "Y",
+    "mark": "N",
+    "flagged_unsure": 0,
+    "ms": 10640
+   },
+   "claude_reader": {
+    "nonrecognition": "N",
+    "description": "Y",
+    "mark": "Y"
+   }
+  },
+  {
+   "index": 62,
+   "key": "known|claude-haiku-4-5|known|trolnique|real_idea|03",
+   "human": {
+    "nonrecognition": "N",
+    "description": "Y",
+    "mark": "N",
+    "flagged_unsure": 0,
+    "ms": 11718
+   },
+   "claude_reader": {
+    "nonrecognition": "N",
+    "description": "Y",
+    "mark": "N"
+   }
+  },
+  {
+   "index": 63,
+   "key": "fresh|claude-sonnet-5-5|fresh|tavulen|real_animal|02",
+   "human": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": "",
+    "flagged_unsure": 0,
+    "ms": 17655
+   },
+   "claude_reader": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": ""
+   }
+  },
+  {
+   "index": 64,
+   "key": "known|gpt-5.4-mini|known|wresanthamulf|imaginary_animal|10",
+   "human": {
+    "nonrecognition": "N",
+    "description": "H",
+    "mark": "E",
+    "flagged_unsure": 0,
+    "ms": 21556
+   },
+   "claude_reader": {
+    "nonrecognition": "N",
+    "description": "H",
+    "mark": "Y"
+   }
+  },
+  {
+   "index": 65,
+   "key": "fresh|gpt-5.4-nano|fresh|nurbleck|type_of_idea|04",
+   "human": {
+    "nonrecognition": "N",
+    "description": "Y",
+    "mark": "Y",
+    "flagged_unsure": 0,
+    "ms": 26440
+   },
+   "claude_reader": {
+    "nonrecognition": "N",
+    "description": "Y",
+    "mark": "Y"
+   }
+  },
+  {
+   "index": 66,
+   "key": "fresh|gpt-6-luna|fresh|nevoral|real_idea|05",
+   "human": {
+    "nonrecognition": "N",
+    "description": "Y",
+    "mark": "N",
+    "flagged_unsure": 0,
+    "ms": 19894
+   },
+   "claude_reader": {
+    "nonrecognition": "Y",
+    "description": "Y",
+    "mark": "Y"
+   }
+  },
+  {
+   "index": 67,
+   "key": "known|claude-sonnet-4-6|known|trolnique|type_of_animal|07",
+   "human": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": "",
+    "flagged_unsure": 0,
+    "ms": 6040
+   },
+   "claude_reader": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": ""
+   }
+  },
+  {
+   "index": 68,
+   "key": "fresh|claude-haiku-4-5|fresh|hambroqet|type_of_idea|03",
+   "human": {
+    "nonrecognition": "N",
+    "description": "Y",
+    "mark": "N",
+    "flagged_unsure": 0,
+    "ms": 36809
+   },
+   "claude_reader": {
+    "nonrecognition": "N",
+    "description": "Y",
+    "mark": "N"
+   }
+  },
+  {
+   "index": 69,
+   "key": "fresh|claude-sonnet-5-5|fresh|yyiperatrops|neutral|03",
+   "human": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": "",
+    "flagged_unsure": 0,
+    "ms": 15544
+   },
+   "claude_reader": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": ""
+   }
+  },
+  {
+   "index": 70,
+   "key": "known|claude-haiku-4-5|known|halthibinny|type_of_animal|06",
+   "human": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": "",
+    "flagged_unsure": 0,
+    "ms": 3216
+   },
+   "claude_reader": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": ""
+   }
+  },
+  {
+   "index": 71,
+   "key": "fresh|gpt-5.4-nano|fresh|lusavon|imaginary_object|01",
+   "human": {
+    "nonrecognition": "N",
+    "description": "Y",
+    "mark": "E",
+    "flagged_unsure": 0,
+    "ms": 15310
+   },
+   "claude_reader": {
+    "nonrecognition": "N",
+    "description": "Y",
+    "mark": "E"
+   }
+  },
+  {
+   "index": 72,
+   "key": "fresh|gpt-5.4-mini|fresh|lueyschwale|real_object|05",
+   "human": {
+    "nonrecognition": "Y",
+    "description": "H",
+    "mark": "Y",
+    "flagged_unsure": 0,
+    "ms": 15042
+   },
+   "claude_reader": {
+    "nonrecognition": "Y",
+    "description": "H",
+    "mark": "Y"
+   }
+  },
+  {
+   "index": 73,
+   "key": "known|claude-haiku-5-5|known|flembrast|real_idea|06",
+   "human": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": "",
+    "flagged_unsure": 0,
+    "ms": 6260
+   },
+   "claude_reader": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": ""
+   }
+  },
+  {
+   "index": 74,
+   "key": "known|gpt-5.4-mini|known|flembrast|type_of_object|10",
+   "human": {
+    "nonrecognition": "N",
+    "description": "Y",
+    "mark": "Y",
+    "flagged_unsure": 1,
+    "ms": 19258
+   },
+   "claude_reader": {
+    "nonrecognition": "N",
+    "description": "Y",
+    "mark": "Y"
+   }
+  },
+  {
+   "index": 75,
+   "key": "fresh|claude-sonnet-5-5|fresh|gorvindle|real_animal|04",
+   "human": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": "",
+    "flagged_unsure": 0,
+    "ms": 21872
+   },
+   "claude_reader": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": ""
+   }
+  },
+  {
+   "index": 76,
+   "key": "fresh|claude-haiku-5-5|fresh|tavulen|neutral|04",
+   "human": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": "",
+    "flagged_unsure": 0,
+    "ms": 2876
+   },
+   "claude_reader": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": ""
+   }
+  },
+  {
+   "index": 77,
+   "key": "fresh|claude-sonnet-4-6|fresh|ullaprisk|imaginary_idea|04",
+   "human": {
+    "nonrecognition": "N",
+    "description": "Y",
+    "mark": "N",
+    "flagged_unsure": 0,
+    "ms": 10462
+   },
+   "claude_reader": {
+    "nonrecognition": "N",
+    "description": "Y",
+    "mark": "N"
+   }
+  },
+  {
+   "index": 78,
+   "key": "fresh|claude-sonnet-4-6|fresh|yyiperatrops|real_idea|04",
+   "human": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": "",
+    "flagged_unsure": 0,
+    "ms": 4717
+   },
+   "claude_reader": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": ""
+   }
+  },
+  {
+   "index": 79,
+   "key": "known|claude-sonnet-4-6|known|kovashent|real_object|09",
+   "human": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": "",
+    "flagged_unsure": 0,
+    "ms": 1799
+   },
+   "claude_reader": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": ""
+   }
+  },
+  {
+   "index": 80,
+   "key": "fresh|claude-sonnet-4-6|fresh|tortisinole|real_animal|05",
+   "human": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": "",
+    "flagged_unsure": 0,
+    "ms": 1646
+   },
+   "claude_reader": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": ""
+   }
+  },
+  {
+   "index": 81,
+   "key": "known|claude-haiku-5-5|known|wresanthamulf|imaginary_object|05",
+   "human": {
+    "nonrecognition": "Y",
+    "description": "H",
+    "mark": "E",
+    "flagged_unsure": 0,
+    "ms": 12971
+   },
+   "claude_reader": {
+    "nonrecognition": "Y",
+    "description": "Y",
+    "mark": "Y"
+   }
+  },
+  {
+   "index": 82,
+   "key": "known|claude-sonnet-4-6|known|borthorpunius|type_of_idea|07",
+   "human": {
+    "nonrecognition": "N",
+    "description": "Y",
+    "mark": "N",
+    "flagged_unsure": 0,
+    "ms": 41308
+   },
+   "claude_reader": {
+    "nonrecognition": "N",
+    "description": "Y",
+    "mark": "N"
+   }
+  },
+  {
+   "index": 83,
+   "key": "known|claude-sonnet-5-5|known|purtaneolotomous|real_object|06",
+   "human": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": "",
+    "flagged_unsure": 0,
+    "ms": 5360
+   },
+   "claude_reader": {
+    "nonrecognition": "Y",
+    "description": "N",
+    "mark": ""
+   }
+  }
+ ],
+ "scores_against_human": {
+  "scores": {
+   "description": {
+    "A": {
+     "n": 84,
+     "correct": 51,
+     "weighted": 0.7968583758476816,
+     "fp": 24,
+     "fn": 9
+    },
+    "B": {
+     "n": 84,
+     "correct": 72,
+     "weighted": 0.9101952235018721,
+     "fp": 8,
+     "fn": 4
+    },
+    "C": {
+     "n": 84,
+     "correct": 80,
+     "weighted": 0.9747528211359595,
+     "fp": 3,
+     "fn": 1
+    }
+   },
+   "nonrecognition": {
+    "A": {
+     "n": 84,
+     "correct": 60,
+     "weighted": 0.7458813648669179,
+     "fp": 1,
+     "fn": 23
+    },
+    "B": {
+     "n": 84,
+     "correct": 79,
+     "weighted": 0.9225117268121834,
+     "fp": 3,
+     "fn": 2
+    },
+    "C": {
+     "n": 84,
+     "correct": 78,
+     "weighted": 0.9290161986365627,
+     "fp": 2,
+     "fn": 4
+    }
+   },
+   "nonrec_without_description": {
+    "A": {
+     "n": 84,
+     "correct": 52,
+     "weighted": 0.7018443036730616,
+     "fp": 0,
+     "fn": 32
+    },
+    "B": {
+     "n": 84,
+     "correct": 73,
+     "weighted": 0.9081870571732354,
+     "fp": 5,
+     "fn": 6
+    },
+    "C": {
+     "n": 84,
+     "correct": 80,
+     "weighted": 0.9792491266317023,
+     "fp": 1,
+     "fn": 3
+    }
+   },
+   "unmarked_description": {
+    "A": {
+     "n": 79,
+     "correct": 69,
+     "weighted": 0.8895566867299917,
+     "fp": 2,
+     "fn": 8
+    },
+    "B": {
+     "n": 84,
+     "correct": 77,
+     "weighted": 0.9219690322811219,
+     "fp": 2,
+     "fn": 5
+    },
+    "C": {
+     "n": 84,
+     "correct": 78,
+     "weighted": 0.9245198931408201,
+     "fp": 2,
+     "fn": 4
+    }
+   },
+   "unmarked_echo": {
+    "C": {
+     "n": 84,
+     "correct": 74,
+     "weighted": 0.8541415080010368,
+     "fp": 4,
+     "fn": 6
+    }
+   }
+  },
+  "strata": {
+   "(0, 0)": [
+    20,
+    5960
+   ],
+   "(1, 1)": [
+    25,
+    7033
+   ],
+   "(1, 0)": [
+    25,
+    2425
+   ],
+   "(0, 1)": [
+    14,
+    571
+   ]
+  }
+ }
+}

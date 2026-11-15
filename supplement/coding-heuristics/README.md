@@ -137,9 +137,62 @@ Blind check, correct out of 84 (model-read labels):
 | Nonrecognition without description | 51 | 74 | 79 |
 | Unmarked description | 71 of 79 | 80 | 81 |
 
+Human pass on the same 84, correct out of 84 (labels by the investigator, added
+later the same day; see [human-pass/](human-pass/)):
+
+| Construct | A | B | C |
+|---|---:|---:|---:|
+| Description produced | 51 | 72 | 80 |
+| Any nonrecognition | 60 | 79 | 78 |
+| Nonrecognition without description | 52 | 73 | 80 |
+| Unmarked description | 69 of 79 | 77 | 78 |
+
 Agreement is not accuracy, and the sample is enriched for disagreement, so
 these raw counts are not population accuracy rates. Weighted figures and full
-counts are in `three_way.json`.
+counts are in `three_way.json` for the model-read labels and in
+`human-pass/human_labels.json` for the human pass.
+
+## Human pass
+
+The investigator labelled the 84 held-out responses in one sitting of about 29
+minutes, from text alone, on a single-key page that showed no instrument
+output and no model-read labels. The page is saved as
+[human-pass/labelling-page.html](human-pass/labelling-page.html) so the exact
+wording of each question is on record. The investigator was not naive: he had
+read the comparison summaries first, and the page's hint says that guesses
+about the word are not a description.
+
+The ordering of the three arms is the same under the human labels as under the
+model-read ones.
+
+Human reader against model reader, same 84:
+
+| Judgement | Agree | Kappa |
+|---|---:|---:|
+| Description produced | 80 | 0.90 |
+| Any nonrecognition | 82 | 0.95 |
+| Nonrecognition without description | 83 | 0.98 |
+| Unmarked description | 77 | 0.69 |
+
+On the 34 responses where both readers saw a description, they gave the same
+mark code on 26. Whether a description is flagged as invented is the least
+reliable judgement here, between readers as well as between instruments.
+
+Defects in the zoned heuristic 1.0.0 that the human pass adds to the list in
+its `METHOD.md`:
+
+- **Substitution by respelling.** The human reader marked four responses as
+  describing a different word. The heuristic caught one. The other three treat
+  the target as a variant spelling or alias of a real word ("kavanesh (also
+  spelled kavanah)", hambroqet as a name for the barn owl) and describe that.
+  The heuristic scored all three as descriptions of the target, two of them
+  as unmarked. The model reader made the same call as the heuristic on these.
+- **Soft fiction words.** In several described responses the heuristic, and the
+  model reader, took "imagined", "mythical" or "isn't an established term" as
+  flagging the description or as nonrecognition where the human reader did not.
+
+The frozen 1.0.0 files are unchanged. These belong in a later version, tested
+on a fresh held-out sample, since this one has now been read three times.
 
 ## Status of the main choice
 
@@ -151,9 +204,10 @@ best on the one blind check available. That choice carries these limits:
 1. It was designed with knowledge of the other two arms and of where they
    disagree. Its agreement with the registered scorers is not validation by
    them, and its lead on the blind check is not independent evidence.
-2. The blind labels were written by the model that wrote the heuristic, from
-   the first 600 characters of most responses. A human pass over
-   `zoned-heuristic-v1/holdout_keys.json` is still owed.
+2. The first blind labels were written by the model that wrote the heuristic,
+   from the first 600 characters of most responses. One human pass has since
+   been done and agrees on the ordering of the arms. It is one reader, on 84
+   responses, who knew the comparison's findings.
 3. The mechanical arm wraps a Fable scorer and the zoned arm was written by
    Claude Fable 5.2; the context arm's author had project history. None of the
    three is independent of the others.
@@ -170,10 +224,12 @@ mechanical-coding-heuristic-v1/   expanded package, plus the labelled run folder
 context-heuristic-v1/             expanded package, large result files left in the archive
 zoned-heuristic-v1/               expanded package, evidence file left in the archive
 comparison/                       both two-arm reports and Claude's two-arm machine-readable results
+human-pass/                       the investigator's labels for the 84 held-out responses, the page used, and scores
 ```
 
 Expanded folders contain only members of the corresponding archive, byte for
 byte, with one exception: the labelled run folder inside the mechanical arm.
+`human-pass/` is new material and belongs to no archive.
 Members larger than 5 MB are not expanded and are available from the archive:
 
 | Archive | Not expanded |
@@ -188,8 +244,9 @@ folder. In the mechanical run folder, `match_evidence.jsonl` is stored zipped.
 A local `.gitattributes` turns off line-ending conversion for this directory so
 the hashes in each arm's freeze file keep matching on any checkout.
 
-Response texts are not included anywhere in this directory beyond the short
-evidence excerpts each arm records; the full texts remain in the releases.
+Response texts are not included in this directory beyond the short evidence
+excerpts each arm records and the 84 held-out and three practice responses
+embedded in the labelling page; the full texts remain in the releases.
 
 ## Record of this upload
 
