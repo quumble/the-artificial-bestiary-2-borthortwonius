@@ -17,6 +17,7 @@ A continuation of [The Artificial Bestiary](https://github.com/quumble/the-artif
 | Raw responses, stimulus lists, frozen source, manifest, and collection metadata | [Raw-data release: `raw-data-2026-11-11`](https://github.com/quumble/the-artificial-bestiary-2-borthortwonius/releases/tag/raw-data-2026-11-11) |
 | Original analysis outputs: 12 GPT files and four Fable files | [Analysis release: `analysis-v1-2026-11-11`](https://github.com/quumble/the-artificial-bestiary-2-borthortwonius/releases/tag/analysis-v1-2026-11-11) |
 | Planned Fable descriptive summaries, implemented after analysis | [Supplement summary](supplement/fable-descriptives/summary.md), [machine-readable results](supplement/fable-descriptives/descriptives.json), and [reporting revision record](supplement/REPORTING_REVISION.md) |
+| Post-publication coding heuristics: three exploratory arms, their provenance, and two comparison reports | [supplement/coding-heuristics/](supplement/coding-heuristics/README.md). The zoned heuristic is the investigator's main choice for descriptive recoding; none replaces a registered measure |
 | Analysis archive also uploaded to the repository | [`bestiary-analysis-2026-11-11.zip`](bestiary-analysis-2026-11-11.zip) |
 | Exact source and protocols used for the run | [Frozen commit `0d39166092aac95253fc5a140231fb428a6a4809`](https://github.com/quumble/the-artificial-bestiary-2-borthortwonius/tree/0d39166092aac95253fc5a140231fb428a6a4809) |
 
@@ -141,6 +142,7 @@ The raw archive includes its own manifest and per-file checksums. Its snapshot e
 | [prereg/CLAUDE_PREREG_AMENDMENT_1.md](prereg/CLAUDE_PREREG_AMENDMENT_1.md) and [prereg/claude_scorer_v1_1.py](prereg/claude_scorer_v1_1.py) | Precollection amendment and primary scorer v1.1 |
 | [analyze_claude.py](analyze_claude.py) | Fable's six confirmatory tests and scorer-version comparison |
 | [docs/implementation-protocol.md](docs/implementation-protocol.md), [docs/claude-review.md](docs/claude-review.md), [docs/fable-final-review.md](docs/fable-final-review.md), and [docs/validation.md](docs/validation.md) | Historical implementation and review records. Pre-run status language in these records describes that stage |
+| [supplement/coding-heuristics/](supplement/coding-heuristics/README.md) | Three post-publication mechanical coding layers (GPT temporary chat, GPT with project context, Claude Fable 5.2 with sight of both), original archives, run outputs, and comparison reports. Exploratory; added November 15, 2026 |
 | [tests/](tests/) | Offline tests, including the post-freeze Windows encoding fix |
 | [stimuli/known-words.txt](stimuli/known-words.txt) | The eight previously published words |
 | Raw-data release | Released fresh words, both stimulus files, `data/freeze.json`, `data/attempts.jsonl`, per-model raw exports, and collection metadata |

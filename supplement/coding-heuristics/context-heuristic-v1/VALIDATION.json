@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "responses": 16000,
+  "evidence_spans": 151300,
+  "cells": 2560,
+  "banks": {
+    "fresh": 9600,
+    "known": 6400
+  },
+  "responses_with_unresolved_fields": 4233,
+  "freeze_sha256": "37e0649cfd03ad307b73bc369c791defbeeec76099ba00ed7faca9b49a6a99fd",
+  "regression_test_methods_passed": 42,
+  "accuracy_validated": false,
+  "independent_artifact_inspected": false
+}

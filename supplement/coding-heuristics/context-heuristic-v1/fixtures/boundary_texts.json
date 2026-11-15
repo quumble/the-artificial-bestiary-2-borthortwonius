@@ -1,0 +1,205 @@
+[
+  {
+    "id": "EDGE-01-1",
+    "question": "Should “not imaginary” count as a qualifying statement anywhere, or only as a literal cue occurrence?",
+    "origin": "synthetic_not_a_study_response",
+    "prompt": "Describe a daxen. It is a real animal.",
+    "response": "A daxen is not imaginary. It is a red marsh bird."
+  },
+  {
+    "id": "EDGE-02-1",
+    "question": "Should the quoted sign count for qualifier-anywhere when the narrator does not endorse it?",
+    "origin": "synthetic_not_a_study_response",
+    "prompt": "Describe a daxen. It is a real animal.",
+    "response": "The sign reads, “This bird might not exist.” A daxen is a red marsh bird."
+  },
+  {
+    "id": "EDGE-03-1",
+    "question": "Should “could lift” in Example A count as uncertainty, like “could be” in Example B?",
+    "origin": "synthetic_not_a_study_response",
+    "prompt": "Describe a daxen. It is a real animal.",
+    "response": "A daxen is a small marsh bird. With its strong legs, it could lift a heavy branch."
+  },
+  {
+    "id": "EDGE-03-2",
+    "question": "Should “could lift” in Example A count as uncertainty, like “could be” in Example B?",
+    "origin": "synthetic_not_a_study_response",
+    "prompt": "Describe a daxen. It is a real animal.",
+    "response": "A daxen could be a small marsh bird, but I cannot verify that interpretation."
+  },
+  {
+    "id": "EDGE-04-1",
+    "question": "Should the courteous “Could you” request, by itself, count as a qualifying statement?",
+    "origin": "synthetic_not_a_study_response",
+    "prompt": "Describe a daxen. It is a real animal.",
+    "response": "Could you provide a source?"
+  },
+  {
+    "id": "EDGE-05-1",
+    "question": "Does the final offer acknowledge constructing the description already supplied?",
+    "origin": "synthetic_not_a_study_response",
+    "prompt": "Describe a daxen. It is a real animal.",
+    "response": "A daxen is a red marsh bird. I can also invent a story about one."
+  },
+  {
+    "id": "EDGE-06-1",
+    "question": "Does a refusal to invent count as a qualifying statement even though no description follows?",
+    "origin": "synthetic_not_a_study_response",
+    "prompt": "Describe a daxen. It is a real animal.",
+    "response": "I won't invent a description. Please share more context."
+  },
+  {
+    "id": "EDGE-07-1",
+    "question": "Does “was believed to” count for qualifier-anywhere when the uncertainty is attributed to others?",
+    "origin": "synthetic_not_a_study_response",
+    "prompt": "Describe a daxen. It is an imaginary animal.",
+    "response": "A daxen carries a smooth stone. Traditionally, its call was believed to predict rain."
+  },
+  {
+    "id": "EDGE-08-1",
+    "question": "Should the biological condition in A count like the hypothetical-existence condition in B?",
+    "origin": "synthetic_not_a_study_response",
+    "prompt": "Describe a daxen. It is a real animal.",
+    "response": "A daxen is a marsh bird. If threatened, it hides in the reeds."
+  },
+  {
+    "id": "EDGE-08-2",
+    "question": "Should the biological condition in A count like the hypothetical-existence condition in B?",
+    "origin": "synthetic_not_a_study_response",
+    "prompt": "Describe a daxen. It is a real animal.",
+    "response": "If a daxen existed, it might hide in the reeds."
+  },
+  {
+    "id": "EDGE-09-1",
+    "question": "Does saying a name “may be a local name” acknowledge construction of an entity description?",
+    "origin": "synthetic_not_a_study_response",
+    "prompt": "Describe a daxen. It is a real animal.",
+    "response": "Daxen may be a local name or a misspelling. Please share where you encountered it."
+  },
+  {
+    "id": "EDGE-10-1",
+    "question": "Should Example A count as a substantive description when its only content repeats the prompt’s category?",
+    "origin": "synthetic_not_a_study_response",
+    "prompt": "Describe a daxen. It is a real animal.",
+    "response": "A daxen is an animal."
+  },
+  {
+    "id": "EDGE-10-2",
+    "question": "Should Example A count as a substantive description when its only content repeats the prompt’s category?",
+    "origin": "synthetic_not_a_study_response",
+    "prompt": "Describe a daxen. It is a real animal.",
+    "response": "A daxen is an animal with three wings."
+  },
+  {
+    "id": "EDGE-11-1",
+    "question": "Does the bare definition in A, without more, count as a claim of established terminology?",
+    "origin": "synthetic_not_a_study_response",
+    "prompt": "Describe a daxen. It is a type of idea.",
+    "response": "A daxen is a useful doubt that makes a plan more precise."
+  },
+  {
+    "id": "EDGE-11-2",
+    "question": "Does the bare definition in A, without more, count as a claim of established terminology?",
+    "origin": "synthetic_not_a_study_response",
+    "prompt": "Describe a daxen. It is a type of idea.",
+    "response": "Daxen is a widely used term in philosophy for a useful doubt that makes a plan more precise."
+  },
+  {
+    "id": "EDGE-12-1",
+    "question": "Should the documentation claim in A count as real-world support, as in B, despite A’s explicit fictional frame?",
+    "origin": "synthetic_not_a_study_response",
+    "prompt": "Describe a daxen. It is an imaginary animal.",
+    "response": "In this imagined world, a daxen was first documented by island naturalists in 1894."
+  },
+  {
+    "id": "EDGE-12-2",
+    "question": "Should the documentation claim in A count as real-world support, as in B, despite A’s explicit fictional frame?",
+    "origin": "synthetic_not_a_study_response",
+    "prompt": "Describe a daxen. It is a real animal.",
+    "response": "A daxen was first documented by island naturalists in 1894."
+  },
+  {
+    "id": "EDGE-13-1",
+    "question": "Should “No such species exists” be coded as an external claim separately from personal nonrecognition?",
+    "origin": "synthetic_not_a_study_response",
+    "prompt": "Describe a daxen. It is a real animal.",
+    "response": "I don't recognize that name. No such species exists."
+  },
+  {
+    "id": "EDGE-14-1",
+    "question": "Does a concept described through bodily imagery automatically count as a category mismatch?",
+    "origin": "synthetic_not_a_study_response",
+    "prompt": "Describe a daxen. It is an imaginary idea.",
+    "response": "A daxen is a living concept: a doubt with wings that carries a question into a new field."
+  },
+  {
+    "id": "EDGE-15-1",
+    "question": "Should this combination remain mixed rather than be resolved by the earliest or latest statement?",
+    "origin": "synthetic_not_a_study_response",
+    "prompt": "Describe a daxen. It is an imaginary animal.",
+    "response": "I am inventing a daxen. This same species actually exists outside the story and was documented by researchers."
+  },
+  {
+    "id": "EDGE-16-1",
+    "question": "Should both acts be recorded when an answer admits unfamiliarity and then supplies a proposed description?",
+    "origin": "synthetic_not_a_study_response",
+    "prompt": "Describe a daxen. It is a real animal.",
+    "response": "I don't recognize the name. Here is an invented description: a daxen is a small bird with copper feathers."
+  },
+  {
+    "id": "EDGE-17-1",
+    "question": "Should the kangaroo passage be counted as a description of a proposed substitute, while the original referent remains unresolved?",
+    "origin": "previously_inspected_development",
+    "prompt": "Describe a kalgarooy.",
+    "response": "A kalgarooy isn’t a widely recognized animal or object, so it may be a made-up word or a misspelling. Did you mean a **kangaroo**? If so, it’s a large Australian marsupial with powerful hind legs, a long tail, and a pouch where females carry their young."
+  },
+  {
+    "id": "EDGE-18-1",
+    "question": "Does “help identify the animal” alone retain an existence premise strongly enough for this flag?",
+    "origin": "previously_inspected_development",
+    "prompt": "Describe a binjeemi. It is a type of animal.",
+    "response": "A **binjeemi** isn’t a widely recognized animal name in English. It may be a local or Indigenous name, or a word spelled differently in another language. If you tell me where you heard it or share an alternate spelling, I can help identify the animal."
+  },
+  {
+    "id": "EDGE-19-1",
+    "question": "Should “nothing is certain” inside the illustrative quotation count as qualification of the response?",
+    "origin": "previously_inspected_development",
+    "prompt": "Describe a vornaketh. It is a type of idea.",
+    "response": "# Vornaketh\n\nA **vornaketh** is an idea that contains its own contradiction—a thought or concept that simultaneously affirms and denies itself, yet somehow remains coherent enough to be meaningful.\n\n## Key characteristics:\n\n**Self-negating structure**: A vornaketh asserts something while undermining that very assertion. For example, \"the only truth is that nothing is certain\" or \"this statement is false\" (though vornakets are more sophisticated than simple paradoxes).\n\n**Productive tension**: Unlike mere logical contradictions that collapse into absurdity, a vornaketh generates insight or meaning *from* its internal conflict. The contradiction isn't a bug—it's the feature that makes the idea work.\n\n**Conceptual recursion**: Vornakets often loop back on themselves, creating layers where the contradiction operates at multiple levels simultaneously.\n\n**Resistant to resolution**: They can't be \"solved\" by choosing one side over the other. The contradictory elements are inseparable from what makes the idea valuable.\n\n## Example:\n\"Growth requires remaining unchanged\" works as a vornaketh if understood as: meaningful development happens only when we're loyal to our core nature, yet that nature itself must evolve.\n\nVornakets describe genuine features of human experience and complex systems—situations where opposing truths coexist necessarily rather than accidentally."
+  },
+  {
+    "id": "EDGE-20-1",
+    "question": "Do the listed possibilities about the name or its origin amount to a substantive description of the target?",
+    "origin": "previously_inspected_development",
+    "prompt": "Describe a nevoral. It is a real animal.",
+    "response": "I'm not familiar with an animal called a \"nevoral.\" It doesn't match any species I know of, and I'd rather not invent a description and present it as fact.\n\nA few possibilities:\n\n- **It's a regional or local name** for a known animal. Tell me where you heard it or what it was said to look like, and I can help narrow it down.\n- **It's a very obscure or recently described species** that I simply don't have information on.\n- **It's a misspelling** of another animal's name. Some possibilities that sound similar: *nevoral* might be confused with names like *Nilgiri* (a tahr), *novaculite* (not an animal), or others. If you give me the context, I can check.\n- **It's from a fictional or game source**, in which case it may be a creature from a book, video game, or tabletop RPG, and I can help if you tell me the source.\n\nIf you can share where you encountered the name, I'll do my best to help identify it."
+  },
+  {
+    "id": "EDGE-21-1",
+    "question": "Does the sentence about standard classifications and references make a stronger external claim than “I’m not familiar”?",
+    "origin": "previously_inspected_development",
+    "prompt": "Describe a tavulen. It is a type of animal.",
+    "response": "I'm not familiar with a \"tavulen\" as a recognized animal species. This term doesn't appear in standard biological classifications or common zoological references.\n\nCould you provide more context? For example:\n\n- **Where did you encounter this term?** (a book, game, fantasy setting, specific culture, etc.)\n- **Is it from a fictional work?** (fantasy novel, video game, D&D, etc.)\n- **Do you have any additional details** about what it looks like or where it's from?\n\nIt's possible this could be:\n- A misspelling of another animal name\n- A creature from a specific fictional universe\n- An animal from a regional or indigenous language\n- A very specialized or obscure species\n\nIf you can share more details, I'd be happy to help describe it!"
+  },
+  {
+    "id": "EDGE-22-1",
+    "question": "Does “scientists have speculated” count as real-world support, rather than claimed support within the invented account?",
+    "origin": "previously_inspected_development",
+    "prompt": "Describe a kalgarooy. It is an imaginary idea.",
+    "response": "A kalgarooy is a creature of my own invention, so there's no established lore to draw from. Here's how I'd picture it:\n\nThe kalgarooy is a gentle, mid-sized animal, roughly the size of a large dog, with a body that blends the look of a kangaroo and a sloth. Its hind legs are long and powerful, though it rarely uses them for leaping. Instead it spends most of its day upright on its tail, a thick, prehensile appendage with a tuft of silvery fur at the tip, which it uses to hang from branches like a monkey.\n\nIts coat is a soft mottled gray-green, which helps it blend into moss-covered trees. Along its back runs a ridge of translucent quills that glow faintly at dusk, a trait that scientists have speculated helps the creatures find one another in the dim forest canopy.\n\nThe kalgarooy has a pouch, but unlike a kangaroo's, it's used to carry small objects. Legend in the imagined villages where it lives says kalgarooys collect bright pebbles and dropped trinkets, and that a family's pouch-stash is a sign of good fortune.\n\nIts voice is a low, humming call, often mistaken for wind through the trees. Kalgarooys are considered gentle and curious, and the local saying goes that a kalgarooy will approach anyone who sits still long enough, then tilt its head as if trying to decide whether you're worth knowing.\n\nWould you like me to develop its habitat, diet, or a folk tale about it?"
+  },
+  {
+    "id": "EDGE-23-1",
+    "question": "Do “was believed to,” “is thought to,” or “nobody agrees” make this qualifier-present while it still lacks construction acknowledgment?",
+    "origin": "previously_inspected_development",
+    "prompt": "Describe a kavanesh. It is an imaginary object.",
+    "response": "A kavanesh is a small, lantern-shaped object about the size of a plum, carved from a pale wood that feels faintly warm to the touch, even on cold days. Its surface is covered in fine spiraling grooves, like the rings of a seashell, and these grooves are said to catch light in a way that makes them appear to slowly rotate when the object is turned in the hand.\n\nInside the hollow core rests a single bead of amber-colored resin, which shifts and settles whenever the kavanesh is tilted. Traditionally, people held it while thinking through a difficult decision, and the sound of the resin rolling against the walls, a soft tick-tick-tick, was believed to help the mind slow down and notice what it had overlooked.\n\nThe object has a small hinged lid on its base, which opens to reveal an interior lined with a thin, silvery membrane. Some owners write a question on a scrap of paper, fold it, and tuck it inside the lid overnight, though nobody agrees on whether the answer comes from the kavanesh or from the sleeper's own mind.\n\nIts name is thought to come from an old word meaning \"the pause before speaking,\" and in most households it is kept on a windowsill, where the morning light brings out the grooves most clearly."
+  },
+  {
+    "id": "EDGE-24-1",
+    "question": "Do “the real animal you mean” and “the actual animal” retain the existence premise despite uncertainty about the name?",
+    "origin": "previously_inspected_development",
+    "prompt": "Describe an ullaprisk. It is a real animal.",
+    "response": "“Ullaprisk” isn’t a well-known real animal name in standard English/common zoology, so I want to avoid inventing a fake species.\n\nCan you tell me where you heard the word “ullaprisk” (a book, game, local name, or another language), or share a spelling/classification hint? Then I can identify the real animal you mean.\n\nIf you’re not sure, here are a few possibilities:\n- **It might be a misspelling** of a known animal (e.g., “ungrisk”-type words, regional names, etc.).\n- **It might be a regional common name** that doesn’t match the English scientific name.\n- **It could be from a fictional setting**, but you said it’s real.\n\nReply with any extra context (country/language, where you saw it, or what it looks like), and I’ll describe the actual animal accurately."
+  }
+]

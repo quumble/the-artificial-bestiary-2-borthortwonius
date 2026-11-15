@@ -1,0 +1,31 @@
+{
+  "version": "bestiary-context-heuristic/1.0.0",
+  "freeze_sha256": "37e0649cfd03ad307b73bc369c791defbeeec76099ba00ed7faca9b49a6a99fd",
+  "raw_archive_sha256": "f3a20641ed5d7136d71529cc7325437c9f415e62a3d41f5513e38c115875aef6",
+  "collection_manifest_sha256": "bb17ad15ce9fd16745230aed79853fe11be362456cd44a2eeccdc96a2e518f7a",
+  "completed_utc": "2026-11-15T22:13:24.973246+00:00",
+  "python": "3.12.14",
+  "n": 16000,
+  "cells": 2560,
+  "banks": {
+    "fresh": 9600,
+    "known": 6400
+  },
+  "key_columns": [
+    "batch",
+    "model_requested",
+    "trial_id"
+  ],
+  "ordered_keys_sha256": "679a0fd3786f5710603f0195dfcb58b7d9435312b0706561fb4eba1fc6f4a5c2",
+  "raw_texts_modified": false,
+  "provider_calls": 0,
+  "original_scores_overwritten": false,
+  "files": {
+    "cell_consistency.jsonl": "97c3de1bf7267c73201988f1468fcb975533ef83e348bda1e1c9f5197ebab427",
+    "consistency_summary.json": "c912d3ad7d98d1e60746368b6e447be6710eeef73cac24d46f512898d55ffe72",
+    "detection_summary.json": "d84bdea2fd95a31d880a811c017d38b124575a3487e914d8ff332859aac44bd3",
+    "evidence.jsonl": "3e63ab2bd6a90ac2d15673132d9a1268dddae48ff2fb88d7d312ed4cc9c3d5df",
+    "exploratory_contrasts.json": "f6c8ba9549f29aea4e6e3d6a4e4d9e95eaaa1d6cf3de107ba64ba1ce32d0550d",
+    "response_codes.jsonl": "9faae467563f4ea0e9edec61aa71246c5c171786819c87993730d43752799df9"
+  }
+}

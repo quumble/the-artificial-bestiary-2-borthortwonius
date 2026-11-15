@@ -1,0 +1,26 @@
+{
+  "version": "bestiary2-response-categories/1.0.0",
+  "status": "post-publication descriptive/exploratory coding; not preregistered",
+  "unit": "one selected visible response to one word-condition-endpoint-repetition prompt",
+  "registered_flags": {
+    "gpt_primary": ["M01", "M02", "M03", "M09"],
+    "fable_confirmatory": ["F_E", "F_U", "F_N"],
+    "fable_relationships": ["F_U implies F_E", "F_N implies not F_E", "F_E and F_N are disjoint", "F_E, F_U, F_N are not exhaustive mutually exclusive categories"]
+  },
+  "new_exclusive_classes": [
+    {"priority": 1, "code": "X_UNUSABLE", "predicate": "not usable", "meaning": "No selected nonblank response; behavior flags missing"},
+    {"priority": 2, "code": "D0_UNMARKED", "predicate": "usable and E and not C", "meaning": "Description form with no Fable marking cue"},
+    {"priority": 3, "code": "D1_NONREC_MARKED", "predicate": "usable and E and any_nonrec", "meaning": "Description form co-occurs with nonrecognition"},
+    {"priority": 4, "code": "D2_OTHER_MARKED", "predicate": "usable and E and C and not any_nonrec", "meaning": "Description form marked by fiction/construction/interpretation but not nonrecognition"},
+    {"priority": 5, "code": "N0_NONRECOGNITION", "predicate": "usable and not E and any_nonrec", "meaning": "Nonrecognition without description form"},
+    {"priority": 6, "code": "O0_CUED_OTHER", "predicate": "usable and not E and not any_nonrec and C", "meaning": "Cue without description form"},
+    {"priority": 7, "code": "O1_UNMARKED_OTHER", "predicate": "usable and not E and not C", "meaning": "Neither description form nor Fable marking cue"}
+  ],
+  "Fable_C": "any_nonrec or any_fiction or any_construct or any_interp",
+  "secondary_tags": [
+    "S_FICTION", "S_NONRECOGNITION", "S_CONSTRUCTION", "S_INTERPRETATION", "S_QUALIFICATION",
+    "S_CONTEXT_REQUEST", "S_OFFER", "S_NEGATED_DEFINITION", "S_GPT_DEF_LOCAL_NEGATION", "S_QUOTED_GPT_CUE",
+    "S_PROMPT_IMAGINARY_OVERLAP", "S_TARGET_DEFINITION_DISAGREEMENT", "S_WORD_REPAIR", "S_CATEGORY_WORDS"
+  ],
+  "interpretation_limits": "All codes are surface patterns, not semantic truth, hallucination, model belief, or training recognition."
+}

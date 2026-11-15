@@ -1,0 +1,344 @@
+[
+  {
+    "batch": "fresh",
+    "measure": "target_description",
+    "matching_resolved_pairs": 14634,
+    "resolved_pairs": 19171,
+    "all_pairs": 19200,
+    "pair_agreement": 0.7633404621563821,
+    "pair_coverage": 0.9984895833333334
+  },
+  {
+    "batch": "fresh",
+    "measure": "substitute_description",
+    "matching_resolved_pairs": 19182,
+    "resolved_pairs": 19200,
+    "all_pairs": 19200,
+    "pair_agreement": 0.9990625,
+    "pair_coverage": 1.0
+  },
+  {
+    "batch": "fresh",
+    "measure": "category_mismatch",
+    "matching_resolved_pairs": 18313,
+    "resolved_pairs": 19116,
+    "all_pairs": 19200,
+    "pair_agreement": 0.9579933040385018,
+    "pair_coverage": 0.995625
+  },
+  {
+    "batch": "fresh",
+    "measure": "qualifier_anywhere",
+    "matching_resolved_pairs": 13692,
+    "resolved_pairs": 15441,
+    "all_pairs": 19200,
+    "pair_agreement": 0.886730134058675,
+    "pair_coverage": 0.80421875
+  },
+  {
+    "batch": "fresh",
+    "measure": "target_qualification",
+    "matching_resolved_pairs": 10197,
+    "resolved_pairs": 11587,
+    "all_pairs": 19200,
+    "pair_agreement": 0.8800379735910935,
+    "pair_coverage": 0.6034895833333334
+  },
+  {
+    "batch": "fresh",
+    "measure": "construction_acknowledgment",
+    "matching_resolved_pairs": 15978,
+    "resolved_pairs": 19200,
+    "all_pairs": 19200,
+    "pair_agreement": 0.8321875,
+    "pair_coverage": 1.0
+  },
+  {
+    "batch": "fresh",
+    "measure": "knowledge_limit",
+    "matching_resolved_pairs": 16010,
+    "resolved_pairs": 19200,
+    "all_pairs": 19200,
+    "pair_agreement": 0.8338541666666667,
+    "pair_coverage": 1.0
+  },
+  {
+    "batch": "fresh",
+    "measure": "external_negative",
+    "matching_resolved_pairs": 17576,
+    "resolved_pairs": 19200,
+    "all_pairs": 19200,
+    "pair_agreement": 0.9154166666666667,
+    "pair_coverage": 1.0
+  },
+  {
+    "batch": "fresh",
+    "measure": "premise_retention",
+    "matching_resolved_pairs": 18970,
+    "resolved_pairs": 19200,
+    "all_pairs": 19200,
+    "pair_agreement": 0.9880208333333333,
+    "pair_coverage": 1.0
+  },
+  {
+    "batch": "fresh",
+    "measure": "implicit_existence",
+    "matching_resolved_pairs": 16863,
+    "resolved_pairs": 17652,
+    "all_pairs": 19200,
+    "pair_agreement": 0.9553025152957172,
+    "pair_coverage": 0.919375
+  },
+  {
+    "batch": "fresh",
+    "measure": "explicit_existence",
+    "matching_resolved_pairs": 18248,
+    "resolved_pairs": 19200,
+    "all_pairs": 19200,
+    "pair_agreement": 0.9504166666666667,
+    "pair_coverage": 1.0
+  },
+  {
+    "batch": "fresh",
+    "measure": "real_world_grounding",
+    "matching_resolved_pairs": 18892,
+    "resolved_pairs": 19200,
+    "all_pairs": 19200,
+    "pair_agreement": 0.9839583333333334,
+    "pair_coverage": 1.0
+  },
+  {
+    "batch": "fresh",
+    "measure": "pb_worldbuilding",
+    "matching_resolved_pairs": 17368,
+    "resolved_pairs": 19200,
+    "all_pairs": 19200,
+    "pair_agreement": 0.9045833333333333,
+    "pair_coverage": 1.0
+  },
+  {
+    "batch": "fresh",
+    "measure": "mixed_status",
+    "matching_resolved_pairs": 19196,
+    "resolved_pairs": 19200,
+    "all_pairs": 19200,
+    "pair_agreement": 0.9997916666666666,
+    "pair_coverage": 1.0
+  },
+  {
+    "batch": "fresh",
+    "measure": "description_produced",
+    "matching_resolved_pairs": 14630,
+    "resolved_pairs": 19171,
+    "all_pairs": 19200,
+    "pair_agreement": 0.7631318136769079,
+    "pair_coverage": 0.9984895833333334
+  },
+  {
+    "batch": "fresh",
+    "measure": "target_description_produced",
+    "matching_resolved_pairs": 14634,
+    "resolved_pairs": 19171,
+    "all_pairs": 19200,
+    "pair_agreement": 0.7633404621563821,
+    "pair_coverage": 0.9984895833333334
+  },
+  {
+    "batch": "fresh",
+    "measure": "nonrecognition_without_description",
+    "matching_resolved_pairs": 15748,
+    "resolved_pairs": 19186,
+    "all_pairs": 19200,
+    "pair_agreement": 0.8208068383196081,
+    "pair_coverage": 0.9992708333333333
+  },
+  {
+    "batch": "fresh",
+    "measure": "unmarked_target_description",
+    "matching_resolved_pairs": 14449,
+    "resolved_pairs": 15990,
+    "all_pairs": 19200,
+    "pair_agreement": 0.9036272670419012,
+    "pair_coverage": 0.8328125
+  },
+  {
+    "batch": "fresh",
+    "measure": "target_unqualified_description",
+    "matching_resolved_pairs": 13088,
+    "resolved_pairs": 14253,
+    "all_pairs": 19200,
+    "pair_agreement": 0.9182628218620641,
+    "pair_coverage": 0.74234375
+  },
+  {
+    "batch": "known",
+    "measure": "target_description",
+    "matching_resolved_pairs": 21924,
+    "resolved_pairs": 28782,
+    "all_pairs": 28800,
+    "pair_agreement": 0.7617260787992496,
+    "pair_coverage": 0.999375
+  },
+  {
+    "batch": "known",
+    "measure": "substitute_description",
+    "matching_resolved_pairs": 28800,
+    "resolved_pairs": 28800,
+    "all_pairs": 28800,
+    "pair_agreement": 1.0,
+    "pair_coverage": 1.0
+  },
+  {
+    "batch": "known",
+    "measure": "category_mismatch",
+    "matching_resolved_pairs": 27620,
+    "resolved_pairs": 28684,
+    "all_pairs": 28800,
+    "pair_agreement": 0.9629061497699065,
+    "pair_coverage": 0.9959722222222223
+  },
+  {
+    "batch": "known",
+    "measure": "qualifier_anywhere",
+    "matching_resolved_pairs": 21046,
+    "resolved_pairs": 23210,
+    "all_pairs": 28800,
+    "pair_agreement": 0.9067643257216716,
+    "pair_coverage": 0.8059027777777777
+  },
+  {
+    "batch": "known",
+    "measure": "target_qualification",
+    "matching_resolved_pairs": 14338,
+    "resolved_pairs": 16507,
+    "all_pairs": 28800,
+    "pair_agreement": 0.868601199491125,
+    "pair_coverage": 0.5731597222222222
+  },
+  {
+    "batch": "known",
+    "measure": "construction_acknowledgment",
+    "matching_resolved_pairs": 23197,
+    "resolved_pairs": 28800,
+    "all_pairs": 28800,
+    "pair_agreement": 0.8054513888888889,
+    "pair_coverage": 1.0
+  },
+  {
+    "batch": "known",
+    "measure": "knowledge_limit",
+    "matching_resolved_pairs": 23750,
+    "resolved_pairs": 28800,
+    "all_pairs": 28800,
+    "pair_agreement": 0.8246527777777778,
+    "pair_coverage": 1.0
+  },
+  {
+    "batch": "known",
+    "measure": "external_negative",
+    "matching_resolved_pairs": 25612,
+    "resolved_pairs": 28800,
+    "all_pairs": 28800,
+    "pair_agreement": 0.8893055555555556,
+    "pair_coverage": 1.0
+  },
+  {
+    "batch": "known",
+    "measure": "premise_retention",
+    "matching_resolved_pairs": 28376,
+    "resolved_pairs": 28800,
+    "all_pairs": 28800,
+    "pair_agreement": 0.9852777777777778,
+    "pair_coverage": 1.0
+  },
+  {
+    "batch": "known",
+    "measure": "implicit_existence",
+    "matching_resolved_pairs": 26222,
+    "resolved_pairs": 27110,
+    "all_pairs": 28800,
+    "pair_agreement": 0.967244559203246,
+    "pair_coverage": 0.9413194444444445
+  },
+  {
+    "batch": "known",
+    "measure": "explicit_existence",
+    "matching_resolved_pairs": 26982,
+    "resolved_pairs": 28800,
+    "all_pairs": 28800,
+    "pair_agreement": 0.936875,
+    "pair_coverage": 1.0
+  },
+  {
+    "batch": "known",
+    "measure": "real_world_grounding",
+    "matching_resolved_pairs": 28443,
+    "resolved_pairs": 28800,
+    "all_pairs": 28800,
+    "pair_agreement": 0.9876041666666666,
+    "pair_coverage": 1.0
+  },
+  {
+    "batch": "known",
+    "measure": "pb_worldbuilding",
+    "matching_resolved_pairs": 26073,
+    "resolved_pairs": 28800,
+    "all_pairs": 28800,
+    "pair_agreement": 0.9053125,
+    "pair_coverage": 1.0
+  },
+  {
+    "batch": "known",
+    "measure": "mixed_status",
+    "matching_resolved_pairs": 28768,
+    "resolved_pairs": 28800,
+    "all_pairs": 28800,
+    "pair_agreement": 0.9988888888888889,
+    "pair_coverage": 1.0
+  },
+  {
+    "batch": "known",
+    "measure": "description_produced",
+    "matching_resolved_pairs": 21924,
+    "resolved_pairs": 28782,
+    "all_pairs": 28800,
+    "pair_agreement": 0.7617260787992496,
+    "pair_coverage": 0.999375
+  },
+  {
+    "batch": "known",
+    "measure": "target_description_produced",
+    "matching_resolved_pairs": 21924,
+    "resolved_pairs": 28782,
+    "all_pairs": 28800,
+    "pair_agreement": 0.7617260787992496,
+    "pair_coverage": 0.999375
+  },
+  {
+    "batch": "known",
+    "measure": "nonrecognition_without_description",
+    "matching_resolved_pairs": 23661,
+    "resolved_pairs": 28800,
+    "all_pairs": 28800,
+    "pair_agreement": 0.8215625,
+    "pair_coverage": 1.0
+  },
+  {
+    "batch": "known",
+    "measure": "unmarked_target_description",
+    "matching_resolved_pairs": 22611,
+    "resolved_pairs": 24347,
+    "all_pairs": 28800,
+    "pair_agreement": 0.9286975808107775,
+    "pair_coverage": 0.8453819444444445
+  },
+  {
+    "batch": "known",
+    "measure": "target_unqualified_description",
+    "matching_resolved_pairs": 20126,
+    "resolved_pairs": 21583,
+    "all_pairs": 28800,
+    "pair_agreement": 0.9324931659176203,
+    "pair_coverage": 0.7494097222222222
+  }
+]

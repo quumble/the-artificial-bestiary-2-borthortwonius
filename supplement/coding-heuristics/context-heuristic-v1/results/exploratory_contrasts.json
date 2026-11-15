@@ -1,0 +1,838 @@
+[
+  {
+    "batch": "fresh",
+    "contrast": "imaginary-real",
+    "measure": "target_description",
+    "available_case_difference": 0.5819444444444444,
+    "unresolved_assignment_interval": [
+      0.5819444444444444,
+      0.5819444444444444
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "fresh",
+    "contrast": "imaginary-real",
+    "measure": "substitute_description",
+    "available_case_difference": -0.00034722222222222224,
+    "unresolved_assignment_interval": [
+      -0.00034722222222222224,
+      -0.00034722222222222224
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "fresh",
+    "contrast": "imaginary-real",
+    "measure": "category_mismatch",
+    "available_case_difference": 0.22590047216660564,
+    "unresolved_assignment_interval": [
+      0.2236111111111111,
+      0.23090277777777776
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "fresh",
+    "contrast": "imaginary-real",
+    "measure": "qualifier_anywhere",
+    "available_case_difference": -0.29005850327792204,
+    "unresolved_assignment_interval": [
+      -0.42013888888888895,
+      -0.17013888888888895
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "fresh",
+    "contrast": "imaginary-real",
+    "measure": "target_qualification",
+    "available_case_difference": -0.27769292264895307,
+    "unresolved_assignment_interval": [
+      -0.4656249999999999,
+      0.03680555555555565
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "fresh",
+    "contrast": "imaginary-real",
+    "measure": "construction_acknowledgment",
+    "available_case_difference": -0.3638888888888889,
+    "unresolved_assignment_interval": [
+      -0.3638888888888889,
+      -0.3638888888888889
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "fresh",
+    "contrast": "imaginary-real",
+    "measure": "knowledge_limit",
+    "available_case_difference": -0.5090277777777777,
+    "unresolved_assignment_interval": [
+      -0.5090277777777777,
+      -0.5090277777777777
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "fresh",
+    "contrast": "imaginary-real",
+    "measure": "external_negative",
+    "available_case_difference": -0.040625,
+    "unresolved_assignment_interval": [
+      -0.040625,
+      -0.040625
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "fresh",
+    "contrast": "imaginary-real",
+    "measure": "premise_retention",
+    "available_case_difference": -0.019444444444444448,
+    "unresolved_assignment_interval": [
+      -0.019444444444444448,
+      -0.019444444444444448
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "fresh",
+    "contrast": "imaginary-real",
+    "measure": "implicit_existence",
+    "available_case_difference": -0.0528206970894718,
+    "unresolved_assignment_interval": [
+      -0.08472222222222223,
+      -0.051041666666666666
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "fresh",
+    "contrast": "imaginary-real",
+    "measure": "explicit_existence",
+    "available_case_difference": -0.05138888888888889,
+    "unresolved_assignment_interval": [
+      -0.05138888888888889,
+      -0.05138888888888889
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "fresh",
+    "contrast": "imaginary-real",
+    "measure": "real_world_grounding",
+    "available_case_difference": -0.016319444444444445,
+    "unresolved_assignment_interval": [
+      -0.016319444444444445,
+      -0.016319444444444445
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "fresh",
+    "contrast": "imaginary-real",
+    "measure": "pb_worldbuilding",
+    "available_case_difference": 0.3409722222222223,
+    "unresolved_assignment_interval": [
+      0.3409722222222223,
+      0.3409722222222223
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "fresh",
+    "contrast": "imaginary-real",
+    "measure": "mixed_status",
+    "available_case_difference": 0.00034722222222222224,
+    "unresolved_assignment_interval": [
+      0.00034722222222222224,
+      0.00034722222222222224
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "fresh",
+    "contrast": "imaginary-real",
+    "measure": "description_produced",
+    "available_case_difference": 0.5815972222222222,
+    "unresolved_assignment_interval": [
+      0.5815972222222222,
+      0.5815972222222222
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "fresh",
+    "contrast": "imaginary-real",
+    "measure": "target_description_produced",
+    "available_case_difference": 0.5819444444444444,
+    "unresolved_assignment_interval": [
+      0.5819444444444444,
+      0.5819444444444444
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "fresh",
+    "contrast": "imaginary-real",
+    "measure": "nonrecognition_without_description",
+    "available_case_difference": -0.3576388888888889,
+    "unresolved_assignment_interval": [
+      -0.3576388888888889,
+      -0.3576388888888889
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "fresh",
+    "contrast": "imaginary-real",
+    "measure": "unmarked_target_description",
+    "available_case_difference": 0.3121291526245725,
+    "unresolved_assignment_interval": [
+      0.21180555555555555,
+      0.43819444444444444
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "fresh",
+    "contrast": "imaginary-real",
+    "measure": "target_unqualified_description",
+    "available_case_difference": 0.49362073404468343,
+    "unresolved_assignment_interval": [
+      0.2569444444444443,
+      0.6281249999999999
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "fresh",
+    "contrast": "type_of-real",
+    "measure": "target_description",
+    "available_case_difference": 0.13096221874275088,
+    "unresolved_assignment_interval": [
+      0.12986111111111093,
+      0.13194444444444425
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "fresh",
+    "contrast": "type_of-real",
+    "measure": "substitute_description",
+    "available_case_difference": 0.0,
+    "unresolved_assignment_interval": [
+      0.0,
+      0.0
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "fresh",
+    "contrast": "type_of-real",
+    "measure": "category_mismatch",
+    "available_case_difference": -0.014941896713905133,
+    "unresolved_assignment_interval": [
+      -0.015625000000000003,
+      -0.014583333333333337
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "fresh",
+    "contrast": "type_of-real",
+    "measure": "qualifier_anywhere",
+    "available_case_difference": -0.02002663896321133,
+    "unresolved_assignment_interval": [
+      -0.12395833333333339,
+      0.03749999999999998
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "fresh",
+    "contrast": "type_of-real",
+    "measure": "target_qualification",
+    "available_case_difference": 0.09934207278888474,
+    "unresolved_assignment_interval": [
+      -0.15763888888888877,
+      0.2812500000000001
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "fresh",
+    "contrast": "type_of-real",
+    "measure": "construction_acknowledgment",
+    "available_case_difference": -0.019791666666666596,
+    "unresolved_assignment_interval": [
+      -0.019791666666666596,
+      -0.019791666666666596
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "fresh",
+    "contrast": "type_of-real",
+    "measure": "knowledge_limit",
+    "available_case_difference": -0.09340277777777778,
+    "unresolved_assignment_interval": [
+      -0.09340277777777778,
+      -0.09340277777777778
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "fresh",
+    "contrast": "type_of-real",
+    "measure": "external_negative",
+    "available_case_difference": 0.028472222222222232,
+    "unresolved_assignment_interval": [
+      0.028472222222222232,
+      0.028472222222222232
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "fresh",
+    "contrast": "type_of-real",
+    "measure": "premise_retention",
+    "available_case_difference": -0.018055555555555557,
+    "unresolved_assignment_interval": [
+      -0.018055555555555557,
+      -0.018055555555555557
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "fresh",
+    "contrast": "type_of-real",
+    "measure": "implicit_existence",
+    "available_case_difference": 0.03648600091287837,
+    "unresolved_assignment_interval": [
+      -0.005555555555555564,
+      0.14166666666666666
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "fresh",
+    "contrast": "type_of-real",
+    "measure": "explicit_existence",
+    "available_case_difference": -0.014236111111111109,
+    "unresolved_assignment_interval": [
+      -0.014236111111111109,
+      -0.014236111111111109
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "fresh",
+    "contrast": "type_of-real",
+    "measure": "real_world_grounding",
+    "available_case_difference": -0.0069444444444444475,
+    "unresolved_assignment_interval": [
+      -0.0069444444444444475,
+      -0.0069444444444444475
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "fresh",
+    "contrast": "type_of-real",
+    "measure": "pb_worldbuilding",
+    "available_case_difference": 0.005555555555555555,
+    "unresolved_assignment_interval": [
+      0.005555555555555555,
+      0.005555555555555555
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "fresh",
+    "contrast": "type_of-real",
+    "measure": "mixed_status",
+    "available_case_difference": 0.0,
+    "unresolved_assignment_interval": [
+      0.0,
+      0.0
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "fresh",
+    "contrast": "type_of-real",
+    "measure": "description_produced",
+    "available_case_difference": 0.13096294363256766,
+    "unresolved_assignment_interval": [
+      0.12986111111111098,
+      0.1319444444444443
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "fresh",
+    "contrast": "type_of-real",
+    "measure": "target_description_produced",
+    "available_case_difference": 0.13096221874275088,
+    "unresolved_assignment_interval": [
+      0.12986111111111093,
+      0.13194444444444425
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "fresh",
+    "contrast": "type_of-real",
+    "measure": "nonrecognition_without_description",
+    "available_case_difference": -0.056522369031061614,
+    "unresolved_assignment_interval": [
+      -0.05694444444444441,
+      -0.055555555555555525
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "fresh",
+    "contrast": "type_of-real",
+    "measure": "unmarked_target_description",
+    "available_case_difference": 0.030498077516553333,
+    "unresolved_assignment_interval": [
+      -0.006250000000000019,
+      0.11840277777777777
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "fresh",
+    "contrast": "type_of-real",
+    "measure": "target_unqualified_description",
+    "available_case_difference": 0.01964477056528839,
+    "unresolved_assignment_interval": [
+      -0.05555555555555558,
+      0.1506944444444444
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "known",
+    "contrast": "imaginary-real",
+    "measure": "target_description",
+    "available_case_difference": 0.6161458333333334,
+    "unresolved_assignment_interval": [
+      0.6161458333333334,
+      0.6161458333333334
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "known",
+    "contrast": "imaginary-real",
+    "measure": "substitute_description",
+    "available_case_difference": 0.0,
+    "unresolved_assignment_interval": [
+      0.0,
+      0.0
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "known",
+    "contrast": "imaginary-real",
+    "measure": "category_mismatch",
+    "available_case_difference": 0.19987190832022372,
+    "unresolved_assignment_interval": [
+      0.1984375,
+      0.20520833333333333
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "known",
+    "contrast": "imaginary-real",
+    "measure": "qualifier_anywhere",
+    "available_case_difference": -0.29276204549130314,
+    "unresolved_assignment_interval": [
+      -0.4432291666666667,
+      -0.17083333333333328
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "known",
+    "contrast": "imaginary-real",
+    "measure": "target_qualification",
+    "available_case_difference": -0.2410887964172918,
+    "unresolved_assignment_interval": [
+      -0.45833333333333326,
+      0.08281250000000018
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "known",
+    "contrast": "imaginary-real",
+    "measure": "construction_acknowledgment",
+    "available_case_difference": -0.37812499999999993,
+    "unresolved_assignment_interval": [
+      -0.37812499999999993,
+      -0.37812499999999993
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "known",
+    "contrast": "imaginary-real",
+    "measure": "knowledge_limit",
+    "available_case_difference": -0.5083333333333333,
+    "unresolved_assignment_interval": [
+      -0.5083333333333333,
+      -0.5083333333333333
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "known",
+    "contrast": "imaginary-real",
+    "measure": "external_negative",
+    "available_case_difference": -0.07708333333333334,
+    "unresolved_assignment_interval": [
+      -0.07708333333333334,
+      -0.07708333333333334
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "known",
+    "contrast": "imaginary-real",
+    "measure": "premise_retention",
+    "available_case_difference": -0.025520833333333336,
+    "unresolved_assignment_interval": [
+      -0.025520833333333336,
+      -0.025520833333333336
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "known",
+    "contrast": "imaginary-real",
+    "measure": "implicit_existence",
+    "available_case_difference": -0.033898305084745756,
+    "unresolved_assignment_interval": [
+      -0.04999999999999999,
+      -0.033333333333333326
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "known",
+    "contrast": "imaginary-real",
+    "measure": "explicit_existence",
+    "available_case_difference": -0.0578125,
+    "unresolved_assignment_interval": [
+      -0.0578125,
+      -0.0578125
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "known",
+    "contrast": "imaginary-real",
+    "measure": "real_world_grounding",
+    "available_case_difference": -0.011979166666666666,
+    "unresolved_assignment_interval": [
+      -0.011979166666666666,
+      -0.011979166666666666
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "known",
+    "contrast": "imaginary-real",
+    "measure": "pb_worldbuilding",
+    "available_case_difference": 0.3135416666666667,
+    "unresolved_assignment_interval": [
+      0.3135416666666667,
+      0.3135416666666667
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "known",
+    "contrast": "imaginary-real",
+    "measure": "mixed_status",
+    "available_case_difference": 0.0020833333333333333,
+    "unresolved_assignment_interval": [
+      0.0020833333333333333,
+      0.0020833333333333333
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "known",
+    "contrast": "imaginary-real",
+    "measure": "description_produced",
+    "available_case_difference": 0.6161458333333334,
+    "unresolved_assignment_interval": [
+      0.6161458333333334,
+      0.6161458333333334
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "known",
+    "contrast": "imaginary-real",
+    "measure": "target_description_produced",
+    "available_case_difference": 0.6161458333333334,
+    "unresolved_assignment_interval": [
+      0.6161458333333334,
+      0.6161458333333334
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "known",
+    "contrast": "imaginary-real",
+    "measure": "nonrecognition_without_description",
+    "available_case_difference": -0.36458333333333326,
+    "unresolved_assignment_interval": [
+      -0.36458333333333326,
+      -0.36458333333333326
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "known",
+    "contrast": "imaginary-real",
+    "measure": "unmarked_target_description",
+    "available_case_difference": 0.3079426381601237,
+    "unresolved_assignment_interval": [
+      0.21770833333333328,
+      0.4489583333333333
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "known",
+    "contrast": "imaginary-real",
+    "measure": "target_unqualified_description",
+    "available_case_difference": 0.46049517966695874,
+    "unresolved_assignment_interval": [
+      0.2453125,
+      0.6182291666666666
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "known",
+    "contrast": "type_of-real",
+    "measure": "target_description",
+    "available_case_difference": 0.11090274157108099,
+    "unresolved_assignment_interval": [
+      0.11041666666666666,
+      0.11145833333333333
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "known",
+    "contrast": "type_of-real",
+    "measure": "substitute_description",
+    "available_case_difference": 0.0,
+    "unresolved_assignment_interval": [
+      0.0,
+      0.0
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "known",
+    "contrast": "type_of-real",
+    "measure": "category_mismatch",
+    "available_case_difference": -0.011458333333333333,
+    "unresolved_assignment_interval": [
+      -0.011458333333333333,
+      -0.011458333333333333
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "known",
+    "contrast": "type_of-real",
+    "measure": "qualifier_anywhere",
+    "available_case_difference": -0.008925781689384071,
+    "unresolved_assignment_interval": [
+      -0.09583333333333344,
+      0.04010416666666661
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "known",
+    "contrast": "type_of-real",
+    "measure": "target_qualification",
+    "available_case_difference": 0.1028623747921994,
+    "unresolved_assignment_interval": [
+      -0.1802083333333333,
+      0.2963541666666667
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "known",
+    "contrast": "type_of-real",
+    "measure": "construction_acknowledgment",
+    "available_case_difference": -0.05885416666666665,
+    "unresolved_assignment_interval": [
+      -0.05885416666666665,
+      -0.05885416666666665
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "known",
+    "contrast": "type_of-real",
+    "measure": "knowledge_limit",
+    "available_case_difference": -0.07500000000000007,
+    "unresolved_assignment_interval": [
+      -0.07500000000000007,
+      -0.07500000000000007
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "known",
+    "contrast": "type_of-real",
+    "measure": "external_negative",
+    "available_case_difference": 0.022395833333333323,
+    "unresolved_assignment_interval": [
+      0.022395833333333323,
+      0.022395833333333323
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "known",
+    "contrast": "type_of-real",
+    "measure": "premise_retention",
+    "available_case_difference": -0.022916666666666672,
+    "unresolved_assignment_interval": [
+      -0.022916666666666672,
+      -0.022916666666666672
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "known",
+    "contrast": "type_of-real",
+    "measure": "implicit_existence",
+    "available_case_difference": 0.031183754903935615,
+    "unresolved_assignment_interval": [
+      0.00989583333333334,
+      0.10625000000000001
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "known",
+    "contrast": "type_of-real",
+    "measure": "explicit_existence",
+    "available_case_difference": 0.0026041666666666644,
+    "unresolved_assignment_interval": [
+      0.0026041666666666644,
+      0.0026041666666666644
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "known",
+    "contrast": "type_of-real",
+    "measure": "real_world_grounding",
+    "available_case_difference": -0.006249999999999999,
+    "unresolved_assignment_interval": [
+      -0.006249999999999999,
+      -0.006249999999999999
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "known",
+    "contrast": "type_of-real",
+    "measure": "pb_worldbuilding",
+    "available_case_difference": 0.0020833333333333333,
+    "unresolved_assignment_interval": [
+      0.0020833333333333333,
+      0.0020833333333333333
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "known",
+    "contrast": "type_of-real",
+    "measure": "mixed_status",
+    "available_case_difference": 0.0,
+    "unresolved_assignment_interval": [
+      0.0,
+      0.0
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "known",
+    "contrast": "type_of-real",
+    "measure": "description_produced",
+    "available_case_difference": 0.11090274157108099,
+    "unresolved_assignment_interval": [
+      0.11041666666666666,
+      0.11145833333333333
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "known",
+    "contrast": "type_of-real",
+    "measure": "target_description_produced",
+    "available_case_difference": 0.11090274157108099,
+    "unresolved_assignment_interval": [
+      0.11041666666666666,
+      0.11145833333333333
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "known",
+    "contrast": "type_of-real",
+    "measure": "nonrecognition_without_description",
+    "available_case_difference": -0.05208333333333326,
+    "unresolved_assignment_interval": [
+      -0.05208333333333326,
+      -0.05208333333333326
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "known",
+    "contrast": "type_of-real",
+    "measure": "unmarked_target_description",
+    "available_case_difference": 0.017220111890260105,
+    "unresolved_assignment_interval": [
+      -0.0036458333333333343,
+      0.07916666666666666
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  },
+  {
+    "batch": "known",
+    "contrast": "type_of-real",
+    "measure": "target_unqualified_description",
+    "available_case_difference": 0.017325227963525813,
+    "unresolved_assignment_interval": [
+      -0.04062500000000001,
+      0.13020833333333331
+    ],
+    "interpretation": "Exploratory mechanical difference; not a confidence interval or original preregistered estimator"
+  }
+]

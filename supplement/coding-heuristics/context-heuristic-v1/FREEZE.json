@@ -1,0 +1,22 @@
+{
+  "schema": "bestiary-heuristic-freeze/1",
+  "version": "bestiary-context-heuristic/1.0.0",
+  "created_utc": "2026-11-15T22:13:02.360925+00:00",
+  "phase": "before_full_corpus_scoring_and_before_independent_artifact_inspection",
+  "tests_passed": 42,
+  "files": {
+    "METHOD.md": "ec8ab74ba02e4dbc4772c415ed12c1720fd20faccfdaab4dde2d5f17a2404c6e",
+    "PROVENANCE.json": "aa922c1d319691ade36b4064a1086dd42b6c112297e11b508d2a53a569c58ae4",
+    "README.md": "79a859e566140e583afec21ffa60cbbd56856ee3ba12d3d8e0f31431598098b1",
+    "codebook.json": "15169fdec4c8f289f06d2aed92c32278e61c48dbf3f666edd1f965f92178a9a2",
+    "fixtures/boundary_texts.json": "31c14d103b013c70bcb8e80c27253c77f862c69e658e776c9369c74fdf9c204e",
+    "fixtures/development_allowlist.json": "81c3b3424f7c42bfce1f1ef1895324beb66222f683cef03e2252553cd8197453",
+    "fixtures/development_texts.json": "0eadccf1c183a6bbe5c9a299afa255f1c8accd9be48c151d1d3949c32ec49bba",
+    "heuristic.py": "ad89261fb32276f02aebbc7187d9f71105cf1394fc2a1e7d7966716779bc9fe8",
+    "run_corpus.py": "4e330cf1e367ff7da87f94f4e3398b317581f9c91ac798a7f67faadccd110572",
+    "test_aggregation.py": "f316df74d210f79170135eb7e24488f23d446c08939ac7f590f2841ed95a6858",
+    "test_heuristic.py": "27abe4249863ed9b2527d89780b647a16950b5b6ef84e906e13ddbc0d2f2f591",
+    "verify.py": "ef50c36a60c4a46d0bdd0bedb1e8b6cb05dd46ff56ab346ff0b7f98d43d39d96"
+  },
+  "freeze_sha256": "37e0649cfd03ad307b73bc369c791defbeeec76099ba00ed7faca9b49a6a99fd"
+}
