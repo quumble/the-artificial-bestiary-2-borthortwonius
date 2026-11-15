@@ -225,6 +225,7 @@ context-heuristic-v1/             expanded package, large result files left in t
 zoned-heuristic-v1/               expanded package, evidence file left in the archive
 comparison/                       both two-arm reports and Claude's two-arm machine-readable results
 human-pass/                       the investigator's labels for the 84 held-out responses, the page used, and scores
+declared-contrasts/               the exploratory contrast list, declared before intervals were computed
 ```
 
 Expanded folders contain only members of the corresponding archive, byte for
