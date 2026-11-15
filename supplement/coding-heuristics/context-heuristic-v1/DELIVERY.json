@@ -1,0 +1,12 @@
+{
+  "freeze_commit": "c49bbf09440dcaf40579de208af8f268ca61814c",
+  "freeze_sha256": "37e0649cfd03ad307b73bc369c791defbeeec76099ba00ed7faca9b49a6a99fd",
+  "response_count": 16000,
+  "cell_count": 2560,
+  "evidence_spans_verified": 151300,
+  "responses_with_one_or_more_unresolved_fields": 4233,
+  "unresolved_response_fraction": 0.2645625,
+  "rules_modified_after_full_run": false,
+  "independent_artifact_seen": false,
+  "remote_writes": false
+}

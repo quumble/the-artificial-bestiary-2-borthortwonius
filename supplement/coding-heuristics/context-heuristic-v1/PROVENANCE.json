@@ -1,0 +1,28 @@
+{
+  "arm": "repository_plus_conversation",
+  "version": "bestiary-context-heuristic/1.0.0",
+  "repository": "https://github.com/quumble/the-artificial-bestiary-2-borthortwonius",
+  "base_local_commit": "37e612012741d355f945a4b39c32f42d56fc7627",
+  "remote_secondary_branch_commit": "26d8ccd6c00539bd08e4d86c0cacb2c8a8206b14",
+  "remote_main_commit_observed_earlier_in_session": "ecc078b09da59a2859fb8ab82607b9c095de0cb6",
+  "temporary_chat_brief_verbatim": "https://github.com/quumble/the-artificial-bestiary-2-borthortwonius\n\n\nplease design a mechanical categorization heuristic to code responses for the primary and secondary analysis based on what you see. export a zip",
+  "temporary_chat_artifact_inspected": false,
+  "external_agent_spawned": false,
+  "remote_writes": false,
+  "semantic_source": "measurement-redesign/check32/codebook.json version 0.2; settled conversational boundaries",
+  "semantic_codebook_sha256": "15169fdec4c8f289f06d2aed92c32278e61c48dbf3f666edd1f965f92178a9a2",
+  "calibration_sources": [
+    "12 previously inspected development responses with original hash allowlist",
+    "24 prior boundary cards; subsequent conversational decisions supersede preliminary ledger",
+    "synthetic counterexamples and paraphrases"
+  ],
+  "reserved_sources_not_used_for_tuning": [
+    "old audit 64",
+    "old targeted 4",
+    "new check32"
+  ],
+  "prior_exposure": "Assistant has prior project context and prior aggregate-analysis exposure. This arm is deliberately contextual, not blinded or neutral. Full corpus response text and model rankings were not used to tune this version.",
+  "pre_freeze_source_access": "Raw archive member names, row field names and one row of non-response metadata checked to implement input adapter. No response text from that check displayed or used for calibration.",
+  "new_human_check32_labels_received": false,
+  "comparison_rule": "Freeze each arm independently; crosswalk definitions before measuring agreement. No equivalence or gold-standard accuracy assumption."
+}

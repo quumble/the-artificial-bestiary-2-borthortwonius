@@ -1,0 +1,25 @@
+{
+ "version": "bestiary2-zoned-heuristic/1.0.0",
+ "n": 16000,
+ "input_sha256": "43cc60242c444449d9a74c8ff9f8d6aa97e39090b369ba4d4e3f64656674c389",
+ "heuristic_sha256": "5f57c220d046fcc5e4d2626c429d734ee6c067a42f619cc8c64470d137a5d1c9",
+ "response_types": {
+  "DECLINE_PLAIN": 1953,
+  "DESCRIBE_UNMARKED": 1485,
+  "DESCRIBE_HEDGED": 1805,
+  "DECLINE_WITH_POSSIBILITIES": 6124,
+  "DESCRIBE_FRAMED": 2924,
+  "DISCLAIM_AND_DESCRIBE": 1079,
+  "NO_DESCRIPTION_OTHER": 485,
+  "DESCRIBE_SUBSTITUTE": 145
+ },
+ "fragile_reasons": {
+  "target_respelled": 196,
+  "disclaimer_and_description": 1079,
+  "hypothetical_only": 302,
+  "description_from_attributes_only": 236,
+  "target_named_in_possibility": 159,
+  "category_echo_definition": 188,
+  "very_short": 1
+ }
+}

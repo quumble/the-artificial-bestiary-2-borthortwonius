@@ -1,0 +1,58 @@
+{
+  "codebook": {
+    "derived_response_classes": [
+      "D0_UNMARKED",
+      "D1_NONREC_MARKED",
+      "D2_OTHER_MARKED",
+      "N0_NONRECOGNITION",
+      "O0_CUED_OTHER",
+      "O1_UNMARKED_OTHER"
+    ],
+    "exclusion_code": "X_UNUSABLE",
+    "registered_fable": [
+      "F_E",
+      "F_U",
+      "F_N"
+    ],
+    "registered_primary_gpt": [
+      "M01",
+      "M02",
+      "M03",
+      "M09"
+    ],
+    "version": "bestiary2-response-categories/1.0.0"
+  },
+  "coding_tool_sha256": {
+    "code_responses.py": "dbaf798bc8f85bc658c6d661cc573577ea25374e81c7984ce75972c37f496ceb",
+    "coding_heuristic.py": "4f5c8892d5c2cab5f2b6f18ee38065557213e3a2a32e8c18e7054f2ffdc65bba"
+  },
+  "coding_version": "bestiary2-response-categories/1.0.0",
+  "counts_by_response_class_all_usable": {
+    "D0_UNMARKED": 3105,
+    "D1_NONREC_MARKED": 1316,
+    "D2_OTHER_MARKED": 3186,
+    "N0_NONRECOGNITION": 7934,
+    "O0_CUED_OTHER": 231,
+    "O1_UNMARKED_OTHER": 228
+  },
+  "embedded_gpt_scoring": 16000,
+  "evidence_snippets_redacted": false,
+  "input_file_name": "response-features.jsonl",
+  "input_sha256": "43cc60242c444449d9a74c8ff9f8d6aa97e39090b369ba4d4e3f64656674c389",
+  "n_fable_eligibility_unknown": 0,
+  "n_fable_primary_eligible": 16000,
+  "n_input_rows": 16000,
+  "n_truncated": 0,
+  "n_usable": 16000,
+  "purpose": "Post-publication descriptive coding; not a preregistered confirmatory analysis or new significance test",
+  "rescore_verified": true,
+  "upstream_provenance": {
+    "fable_scorer_version": "claude-fable-5-2/1.1",
+    "gpt_scorer_version": "gpt-bestiary-2-v1.0",
+    "source_hash_sha256": {
+      "bestiary_scorer.py": "660fcdc2cdd18ad659c4b6cdda9d1fdfcdecbb81adcdb98d2c828989010813db",
+      "docs/gpt-proposal/inventories-gpt-v1.json": "09b810ba3a30b3ce574aa1f1b4dedd14a6cf578d19754d48cec95cd9491b2408",
+      "prereg/claude_scorer_v1_1.py": "7cebfa2c4e4524ec6a48fd3097485fce758edce20fd4b5773fe466e1ead4f967"
+    }
+  }
+}
