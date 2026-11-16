@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; connect-src 'none'; img-src 'none'; form-action 'none'; base-uri 'none'">
+  <title>Response reading audit</title>
+  <style>
+    :root { color-scheme: light dark; --paper:#f7f5f0; --card:#fffefa; --ink:#202b30; --muted:#55656d; --line:#cdd4d3; --accent:#176c60; --soft:#e5f1eb; --warn:#8b4b16; --focus:#965d09; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--paper); color:var(--ink); font:16px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    header,main,footer { max-width:960px; margin:auto; padding:22px 28px; }
+    header { padding-bottom:8px; }
+    h1 { margin:0; font-size:clamp(1.5rem,4vw,2.1rem); line-height:1.2; letter-spacing:-.035em; }
+    h2 { font-size:1.1rem; margin:0 0 8px; }
+    p { margin:8px 0 14px; }
+    .eyebrow { color:var(--accent); text-transform:uppercase; font-size:.72rem; font-weight:750; letter-spacing:.14em; margin:0 0 9px; }
+    .muted,.hint { color:var(--muted); }
+    .hint { font-size:.9rem; margin:5px 0 12px; }
+    .toolbar,.navigation,.status-row { display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+    .toolbar { margin:15px 0 8px; }
+    .status-row { justify-content:space-between; font-size:.9rem; }
+    progress { width:100%; height:8px; display:block; accent-color:var(--accent); margin-top:10px; }
+    button,select,textarea { font:inherit; }
+    button,select { min-height:42px; border:1px solid var(--line); border-radius:7px; background:var(--card); color:var(--ink); padding:8px 13px; }
+    button { cursor:pointer; }
+    button:hover { border-color:var(--accent); }
+    button:disabled { opacity:.45; cursor:default; }
+    button.primary { background:var(--accent); color:#fff; border-color:var(--accent); font-weight:650; }
+    :focus-visible { outline:3px solid var(--focus); outline-offset:3px; }
+    details { border:1px solid var(--line); border-radius:9px; background:var(--card); padding:12px 16px; margin:0 0 20px; }
+    summary { cursor:pointer; font-weight:650; }
+    details p:last-child { margin-bottom:2px; }
+    .text-card { border:1px solid var(--line); border-radius:10px; background:var(--card); margin-bottom:18px; padding:20px 22px; }
+    .text-card h2 { font-size:.75rem; text-transform:uppercase; letter-spacing:.12em; color:var(--muted); }
+    .verbatim { white-space:pre-wrap; overflow-wrap:anywhere; margin:0; }
+    #response { font-family:ui-serif,Georgia,"Times New Roman",serif; font-size:1.08rem; line-height:1.7; }
+    #prompt { font-weight:550; }
+    fieldset { border:0; padding:0; margin:26px 0; min-width:0; }
+    legend { font-weight:700; font-size:1.04rem; padding:0; }
+    .options { display:grid; gap:8px; }
+    .choice { display:flex; align-items:flex-start; gap:11px; border:1px solid var(--line); border-radius:8px; padding:11px 14px; background:var(--card); cursor:pointer; }
+    .choice:has(input:checked) { border-color:var(--accent); background:var(--soft); }
+    input[type=radio],input[type=checkbox] { accent-color:var(--accent); width:18px; height:18px; flex-shrink:0; margin:3px 0 0; }
+    .code { display:inline-block; font-size:.78rem; font-weight:750; color:var(--muted); margin-right:7px; }
+    .extra { border-top:1px solid var(--line); padding-top:18px; }
+    .check { display:flex; align-items:flex-start; gap:10px; }
+    textarea { width:100%; min-height:80px; resize:vertical; border:1px solid var(--line); border-radius:8px; background:var(--card); color:var(--ink); padding:10px 12px; margin-top:6px; }
+    .notes-label { display:block; margin-top:16px; }
+    .navigation { justify-content:space-between; margin-top:20px; padding-top:18px; border-top:1px solid var(--line); }
+    #message { min-height:1.5em; color:var(--accent); margin:12px 0 0; }
+    #message.error { color:var(--warn); }
+    #not-applicable { color:var(--muted); background:var(--soft); padding:12px 15px; border-radius:7px; }
+    #complete-banner { border:1px solid var(--accent); border-radius:9px; padding:16px 18px; background:var(--soft); margin-bottom:20px; }
+    [hidden] { display:none!important; }
+    footer { color:var(--muted); font-size:.82rem; padding-top:0; padding-bottom:32px; }
+    @media(max-width:600px) { header,main,footer { padding-left:17px; padding-right:17px; } .text-card { padding:16px; } .toolbar button { flex:1; } #jump { width:100%; } .navigation button { flex:1; } }
+    @media(prefers-color-scheme:dark) { :root { --paper:#192126; --card:#222e33; --ink:#e8ede9; --muted:#b0bebf; --line:#435259; --accent:#84cbbc; --soft:#263e3a; --warn:#f1bd8b; --focus:#e7bc6c; } button.primary { color:#152c26; } }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="eyebrow">Human reading audit</p>
+    <h1>Read the response. Make your judgment.</h1>
+    <p class="muted">Full prompts and responses, with three questions about what each response says.</p>
+    <div class="status-row"><strong id="position">Loading…</strong><span id="progress-text"></span></div>
+    <progress id="progress" value="0" max="1" aria-label="Responses with complete labels"></progress>
+    <div class="toolbar">
+      <button id="download" type="button">Download labels JSON</button>
+      <button id="import" type="button">Import saved JSON</button>
+      <input id="file" type="file" accept="application/json,.json" hidden>
+      <label for="jump" class="muted">Review</label><select id="jump" aria-label="Go to response"></select>
+    </div>
+    <p id="storage" class="hint">Answers stay on this device. Download JSON to keep or share your work.</p>
+    <p id="message" role="status" aria-live="polite"></p>
+  </header>
+  <main id="main">
+    <details open id="instructions">
+      <summary>How to label</summary>
+      <p>Read the complete prompt and response, then answer in order: nonrecognition, description, and—when there is a target description—whether it is flagged as invented, fictional, or a guess. The supplied definitions guide a judgment call. Use the unsure flag and optional notes where helpful.</p>
+      <p>“Only as a what-if or offered example” is separate from a stated description. “Describes a different word instead” is a separate option. If there is no target description, the third question does not apply.</p>
+      <p>No endpoint or source labels, previous judgments, or instrument outputs are supplied. The response’s own prose may reveal its origin. Nothing is sent from this page. Changes are saved locally when browser storage is available; download JSON regularly. An export contains complete response labels only, so you may export before finishing the audit.</p>
+    </details>
+    <div id="complete-banner" hidden><strong>Every response has a complete label.</strong> You can review your answers, especially those flagged unsure, then download the JSON file.</div>
+    <section class="text-card" aria-labelledby="prompt-heading"><h2 id="prompt-heading">Prompt</h2><p id="prompt" class="verbatim"></p></section>
+    <section class="text-card" aria-labelledby="response-heading"><h2 id="response-heading">Response</h2><div id="response" class="verbatim" tabindex="0"></div></section>
+    <form id="labels" novalidate>
+      <fieldset id="nonrecognition-group">
+        <legend>1. Does it say it doesn’t know the word, or that it isn’t a real or established thing?</legend>
+        <p class="hint" id="nonrecognition-hint">Anywhere in the response counts. “This is imaginary, so there’s no set description” counts as yes.</p>
+        <div class="options">
+          <label class="choice"><input type="radio" name="nonrecognition" value="N" aria-describedby="nonrecognition-hint"><span><span class="code">N</span>No</span></label>
+          <label class="choice"><input type="radio" name="nonrecognition" value="Y" aria-describedby="nonrecognition-hint"><span><span class="code">Y</span>Yes</span></label>
+        </div>
+      </fieldset>
+      <fieldset id="description-group">
+        <legend>2. Does it describe the thing itself?</legend>
+        <p class="hint" id="description-hint">Guesses about the word (a misspelling, a regional term, something from a game) are not a description.</p>
+        <div class="options">
+          <label class="choice"><input type="radio" name="description" value="N" aria-describedby="description-hint"><span><span class="code">N</span>No</span></label>
+          <label class="choice"><input type="radio" name="description" value="Y" aria-describedby="description-hint"><span><span class="code">Y</span>Yes, stated as what it is</span></label>
+          <label class="choice"><input type="radio" name="description" value="H" aria-describedby="description-hint"><span><span class="code">H</span>Only as a what-if or offered example</span></label>
+          <label class="choice"><input type="radio" name="description" value="S" aria-describedby="description-hint"><span><span class="code">S</span>Describes a different word instead</span></label>
+        </div>
+      </fieldset>
+      <fieldset id="mark-group" hidden>
+        <legend>3. Does it flag that description as invented, fictional, or a guess?</legend>
+        <p class="hint" id="mark-hint">“Said to” or “seems to” about one feature does not count.</p>
+        <div class="options">
+          <label class="choice"><input type="radio" name="mark" value="N" aria-describedby="mark-hint"><span><span class="code">N</span>No</span></label>
+          <label class="choice"><input type="radio" name="mark" value="Y" aria-describedby="mark-hint"><span><span class="code">Y</span>Yes</span></label>
+          <label class="choice" id="echo-choice"><input type="radio" name="mark" value="E" aria-describedby="mark-hint"><span><span class="code">E</span>Only the prompt’s own word “imaginary”</span></label>
+        </div>
+      </fieldset>
+      <p id="not-applicable" hidden>No target description recorded. The third question does not apply.</p>
+      <div class="extra">
+        <label class="check"><input id="unsure" type="checkbox"><span>Flag this judgment as unsure</span></label>
+        <label class="notes-label" for="notes">Notes <span class="muted">(optional)</span></label><textarea id="notes" maxlength="10000" placeholder="Anything you want to revisit or explain"></textarea>
+      </div>
+      <div class="navigation"><button id="previous" type="button">Previous</button><span id="current-status" class="hint"></span><button id="next" type="submit" class="primary">Save &amp; next</button></div>
+    </form>
+  </main>
+  <footer>Autosave is specific to this audit and this browser. Import a matching downloaded JSON file to continue elsewhere. Labels remain editable until you share them.</footer>
+  <script id="audit-data" type="application/json">__AUDIT_PAYLOAD__</script>
+  <script>
+  'use strict';
+  (() => {
+    const PAGE_SCHEMA = 'bestiary2-zoned-v1.1-audit-page/1';
+    const LABEL_SCHEMA = 'bestiary2-zoned-v1.1-human-labels/1';
+    const $ = id => document.getElementById(id);
+    const own = (obj, key) => Object.prototype.hasOwnProperty.call(obj, key);
+    const object = value => value !== null && typeof value === 'object' && !Array.isArray(value);
+    const demand = (condition, message) => { if (!condition) throw new Error(message); };
+    let data;
+    try {
+      data = JSON.parse($('audit-data').textContent);
+      demand(object(data) && data.schema === PAGE_SCHEMA && typeof data.audit_id === 'string' && data.audit_id.length > 0, 'Invalid audit page data.');
+      demand(Array.isArray(data.items) && data.items.length > 0, 'This audit has no responses.');
+      const ids = new Set();
+      for (const item of data.items) {
+        demand(object(item) && typeof item.item_id === 'string' && item.item_id.length > 0 && !ids.has(item.item_id), 'Invalid or repeated response identifier.');
+        demand(typeof item.prompt === 'string' && typeof item.response === 'string' && typeof item.imaginary === 'boolean', 'Invalid prompt or response data.');
+        ids.add(item.item_id);
+      }
+    } catch (error) {
+      $('main').hidden = true;
+      $('message').className = 'error';
+      $('message').textContent = error.message;
+      $('download').disabled = true;
+      $('import').disabled = true;
+      return;
+    }
+    const byId = new Map(data.items.map(item => [item.item_id, item]));
+    const storageKey = 'bestiary2-audit:' + data.audit_id;
+    let records = Object.create(null), index = 0, startedAt = null, storageAvailable = true;
+    const blank = id => ({item_id:id, nonrecognition:null, description:null, mark:null, flagged_unsure:false, ms:0, notes:''});
+    const current = () => records[data.items[index].item_id] || blank(data.items[index].item_id);
+    const hasDescription = record => record.description === 'Y' || record.description === 'H';
+    function validate(record, partial = false) {
+      demand(object(record), 'A label is not an object.');
+      demand(typeof record.item_id === 'string' && byId.has(record.item_id), 'A label belongs to an unknown response.');
+      const allowed = new Set(['item_id','nonrecognition','description','mark','flagged_unsure','ms','notes']);
+      demand(Object.keys(record).every(key => allowed.has(key)), 'A label contains an unsupported field.');
+      demand(['Y','N'].includes(record.nonrecognition) || (partial && record.nonrecognition === null), 'Choose an answer to question 1.');
+      demand(['Y','H','S','N'].includes(record.description) || (partial && record.description === null), 'Choose an answer to question 2.');
+      if (hasDescription(record)) {
+        demand(['Y','E','N'].includes(record.mark) || (partial && record.mark === null), 'Choose an answer to question 3.');
+        demand(record.mark !== 'E' || byId.get(record.item_id).imaginary, 'The prompt-echo answer is unavailable for this response.');
+      } else {
+        demand(record.mark === null, 'Question 3 must be null when there is no target description.');
+      }
+      demand(typeof record.flagged_unsure === 'boolean', 'The unsure flag must be true or false.');
+      demand(Number.isSafeInteger(record.ms) && record.ms >= 0, 'Invalid reading time.');
+      demand(!own(record,'notes') || (typeof record.notes === 'string' && record.notes.length <= 10000), 'Invalid notes.');
+      return {...record, notes:record.notes || ''};
+    }
+    function complete(record) { try { validate(record); return true; } catch (_) { return false; } }
+    function message(text, error = false) { $('message').textContent = text; $('message').className = error ? 'error' : ''; }
+    function save() {
+      try {
+        localStorage.setItem(storageKey, JSON.stringify({schema:LABEL_SCHEMA, audit_id:data.audit_id, index, records}));
+        storageAvailable = true;
+        $('storage').textContent = 'Saved on this device. Download JSON to keep or share your work.';
+      } catch (_) {
+        storageAvailable = false;
+        $('storage').textContent = 'Browser storage is unavailable. Keep this page open and download JSON regularly.';
+      }
+    }
+    function flushTime() {
+      if (startedAt !== null) {
+        const id = data.items[index].item_id;
+        const record = records[id] || blank(id);
+        record.ms += Math.max(0, Math.round(performance.now() - startedAt));
+        records[id] = record;
+      }
+      startedAt = document.hidden ? null : performance.now();
+    }
+    try {
+      const saved = localStorage.getItem(storageKey);
+      if (saved) {
+        const state = JSON.parse(saved);
+        demand(object(state) && state.schema === LABEL_SCHEMA && state.audit_id === data.audit_id && object(state.records), 'Saved data belongs to another audit or is invalid.');
+        const loaded = Object.create(null);
+        for (const [id, record] of Object.entries(state.records)) {
+          demand(id === record.item_id, 'Saved response identifier mismatch.');
+          loaded[id] = validate(record, true);
+        }
+        records = loaded;
+        index = Number.isInteger(state.index) && state.index >= 0 && state.index < data.items.length ? state.index : 0;
+        message('Restored your locally saved answers.');
+      }
+    } catch (error) {
+      message('Could not restore local answers: ' + error.message + ' Import a saved JSON file if available.', true);
+    }
+    function status() {
+      let done = 0, unsure = 0;
+      for (const item of data.items) {
+        const record = records[item.item_id];
+        if (record && complete(record)) done++;
+        if (record && record.flagged_unsure) unsure++;
+      }
+      $('position').textContent = 'Response ' + (index + 1) + ' of ' + data.items.length;
+      $('progress-text').textContent = done + ' complete · ' + unsure + ' flagged unsure';
+      $('progress').value = done;
+      $('progress').max = data.items.length;
+      $('complete-banner').hidden = done !== data.items.length;
+      $('current-status').textContent = complete(current()) ? 'Complete' : 'Answer each applicable question';
+      $('previous').disabled = index === 0;
+      $('next').textContent = index === data.items.length - 1 ? 'Save & review' : 'Save & next';
+      $('jump').replaceChildren();
+      data.items.forEach((item, n) => {
+        const record = records[item.item_id];
+        const option = document.createElement('option');
+        option.value = String(n);
+        option.textContent = String(n + 1) + ' · ' + (record && complete(record) ? 'Complete' : 'Incomplete') + (record && record.flagged_unsure ? ' · Unsure' : '');
+        option.selected = n === index;
+        $('jump').append(option);
+      });
+    }
+    function markVisibility(record) {
+      const described = hasDescription(record);
+      $('mark-group').hidden = !described;
+      $('not-applicable').hidden = record.description === null || described;
+      $('echo-choice').hidden = !data.items[index].imaginary;
+      for (const input of document.querySelectorAll('input[name="mark"]')) input.disabled = !described || (input.value === 'E' && !data.items[index].imaginary);
+    }
+    function render(scroll = false) {
+      const item = data.items[index], record = current();
+      $('prompt').textContent = item.prompt;
+      $('response').textContent = item.response;
+      for (const name of ['nonrecognition','description','mark']) {
+        for (const input of document.querySelectorAll('input[name="' + name + '"]')) input.checked = input.value === record[name];
+      }
+      $('unsure').checked = record.flagged_unsure;
+      $('notes').value = record.notes || '';
+      markVisibility(record);
+      status();
+      startedAt = document.hidden ? null : performance.now();
+      if (scroll) $('prompt-heading').scrollIntoView({block:'start'});
+    }
+    function change() {
+      flushTime();
+      const record = current();
+      for (const name of ['nonrecognition','description','mark']) {
+        const checked = document.querySelector('input[name="' + name + '"]:checked');
+        record[name] = checked ? checked.value : null;
+      }
+      if (!hasDescription(record)) {
+        record.mark = null;
+        for (const input of document.querySelectorAll('input[name="mark"]')) input.checked = false;
+      }
+      record.flagged_unsure = $('unsure').checked;
+      record.notes = $('notes').value;
+      records[record.item_id] = record;
+      markVisibility(record);
+      save();
+      status();
+      message('');
+    }
+    function go(nextIndex) {
+      flushTime();
+      index = nextIndex;
+      save();
+      message('');
+      $('instructions').open = false;
+      render(true);
+    }
+    $('labels').addEventListener('change', change);
+    $('notes').addEventListener('input', change);
+    $('previous').addEventListener('click', () => { if (index > 0) go(index - 1); });
+    $('jump').addEventListener('change', () => go(Number($('jump').value)));
+    $('labels').addEventListener('submit', event => {
+      event.preventDefault();
+      flushTime();
+      save();
+      try { validate(current()); } catch (error) {
+        message(error.message, true);
+        const record = current();
+        const name = !['Y','N'].includes(record.nonrecognition) ? 'nonrecognition' : !['Y','H','S','N'].includes(record.description) ? 'description' : 'mark';
+        document.querySelector('input[name="' + name + '"]').focus();
+        return;
+      }
+      if (index < data.items.length - 1) go(index + 1);
+      else {
+        const missing = data.items.findIndex(item => !records[item.item_id] || !complete(records[item.item_id]));
+        if (missing >= 0) { go(missing); message('Returned to the first incomplete response.'); }
+        else { status(); message('All labels are complete. Review any unsure judgments, then download your JSON.'); $('download').focus(); }
+      }
+    });
+    $('download').addEventListener('click', () => {
+      flushTime();
+      save();
+      const items = data.items.map(item => records[item.item_id]).filter(record => record && complete(record)).map(record => validate(record));
+      const output = {schema:LABEL_SCHEMA, audit_id:data.audit_id, exported_at:new Date().toISOString(), items};
+      const url = URL.createObjectURL(new Blob([JSON.stringify(output, null, 2) + '\n'], {type:'application/json'}));
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'bestiary-audit-labels-' + data.audit_id.replace(/[^a-zA-Z0-9_-]/g, '_').slice(0,70) + '.json';
+      document.body.append(link); link.click(); link.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+      message('Downloaded ' + items.length + ' of ' + data.items.length + ' complete labels.' + (items.length < data.items.length ? ' Incomplete answers remain in local autosave.' : ''));
+    });
+    $('import').addEventListener('click', () => $('file').click());
+    $('file').addEventListener('change', async () => {
+      const file = $('file').files[0];
+      if (!file) return;
+      try {
+        demand(file.size <= 5000000, 'The selected JSON file is too large.');
+        const imported = JSON.parse(await file.text());
+        demand(object(imported) && imported.schema === LABEL_SCHEMA, 'Unsupported labels schema.');
+        demand(imported.audit_id === data.audit_id, 'This file belongs to a different audit.');
+        demand(Array.isArray(imported.items), 'The labels file has no items array.');
+        const checked = [], seen = new Set();
+        for (const item of imported.items) {
+          const record = validate(item);
+          demand(!seen.has(record.item_id), 'A response appears twice in the import.');
+          seen.add(record.item_id); checked.push(record);
+        }
+        flushTime();
+        for (const record of checked) records[record.item_id] = record;
+        save(); render();
+        message('Imported ' + checked.length + ' complete labels. Matching answers were replaced; other local answers were kept.');
+      } catch (error) { message('Import rejected: ' + error.message, true); }
+      $('file').value = '';
+    });
+    document.addEventListener('visibilitychange', () => { flushTime(); save(); });
+    window.addEventListener('pagehide', () => { flushTime(); save(); });
+    render();
+    if (!storageAvailable) $('storage').textContent = 'Browser storage is unavailable. Keep this page open and download JSON regularly.';
+  })();
+  </script>
+</body>
+</html>
