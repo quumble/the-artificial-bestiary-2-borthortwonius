@@ -125,3 +125,94 @@ branch (Studies A and B), which has not yet been examined for this work.
 
 Any change to this list after results are seen will be added below with its
 date and reason, and the affected results marked.
+### November 15, 2026 implementation clarification before new estimates
+
+This clarification was written before computing the newly declared estimates
+or intervals. It resolves implementation details and the interpretation rule;
+it does not add hypotheses or change the frozen instruments. Previously seen
+results remain disclosed above. These analyses remain post hoc and exploratory.
+
+**Weights and repeated conditions.** Average resolved repetitions within each
+condition, then the named conditions equally, then endpoints equally, then
+words within their source stratum. Real plus type-of comprises six equally
+weighted conditions. Neutral plus real plus type-of comprises seven equally
+weighted conditions, so neutral receives one-seventh of the condition weight.
+Repetition consistency uses all ten conditions. Ordinary pooled fresh results
+weight the three sources equally. Known-bank results weight the two intent
+strata equally. H3 compares the Bo stratum with the equally weighted Claude
+and GPT strata. H4 standardizes both banks to equal intent weights: fresh
+weights are one-half Bo, one-quarter Claude and one-quarter GPT; known weights
+are one-half per intent stratum. H6 compares the Claude-origin and GPT-origin
+provider differences. H1 is the same calculation as G1/E and is reported as
+an alias, not additional evidence.
+
+**Unavailable values and paired support.** Omit null repetitions from their
+cell. Omit and count a cell with no resolved values; average equally over the
+remaining selected conditions and endpoints at each nesting level. For a
+within-word contrast, use only words for which every participating term in
+that instrument, bank and source stratum is defined. Average over those same
+words on both sides. Preserve the fixed source weights; if a required stratum
+has no usable words, report the estimate as not estimable. Report unresolved
+responses, omitted cells and retained words. Instrument comparisons are
+differences between each instrument's own declared estimator using shared
+bootstrap draws. They do not impose an additional common-response subset.
+Differences involving A can therefore reflect both coding and its
+available-case support.
+
+**Bootstrap.** Use 10,000 draws at seed 20261115, with NumPy's PCG64 generator
+and linear percentile interpolation. Resample words independently within the
+three fresh source strata and two known intent strata, using a recorded,
+fixed ordering of strata and word names. Retain all conditions, endpoints and
+repetitions of each sampled word and retain multiplicity when it is sampled
+more than once. Use the same draw indices for all instruments, estimates and
+instrument differences. Recompute each estimator, including conditional
+ratios, within every draw. Count and report undefined draws, including zero
+conditional denominators and absent usable support in a required stratum;
+calculate intervals from finite draws and report their number. When any draw
+is undefined, flag the interval as conditional on estimable draws. An estimate
+with no finite draws has no interval. These unadjusted 95% intervals describe
+word-resampling variation within the selected strata for the fixed endpoints
+and frozen detectors. They do not include detector error or support
+population-wide model or stimulus generalization.
+
+**Conditional outcomes.** Calculate each conditional rate as the ratio of its
+weighted numerator rate to its weighted denominator rate. Do not average
+word-specific or endpoint-specific conditional ratios. For provider or
+generation contrasts, first calculate each group's ratio and then subtract.
+Possibility-list shares use the two decline response types as the denominator.
+Grounding shares use E = 1 as the denominator and E = 1 with a grounding claim
+as the numerator. Bare, hedged, framed and disclaimed shares use the four
+exclusive description response types over E = 1. Prompt-echo estimates are
+unconditional unmarked-description rates over fresh imaginary responses;
+their difference is discounting echo minus counting it. Component rates
+needed to interpret a declared contrast are reported alongside it. The
+imaginary grounding reference is pooled across endpoints.
+
+**Late marking.** Use E = 1 and a frozen `marking_position` other than `none`
+as the denominator, and E = 1 with `marking_position == "after"` as the
+numerator. The frozen positional measure covers fiction, construction,
+interpretation and nonrecognition cues. It excludes attribute hedges and
+implicit hypothetical framing. Non-imaginary includes neutral, real and
+type-of conditions with the seven-condition weighting specified above.
+
+**Repetition consistency.** Within each word, endpoint and condition, count
+unordered distinct repetition pairs. The agreement proportion is the sum of
+`n_k * (n_k - 1) / 2` over response categories, divided by `n * (n - 1) / 2`.
+For A's binary description outcome, omit null values and require at least two
+resolved repetitions; report resolved-pair coverage. Average the resulting
+cell proportions using the declared condition, word and source weights.
+Do not pool pair counts across cells, which would give more weight to cells
+with more resolved repetitions. Response-type consistency is calculated for
+C; binary description consistency is calculated for A, B and C.
+
+**Interpretation rule.** Replace the statement that anything short of all
+three intervals excluding zero is "instrument-dependent." Report a
+`direction_robust` result when all three estimates have intervals entirely
+above zero or all entirely below zero; otherwise report
+`direction_unresolved`. Also report whether point-estimate directions are
+mixed. Separately report each paired instrument difference and whether its
+exploratory interval excludes zero. Common direction can coexist with
+differences in magnitude. An unresolved common direction does not establish
+an instrument effect, and an interval containing zero does not establish
+equivalence. No p-values, multiplicity-controlled decisions or confirmatory
+claims are introduced.
