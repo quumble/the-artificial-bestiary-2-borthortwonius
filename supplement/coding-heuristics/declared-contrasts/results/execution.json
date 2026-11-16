@@ -1,0 +1,180 @@
+{
+  "H1_alias": "G1.E",
+  "block1_rows": 66,
+  "block2_rows": 159,
+  "bootstrap": {
+    "draws": 10000,
+    "endpoint_sampling": "fixed endpoints; no endpoint resampling",
+    "interval": "95% percentile, numpy.quantile(method='linear')",
+    "resampling_unit": "whole word within source/intent stratum",
+    "rng": "numpy.Generator(PCG64)",
+    "seed": 20261115,
+    "shared_draws_sha256": "bb52220d24285d90efe2fbf04f017162ceead1bd843c97085b206e5aa2e6037c",
+    "source_order": [
+      "fresh-animal-intent",
+      "fresh-no-intent-claude",
+      "fresh-no-intent-gpt",
+      "known-animal-intent",
+      "known-no-intent"
+    ],
+    "word_order": {
+      "fresh-animal-intent": [
+        "alfontrosii",
+        "binjeemi",
+        "falbrux",
+        "kalgarooy",
+        "lueyschwale",
+        "mahoggiralf",
+        "tortisinole",
+        "yyiperatrops"
+      ],
+      "fresh-no-intent-claude": [
+        "crendolf",
+        "gorvindle",
+        "hambroqet",
+        "mispaveld",
+        "nurbleck",
+        "trunsavel",
+        "ullaprisk",
+        "vornaketh"
+      ],
+      "fresh-no-intent-gpt": [
+        "brenulo",
+        "havorik",
+        "kavanesh",
+        "lusavon",
+        "nevoral",
+        "tavulen",
+        "vubelan",
+        "wenvuto"
+      ],
+      "known-animal-intent": [
+        "borthorpunius",
+        "halthibinny",
+        "purtaneolotomous",
+        "wresanthamulf"
+      ],
+      "known-no-intent": [
+        "flembrast",
+        "kovashent",
+        "plindorf",
+        "trolnique"
+      ]
+    }
+  },
+  "completed_utc": "2026-11-16T00:36:15.585806+00:00",
+  "conditional_intervals": {
+    "Q4.grounding_share.claude-haiku-5-5": 3399
+  },
+  "declaration_sha256": "bb65e64012fe0236f161db3333f563f92312f714339eea39ac18a129b4d62c3b",
+  "elapsed_seconds": 2.767,
+  "frozen_instruments_changed": false,
+  "git_head": "a73a37f539f3dd99e84f256f7bdf8d2713838120",
+  "inputs": {
+    "crosswalk": {
+      "A": {
+        "E": "description_produced",
+        "N": "nonrecognition_without_description",
+        "R": "knowledge_limit OR external_negative",
+        "U": "unmarked_target_description"
+      },
+      "B": {
+        "E": "F_E",
+        "N": "F_N",
+        "R": "F_nonrec",
+        "U": "F_U"
+      },
+      "C": {
+        "E": "E_description",
+        "N": "N_nonrecognition_without_description",
+        "R": "nonrec_any",
+        "U": "U_unmarked_description"
+      }
+    },
+    "files": {
+      "archives/Bestiary_2_Context_Heuristic_v1.zip": {
+        "bytes": 6135049,
+        "sha256": "58242b976864c7c423f1c49f26b07aa26180435a0fbdf6258358016f504ef37f"
+      },
+      "archives/Bestiary_2_Context_Heuristic_v1.zip!Bestiary_2_Context_Heuristic_v1/results/response_codes.jsonl": {
+        "bytes": 15666519,
+        "sha256": "9faae467563f4ea0e9edec61aa71246c5c171786819c87993730d43752799df9"
+      },
+      "archives/Bestiary_2_Zoned_Heuristic_v1.zip": {
+        "bytes": 4192207,
+        "sha256": "d831f3415c3b32ab430975ed2b317641d511713dee84b77a66acc55424b0c57b"
+      },
+      "archives/SHA256SUMS.txt": {
+        "bytes": 310,
+        "sha256": "e3ab5fc4eb49b7bdd82d77dd26706b2cd1ff47fc10969d9c21d79628f7cf7fd7"
+      },
+      "mechanical-coding-heuristic-v1/run-2026-11-15_claude-fable-5-2/coded_responses.csv": {
+        "bytes": 6358946,
+        "sha256": "44b898961259dc6ccb2b7256fb70b3721f9dcb4d38e20e87d8b07ed7f8e0c042"
+      },
+      "zoned-heuristic-v1/results/response_codes.csv": {
+        "bytes": 4291508,
+        "sha256": "84afb45c6b50563486b668dd148d7fc9798da571c1acfc9ccae9b4d7b002afb2"
+      }
+    },
+    "validation": {
+      "A_C_response_hashes_equal": true,
+      "C_export_matches_archive": true,
+      "banks": {
+        "fresh": 9600,
+        "known": 6400
+      },
+      "complete_cells": 2560,
+      "conditions": 10,
+      "endpoints": 8,
+      "joined_keys_equal": true,
+      "metadata_equal": true,
+      "null_outcomes_A": {
+        "E": 11,
+        "N": 5,
+        "R": 0,
+        "U": 1531
+      },
+      "rows": 16000,
+      "source_word_counts": {
+        "fresh-animal-intent": 8,
+        "fresh-no-intent-claude": 8,
+        "fresh-no-intent-gpt": 8,
+        "known-animal-intent": 4,
+        "known-no-intent": 4
+      },
+      "used_archives_match_published_checksums": true,
+      "words": 32
+    }
+  },
+  "numpy": "2.3.5",
+  "output_files": {
+    "estimates.csv": "15fbb86ba1a102c51f2b197e9dc1a63d599073dae1d35c4a9e2260c90b1c9f1b",
+    "estimates.json": "f69cbbf94c2340ab8252d8ee5bdb7113532a40ca687050edd00afc058749119e",
+    "interpretation.json": "f3fe8c072dca65ae1471d65130502310cfee1119440083904ba4446584aa9a2f",
+    "specifications.json": "fa3e4c64e21ef1c7ebb63a29f7a8f148ec81c0a42876460302923985d7e04c64",
+    "tables.md": "d6d75d025a9421deeee86e0abd3c5871d6f25140b26bc030fd0f022c4541524a"
+  },
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "provider_calls": 0,
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "response_text_read": false,
+  "rows_reported": 225,
+  "schema": "bestiary2-declared-exploratory/1",
+  "source_files": {
+    "check_selected_estimates.py": "61aba8d948de62c855cd9dcfbdd02a83871c4d2bac1ac0a2ef4321a192b4448e",
+    "contrasts.py": "5a44e9f981a1a42058ace1c5dc2a67f8e0e3a1f1c8bfdf56cf2d629c325e8ae2",
+    "estimation.py": "bfb8a1060cf2f9e39842ae34a9bccfaea2ef04226a680f6234d41b8d2a010a10",
+    "inputs.py": "af3b9b76e10759b82b3b0f3c60e8f5e19d052294a735d8260e74169f40c592e0",
+    "questions.py": "ba06f8e55f3b924c1aea96864ba0461c9925ddc86775ea74949c24f56a70c471",
+    "reproduce_comparisons.py": "5090317b2fd864ffcfb12949af602864adb3731b3c2da54f535f70b6f99e2bc8",
+    "run_analysis.py": "242d06d93dd8d73d7a802233c38546436b096261b75585c4b9d0a732cf40d9e4"
+  },
+  "source_identity_note": "Source file hashes identify the implementation, including any code not yet committed at execution.",
+  "undefined_intervals": [],
+  "verification": {
+    "description_shares_sum_to_one": true,
+    "paired_differences_match_native_estimators": true
+  },
+  "worktree_has_changes": true
+}

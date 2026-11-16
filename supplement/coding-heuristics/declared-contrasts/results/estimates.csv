@@ -1,0 +1,226 @@
+id,block,tier,label,estimate,ci95_low,ci95_high,bootstrap_defined,bootstrap_undefined,interval_status,units
+G1.E.A,1,primary,"Imaginary minus real, all endpoints, fresh",0.5815972222222222,0.5562499999999998,0.6065972222222222,10000,0,all_draws_defined,proportion
+G1.E.B,1,primary,"Imaginary minus real, all endpoints, fresh",0.7670138888888889,0.7430555555555556,0.7920138888888889,10000,0,all_draws_defined,proportion
+G1.E.C,1,primary,"Imaginary minus real, all endpoints, fresh",0.8086805555555556,0.7871527777777778,0.83125,10000,0,all_draws_defined,proportion
+G1.E.A-B,1,primary,"Imaginary minus real, all endpoints, fresh; instrument A minus B",-0.18541666666666665,-0.2086805555555556,-0.1614583333333334,10000,0,all_draws_defined,proportion
+G1.E.A-C,1,primary,"Imaginary minus real, all endpoints, fresh; instrument A minus C",-0.22708333333333341,-0.2479166666666667,-0.20625,10000,0,all_draws_defined,proportion
+G1.E.B-C,1,primary,"Imaginary minus real, all endpoints, fresh; instrument B minus C",-0.04166666666666674,-0.050694444444444264,-0.03263888888888897,10000,0,all_draws_defined,proportion
+G1.N.A,1,primary,"Imaginary minus real, all endpoints, fresh",-0.35763888888888895,-0.37778645833333335,-0.3392361111111111,10000,0,all_draws_defined,proportion
+G1.N.B,1,primary,"Imaginary minus real, all endpoints, fresh",-0.720486111111111,-0.7503472222222222,-0.6902777777777778,10000,0,all_draws_defined,proportion
+G1.N.C,1,primary,"Imaginary minus real, all endpoints, fresh",-0.7440972222222221,-0.7711805555555555,-0.7177083333333333,10000,0,all_draws_defined,proportion
+G1.N.A-B,1,primary,"Imaginary minus real, all endpoints, fresh; instrument A minus B",0.36284722222222204,0.3395833333333333,0.3864583333333333,10000,0,all_draws_defined,proportion
+G1.N.A-C,1,primary,"Imaginary minus real, all endpoints, fresh; instrument A minus C",0.3864583333333332,0.3673611111111109,0.40694444444444444,10000,0,all_draws_defined,proportion
+G1.N.B-C,1,primary,"Imaginary minus real, all endpoints, fresh; instrument B minus C",0.023611111111111027,0.008333333333333522,0.03993055555555558,10000,0,all_draws_defined,proportion
+G1.U.A,1,secondary,"Imaginary minus real, all endpoints, fresh",0.3121672453703703,0.28480902777777783,0.34078414351851843,10000,0,all_draws_defined,proportion
+G1.U.B,1,secondary,"Imaginary minus real, all endpoints, fresh",0.401736111111111,0.3732638888888889,0.4319444444444444,10000,0,all_draws_defined,proportion
+G1.U.C,1,secondary,"Imaginary minus real, all endpoints, fresh",0.403125,0.3732638888888888,0.4336805555555554,10000,0,all_draws_defined,proportion
+G1.U.A-B,1,secondary,"Imaginary minus real, all endpoints, fresh; instrument A minus B",-0.0895688657407407,-0.1083043981481481,-0.06990668402777774,10000,0,all_draws_defined,proportion
+G1.U.A-C,1,secondary,"Imaginary minus real, all endpoints, fresh; instrument A minus C",-0.09095775462962967,-0.10853587962962966,-0.07402994791666671,10000,0,all_draws_defined,proportion
+G1.U.B-C,1,secondary,"Imaginary minus real, all endpoints, fresh; instrument B minus C",-0.001388888888888981,-0.011111111111111127,0.009027777777777829,10000,0,all_draws_defined,proportion
+G2.E.A,1,primary,"Type-of minus real, all endpoints, fresh",0.1303240740740741,0.09456018518518522,0.16539351851851852,10000,0,all_draws_defined,proportion
+G2.E.B,1,primary,"Type-of minus real, all endpoints, fresh",0.17152777777777775,0.1305555555555556,0.2163194444444444,10000,0,all_draws_defined,proportion
+G2.E.C,1,primary,"Type-of minus real, all endpoints, fresh",0.18645833333333328,0.14826388888888886,0.22638888888888892,10000,0,all_draws_defined,proportion
+G2.E.A-B,1,primary,"Type-of minus real, all endpoints, fresh; instrument A minus B",-0.04120370370370366,-0.07905092592592594,-0.004861111111111148,10000,0,all_draws_defined,proportion
+G2.E.A-C,1,primary,"Type-of minus real, all endpoints, fresh; instrument A minus C",-0.05613425925925919,-0.08993055555555557,-0.02256944444444453,10000,0,all_draws_defined,proportion
+G2.E.B-C,1,primary,"Type-of minus real, all endpoints, fresh; instrument B minus C",-0.01493055555555553,-0.027430555555555514,-0.0024305555555556024,10000,0,all_draws_defined,proportion
+G2.N.A,1,primary,"Type-of minus real, all endpoints, fresh",-0.05555555555555558,-0.08680555555555547,-0.026736111111111127,10000,0,all_draws_defined,proportion
+G2.N.B,1,primary,"Type-of minus real, all endpoints, fresh",-0.1343749999999999,-0.18090277777777763,-0.09062499999999996,10000,0,all_draws_defined,proportion
+G2.N.C,1,primary,"Type-of minus real, all endpoints, fresh",-0.1416666666666666,-0.18333333333333335,-0.10243055555555558,10000,0,all_draws_defined,proportion
+G2.N.A-B,1,primary,"Type-of minus real, all endpoints, fresh; instrument A minus B",0.07881944444444433,0.0430555555555554,0.11423611111111098,10000,0,all_draws_defined,proportion
+G2.N.A-C,1,primary,"Type-of minus real, all endpoints, fresh; instrument A minus C",0.08611111111111103,0.05486111111111125,0.11874999999999991,10000,0,all_draws_defined,proportion
+G2.N.B-C,1,primary,"Type-of minus real, all endpoints, fresh; instrument B minus C",0.007291666666666696,-0.010069444444444353,0.025000000000000133,10000,0,all_draws_defined,proportion
+G2.U.A,1,secondary,"Type-of minus real, all endpoints, fresh",0.049392361111111116,0.027024739583333325,0.0716724537037037,10000,0,all_draws_defined,proportion
+G2.U.B,1,secondary,"Type-of minus real, all endpoints, fresh",0.0548611111111111,0.02708333333333332,0.0829861111111111,10000,0,all_draws_defined,proportion
+G2.U.C,1,secondary,"Type-of minus real, all endpoints, fresh",0.0767361111111111,0.04305555555555557,0.11180555555555557,10000,0,all_draws_defined,proportion
+G2.U.A-B,1,secondary,"Type-of minus real, all endpoints, fresh; instrument A minus B",-0.005468749999999981,-0.02126736111111109,0.009115306712962975,10000,0,all_draws_defined,proportion
+G2.U.A-C,1,secondary,"Type-of minus real, all endpoints, fresh; instrument A minus C",-0.027343749999999986,-0.04623842592592592,-0.009316406250000015,10000,0,all_draws_defined,proportion
+G2.U.B-C,1,secondary,"Type-of minus real, all endpoints, fresh; instrument B minus C",-0.021875000000000006,-0.034027777777777754,-0.010416666666666685,10000,0,all_draws_defined,proportion
+H2.N.A,1,primary,"Type-of minus real, OpenAI endpoints, fresh",-0.14097222222222222,-0.17708333333333334,-0.10555555555555557,10000,0,all_draws_defined,proportion
+H2.N.B,1,primary,"Type-of minus real, OpenAI endpoints, fresh",-0.24374999999999997,-0.2993055555555555,-0.19027777777777777,10000,0,all_draws_defined,proportion
+H2.N.C,1,primary,"Type-of minus real, OpenAI endpoints, fresh",-0.24861111111111112,-0.3048611111111112,-0.19513888888888886,10000,0,all_draws_defined,proportion
+H2.N.A-B,1,primary,"Type-of minus real, OpenAI endpoints, fresh; instrument A minus B",0.10277777777777775,0.0708333333333333,0.13611111111111107,10000,0,all_draws_defined,proportion
+H2.N.A-C,1,primary,"Type-of minus real, OpenAI endpoints, fresh; instrument A minus C",0.1076388888888889,0.07638888888888884,0.14166666666666672,10000,0,all_draws_defined,proportion
+H2.N.B-C,1,primary,"Type-of minus real, OpenAI endpoints, fresh; instrument B minus C",0.004861111111111205,-0.018055555555555602,0.02777777777777779,10000,0,all_draws_defined,proportion
+H3.U.A,1,secondary,"Animal-intent minus no-intent words, real and type-of, fresh",-0.007921006944444448,-0.03293858506944444,0.016714409722222226,10000,0,all_draws_defined,proportion
+H3.U.B,1,secondary,"Animal-intent minus no-intent words, real and type-of, fresh",-0.015625,-0.05052734375000001,0.018756510416666587,10000,0,all_draws_defined,proportion
+H3.U.C,1,secondary,"Animal-intent minus no-intent words, real and type-of, fresh",-0.018489583333333337,-0.05755208333333332,0.02031250000000001,10000,0,all_draws_defined,proportion
+H3.U.A-B,1,secondary,"Animal-intent minus no-intent words, real and type-of, fresh; instrument A minus B",0.0077039930555555525,-0.01030392795138893,0.025195312499999983,10000,0,all_draws_defined,proportion
+H3.U.A-C,1,secondary,"Animal-intent minus no-intent words, real and type-of, fresh; instrument A minus C",0.01056857638888889,-0.008433376736111166,0.028815646701388874,10000,0,all_draws_defined,proportion
+H3.U.B-C,1,secondary,"Animal-intent minus no-intent words, real and type-of, fresh; instrument B minus C",0.002864583333333337,-0.008854166666666677,0.013802083333333326,10000,0,all_draws_defined,proportion
+H4.N.A,1,primary,"Current-minus-historical gap, known minus fresh, equal intent weights",0.04642857142857143,0.0033482142857143007,0.08995535714285718,10000,0,all_draws_defined,proportion
+H4.N.B,1,primary,"Current-minus-historical gap, known minus fresh, equal intent weights",-0.026562499999999822,-0.08437499999999987,0.02968749999999987,10000,0,all_draws_defined,proportion
+H4.N.C,1,primary,"Current-minus-historical gap, known minus fresh, equal intent weights",-0.01651785714285725,-0.06674107142857133,0.02946428571428583,10000,0,all_draws_defined,proportion
+H4.N.A-B,1,primary,"Current-minus-historical gap, known minus fresh, equal intent weights; instrument A minus B",0.07299107142857131,0.026339285714285676,0.12321428571428572,10000,0,all_draws_defined,proportion
+H4.N.A-C,1,primary,"Current-minus-historical gap, known minus fresh, equal intent weights; instrument A minus C",0.06294642857142874,0.016741071428571504,0.10758928571428561,10000,0,all_draws_defined,proportion
+H4.N.B-C,1,primary,"Current-minus-historical gap, known minus fresh, equal intent weights; instrument B minus C",-0.010044642857142572,-0.0345982142857143,0.013839285714285832,10000,0,all_draws_defined,proportion
+H5.U.A,1,secondary,"Current minus historical endpoints, real and type-of, fresh",-0.018819444444444444,-0.04295746527777777,0.005619212962962958,10000,0,all_draws_defined,proportion
+H5.U.B,1,secondary,"Current minus historical endpoints, real and type-of, fresh",-0.03472222222222221,-0.058333333333333307,-0.009375000000000008,10000,0,all_draws_defined,proportion
+H5.U.C,1,secondary,"Current minus historical endpoints, real and type-of, fresh",-0.071875,-0.09861111111111108,-0.04374999999999998,10000,0,all_draws_defined,proportion
+H5.U.A-B,1,secondary,"Current minus historical endpoints, real and type-of, fresh; instrument A minus B",0.015902777777777766,0.004646990740740736,0.029294126157407372,10000,0,all_draws_defined,proportion
+H5.U.A-C,1,secondary,"Current minus historical endpoints, real and type-of, fresh; instrument A minus C",0.05305555555555555,0.03940321180555556,0.06894111689814812,10000,0,all_draws_defined,proportion
+H5.U.B-C,1,secondary,"Current minus historical endpoints, real and type-of, fresh; instrument B minus C",0.037152777777777785,0.027777777777777762,0.04756944444444447,10000,0,all_draws_defined,proportion
+H6.N.A,1,primary,"Anthropic-minus-OpenAI gap, Claude-origin minus GPT-origin fresh words",0.05625000000000008,-0.002678571428571419,0.11428571428571427,10000,0,all_draws_defined,proportion
+H6.N.B,1,primary,"Anthropic-minus-OpenAI gap, Claude-origin minus GPT-origin fresh words",0.09375000000000006,0.04017857142857151,0.14464285714285702,10000,0,all_draws_defined,proportion
+H6.N.C,1,primary,"Anthropic-minus-OpenAI gap, Claude-origin minus GPT-origin fresh words",0.07678571428571418,0.03839285714285723,0.11696428571428574,10000,0,all_draws_defined,proportion
+H6.N.A-B,1,primary,"Anthropic-minus-OpenAI gap, Claude-origin minus GPT-origin fresh words; instrument A minus B",-0.03749999999999992,-0.09910714285714273,0.025000000000000133,10000,0,all_draws_defined,proportion
+H6.N.A-C,1,primary,"Anthropic-minus-OpenAI gap, Claude-origin minus GPT-origin fresh words; instrument A minus C",-0.020535714285714157,-0.07589285714285704,0.036629464285714265,10000,0,all_draws_defined,proportion
+H6.N.B-C,1,primary,"Anthropic-minus-OpenAI gap, Claude-origin minus GPT-origin fresh words; instrument B minus C",0.016964285714285876,-0.01607142857142868,0.050892857142857184,10000,0,all_draws_defined,proportion
+Q1.possibility_share.claude-sonnet-4-6,2,primary,Possibility-list share among declines: claude-sonnet-4-6,0.9028132992327366,0.8776588745800673,0.9270839993606137,10000,0,all_draws_defined,proportion
+Q1.possibility_share.claude-haiku-4-5,2,primary,Possibility-list share among declines: claude-haiku-4-5,0.8377125193199382,0.8044437434279705,0.869842590591456,10000,0,all_draws_defined,proportion
+Q1.possibility_share.claude-sonnet-5-5,2,primary,Possibility-list share among declines: claude-sonnet-5-5,0.9923857868020305,0.9834605597964376,0.998745294855709,10000,0,all_draws_defined,proportion
+Q1.possibility_share.claude-haiku-5-5,2,primary,Possibility-list share among declines: claude-haiku-5-5,0.9964028776978417,0.9927971188475391,1.0,10000,0,all_draws_defined,proportion
+Q1.possibility_share.gpt-5.4-mini,2,primary,Possibility-list share among declines: gpt-5.4-mini,0.4009661835748792,0.33152173913043476,0.46666666666666673,10000,0,all_draws_defined,proportion
+Q1.possibility_share.gpt-5.4-nano,2,primary,Possibility-list share among declines: gpt-5.4-nano,0.46666666666666656,0.3846045197740112,0.5447761194029851,10000,0,all_draws_defined,proportion
+Q1.possibility_share.gpt-6-sol,2,primary,Possibility-list share among declines: gpt-6-sol,0.10476190476190478,0.07504072057938141,0.1374795417348609,10000,0,all_draws_defined,proportion
+Q1.possibility_share.gpt-6-luna,2,primary,Possibility-list share among declines: gpt-6-luna,0.8093645484949833,0.7621621621621621,0.8543049335366145,10000,0,all_draws_defined,proportion
+Q1.possibility_share.Anthropic_minus_OpenAI,2,primary,Possibility-list share among declines: Anthropic minus OpenAI,0.4941922129270332,0.46612622266734205,0.5225589990675322,10000,0,all_draws_defined,proportion
+Q1.possibility_share.current_minus_historical,2,primary,Possibility-list share among declines: current minus historical,-0.025487122060470324,-0.05112343529353322,0.003484424165220041,10000,0,all_draws_defined,proportion
+Q2.describe_anyway.real.claude-sonnet-4-6,2,primary,"Disclaim and describe rate: real, claude-sonnet-4-6",0.0027777777777777775,0.0,0.008333333333333333,10000,0,all_draws_defined,proportion
+Q2.describe_anyway.type_of.claude-sonnet-4-6,2,primary,"Disclaim and describe rate: type_of, claude-sonnet-4-6",0.0027777777777777775,0.0,0.008333333333333333,10000,0,all_draws_defined,proportion
+Q2.describe_anyway.type_of_minus_real.claude-sonnet-4-6,2,primary,"Disclaim and describe: type-of minus real, claude-sonnet-4-6",0.0,-0.008333333333333333,0.008333333333333333,10000,0,all_draws_defined,proportion
+Q2.describe_anyway.real.claude-haiku-4-5,2,primary,"Disclaim and describe rate: real, claude-haiku-4-5",0.01111111111111111,0.0,0.027777777777777776,10000,0,all_draws_defined,proportion
+Q2.describe_anyway.type_of.claude-haiku-4-5,2,primary,"Disclaim and describe rate: type_of, claude-haiku-4-5",0.03888888888888889,0.02222222222222222,0.05555555555555555,10000,0,all_draws_defined,proportion
+Q2.describe_anyway.type_of_minus_real.claude-haiku-4-5,2,primary,"Disclaim and describe: type-of minus real, claude-haiku-4-5",0.02777777777777778,0.01111111111111111,0.044444444444444446,10000,0,all_draws_defined,proportion
+Q2.describe_anyway.real.claude-sonnet-5-5,2,primary,"Disclaim and describe rate: real, claude-sonnet-5-5",0.013888888888888888,0.0027777777777777775,0.027777777777777776,10000,0,all_draws_defined,proportion
+Q2.describe_anyway.type_of.claude-sonnet-5-5,2,primary,"Disclaim and describe rate: type_of, claude-sonnet-5-5",0.08888888888888888,0.058333333333333334,0.11944444444444444,10000,0,all_draws_defined,proportion
+Q2.describe_anyway.type_of_minus_real.claude-sonnet-5-5,2,primary,"Disclaim and describe: type-of minus real, claude-sonnet-5-5",0.07499999999999998,0.041666666666666685,0.10833333333333334,10000,0,all_draws_defined,proportion
+Q2.describe_anyway.real.claude-haiku-5-5,2,primary,"Disclaim and describe rate: real, claude-haiku-5-5",0.0,0.0,0.0,10000,0,all_draws_defined,proportion
+Q2.describe_anyway.type_of.claude-haiku-5-5,2,primary,"Disclaim and describe rate: type_of, claude-haiku-5-5",0.0027777777777777775,0.0,0.008333333333333333,10000,0,all_draws_defined,proportion
+Q2.describe_anyway.type_of_minus_real.claude-haiku-5-5,2,primary,"Disclaim and describe: type-of minus real, claude-haiku-5-5",0.0027777777777777775,0.0,0.008333333333333333,10000,0,all_draws_defined,proportion
+Q2.describe_anyway.real.gpt-5.4-mini,2,primary,"Disclaim and describe rate: real, gpt-5.4-mini",0.17777777777777776,0.15,0.20277777777777778,10000,0,all_draws_defined,proportion
+Q2.describe_anyway.type_of.gpt-5.4-mini,2,primary,"Disclaim and describe rate: type_of, gpt-5.4-mini",0.10555555555555556,0.05555555555555555,0.1611111111111111,10000,0,all_draws_defined,proportion
+Q2.describe_anyway.type_of_minus_real.gpt-5.4-mini,2,primary,"Disclaim and describe: type-of minus real, gpt-5.4-mini",-0.0722222222222222,-0.13333333333333333,-0.005555555555555564,10000,0,all_draws_defined,proportion
+Q2.describe_anyway.real.gpt-5.4-nano,2,primary,"Disclaim and describe rate: real, gpt-5.4-nano",0.21666666666666667,0.15555555555555556,0.28888888888888886,10000,0,all_draws_defined,proportion
+Q2.describe_anyway.type_of.gpt-5.4-nano,2,primary,"Disclaim and describe rate: type_of, gpt-5.4-nano",0.32499999999999996,0.24166666666666664,0.4083333333333333,10000,0,all_draws_defined,proportion
+Q2.describe_anyway.type_of_minus_real.gpt-5.4-nano,2,primary,"Disclaim and describe: type-of minus real, gpt-5.4-nano",0.10833333333333328,0.005555555555555564,0.20277777777777778,10000,0,all_draws_defined,proportion
+Q2.describe_anyway.real.gpt-6-sol,2,primary,"Disclaim and describe rate: real, gpt-6-sol",0.0,0.0,0.0,10000,0,all_draws_defined,proportion
+Q2.describe_anyway.type_of.gpt-6-sol,2,primary,"Disclaim and describe rate: type_of, gpt-6-sol",0.016666666666666666,0.0,0.04722222222222222,10000,0,all_draws_defined,proportion
+Q2.describe_anyway.type_of_minus_real.gpt-6-sol,2,primary,"Disclaim and describe: type-of minus real, gpt-6-sol",0.016666666666666666,0.0,0.04722222222222222,10000,0,all_draws_defined,proportion
+Q2.describe_anyway.real.gpt-6-luna,2,primary,"Disclaim and describe rate: real, gpt-6-luna",0.10277777777777777,0.06388888888888888,0.14444444444444443,10000,0,all_draws_defined,proportion
+Q2.describe_anyway.type_of.gpt-6-luna,2,primary,"Disclaim and describe rate: type_of, gpt-6-luna",0.06944444444444445,0.03888888888888889,0.10277777777777777,10000,0,all_draws_defined,proportion
+Q2.describe_anyway.type_of_minus_real.gpt-6-luna,2,primary,"Disclaim and describe: type-of minus real, gpt-6-luna",-0.033333333333333326,-0.08611111111111111,0.019444444444444445,10000,0,all_draws_defined,proportion
+Q2.describe_anyway.type_of_minus_real.all,2,primary,"Disclaim and describe: type-of minus real, all endpoints",0.015625,-1.3877787807814457e-17,0.03125,10000,0,all_draws_defined,proportion
+Q2.describe_anyway.current_minus_historical,2,primary,"Disclaim and describe: current minus historical, real and type-of",-0.07326388888888889,-0.09270833333333334,-0.05243055555555555,10000,0,all_draws_defined,proportion
+Q3.description_share.bare,2,secondary,Share of descriptions that are bare: real and type-of,0.2946954813359528,0.26398905668490913,0.32465864210188006,10000,0,all_draws_defined,proportion
+Q3.description_share.hedged,2,secondary,Share of descriptions that are hedged: real and type-of,0.16437459070072033,0.14077566910643907,0.1869522124375075,10000,0,all_draws_defined,proportion
+Q3.description_share.framed,2,secondary,Share of descriptions that are framed: real and type-of,0.2639161755075311,0.2367464473163002,0.2915340547422024,10000,0,all_draws_defined,proportion
+Q3.description_share.disclaimed,2,secondary,Share of descriptions that are disclaimed: real and type-of,0.2770137524557957,0.24230955199240894,0.31393854915898833,10000,0,all_draws_defined,proportion
+Q3.bare_share.Anthropic_minus_OpenAI,2,secondary,Bare share among descriptions: Anthropic minus OpenAI,0.07070478800956442,-0.003552458069275307,0.13390079082221534,10000,0,all_draws_defined,proportion
+Q3.bare_share.current_minus_historical,2,secondary,Bare share among descriptions: current minus historical,0.2290504702537183,0.1584206610454795,0.3053433982905788,10000,0,all_draws_defined,proportion
+Q4.grounding_share.claude-sonnet-4-6,2,primary,"Grounding share among descriptions: real and type-of, claude-sonnet-4-6",0.02631578947368421,0.0,0.08333333333333334,10000,0,all_draws_defined,proportion
+Q4.grounding_share.claude-haiku-4-5,2,primary,"Grounding share among descriptions: real and type-of, claude-haiku-4-5",0.22900763358778625,0.11214953271028037,0.3278731893485991,10000,0,all_draws_defined,proportion
+Q4.grounding_share.claude-sonnet-5-5,2,primary,"Grounding share among descriptions: real and type-of, claude-sonnet-5-5",0.07894736842105263,0.0,0.15,10000,0,all_draws_defined,proportion
+Q4.grounding_share.claude-haiku-5-5,2,primary,"Grounding share among descriptions: real and type-of, claude-haiku-5-5",0.0,0.0,0.0,6601,3399,conditional_on_defined_draws,proportion
+Q4.grounding_share.gpt-5.4-mini,2,primary,"Grounding share among descriptions: real and type-of, gpt-5.4-mini",0.0668103448275862,0.04524886877828054,0.08991286768849317,10000,0,all_draws_defined,proportion
+Q4.grounding_share.gpt-5.4-nano,2,primary,"Grounding share among descriptions: real and type-of, gpt-5.4-nano",0.19411764705882353,0.15173574240914883,0.23695039120625933,10000,0,all_draws_defined,proportion
+Q4.grounding_share.gpt-6-sol,2,primary,"Grounding share among descriptions: real and type-of, gpt-6-sol",0.05454545454545455,0.006993006993006993,0.10555555555555554,10000,0,all_draws_defined,proportion
+Q4.grounding_share.gpt-6-luna,2,primary,"Grounding share among descriptions: real and type-of, gpt-6-luna",0.22777777777777783,0.15527950310559008,0.30488520554219617,10000,0,all_draws_defined,proportion
+Q4.grounding_share.Anthropic_minus_OpenAI,2,primary,Grounding share among descriptions: Anthropic minus OpenAI,0.02699451799148539,-0.04922319893543417,0.1002127485334471,10000,0,all_draws_defined,proportion
+Q4.grounding_share.real_minus_type_of,2,primary,Grounding share among descriptions: real minus type-of,0.30677707305614277,0.253075391750465,0.35578443926391357,10000,0,all_draws_defined,proportion
+Q4.grounding_share.imaginary_reference,2,primary,Grounding share among descriptions: pooled imaginary reference,0.08640226628895183,0.07230998168498168,0.10112765429366856,10000,0,all_draws_defined,proportion
+Q5.unmarked_echo.counted.claude-sonnet-4-6,2,secondary,Unmarked description rate counting prompt echo: claude-sonnet-4-6,0.4527777777777777,0.35,0.5555555555555556,10000,0,all_draws_defined,proportion
+Q5.unmarked_echo.discounted.claude-sonnet-4-6,2,secondary,Unmarked description rate discounting prompt echo: claude-sonnet-4-6,0.6472222222222221,0.5471527777777778,0.7472222222222221,10000,0,all_draws_defined,proportion
+Q5.unmarked_echo.discounted_minus_counted.claude-sonnet-4-6,2,secondary,"Prompt-echo sensitivity: discounted minus counted, claude-sonnet-4-6",0.19444444444444442,0.1333333333333333,0.2611111111111112,10000,0,all_draws_defined,proportion
+Q5.unmarked_echo.counted.claude-haiku-4-5,2,secondary,Unmarked description rate counting prompt echo: claude-haiku-4-5,0.7138888888888888,0.6555555555555556,0.7722222222222221,10000,0,all_draws_defined,proportion
+Q5.unmarked_echo.discounted.claude-haiku-4-5,2,secondary,Unmarked description rate discounting prompt echo: claude-haiku-4-5,0.8083333333333332,0.7555555555555555,0.8583333333333332,10000,0,all_draws_defined,proportion
+Q5.unmarked_echo.discounted_minus_counted.claude-haiku-4-5,2,secondary,"Prompt-echo sensitivity: discounted minus counted, claude-haiku-4-5",0.09444444444444444,0.06388888888888888,0.12777777777777777,10000,0,all_draws_defined,proportion
+Q5.unmarked_echo.counted.claude-sonnet-5-5,2,secondary,Unmarked description rate counting prompt echo: claude-sonnet-5-5,0.7638888888888888,0.7138888888888889,0.8138888888888889,10000,0,all_draws_defined,proportion
+Q5.unmarked_echo.discounted.claude-sonnet-5-5,2,secondary,Unmarked description rate discounting prompt echo: claude-sonnet-5-5,0.861111111111111,0.825,0.8944444444444444,10000,0,all_draws_defined,proportion
+Q5.unmarked_echo.discounted_minus_counted.claude-sonnet-5-5,2,secondary,"Prompt-echo sensitivity: discounted minus counted, claude-sonnet-5-5",0.09722222222222221,0.06666666666666665,0.12777777777777788,10000,0,all_draws_defined,proportion
+Q5.unmarked_echo.counted.claude-haiku-5-5,2,secondary,Unmarked description rate counting prompt echo: claude-haiku-5-5,0.37777777777777777,0.28055555555555556,0.47777777777777775,10000,0,all_draws_defined,proportion
+Q5.unmarked_echo.discounted.claude-haiku-5-5,2,secondary,Unmarked description rate discounting prompt echo: claude-haiku-5-5,0.5027777777777778,0.41666666666666663,0.5888888888888889,10000,0,all_draws_defined,proportion
+Q5.unmarked_echo.discounted_minus_counted.claude-haiku-5-5,2,secondary,"Prompt-echo sensitivity: discounted minus counted, claude-haiku-5-5",0.125,0.08611111111111108,0.175,10000,0,all_draws_defined,proportion
+Q5.unmarked_echo.counted.gpt-5.4-mini,2,secondary,Unmarked description rate counting prompt echo: gpt-5.4-mini,0.005555555555555555,0.0,0.013888888888888888,10000,0,all_draws_defined,proportion
+Q5.unmarked_echo.discounted.gpt-5.4-mini,2,secondary,Unmarked description rate discounting prompt echo: gpt-5.4-mini,0.4166666666666667,0.3472222222222222,0.4833333333333333,10000,0,all_draws_defined,proportion
+Q5.unmarked_echo.discounted_minus_counted.gpt-5.4-mini,2,secondary,"Prompt-echo sensitivity: discounted minus counted, gpt-5.4-mini",0.41111111111111115,0.3416666666666667,0.47777777777777775,10000,0,all_draws_defined,proportion
+Q5.unmarked_echo.counted.gpt-5.4-nano,2,secondary,Unmarked description rate counting prompt echo: gpt-5.4-nano,0.15000000000000002,0.11111111111111112,0.19166666666666665,10000,0,all_draws_defined,proportion
+Q5.unmarked_echo.discounted.gpt-5.4-nano,2,secondary,Unmarked description rate discounting prompt echo: gpt-5.4-nano,0.786111111111111,0.7444444444444444,0.8277777777777777,10000,0,all_draws_defined,proportion
+Q5.unmarked_echo.discounted_minus_counted.gpt-5.4-nano,2,secondary,"Prompt-echo sensitivity: discounted minus counted, gpt-5.4-nano",0.636111111111111,0.5777777777777777,0.6916666666666665,10000,0,all_draws_defined,proportion
+Q5.unmarked_echo.counted.gpt-6-sol,2,secondary,Unmarked description rate counting prompt echo: gpt-6-sol,0.6833333333333332,0.6444444444444444,0.7277777777777776,10000,0,all_draws_defined,proportion
+Q5.unmarked_echo.discounted.gpt-6-sol,2,secondary,Unmarked description rate discounting prompt echo: gpt-6-sol,0.9944444444444445,0.9861111111111109,1.0,10000,0,all_draws_defined,proportion
+Q5.unmarked_echo.discounted_minus_counted.gpt-6-sol,2,secondary,"Prompt-echo sensitivity: discounted minus counted, gpt-6-sol",0.3111111111111112,0.2694444444444444,0.34999999999999987,10000,0,all_draws_defined,proportion
+Q5.unmarked_echo.counted.gpt-6-luna,2,secondary,Unmarked description rate counting prompt echo: gpt-6-luna,0.7444444444444444,0.6861111111111111,0.8027777777777777,10000,0,all_draws_defined,proportion
+Q5.unmarked_echo.discounted.gpt-6-luna,2,secondary,Unmarked description rate discounting prompt echo: gpt-6-luna,0.9694444444444443,0.9333333333333331,0.9944444444444445,10000,0,all_draws_defined,proportion
+Q5.unmarked_echo.discounted_minus_counted.gpt-6-luna,2,secondary,"Prompt-echo sensitivity: discounted minus counted, gpt-6-luna",0.22499999999999998,0.1694444444444445,0.2833333333333332,10000,0,all_draws_defined,proportion
+Q6.description.idea_minus_animal.all.B,2,primary,"Description rate: idea minus animal, all, arm B",0.09739583333333335,0.06614583333333329,0.1291666666666666,10000,0,all_draws_defined,proportion
+Q6.description.object_minus_animal.all.B,2,primary,"Description rate: object minus animal, all, arm B",-0.017187499999999967,-0.0390625,0.0047005208333332086,10000,0,all_draws_defined,proportion
+Q6.description.idea_minus_animal.Anthropic.B,2,primary,"Description rate: idea minus animal, Anthropic, arm B",0.060416666666666646,0.016666666666666677,0.10416666666666669,10000,0,all_draws_defined,proportion
+Q6.description.object_minus_animal.Anthropic.B,2,primary,"Description rate: object minus animal, Anthropic, arm B",-0.01979166666666668,-0.03958333333333332,-0.0010416666666666768,10000,0,all_draws_defined,proportion
+Q6.description.idea_minus_animal.OpenAI.B,2,primary,"Description rate: idea minus animal, OpenAI, arm B",0.1343749999999999,0.09895833333333337,0.16979166666666667,10000,0,all_draws_defined,proportion
+Q6.description.object_minus_animal.OpenAI.B,2,primary,"Description rate: object minus animal, OpenAI, arm B",-0.014583333333333393,-0.055208333333333304,0.028151041666666404,10000,0,all_draws_defined,proportion
+Q6.description.idea_minus_animal.all.C,2,primary,"Description rate: idea minus animal, all, arm C",0.1526041666666667,0.12135416666666665,0.1848958333333334,10000,0,all_draws_defined,proportion
+Q6.description.object_minus_animal.all.C,2,primary,"Description rate: object minus animal, all, arm C",0.0005208333333333315,-0.023437499999999944,0.02447916666666669,10000,0,all_draws_defined,proportion
+Q6.description.idea_minus_animal.Anthropic.C,2,primary,"Description rate: idea minus animal, Anthropic, arm C",0.13958333333333334,0.109375,0.17083333333333334,10000,0,all_draws_defined,proportion
+Q6.description.object_minus_animal.Anthropic.C,2,primary,"Description rate: object minus animal, Anthropic, arm C",0.005208333333333332,-0.013541666666666674,0.02291666666666667,10000,0,all_draws_defined,proportion
+Q6.description.idea_minus_animal.OpenAI.C,2,primary,"Description rate: idea minus animal, OpenAI, arm C",0.16562500000000008,0.11979166666666674,0.2104166666666667,10000,0,all_draws_defined,proportion
+Q6.description.object_minus_animal.OpenAI.C,2,primary,"Description rate: object minus animal, OpenAI, arm C",-0.004166666666666652,-0.048958333333333326,0.04166666666666663,10000,0,all_draws_defined,proportion
+Q7.binary_consistency.fresh.claude-sonnet-4-6.A,2,primary,"Description-call pair agreement: fresh, claude-sonnet-4-6, arm A",0.7708333333333333,0.7333333333333334,0.8091666666666666,10000,0,all_draws_defined,proportion
+Q7.binary_consistency.fresh.claude-sonnet-4-6.B,2,primary,"Description-call pair agreement: fresh, claude-sonnet-4-6, arm B",0.9508333333333333,0.9366666666666665,0.965,10000,0,all_draws_defined,proportion
+Q7.binary_consistency.fresh.claude-sonnet-4-6.C,2,primary,"Description-call pair agreement: fresh, claude-sonnet-4-6, arm C",0.9491666666666667,0.9324999999999999,0.9649999999999999,10000,0,all_draws_defined,proportion
+Q7.response_type_consistency.fresh.claude-sonnet-4-6.C,2,primary,"Response-type pair agreement: fresh, claude-sonnet-4-6, arm C",0.7420833333333333,0.7004166666666667,0.7816666666666666,10000,0,all_draws_defined,proportion
+Q7.binary_consistency.fresh.claude-haiku-4-5.A,2,primary,"Description-call pair agreement: fresh, claude-haiku-4-5, arm A",0.7424999999999999,0.7216666666666666,0.7633333333333332,10000,0,all_draws_defined,proportion
+Q7.binary_consistency.fresh.claude-haiku-4-5.B,2,primary,"Description-call pair agreement: fresh, claude-haiku-4-5, arm B",0.9275,0.9041666666666667,0.9491666666666666,10000,0,all_draws_defined,proportion
+Q7.binary_consistency.fresh.claude-haiku-4-5.C,2,primary,"Description-call pair agreement: fresh, claude-haiku-4-5, arm C",0.9458333333333333,0.9216666666666666,0.9675,10000,0,all_draws_defined,proportion
+Q7.response_type_consistency.fresh.claude-haiku-4-5.C,2,primary,"Response-type pair agreement: fresh, claude-haiku-4-5, arm C",0.5654166666666667,0.5333333333333332,0.5991770833333332,10000,0,all_draws_defined,proportion
+Q7.binary_consistency.fresh.claude-sonnet-5-5.A,2,primary,"Description-call pair agreement: fresh, claude-sonnet-5-5, arm A",0.6599999999999999,0.6416666666666666,0.6775,10000,0,all_draws_defined,proportion
+Q7.binary_consistency.fresh.claude-sonnet-5-5.B,2,primary,"Description-call pair agreement: fresh, claude-sonnet-5-5, arm B",0.8508333333333333,0.8258333333333332,0.8758333333333332,10000,0,all_draws_defined,proportion
+Q7.binary_consistency.fresh.claude-sonnet-5-5.C,2,primary,"Description-call pair agreement: fresh, claude-sonnet-5-5, arm C",0.9374999999999999,0.9175,0.9566666666666666,10000,0,all_draws_defined,proportion
+Q7.response_type_consistency.fresh.claude-sonnet-5-5.C,2,primary,"Response-type pair agreement: fresh, claude-sonnet-5-5, arm C",0.7683333333333332,0.7366666666666667,0.7974999999999999,10000,0,all_draws_defined,proportion
+Q7.binary_consistency.fresh.claude-haiku-5-5.A,2,primary,"Description-call pair agreement: fresh, claude-haiku-5-5, arm A",0.7166666666666667,0.695,0.7391666666666666,10000,0,all_draws_defined,proportion
+Q7.binary_consistency.fresh.claude-haiku-5-5.B,2,primary,"Description-call pair agreement: fresh, claude-haiku-5-5, arm B",0.8858333333333333,0.8641666666666665,0.9075,10000,0,all_draws_defined,proportion
+Q7.binary_consistency.fresh.claude-haiku-5-5.C,2,primary,"Description-call pair agreement: fresh, claude-haiku-5-5, arm C",0.9983333333333333,0.9949999999999999,1.0,10000,0,all_draws_defined,proportion
+Q7.response_type_consistency.fresh.claude-haiku-5-5.C,2,primary,"Response-type pair agreement: fresh, claude-haiku-5-5, arm C",0.8399999999999999,0.8220833333333333,0.8570833333333333,10000,0,all_draws_defined,proportion
+Q7.binary_consistency.fresh.gpt-5.4-mini.A,2,primary,"Description-call pair agreement: fresh, gpt-5.4-mini, arm A",0.825,0.8025,0.8474999999999999,10000,0,all_draws_defined,proportion
+Q7.binary_consistency.fresh.gpt-5.4-mini.B,2,primary,"Description-call pair agreement: fresh, gpt-5.4-mini, arm B",0.8058333333333333,0.7841666666666666,0.8299999999999998,10000,0,all_draws_defined,proportion
+Q7.binary_consistency.fresh.gpt-5.4-mini.C,2,primary,"Description-call pair agreement: fresh, gpt-5.4-mini, arm C",0.8458333333333332,0.8241666666666666,0.8666666666666667,10000,0,all_draws_defined,proportion
+Q7.response_type_consistency.fresh.gpt-5.4-mini.C,2,primary,"Response-type pair agreement: fresh, gpt-5.4-mini, arm C",0.5591666666666666,0.5325,0.585,10000,0,all_draws_defined,proportion
+Q7.binary_consistency.fresh.gpt-5.4-nano.A,2,primary,"Description-call pair agreement: fresh, gpt-5.4-nano, arm A",0.7172222222222222,0.6891666666666666,0.7483333333333333,10000,0,all_draws_defined,proportion
+Q7.binary_consistency.fresh.gpt-5.4-nano.B,2,primary,"Description-call pair agreement: fresh, gpt-5.4-nano, arm B",0.7699999999999999,0.7324999999999999,0.8099999999999998,10000,0,all_draws_defined,proportion
+Q7.binary_consistency.fresh.gpt-5.4-nano.C,2,primary,"Description-call pair agreement: fresh, gpt-5.4-nano, arm C",0.7716666666666665,0.7333333333333333,0.8116666666666665,10000,0,all_draws_defined,proportion
+Q7.response_type_consistency.fresh.gpt-5.4-nano.C,2,primary,"Response-type pair agreement: fresh, gpt-5.4-nano, arm C",0.4099999999999999,0.3883333333333333,0.43166666666666664,10000,0,all_draws_defined,proportion
+Q7.binary_consistency.fresh.gpt-6-sol.A,2,primary,"Description-call pair agreement: fresh, gpt-6-sol, arm A",0.8875,0.8708333333333333,0.9041666666666666,10000,0,all_draws_defined,proportion
+Q7.binary_consistency.fresh.gpt-6-sol.B,2,primary,"Description-call pair agreement: fresh, gpt-6-sol, arm B",0.9249999999999999,0.9033333333333332,0.9466666666666665,10000,0,all_draws_defined,proportion
+Q7.binary_consistency.fresh.gpt-6-sol.C,2,primary,"Description-call pair agreement: fresh, gpt-6-sol, arm C",0.9141666666666666,0.8899999999999999,0.9375,10000,0,all_draws_defined,proportion
+Q7.response_type_consistency.fresh.gpt-6-sol.C,2,primary,"Response-type pair agreement: fresh, gpt-6-sol, arm C",0.72125,0.6858333333333334,0.7545833333333334,10000,0,all_draws_defined,proportion
+Q7.binary_consistency.fresh.gpt-6-luna.A,2,primary,"Description-call pair agreement: fresh, gpt-6-luna, arm A",0.7838888888888889,0.7472152777777776,0.8188888888888888,10000,0,all_draws_defined,proportion
+Q7.binary_consistency.fresh.gpt-6-luna.B,2,primary,"Description-call pair agreement: fresh, gpt-6-luna, arm B",0.8433333333333333,0.8116666666666666,0.8733333333333333,10000,0,all_draws_defined,proportion
+Q7.binary_consistency.fresh.gpt-6-luna.C,2,primary,"Description-call pair agreement: fresh, gpt-6-luna, arm C",0.8383333333333333,0.8058333333333333,0.8716666666666666,10000,0,all_draws_defined,proportion
+Q7.response_type_consistency.fresh.gpt-6-luna.C,2,primary,"Response-type pair agreement: fresh, gpt-6-luna, arm C",0.5870833333333334,0.54415625,0.6325000000000001,10000,0,all_draws_defined,proportion
+Q7.binary_consistency.known.claude-sonnet-4-6.A,2,primary,"Description-call pair agreement: known, claude-sonnet-4-6, arm A",0.765,0.7355555555555555,0.7916666666666667,10000,0,all_draws_defined,proportion
+Q7.binary_consistency.known.claude-sonnet-4-6.B,2,primary,"Description-call pair agreement: known, claude-sonnet-4-6, arm B",0.9530555555555555,0.9338888888888889,0.9688888888888889,10000,0,all_draws_defined,proportion
+Q7.binary_consistency.known.claude-sonnet-4-6.C,2,primary,"Description-call pair agreement: known, claude-sonnet-4-6, arm C",0.9383333333333334,0.9072222222222222,0.9613888888888888,10000,0,all_draws_defined,proportion
+Q7.response_type_consistency.known.claude-sonnet-4-6.C,2,primary,"Response-type pair agreement: known, claude-sonnet-4-6, arm C",0.7388888888888888,0.7016666666666667,0.7825,10000,0,all_draws_defined,proportion
+Q7.binary_consistency.known.claude-haiku-4-5.A,2,primary,"Description-call pair agreement: known, claude-haiku-4-5, arm A",0.7094444444444445,0.6941597222222222,0.7294444444444445,10000,0,all_draws_defined,proportion
+Q7.binary_consistency.known.claude-haiku-4-5.B,2,primary,"Description-call pair agreement: known, claude-haiku-4-5, arm B",0.9388888888888889,0.9138888888888889,0.96,10000,0,all_draws_defined,proportion
+Q7.binary_consistency.known.claude-haiku-4-5.C,2,primary,"Description-call pair agreement: known, claude-haiku-4-5, arm C",0.951388888888889,0.923888888888889,0.9725,10000,0,all_draws_defined,proportion
+Q7.response_type_consistency.known.claude-haiku-4-5.C,2,primary,"Response-type pair agreement: known, claude-haiku-4-5, arm C",0.6144444444444445,0.5766597222222222,0.6505555555555556,10000,0,all_draws_defined,proportion
+Q7.binary_consistency.known.claude-sonnet-5-5.A,2,primary,"Description-call pair agreement: known, claude-sonnet-5-5, arm A",0.6580555555555555,0.6336111111111111,0.6822222222222223,10000,0,all_draws_defined,proportion
+Q7.binary_consistency.known.claude-sonnet-5-5.B,2,primary,"Description-call pair agreement: known, claude-sonnet-5-5, arm B",0.8500000000000001,0.8325,0.8747222222222222,10000,0,all_draws_defined,proportion
+Q7.binary_consistency.known.claude-sonnet-5-5.C,2,primary,"Description-call pair agreement: known, claude-sonnet-5-5, arm C",0.9175,0.8980555555555556,0.9374999999999999,10000,0,all_draws_defined,proportion
+Q7.response_type_consistency.known.claude-sonnet-5-5.C,2,primary,"Response-type pair agreement: known, claude-sonnet-5-5, arm C",0.7625,0.7444444444444445,0.7808333333333333,10000,0,all_draws_defined,proportion
+Q7.binary_consistency.known.claude-haiku-5-5.A,2,primary,"Description-call pair agreement: known, claude-haiku-5-5, arm A",0.6777777777777778,0.6563888888888889,0.6980555555555555,10000,0,all_draws_defined,proportion
+Q7.binary_consistency.known.claude-haiku-5-5.B,2,primary,"Description-call pair agreement: known, claude-haiku-5-5, arm B",0.8797222222222223,0.8674999999999999,0.8891666666666667,10000,0,all_draws_defined,proportion
+Q7.binary_consistency.known.claude-haiku-5-5.C,2,primary,"Description-call pair agreement: known, claude-haiku-5-5, arm C",0.99,0.9850000000000001,0.995,10000,0,all_draws_defined,proportion
+Q7.response_type_consistency.known.claude-haiku-5-5.C,2,primary,"Response-type pair agreement: known, claude-haiku-5-5, arm C",0.8241666666666667,0.788888888888889,0.868888888888889,10000,0,all_draws_defined,proportion
+Q7.binary_consistency.known.gpt-5.4-mini.A,2,primary,"Description-call pair agreement: known, gpt-5.4-mini, arm A",0.821388888888889,0.7775,0.8538888888888889,10000,0,all_draws_defined,proportion
+Q7.binary_consistency.known.gpt-5.4-mini.B,2,primary,"Description-call pair agreement: known, gpt-5.4-mini, arm B",0.8138888888888889,0.7869444444444444,0.8458333333333332,10000,0,all_draws_defined,proportion
+Q7.binary_consistency.known.gpt-5.4-mini.C,2,primary,"Description-call pair agreement: known, gpt-5.4-mini, arm C",0.8827777777777778,0.8569444444444444,0.9102777777777777,10000,0,all_draws_defined,proportion
+Q7.response_type_consistency.known.gpt-5.4-mini.C,2,primary,"Response-type pair agreement: known, gpt-5.4-mini, arm C",0.5486111111111112,0.5230555555555556,0.5730555555555555,10000,0,all_draws_defined,proportion
+Q7.binary_consistency.known.gpt-5.4-nano.A,2,primary,"Description-call pair agreement: known, gpt-5.4-nano, arm A",0.6991666666666667,0.6641666666666666,0.7338888888888888,10000,0,all_draws_defined,proportion
+Q7.binary_consistency.known.gpt-5.4-nano.B,2,primary,"Description-call pair agreement: known, gpt-5.4-nano, arm B",0.77,0.7216666666666667,0.8258333333333334,10000,0,all_draws_defined,proportion
+Q7.binary_consistency.known.gpt-5.4-nano.C,2,primary,"Description-call pair agreement: known, gpt-5.4-nano, arm C",0.7808333333333334,0.7391666666666667,0.8311111111111111,10000,0,all_draws_defined,proportion
+Q7.response_type_consistency.known.gpt-5.4-nano.C,2,primary,"Response-type pair agreement: known, gpt-5.4-nano, arm C",0.4508333333333333,0.4041666666666667,0.5016666666666667,10000,0,all_draws_defined,proportion
+Q7.binary_consistency.known.gpt-6-sol.A,2,primary,"Description-call pair agreement: known, gpt-6-sol, arm A",0.9252777777777776,0.9016666666666666,0.9513888888888888,10000,0,all_draws_defined,proportion
+Q7.binary_consistency.known.gpt-6-sol.B,2,primary,"Description-call pair agreement: known, gpt-6-sol, arm B",0.9847222222222223,0.9733333333333334,0.9955555555555555,10000,0,all_draws_defined,proportion
+Q7.binary_consistency.known.gpt-6-sol.C,2,primary,"Description-call pair agreement: known, gpt-6-sol, arm C",0.976388888888889,0.9624999999999999,0.9905555555555556,10000,0,all_draws_defined,proportion
+Q7.response_type_consistency.known.gpt-6-sol.C,2,primary,"Response-type pair agreement: known, gpt-6-sol, arm C",0.7633333333333334,0.7475,0.779173611111111,10000,0,all_draws_defined,proportion
+Q7.binary_consistency.known.gpt-6-luna.A,2,primary,"Description-call pair agreement: known, gpt-6-luna, arm A",0.8376388888888888,0.7933333333333332,0.8819444444444444,10000,0,all_draws_defined,proportion
+Q7.binary_consistency.known.gpt-6-luna.B,2,primary,"Description-call pair agreement: known, gpt-6-luna, arm B",0.8869444444444445,0.8469444444444445,0.9308333333333333,10000,0,all_draws_defined,proportion
+Q7.binary_consistency.known.gpt-6-luna.C,2,primary,"Description-call pair agreement: known, gpt-6-luna, arm C",0.8816666666666666,0.8397222222222223,0.9266666666666666,10000,0,all_draws_defined,proportion
+Q7.response_type_consistency.known.gpt-6-luna.C,2,primary,"Response-type pair agreement: known, gpt-6-luna, arm C",0.6297222222222222,0.553888888888889,0.6966666666666668,10000,0,all_draws_defined,proportion
+Q8.late_marking.imaginary.Anthropic,2,secondary,"Late-only share among descriptions with positioned marks: imaginary, Anthropic",0.21964285714285714,0.17495711835334476,0.2655957887546682,10000,0,all_draws_defined,proportion
+Q8.late_marking.imaginary.OpenAI,2,secondary,"Late-only share among descriptions with positioned marks: imaginary, OpenAI",0.01392111368909513,0.006748966772411875,0.022592152199762187,10000,0,all_draws_defined,proportion
+Q8.late_marking.imaginary.Anthropic_minus_OpenAI,2,secondary,"Late-only marking share: Anthropic minus OpenAI, imaginary",0.205721743453762,0.1613772470771494,0.2520285180602103,10000,0,all_draws_defined,proportion
+Q8.late_marking.nonimaginary.Anthropic,2,secondary,"Late-only share among descriptions with positioned marks: nonimaginary, Anthropic",0.4025974025974026,0.30769230769230765,0.5056212062508072,10000,0,all_draws_defined,proportion
+Q8.late_marking.nonimaginary.OpenAI,2,secondary,"Late-only share among descriptions with positioned marks: nonimaginary, OpenAI",0.12152777777777779,0.1037391990799711,0.14052715831872425,10000,0,all_draws_defined,proportion
+Q8.late_marking.nonimaginary.Anthropic_minus_OpenAI,2,secondary,"Late-only marking share: Anthropic minus OpenAI, nonimaginary",0.28106962481962483,0.17586917205741892,0.3899921112540005,10000,0,all_draws_defined,proportion

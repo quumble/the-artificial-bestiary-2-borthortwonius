@@ -216,6 +216,18 @@ best on the one blind check available. That choice carries these limits:
 5. Nothing here is preregistered. Any test built on these codes needs its own
    declared error control and must not be appended to either original family.
 
+## Declared exploratory analysis results
+
+The declared comparisons have now been computed using the three frozen
+instruments. See the [results report](declared-contrasts/REPORT.md),
+[complete tables](declared-contrasts/results/tables.md), and
+[reproduction instructions](declared-contrasts/README.md). The new workflow
+also reproduces the historical three-way and human-pass outputs directly
+from the published files. Its clarification of weighting, missing values,
+and interpretation was committed before computing the new contrasts.
+All results remain exploratory; the frozen packages and registered outputs
+are unchanged.
+
 ## Layout and what is not expanded
 
 ```
@@ -225,7 +237,7 @@ context-heuristic-v1/             expanded package, large result files left in t
 zoned-heuristic-v1/               expanded package, evidence file left in the archive
 comparison/                       both two-arm reports and Claude's two-arm machine-readable results
 human-pass/                       the investigator's labels for the 84 held-out responses, the page used, and scores
-declared-contrasts/               the exploratory contrast list, declared before intervals were computed
+declared-contrasts/               declaration, reproducible comparison and analysis code, complete outputs, and report
 ```
 
 Expanded folders contain only members of the corresponding archive, byte for
