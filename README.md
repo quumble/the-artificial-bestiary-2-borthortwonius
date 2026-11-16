@@ -19,6 +19,7 @@ A continuation of [The Artificial Bestiary](https://github.com/quumble/the-artif
 | Planned Fable descriptive summaries, implemented after analysis | [Supplement summary](supplement/fable-descriptives/summary.md), [machine-readable results](supplement/fable-descriptives/descriptives.json), and [reporting revision record](supplement/REPORTING_REVISION.md) |
 | Post-publication coding heuristics: three exploratory arms, their provenance, and two comparison reports | [supplement/coding-heuristics/](supplement/coding-heuristics/README.md). The zoned heuristic is the investigator's main choice for descriptive recoding; none replaces a registered measure |
 | Declared exploratory contrasts under the three frozen coding instruments | [Results report](supplement/coding-heuristics/declared-contrasts/REPORT.md), [complete tables](supplement/coding-heuristics/declared-contrasts/results/tables.md), and [reproduction workflow](supplement/coding-heuristics/declared-contrasts/README.md) |
+| Separately frozen zoned 1.1 repair candidate; human validation pending | [Repair record and 96-response audit](supplement/coding-heuristics/zoned-heuristic-v1-1/README.md) |
 | Analysis archive also uploaded to the repository | [`bestiary-analysis-2026-11-11.zip`](bestiary-analysis-2026-11-11.zip) |
 | Exact source and protocols used for the run | [Frozen commit `0d39166092aac95253fc5a140231fb428a6a4809`](https://github.com/quumble/the-artificial-bestiary-2-borthortwonius/tree/0d39166092aac95253fc5a140231fb428a6a4809) |
 

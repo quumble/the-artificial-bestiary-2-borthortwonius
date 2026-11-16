@@ -1,0 +1,109 @@
+{
+  "version": "bestiary2-zoned-heuristic/1.1.0",
+  "freeze_commit": "3d8b4c35961fbdfb6ca88084dab3c63b9d4df03b",
+  "freeze_manifest_sha256": "467b36c63ebc9053b8ac5272d1eb596aadc0d651b479d558abc4b02060a0a7d7",
+  "python": "3.12.14",
+  "n": 16000,
+  "input_archive_sha256": "f3a20641ed5d7136d71529cc7325437c9f415e62a3d41f5513e38c115875aef6",
+  "collection_manifest_sha256": "bb17ad15ce9fd16745230aed79853fe11be362456cd44a2eeccdc96a2e518f7a",
+  "baseline_codes_sha256": "84afb45c6b50563486b668dd148d7fc9798da571c1acfc9ccae9b4d7b002afb2",
+  "changed_any_field": 416,
+  "changed_audit_fields": 258,
+  "changed_counts_by_field": {
+    "E_description": 71,
+    "N_nonrecognition_without_description": 233,
+    "U_bare_description": 22,
+    "U_unmarked_description": 24,
+    "U_unmarked_discounting_prompt_echo": 24,
+    "description_any": 71,
+    "description_asserted": 67,
+    "description_hypothetical": 4,
+    "fragile": 134,
+    "grounding_claim": 2,
+    "mark_fiction": 3,
+    "mark_hedge": 12,
+    "marking_position": 100,
+    "nonrec_any": 191,
+    "nonrec_personal": 239,
+    "possibility_list": 3,
+    "response_type": 257,
+    "substitute_description": 29
+  },
+  "outcome_transitions": {
+    "E_description": {
+      "1 -> 1": 7223,
+      "0 -> 0": 8706,
+      "1 -> 0": 70,
+      "0 -> 1": 1
+    },
+    "nonrec_any": {
+      "0 -> 0": 6552,
+      "1 -> 1": 9257,
+      "0 -> 1": 191
+    },
+    "N_nonrecognition_without_description": {
+      "0 -> 0": 7590,
+      "1 -> 1": 8177,
+      "0 -> 1": 232,
+      "1 -> 0": 1
+    },
+    "U_unmarked_description": {
+      "1 -> 1": 3266,
+      "0 -> 0": 12710,
+      "1 -> 0": 24
+    },
+    "substitute_description": {
+      "0 -> 0": 15774,
+      "1 -> 1": 197,
+      "0 -> 1": 29
+    },
+    "response_type": {
+      "DESCRIBE_HEDGED -> DESCRIBE_HEDGED": 1803,
+      "DESCRIBE_FRAMED -> DESCRIBE_FRAMED": 2919,
+      "DESCRIBE_UNMARKED -> DESCRIBE_UNMARKED": 1463,
+      "DISCLAIM_AND_DESCRIBE -> DISCLAIM_AND_DESCRIBE": 1035,
+      "DECLINE_WITH_POSSIBILITIES -> DECLINE_WITH_POSSIBILITIES": 6124,
+      "NO_DESCRIPTION_OTHER -> DECLINE_WITH_POSSIBILITIES": 140,
+      "NO_DESCRIPTION_OTHER -> DECLINE_PLAIN": 42,
+      "DECLINE_PLAIN -> DECLINE_PLAIN": 1952,
+      "NO_DESCRIPTION_OTHER -> NO_DESCRIPTION_OTHER": 302,
+      "DESCRIBE_SUBSTITUTE -> DESCRIBE_SUBSTITUTE": 145,
+      "DESCRIBE_HEDGED -> DISCLAIM_AND_DESCRIBE": 1,
+      "DISCLAIM_AND_DESCRIBE -> DESCRIBE_SUBSTITUTE": 41,
+      "DESCRIBE_UNMARKED -> DISCLAIM_AND_DESCRIBE": 2,
+      "DESCRIBE_UNMARKED -> DECLINE_PLAIN": 2,
+      "DESCRIBE_HEDGED -> DESCRIBE_SUBSTITUTE": 1,
+      "DESCRIBE_UNMARKED -> DESCRIBE_SUBSTITUTE": 16,
+      "DESCRIBE_UNMARKED -> DECLINE_WITH_POSSIBILITIES": 2,
+      "DISCLAIM_AND_DESCRIBE -> DECLINE_WITH_POSSIBILITIES": 3,
+      "DESCRIBE_FRAMED -> DESCRIBE_SUBSTITUTE": 5,
+      "DECLINE_PLAIN -> DISCLAIM_AND_DESCRIBE": 1,
+      "NO_DESCRIPTION_OTHER -> DESCRIBE_SUBSTITUTE": 1
+    }
+  },
+  "response_types": {
+    "DESCRIBE_HEDGED": 1803,
+    "DESCRIBE_FRAMED": 2919,
+    "DESCRIBE_UNMARKED": 1463,
+    "DISCLAIM_AND_DESCRIBE": 1039,
+    "DECLINE_WITH_POSSIBILITIES": 6269,
+    "DECLINE_PLAIN": 1996,
+    "NO_DESCRIPTION_OTHER": 302,
+    "DESCRIBE_SUBSTITUTE": 209
+  },
+  "fragile_reasons": {
+    "disclaimer_and_description": 1039,
+    "target_named_in_possibility": 158,
+    "target_respelled": 186,
+    "target_alias_claim": 61,
+    "hypothetical_only": 298,
+    "description_from_attributes_only": 182,
+    "category_echo_definition": 187,
+    "very_short": 1
+  },
+  "outputs": {
+    "changes.csv": "ccc345e75ff6c09643f928b2b5c88ae1aff27e604c1a81a2a13ccf22e1b84e0b",
+    "response_codes.csv": "ea071089abc9467e721d0e2d3cea25b25e646263ce3eed6ed737737bbc4dd237"
+  },
+  "interpretation": "Candidate detections only; human validation pending."
+}
