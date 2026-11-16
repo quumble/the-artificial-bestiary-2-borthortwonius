@@ -1,0 +1,130 @@
+{
+  "absolute_tolerance": 2e-14,
+  "checks_passed": 9,
+  "comparisons": [
+    {
+      "absolute_point_difference": 0.0,
+      "bootstrap_defined": 10000,
+      "ci95": [
+        0.7430555555555557,
+        0.792013888888889
+      ],
+      "estimate": 0.7670138888888889,
+      "id": "G1.E.B",
+      "matches": true,
+      "max_absolute_interval_difference": 1.1102230246251565e-16
+    },
+    {
+      "absolute_point_difference": 3.3306690738754696e-16,
+      "bootstrap_defined": 10000,
+      "ci95": [
+        -0.08437499999999998,
+        0.02968749999999987
+      ],
+      "estimate": -0.026562500000000155,
+      "id": "H4.N.B",
+      "matches": true,
+      "max_absolute_interval_difference": 1.1102230246251565e-16
+    },
+    {
+      "absolute_point_difference": 5.551115123125783e-17,
+      "bootstrap_defined": 10000,
+      "ci95": [
+        0.04017857142857151,
+        0.14464285714285702
+      ],
+      "estimate": 0.09375,
+      "id": "H6.N.B",
+      "matches": true,
+      "max_absolute_interval_difference": 0.0
+    },
+    {
+      "absolute_point_difference": 0.0,
+      "bootstrap_defined": 10000,
+      "ci95": [
+        0.9033333333333332,
+        0.9466666666666665
+      ],
+      "estimate": 0.9249999999999999,
+      "id": "Q7.binary_consistency.fresh.gpt-6-sol.B",
+      "matches": true,
+      "max_absolute_interval_difference": 0.0
+    },
+    {
+      "absolute_point_difference": 0.0,
+      "bootstrap_defined": 10000,
+      "ci95": [
+        0.7871527777777778,
+        0.83125
+      ],
+      "estimate": 0.8086805555555556,
+      "id": "G1.E.C",
+      "matches": true,
+      "max_absolute_interval_difference": 0.0
+    },
+    {
+      "absolute_point_difference": 2.220446049250313e-16,
+      "bootstrap_defined": 10000,
+      "ci95": [
+        -0.06674107142857144,
+        0.029464285714285835
+      ],
+      "estimate": -0.01651785714285703,
+      "id": "H4.N.C",
+      "matches": true,
+      "max_absolute_interval_difference": 1.1102230246251565e-16
+    },
+    {
+      "absolute_point_difference": 2.220446049250313e-16,
+      "bootstrap_defined": 10000,
+      "ci95": [
+        0.03839285714285723,
+        0.11696428571428574
+      ],
+      "estimate": 0.0767857142857144,
+      "id": "H6.N.C",
+      "matches": true,
+      "max_absolute_interval_difference": 0.0
+    },
+    {
+      "absolute_point_difference": 0.0,
+      "bootstrap_defined": 10000,
+      "ci95": [
+        0.8899999999999999,
+        0.9375
+      ],
+      "estimate": 0.9141666666666666,
+      "id": "Q7.binary_consistency.fresh.gpt-6-sol.C",
+      "matches": true,
+      "max_absolute_interval_difference": 0.0
+    },
+    {
+      "absolute_point_difference": 0.0,
+      "bootstrap_defined": 10000,
+      "ci95": [
+        0.46612622266734194,
+        0.5225589990675324
+      ],
+      "estimate": 0.4941922129270332,
+      "id": "Q1.possibility_share.Anthropic_minus_OpenAI",
+      "matches": true,
+      "max_absolute_interval_difference": 2.220446049250313e-16
+    }
+  ],
+  "draws": 10000,
+  "estimates_sha256": "f69cbbf94c2340ab8252d8ee5bdb7113532a40ca687050edd00afc058749119e",
+  "execution_sha256": "57552ee96a871af29b4e9867ba35a2ae390d238133d7668fa301e27d1620d6e8",
+  "input_csv_sha256": {
+    "supplement/coding-heuristics/mechanical-coding-heuristic-v1/run-2026-11-15_claude-fable-5-2/coded_responses.csv": "44b898961259dc6ccb2b7256fb70b3721f9dcb4d38e20e87d8b07ed7f8e0c042",
+    "supplement/coding-heuristics/zoned-heuristic-v1/results/response_codes.csv": "84afb45c6b50563486b668dd148d7fc9798da571c1acfc9ccae9b4d7b002afb2"
+  },
+  "interval": "95% percentile with linear interpolation",
+  "method": "Independent raw-CSV cell grouping and bootstrap index-array means; no analysis-pipeline imports",
+  "numpy": "2.3.5",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "rng": "numpy.Generator(PCG64)",
+  "schema": "bestiary2-independent-selected-check/1",
+  "scope": "Nine selected B/C estimates, intervals and defined-draw counts; not a full independent replication",
+  "seed": 20261115,
+  "verifier_sha256": "61aba8d948de62c855cd9dcfbdd02a83871c4d2bac1ac0a2ef4321a192b4448e"
+}
