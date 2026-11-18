@@ -7,6 +7,13 @@ human labels informed development and do not independently validate this version
 
 ## Next action: the human pass
 
+**Streamlined option (declared 18 November 2026, before any labels).** A one-key
+page with the same questions and answer codes, and a 41-item core set (all 25
+changed items plus one control per unchanged stratum) that is enough for the
+v1.0-versus-v1.1 comparison. See [quick/STREAMLINE.md](quick/STREAMLINE.md) and
+[quick/labelling-page-quick.html](quick/labelling-page-quick.html). The frozen
+page below remains unchanged and valid.
+
 Download [audit/labelling-page.html](audit/labelling-page.html) and open the
 downloaded file in a browser. It works offline. Read the full prompt and response,
 answer the same recognition/description/marking questions as before, and use the
