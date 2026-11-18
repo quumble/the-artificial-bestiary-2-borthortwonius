@@ -1,0 +1,22 @@
+{
+  "plan_commit": "275678f740b3d07d562f8a87a7d3d3aa37fbaf3e",
+  "key_file_sha256": "1bd21ea93d4e58ab1c2eb61f427b48aca2b3117ac36d7f618e6d902514dde6e4",
+  "selection_canonical_sha256": "abfe7aa02e9d4d35395aaed06ad5fdfbbe1d4133ec32fac246ddf51be6dce438",
+  "selected_counts": {
+    "development": 12,
+    "audit": 64,
+    "targeted": 4
+  },
+  "shortfall_total": 0,
+  "disjoint": true,
+  "sampling_inputs": "released scores; no B results",
+  "seeds": {
+    "development-selection": 60961222124931623701490114278587092594,
+    "state-audit-selection": 214810411387942944124083421121405363890,
+    "targeted-selection": 181756817797244371436027240408109407714,
+    "packet-presentation-development": 98695647369085124162240050556736979363,
+    "packet-presentation-audit": 60929338677668106132597619594684211860,
+    "packet-presentation-targeted": 16253178822383058799344070463267093476
+  },
+  "original_analysis_preserved": true
+}
