@@ -13,6 +13,11 @@ inferential reference for every registered claim.
 kept frozen as the comparison baseline. The reasons, and the limits of that
 choice, are set out under [Status of the main choice](#status-of-the-main-choice).
 
+**Repair candidate.** A separately frozen [zoned version 1.1](zoned-heuristic-v1-1/README.md)
+implements bounded detection fixes and provides a fresh, metadata-blinded
+96-response human audit. Its validation is pending. It does not replace the
+three frozen arms or the existing contrast report.
+
 ## The three arms
 
 | | Mechanical coding heuristic | Context heuristic | Zoned heuristic |

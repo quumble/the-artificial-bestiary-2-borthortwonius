@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bestiary zoned v1.1 quick read</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+/* Same layout as the 84-item page: prompt strip, one reading column, the question and its keys pinned at the bottom. */
+:root{
+  --bg:#f3f4f1; --panel:#ffffff; --ink:#15181c; --muted:#5d646c; --line:#d5d8d2;
+  --no:#3c4650; --yes:#0f6e63; --alt:#8a5a00; --alt2:#5b4bb0; --mark:#fbe7a1; --flag:#b23a2a;
+  --body:"Atkinson Hyperlegible",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root{--bg:#121517; --panel:#1b1f22; --ink:#e9ebe6; --muted:#9aa2a8; --line:#30363b;
+    --no:#aeb7bf; --yes:#4fc3b3; --alt:#e0aa3e; --alt2:#a99cf0; --mark:#5a4a12; --flag:#ef7b68; color-scheme:dark}
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.5;display:grid;grid-template-rows:auto 1fr auto}
+.top{display:flex;gap:16px;align-items:center;padding:10px 20px;border-bottom:1px solid var(--line);background:var(--panel)}
+.count{font-family:var(--mono);font-size:15px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.bar{flex:1;height:6px;background:var(--line);border-radius:3px;overflow:hidden;min-width:60px}
+.bar i{display:block;height:100%;width:0;background:var(--yes);transition:width .15s}
+.save{font-size:13px;color:var(--muted);white-space:nowrap}
+.tag{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--flag);border:1px solid var(--flag);border-radius:4px;padding:1px 6px}
+.read{overflow-y:auto;padding:18px 20px 28px;outline:none}
+.col{max-width:68ch;margin:0 auto}
+.prompt{font-family:var(--mono);font-size:15px;color:var(--muted);margin:0 0 14px;padding-bottom:12px;border-bottom:1px dashed var(--line)}
+.prompt b{color:var(--ink)}
+.resp p{margin:0 0 .7em}
+.resp .h{font-weight:700;margin-top:.6em}
+.resp .li{padding-left:1.3em;text-indent:-1.1em;margin-bottom:.25em}
+.resp .q{border-left:3px solid var(--line);padding-left:12px}
+mark{background:var(--mark);color:inherit;padding:0 2px;border-radius:2px}
+.ask{background:var(--panel);border-top:1px solid var(--line);padding:12px 20px 14px}
+.askin{max-width:980px;margin:0 auto;display:grid;gap:8px}
+.steps{display:flex;gap:6px;font-family:var(--mono);font-size:12px;color:var(--muted)}
+.steps span{padding:1px 7px;border-radius:10px;border:1px solid var(--line)}
+.steps span.on{border-color:var(--ink);color:var(--ink)}
+.steps span.done{background:var(--line);color:var(--ink)}
+.q1{font-size:22px;font-weight:700;margin:0;text-wrap:balance}
+.hint{font-size:14px;color:var(--muted);margin:0}
+.keys{display:flex;flex-wrap:wrap;gap:8px;margin-top:2px}
+button.k{font:inherit;font-size:16px;display:flex;align-items:center;gap:9px;padding:8px 14px 8px 8px;background:transparent;color:var(--ink);border:2px solid var(--c);border-radius:8px;cursor:pointer}
+button.k kbd{font-family:var(--mono);font-weight:600;font-size:16px;background:var(--c);color:var(--panel);min-width:30px;text-align:center;padding:2px 0;border-radius:5px}
+button.k:hover{background:color-mix(in srgb,var(--c) 16%,transparent)}
+button.k:focus-visible,.read:focus-visible{outline:3px solid var(--alt2);outline-offset:2px}
+.foot{font-size:13px;color:var(--muted);display:flex;flex-wrap:wrap;gap:4px 16px}
+.foot kbd{font-family:var(--mono);border:1px solid var(--line);border-radius:4px;padding:0 5px;color:var(--ink)}
+.card{max-width:62ch;margin:4vh auto 0}
+.card h1{font-size:28px;margin:0 0 10px;text-wrap:balance}
+.card table{border-collapse:collapse;margin:12px 0;font-size:16px}
+.card td{padding:5px 14px 5px 0;vertical-align:top;border-bottom:1px solid var(--line)}
+.card td:first-child{font-family:var(--mono);white-space:nowrap}
+.err{color:var(--flag)}
+textarea{width:100%;height:120px;font-family:var(--mono);font-size:12px;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:8px}
+@media (max-width:520px){body{font-size:17px}.q1{font-size:19px}.save{display:none}}
+@media (prefers-reduced-motion:reduce){.bar i{transition:none}}
+</style>
+</head>
+<body>
+<div class="top">
+  <span class="count" id="count">0 / 0</span>
+  <div class="bar"><i id="bar"></i></div>
+  <span class="tag" id="tag" hidden>flagged unsure</span>
+  <span class="save" id="save">saved on this device</span>
+</div>
+<div class="read" id="read" tabindex="0"><div class="col" id="col"></div></div>
+<div class="ask"><div class="askin" id="ask"></div></div>
+<script id="audit-data" type="application/json">__AUDIT_PAYLOAD__</script>
+<script>
+(function(){
+'use strict';
+var D=JSON.parse(document.getElementById('audit-data').textContent);
+var ITEMS=D.items, N=ITEMS.length, CORE=D.core_count, REST=N-CORE;
+var BY={}; ITEMS.forEach(function(it,i){BY[it.item_id]=i});
+var KEY='bestiary2-quick:'+D.audit_id, DOC='labels/zoned-v1-1';
+var LOCALFILE=typeof window.claude==='undefined';
+/* Question wording and answer codes are the frozen v1.1 page's, unchanged. */
+var Q={
+ R:{step:'1 knows it?',q:'Does it say it doesn’t know the word, or that it isn’t a real or established thing?',
+    hint:'Anywhere in the response counts. “This is imaginary, so there’s no set description” counts as yes.',
+    opts:[['f','N','No','no'],['j','Y','Yes','yes']]},
+ D:{step:'2 describes it?',q:'Does it describe the thing itself?',
+    hint:'Guesses about the word (a misspelling, a regional term, something from a game) are not a description.',
+    opts:[['f','N','No','no'],['j','Y','Yes, stated as what it is','yes'],['k','H','Only as a what-if or offered example','alt'],['d','S','Describes a different word instead','alt2']]},
+ M:{step:'3 flags it?',q:'Does it flag that description as invented, fictional, or a guess?',
+    hint:'“Said to” or “seems to” about one feature does not count.',
+    opts:[['f','N','No','no'],['j','Y','Yes','yes'],['k','E','Only the prompt’s own word “imaginary”','alt']]}
+};
+var S={phase:'intro',i:0,step:'R',cur:{},ans:{},t0:0,extend:false,review:false,fresh:false,carry:{}};
+var $=function(id){return document.getElementById(id)};
+
+/* ---------- records ---------- */
+function valid(r){
+  if(!r||typeof r!=='object'||!(r.item_id in BY))return false;
+  if(['Y','N'].indexOf(r.nonrecognition)<0||['Y','H','S','N'].indexOf(r.description)<0)return false;
+  var desc=r.description==='Y'||r.description==='H';
+  if(desc){if(['Y','E','N'].indexOf(r.mark)<0)return false;if(r.mark==='E'&&!ITEMS[BY[r.item_id]].imaginary)return false}
+  else if(r.mark!==null)return false;
+  return typeof r.flagged_unsure==='boolean'&&typeof r.ms==='number'&&r.ms>=0;
+}
+function clean(r){return {item_id:r.item_id,nonrecognition:r.nonrecognition,description:r.description,mark:r.mark,flagged_unsure:r.flagged_unsure,ms:Math.round(r.ms),notes:typeof r.notes==='string'?r.notes:''}}
+function exportObj(){
+  return {schema:D.label_schema,audit_id:D.audit_id,exported_at:new Date().toISOString(),
+    items:ITEMS.filter(function(it){return S.ans[it.item_id]}).map(function(it){return clean(S.ans[it.item_id])})};
+}
+function merge(items,replace){
+  var n=0;(items||[]).forEach(function(r){if(valid(r)&&(replace||!S.ans[r.item_id])){S.ans[r.item_id]=clean(r);n++}});return n;
+}
+function counts(){
+  var a=0,b=0,f=0;ITEMS.forEach(function(it,i){var r=S.ans[it.item_id];if(r){if(i<CORE)a++;else b++;if(r.flagged_unsure)f++}});
+  return {core:a,rest:b,flags:f,all:a+b};
+}
+function nextUnanswered(){
+  for(var i=0;i<CORE;i++)if(!S.ans[ITEMS[i].item_id])return i;
+  if(S.extend)for(i=CORE;i<N;i++)if(!S.ans[ITEMS[i].item_id])return i;
+  return -1;
+}
+function nextFlag(from){for(var i=from;i<N;i++){var r=S.ans[ITEMS[i].item_id];if(r&&r.flagged_unsure)return i}return -1}
+
+/* ---------- storage: this device first, then the page's store if it is there ---------- */
+var db=null,writing=false,dirty=false;
+function status(t){$('save').textContent=t}
+function local(){try{localStorage.setItem(KEY,JSON.stringify({ans:S.ans,extend:S.extend}))}catch(e){}}
+function loadLocal(){try{var s=JSON.parse(localStorage.getItem(KEY)||'{}')||{};merge(Object.keys(s.ans||{}).map(function(k){return s.ans[k]}),true);S.extend=!!s.extend}catch(e){}}
+function push(){
+  if(!db)return; if(writing){dirty=true;return}
+  writing=true;dirty=false;status('saving…');
+  var o=exportObj();o.count=o.items.length;o.total=N;o.core=CORE;
+  Promise.resolve().then(function(){return db.doc(DOC).set(o)})
+    .then(function(){status('saved for Claude to read')},function(){status('saved on this device only')})
+    .then(function(){writing=false;if(dirty)push()});
+}
+function connect(){
+  if(LOCALFILE||!window.claude.use)return;
+  window.claude.use('db').then(function(d){
+    if(!d){status('saved on this device only');return}
+    db=d;
+    return d.doc(DOC).get().then(function(snap){
+      var remote=snap&&(typeof snap.data==='function'?snap.data():(snap.data||snap));
+      var before=Object.keys(S.ans).length;
+      merge(remote&&remote.items,false);
+      if(Object.keys(S.ans).length>before){local();if(S.phase!=='run')draw()}
+      push();
+    });
+  }).catch(function(){status('saved on this device only')});
+}
+
+/* ---------- rendering ---------- */
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+function hl(html,w){if(!w)return html;var re=new RegExp('('+w.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'\\w{0,3})','gi');return html.replace(re,'<mark>$1</mark>')}
+function render(text,w){
+  return text.replace(/\r/g,'').split('\n').map(function(line){
+    if(!line.trim())return '';
+    var cls='',m;
+    if((m=line.match(/^\s*#{1,6}\s+(.*)$/))){cls='h';line=m[1]}
+    else if((m=line.match(/^\s*>\s?(.*)$/))){cls='q';line=m[1]}
+    else if((m=line.match(/^\s*(?:[-*•]|\d+[.)])\s+(.*)$/))){cls='li';line='• '+m[1]}
+    var h=esc(line).replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>').replace(/(^|[^*])\*([^*\n]+)\*/g,'$1<em>$2</em>').replace(/[*_`]{1,3}/g,'');
+    return '<p class="'+cls+'">'+hl(h,w)+'</p>';
+  }).join('');
+}
+function btn(o){return '<button class="k" data-k="'+o[0]+'" style="--c:var(--'+o[3]+')"><kbd>'+o[0].toUpperCase()+'</kbd>'+o[2]+'</button>'}
+function header(){
+  var c=counts(), inRest=S.extend&&c.core>=CORE;
+  $('count').textContent=inRest?('core done · '+c.rest+' / '+REST+' more'):(c.core+' / '+CORE);
+  $('bar').style.width=(inRest?100*c.rest/REST:100*c.core/CORE)+'%';
+  $('tag').hidden=!(S.phase==='run'&&S.cur.flag);
+}
+function draw(){
+  header();
+  var c=counts();
+  if(S.phase==='intro'){
+    var resume=c.all>0;
+    $('col').innerHTML='<div class="card"><h1>'+CORE+' responses, up to three keys each</h1>'+
+      '<p>Same three questions and same keys as the 84. The made-up word is highlighted. Answer at the bottom with one key; the next question or response appears at once.</p>'+
+      '<table><tr><td>F</td><td>No, every time</td></tr><tr><td>J</td><td>Yes, every time</td></tr><tr><td>K / D</td><td>Extra choices, shown only when they apply</td></tr>'+
+      '<tr><td>Space</td><td>Scroll the response (Shift+Space back up)</td></tr><tr><td>Backspace</td><td>Undo the last key</td></tr><tr><td>U</td><td>Flag this one as unsure and keep going</td></tr></table>'+
+      '<p>Go with your first reading. After the '+CORE+' you can stop, or carry on with '+REST+' more. Close the tab whenever you like; it picks up where you stopped.</p></div>';
+    $('ask').innerHTML='<p class="q1">'+(resume?'You have done '+c.all+'. Carry on?':'Ready?')+'</p><div class="keys">'+
+      btn(['j','',resume?'Carry on':'Begin','yes'])+btn(['i','','Paste saved labels','no'])+'</div>';
+    return;
+  }
+  if(S.phase==='paste'){
+    $('col').innerHTML='<div class="card"><h1>Paste saved labels</h1><p>Paste a labels JSON copied or downloaded from this page or the earlier 96 page. Matching answers are replaced; the rest are kept.</p><textarea id="paste"></textarea><p id="pmsg"></p></div>';
+    $('ask').innerHTML='<div class="keys"><button class="k" data-k="load" style="--c:var(--yes)"><kbd>↵</kbd>Load</button><button class="k" data-k="back" style="--c:var(--no)"><kbd>Esc</kbd>Back</button></div>';
+    $('paste').focus();return;
+  }
+  if(S.phase==='break'){
+    $('col').innerHTML='<div class="card"><h1>Core '+CORE+' done</h1><p>That is enough to score v1.0 against v1.1. The '+REST+' more only firm up the overall accuracy figures. Your call.</p></div>';
+    $('ask').innerHTML='<p class="q1">Carry on?</p><div class="keys">'+btn(['j','','Carry on with '+REST+' more','yes'])+btn(['f','','Stop here','no'])+'</div>';
+    return;
+  }
+  if(S.phase==='done'){
+    var more=c.rest<REST;
+    $('col').innerHTML='<div class="card"><h1>'+c.all+' labelled</h1><p>'+c.flags+' flagged as unsure.'+(more?' Core set complete; '+(REST-c.rest)+' optional ones left.':' Every response is labelled.')+'</p>'+
+      '<p>If the top bar says <em>saved for Claude to read</em>, just tell Claude you are done. Otherwise copy the block below into the chat.</p><textarea id="code" readonly></textarea></div>';
+    $('code').value=JSON.stringify(exportObj());
+    $('ask').innerHTML='<div class="keys">'+btn(['c','','Copy the labels','alt2'])+(LOCALFILE?btn(['s','','Download JSON','alt2']):'')+
+      (c.flags?btn(['r','','Review flagged ones','no']):'')+(more?btn(['j','','Carry on with the rest','yes']):'')+'</div>';
+    return;
+  }
+  var it=ITEMS[S.i], q=Q[S.step], opts=q.opts.filter(function(o){return !(o[1]==='E'&&!it.imaginary)});
+  if(S.fresh){$('col').innerHTML='<p class="prompt">Prompt: <b>'+hl(esc(it.prompt),it.word)+'</b></p><div class="resp">'+render(it.response,it.word)+'</div>';$('read').scrollTop=0;S.fresh=false;S.t0=Date.now()}
+  var showM=S.step==='M'||(S.step==='R')||(S.step==='D'&&!S.cur.D);
+  var st=['R','D'].concat(showM?['M']:[]).map(function(k){return '<span class="'+(k===S.step?'on':S.cur[k]?'done':'')+'">'+Q[k].step+'</span>'}).join('');
+  $('ask').innerHTML='<div class="steps">'+st+(S.review?'<span>review</span>':'')+'</div><p class="q1">'+q.q+'</p><p class="hint">'+q.hint+'</p><div class="keys">'+opts.map(btn).join('')+'</div>'+
+    '<div class="foot"><span><kbd>Space</kbd> scroll</span><span><kbd>Backspace</kbd> undo</span><span><kbd>U</kbd> unsure</span></div>';
+}
+
+/* ---------- flow ---------- */
+function start(i,flag){S.phase='run';S.i=i;S.step='R';S.cur={flag:!!flag};S.fresh=true;draw()}
+function proceed(){
+  var c=counts();
+  if(S.review){var f=nextFlag(S.i+1);if(f>=0){start(f,true);return}S.review=false;S.phase='done';draw();return}
+  var nx=nextUnanswered();
+  if(nx>=0){start(nx);return}
+  S.phase=(c.core>=CORE&&!S.extend&&c.rest<REST)?'break':'done';draw();
+}
+function finishItem(){
+  var it=ITEMS[S.i], prev=S.ans[it.item_id];
+  S.ans[it.item_id]={item_id:it.item_id,nonrecognition:S.cur.R,description:S.cur.D,
+    mark:(S.cur.D==='Y'||S.cur.D==='H')?S.cur.M:null,flagged_unsure:!!S.cur.flag,
+    ms:(prev?prev.ms:0)+(S.carry[it.item_id]||0)+Math.max(0,Date.now()-S.t0),notes:''};
+  delete S.carry[it.item_id];
+  local();push();proceed();
+}
+function answer(code){
+  S.cur[S.step]=code;
+  if(S.step==='R'){S.step='D';draw()}
+  else if(S.step==='D'){if(code==='Y'||code==='H'){S.step='M';draw()}else{delete S.cur.M;finishItem()}}
+  else finishItem();
+}
+function undo(){
+  if(S.phase!=='run')return;
+  if(S.step==='M'){delete S.cur.D;S.step='D';draw()}
+  else if(S.step==='D'){delete S.cur.R;S.step='R';draw()}
+  else if(!S.review){
+    var p=S.i-1;while(p>=0&&!S.ans[ITEMS[p].item_id])p--;if(p<0)return;
+    var old=S.ans[ITEMS[p].item_id];S.carry[old.item_id]=old.ms;delete S.ans[ITEMS[p].item_id];local();push();start(p,old.flagged_unsure);
+  }
+}
+function copy(){
+  var t=$('code');t.select();
+  try{navigator.clipboard.writeText(t.value).then(function(){status('copied')},function(){status('select the text and copy it')})}catch(e){status('select the text and copy it')}
+}
+function download(){
+  var url=URL.createObjectURL(new Blob([JSON.stringify(exportObj(),null,2)+'\n'],{type:'application/json'}));
+  var a=document.createElement('a');a.href=url;a.download='bestiary-quick-labels.json';document.body.append(a);a.click();a.remove();
+  setTimeout(function(){URL.revokeObjectURL(url)},1000);
+}
+function loadPaste(){
+  var msg=$('pmsg');
+  try{
+    var o=JSON.parse($('paste').value);
+    if(!o||o.schema!==D.label_schema)throw new Error('That is not a labels file for this audit.');
+    if(o.audit_id!==D.audit_id)throw new Error('Those labels belong to a different audit.');
+    var n=merge(o.items,true);local();push();
+    msg.className='';msg.textContent='Loaded '+n+' labels.';setTimeout(function(){S.phase='intro';draw()},700);
+  }catch(e){msg.className='err';msg.textContent=e.message||'Could not read that.'}
+}
+function act(k){
+  if(S.phase==='intro'){if(k==='j'){var n=nextUnanswered();n>=0?start(n):proceed()}else if(k==='i'){S.phase='paste';draw()}return}
+  if(S.phase==='paste'){if(k==='load')loadPaste();else if(k==='back'){S.phase='intro';draw()}return}
+  if(S.phase==='break'){if(k==='j'){S.extend=true;local();proceed()}else if(k==='f'){S.phase='done';draw()}return}
+  if(S.phase==='done'){
+    if(k==='c')copy();
+    else if(k==='s'&&LOCALFILE)download();
+    else if(k==='r'){var f=nextFlag(0);if(f>=0){S.review=true;start(f,true)}}
+    else if(k==='j'&&counts().rest<REST){S.extend=true;local();proceed()}
+    return;
+  }
+  if(k==='u'){S.cur.flag=!S.cur.flag;header();return}
+  if(k==='backspace'){undo();return}
+  if(k===' '||k==='shift+ '){var r=$('read');r.scrollBy({top:(k===' '?1:-1)*r.clientHeight*0.8,behavior:'auto'});return}
+  var it=ITEMS[S.i],o=Q[S.step].opts.filter(function(o){return o[0]===k&&!(o[1]==='E'&&!it.imaginary)})[0];
+  if(o)answer(o[1]);
+}
+document.addEventListener('keydown',function(e){
+  if(e.metaKey||e.ctrlKey||e.altKey)return;
+  var tag=e.target&&e.target.tagName;
+  if(S.phase==='paste'){if(e.key==='Escape'){e.preventDefault();act('back')}else if(e.key==='Enter'&&!e.shiftKey&&tag!=='TEXTAREA'){e.preventDefault();act('load')}return}
+  if(tag==='TEXTAREA')return;
+  var k=e.key.toLowerCase(); if(k===' '&&e.shiftKey)k='shift+ ';
+  if(['f','j','k','d','u','c','r','s','i','backspace',' ','shift+ '].indexOf(k)<0)return;
+  e.preventDefault();act(k);
+});
+$('ask').addEventListener('click',function(e){var b=e.target.closest('button.k');if(b){act(b.getAttribute('data-k'));b.blur()}});
+loadLocal();
+if(LOCALFILE)status('saved on this device');
+draw();connect();
+})();
+</script>
+</body>
+</html>

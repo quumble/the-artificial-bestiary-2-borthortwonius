@@ -1,0 +1,3089 @@
+{
+  "schema": "bestiary2-zoned-v1.1-audit-manifest/1",
+  "audit_id": "zoned-v1.1-5b04578625efb3581f25",
+  "freeze": {
+    "commit": "3d8b4c35961fbdfb6ca88084dab3c63b9d4df03b",
+    "manifest": "supplement/coding-heuristics/zoned-heuristic-v1-1/FREEZE.sha256",
+    "sha256": "467b36c63ebc9053b8ac5272d1eb596aadc0d651b479d558abc4b02060a0a7d7",
+    "files": [
+      "METHOD.md",
+      "PLAN.md",
+      "audit-template.html",
+      "audit.py",
+      "run_corpus.py",
+      "test_audit.py",
+      "test_audit_ui.cjs",
+      "test_pipeline.py",
+      "test_zoned.py",
+      "zoned_heuristic.py"
+    ]
+  },
+  "sources": {
+    "original_codes_sha256": "84afb45c6b50563486b668dd148d7fc9798da571c1acfc9ccae9b4d7b002afb2",
+    "repaired_codes_sha256": "ea071089abc9467e721d0e2d3cea25b25e646263ce3eed6ed737737bbc4dd237",
+    "raw_archive_sha256": "f3a20641ed5d7136d71529cc7325437c9f415e62a3d41f5513e38c115875aef6",
+    "repaired_execution_sha256": "b306c20eefc96d1e5d8e8014f9302f03e66b33b2352b2a03bd261683119fedae"
+  },
+  "selection_seed": "bestiary2-zoned-v1.1-audit-select-20261115",
+  "order_seed": "bestiary2-zoned-v1.1-audit-order-20261115",
+  "eligible_population": 15775,
+  "selected_count": 41,
+  "strata": [
+    {
+      "stratum": "claude-haiku-4-5|fresh|changed",
+      "population": 45,
+      "selected": 3,
+      "inclusion_probability": 0.06666666666666667,
+      "weight": 15.0
+    },
+    {
+      "stratum": "claude-haiku-4-5|fresh|unchanged",
+      "population": 1135,
+      "selected": 1,
+      "inclusion_probability": 0.0026431718061674008,
+      "weight": 1135.0
+    },
+    {
+      "stratum": "claude-haiku-4-5|known|changed",
+      "population": 33,
+      "selected": 3,
+      "inclusion_probability": 0.09090909090909091,
+      "weight": 11.0
+    },
+    {
+      "stratum": "claude-haiku-4-5|known|unchanged",
+      "population": 758,
+      "selected": 1,
+      "inclusion_probability": 0.00395778364116095,
+      "weight": 758.0
+    },
+    {
+      "stratum": "claude-haiku-5-5|fresh|changed",
+      "population": 1,
+      "selected": 1,
+      "inclusion_probability": 1.0,
+      "weight": 1.0
+    },
+    {
+      "stratum": "claude-haiku-5-5|fresh|unchanged",
+      "population": 1178,
+      "selected": 1,
+      "inclusion_probability": 0.003395585738539898,
+      "weight": 1178.0
+    },
+    {
+      "stratum": "claude-haiku-5-5|known|changed",
+      "population": 0,
+      "selected": 0,
+      "inclusion_probability": null,
+      "weight": null
+    },
+    {
+      "stratum": "claude-haiku-5-5|known|unchanged",
+      "population": 789,
+      "selected": 1,
+      "inclusion_probability": 0.0038022813688212928,
+      "weight": 789.0
+    },
+    {
+      "stratum": "claude-sonnet-4-6|fresh|changed",
+      "population": 0,
+      "selected": 0,
+      "inclusion_probability": null,
+      "weight": null
+    },
+    {
+      "stratum": "claude-sonnet-4-6|fresh|unchanged",
+      "population": 1183,
+      "selected": 1,
+      "inclusion_probability": 0.0076077768385460695,
+      "weight": 1183.0
+    },
+    {
+      "stratum": "claude-sonnet-4-6|known|changed",
+      "population": 0,
+      "selected": 0,
+      "inclusion_probability": null,
+      "weight": null
+    },
+    {
+      "stratum": "claude-sonnet-4-6|known|unchanged",
+      "population": 786,
+      "selected": 1,
+      "inclusion_probability": 0.003816793893129771,
+      "weight": 786.0
+    },
+    {
+      "stratum": "claude-sonnet-5-5|fresh|changed",
+      "population": 2,
+      "selected": 2,
+      "inclusion_probability": 1.0,
+      "weight": 1.0
+    },
+    {
+      "stratum": "claude-sonnet-5-5|fresh|unchanged",
+      "population": 1180,
+      "selected": 1,
+      "inclusion_probability": 0.005084745762711864,
+      "weight": 1180.0
+    },
+    {
+      "stratum": "claude-sonnet-5-5|known|changed",
+      "population": 0,
+      "selected": 0,
+      "inclusion_probability": null,
+      "weight": null
+    },
+    {
+      "stratum": "claude-sonnet-5-5|known|unchanged",
+      "population": 790,
+      "selected": 1,
+      "inclusion_probability": 0.0037974683544303796,
+      "weight": 790.0
+    },
+    {
+      "stratum": "gpt-5.4-mini|fresh|changed",
+      "population": 66,
+      "selected": 3,
+      "inclusion_probability": 0.045454545454545456,
+      "weight": 22.0
+    },
+    {
+      "stratum": "gpt-5.4-mini|fresh|unchanged",
+      "population": 1119,
+      "selected": 1,
+      "inclusion_probability": 0.002680965147453083,
+      "weight": 1119.0
+    },
+    {
+      "stratum": "gpt-5.4-mini|known|changed",
+      "population": 50,
+      "selected": 3,
+      "inclusion_probability": 0.06,
+      "weight": 16.666666666666668
+    },
+    {
+      "stratum": "gpt-5.4-mini|known|unchanged",
+      "population": 736,
+      "selected": 1,
+      "inclusion_probability": 0.004076086956521739,
+      "weight": 736.0
+    },
+    {
+      "stratum": "gpt-5.4-nano|fresh|changed",
+      "population": 29,
+      "selected": 3,
+      "inclusion_probability": 0.10344827586206896,
+      "weight": 9.666666666666666
+    },
+    {
+      "stratum": "gpt-5.4-nano|fresh|unchanged",
+      "population": 1150,
+      "selected": 1,
+      "inclusion_probability": 0.0026086956521739132,
+      "weight": 1150.0
+    },
+    {
+      "stratum": "gpt-5.4-nano|known|changed",
+      "population": 22,
+      "selected": 3,
+      "inclusion_probability": 0.13636363636363635,
+      "weight": 7.333333333333333
+    },
+    {
+      "stratum": "gpt-5.4-nano|known|unchanged",
+      "population": 772,
+      "selected": 1,
+      "inclusion_probability": 0.0038860103626943004,
+      "weight": 772.0
+    },
+    {
+      "stratum": "gpt-6-luna|fresh|changed",
+      "population": 1,
+      "selected": 1,
+      "inclusion_probability": 1.0,
+      "weight": 1.0
+    },
+    {
+      "stratum": "gpt-6-luna|fresh|unchanged",
+      "population": 1183,
+      "selected": 1,
+      "inclusion_probability": 0.006762468300929839,
+      "weight": 1183.0
+    },
+    {
+      "stratum": "gpt-6-luna|known|changed",
+      "population": 0,
+      "selected": 0,
+      "inclusion_probability": null,
+      "weight": null
+    },
+    {
+      "stratum": "gpt-6-luna|known|unchanged",
+      "population": 792,
+      "selected": 1,
+      "inclusion_probability": 0.003787878787878788,
+      "weight": 792.0
+    },
+    {
+      "stratum": "gpt-6-sol|fresh|changed",
+      "population": 4,
+      "selected": 3,
+      "inclusion_probability": 0.75,
+      "weight": 1.3333333333333333
+    },
+    {
+      "stratum": "gpt-6-sol|fresh|unchanged",
+      "population": 1186,
+      "selected": 1,
+      "inclusion_probability": 0.00927487352445194,
+      "weight": 1186.0
+    },
+    {
+      "stratum": "gpt-6-sol|known|changed",
+      "population": 0,
+      "selected": 0,
+      "inclusion_probability": null,
+      "weight": null
+    },
+    {
+      "stratum": "gpt-6-sol|known|unchanged",
+      "population": 785,
+      "selected": 1,
+      "inclusion_probability": 0.003821656050955414,
+      "weight": 785.0
+    }
+  ],
+  "exclusions": {
+    "rule": "Recorded inspection keys plus every exact response-hash duplicate of recorded exposure",
+    "sources": {
+      "zoned-heuristic-v1/dev_keys.json": {
+        "sha256": "633648fbe4b2c8564b83ad909a60a2cf801e865e27fb21c01aa56ef638444fff",
+        "documented_keys": 128,
+        "excluded_matching_corpus_rows": 128
+      },
+      "zoned-heuristic-v1/holdout_keys.json": {
+        "sha256": "30ecc49b052305110cd7e501296809e26013cb92778728f172d2c2d43dde26d5",
+        "documented_keys": 84,
+        "excluded_matching_corpus_rows": 85
+      },
+      "human-pass/human_labels.json": {
+        "sha256": "d384e9587cdf30eb0a63036efdc5b8b643ee7bed9b199eef128f6311707287c1",
+        "documented_keys": 84,
+        "excluded_matching_corpus_rows": 85
+      },
+      "context-heuristic-v1/fixtures/development_allowlist.json": {
+        "sha256": "81c3b3424f7c42bfce1f1ef1895324beb66222f683cef03e2252553cd8197453",
+        "documented_response_hashes": 12,
+        "excluded_matching_corpus_rows": 12
+      },
+      "context-heuristic-v1/fixtures/development_texts.json": {
+        "sha256": "0eadccf1c183a6bbe5c9a299afa255f1c8accd9be48c151d1d3949c32ec49bba",
+        "documented_texts": 12,
+        "excluded_matching_corpus_rows": 12
+      },
+      "context-heuristic-v1/fixtures/boundary_texts.json": {
+        "sha256": "31c14d103b013c70bcb8e80c27253c77f862c69e658e776c9369c74fdf9c204e",
+        "corpus_derived_cards": 8,
+        "excluded_matching_corpus_rows": 8
+      },
+      "human-pass/labelling-page.html": {
+        "sha256": "487bbc4771a580c5da3cb102d95363510ccde6412c56277a5af87df18d8e0d16",
+        "documented_page_texts": 87,
+        "excluded_matching_corpus_rows": 88
+      }
+    },
+    "direct_key_count": 212,
+    "excluded_count": 225,
+    "hash_only_additional_count": 13,
+    "excluded": [
+      {
+        "key": "fresh|claude-haiku-4-5|fresh|alfontrosii|real_object|01",
+        "response_sha256": "83dc847f971f97c527e33f077411d899c052091738b451fafabfa9446d9ba2f9",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-haiku-4-5|fresh|binjeemi|type_of_object|02",
+        "response_sha256": "b6f60dc449a144ac5e3f6d3a3e2a46f7a178fd6cf37be49cf191c48bea6e72a6",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-haiku-4-5|fresh|crendolf|real_idea|04",
+        "response_sha256": "91a9985be9e5272ddd7e7658ea50376efa6fc09fa2a3234ff7fe7a2ffffe3073",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-haiku-4-5|fresh|hambroqet|type_of_idea|03",
+        "response_sha256": "3b3dd18f68b0f8535ed2a397474f65cd3489fa91a35650b12cff80b39d41c718",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-haiku-4-5|fresh|kavanesh|real_idea|01",
+        "response_sha256": "c339a8b84a453b51ad8a79e06d32d079837b81945ee2059207cccd8e1eb866d5",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-haiku-4-5|fresh|lueyschwale|type_of_idea|03",
+        "response_sha256": "6cb863d0cab880bdca5599fece25ba405a7b8930061e1b17e40d14e607b78413",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-haiku-4-5|fresh|mahoggiralf|neutral|01",
+        "response_sha256": "7744071c3024a58556745a593fb62dbb9fb18b08d6617161590cf88419576efd",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-haiku-4-5|fresh|nevoral|real_object|04",
+        "response_sha256": "ab1ad0516d6bb91eeaca113a30c1fd53302c2da384887ac9b0c4e59ca348f562",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-haiku-4-5|fresh|nurbleck|real_object|05",
+        "response_sha256": "32c5187b142aa3d0418b403543d3d5f5d0cb05c056ff72d4a0ca7c36c3619d33",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-haiku-4-5|fresh|tavulen|real_object|02",
+        "response_sha256": "82eca63e250c8967107048ce169e68b4277b930efc4b90c746a6f50f4d0028a8",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-haiku-4-5|fresh|tavulen|type_of_animal|01",
+        "response_sha256": "24e2295e23aea7a74ccb76f3883eaebe7386f56fceb20e79498ac7ba9c7cfb26",
+        "sources": [
+          "context-heuristic-v1/fixtures/boundary_texts.json",
+          "context-heuristic-v1/fixtures/development_allowlist.json",
+          "context-heuristic-v1/fixtures/development_texts.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-haiku-4-5|fresh|tortisinole|imaginary_animal|02",
+        "response_sha256": "9d9bd262d1e9974a12e026a72b24705965c55dd7bd93d22ad5f7a5283b1fd298",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-haiku-4-5|fresh|tortisinole|imaginary_animal|03",
+        "response_sha256": "e92f98a20ea43bde4e82d8d2db0f1f5a2dd1ca35f27907c9fa6511e79302c7de",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-haiku-4-5|fresh|tortisinole|neutral|01",
+        "response_sha256": "dbf56054d22b54d562fc400375f0afcf7bd8d4284badb7462a5ac9775fa2a960",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-haiku-4-5|fresh|tortisinole|type_of_idea|04",
+        "response_sha256": "61403150170e94af09df5ddc3f1f2f5338bafdae9e11a90ef25fab30f4af6c0e",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-haiku-4-5|fresh|trunsavel|neutral|03",
+        "response_sha256": "8b4d2d2d58d89e80471a50ac24871e78dfec41eaccd9df5ca6e7f3218ca8ed04",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-haiku-4-5|fresh|vornaketh|type_of_animal|03",
+        "response_sha256": "6f7636931653acaa711389d6604c5169c635279895d4a88bad5f36c42f5bca07",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-haiku-4-5|fresh|vornaketh|type_of_idea|04",
+        "response_sha256": "95a52de96e0279c29c05d8094591ef852d1bc7a6d1f5a04d18f23db1111a1c4b",
+        "sources": [
+          "context-heuristic-v1/fixtures/boundary_texts.json",
+          "context-heuristic-v1/fixtures/development_allowlist.json",
+          "context-heuristic-v1/fixtures/development_texts.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-haiku-4-5|fresh|vubelan|type_of_animal|01",
+        "response_sha256": "bbd590b679d1eafcb63367b4eaf978c2d55429ce6417c945e20313ef53053978",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-haiku-4-5|fresh|yyiperatrops|imaginary_idea|01",
+        "response_sha256": "0383dbdc15d7c8aba71fa061de492cde5a91e729670306456c080c32d08aaf8e",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-haiku-5-5|fresh|falbrux|imaginary_object|05",
+        "response_sha256": "952048bfcc79fd8e3084ee973aae8ee8c7c5e5c4b7ad2b3fc4fdb2197331aae1",
+        "sources": [
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-haiku-5-5|fresh|falbrux|neutral|05",
+        "response_sha256": "fccd6b33bdaccc75a5e70a0786943ec2b45e5906ca512eba3d0f182be2e8123e",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-haiku-5-5|fresh|falbrux|real_object|04",
+        "response_sha256": "77fb71cad36091ab3e9fe1b20dbfa795f3e821f24d95403eff61cf2864956b8c",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-haiku-5-5|fresh|hambroqet|neutral|04",
+        "response_sha256": "e0e1a34d980c0113108a987168b71e8b93209dbf505338f1ba09370d0bb5d240",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-haiku-5-5|fresh|havorik|imaginary_animal|03",
+        "response_sha256": "708c86d8b241b849902ab2918a9cc3db7ee47b9e9c3472fcdb9fd6c07c21827b",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-haiku-5-5|fresh|kalgarooy|imaginary_idea|01",
+        "response_sha256": "fa2a4d5b91a2679fb0d15c8564b2a384c7e3b63d850a24dd1b1cabf4d7ba58d3",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-haiku-5-5|fresh|kalgarooy|imaginary_idea|02",
+        "response_sha256": "0978ad2930d7d5c2f544ab9dd6b21a9c98b264a56c61214eed84bed69be4f592",
+        "sources": [
+          "context-heuristic-v1/fixtures/boundary_texts.json",
+          "context-heuristic-v1/fixtures/development_allowlist.json",
+          "context-heuristic-v1/fixtures/development_texts.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-haiku-5-5|fresh|kalgarooy|real_idea|05",
+        "response_sha256": "8e0d2a47c086c527d3204a20349dc9d8329e6d169d07960401dd356e62b2a3a1",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-haiku-5-5|fresh|kavanesh|imaginary_object|03",
+        "response_sha256": "fa747376e1624f2734eb2bef7bf35d5c3cc744225604609355ada87624e888a7",
+        "sources": [
+          "context-heuristic-v1/fixtures/boundary_texts.json",
+          "context-heuristic-v1/fixtures/development_allowlist.json",
+          "context-heuristic-v1/fixtures/development_texts.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-haiku-5-5|fresh|lueyschwale|real_idea|01",
+        "response_sha256": "680fa23564a099a4f52b8f19434da675bb08751f5433846fbf14bfa01315792d",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-haiku-5-5|fresh|mahoggiralf|imaginary_idea|05",
+        "response_sha256": "839acfdfd91d44351adc88b20ab090a7c3f3940ed53b5b000ce7d33464698576",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-haiku-5-5|fresh|mispaveld|imaginary_idea|01",
+        "response_sha256": "288c331ad7a2f8c34b77cd0b582049e19751c635b776d70ead2a3b0cf071b602",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-haiku-5-5|fresh|mispaveld|real_object|02",
+        "response_sha256": "35ce09e4c9e29ecd06e7af3ab1919995a747543b67e6d0a25e48913ab1415466",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-haiku-5-5|fresh|nevoral|real_animal|05",
+        "response_sha256": "15ab4a723f3fa1d7ed2d73f2e230b0e51cda9f9f4b180fa8e6559405d6a00bb8",
+        "sources": [
+          "context-heuristic-v1/fixtures/boundary_texts.json",
+          "context-heuristic-v1/fixtures/development_allowlist.json",
+          "context-heuristic-v1/fixtures/development_texts.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-haiku-5-5|fresh|nurbleck|type_of_idea|01",
+        "response_sha256": "e2d53ffa5ee9a5aeb0a6e5be7efdcf37799903dc91a387f99393d03a02450699",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-haiku-5-5|fresh|nurbleck|type_of_idea|03",
+        "response_sha256": "94cc1ec6160f5ee50d2e8ae6b23a940b8a987ef7d22f168270e7206528cd671e",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-haiku-5-5|fresh|tavulen|neutral|04",
+        "response_sha256": "a0faa2b0d43ef28e13c49e81089c834ee30ec25fab97c0b84b0e8b855b852740",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-haiku-5-5|fresh|ullaprisk|real_object|04",
+        "response_sha256": "eff811f6fcb28e34d3f3fdc86074cfc93329893033d7a77acc4e24230ad6f195",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-haiku-5-5|fresh|wenvuto|imaginary_animal|04",
+        "response_sha256": "dbc694c3acadd6bf3b0e2d43f12f3893099c905e8fa2174c49af92934c235612",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-haiku-5-5|fresh|wenvuto|neutral|01",
+        "response_sha256": "191559c608680105746f54b7e283ffd9375e71d798a7f23db53793cb162203bc",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-haiku-5-5|fresh|wenvuto|type_of_idea|01",
+        "response_sha256": "c6291d4aac3eb1c20908253dcee528f39f9612c0f19acd4bbdef555c8c901666",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-sonnet-4-6|fresh|binjeemi|real_idea|04",
+        "response_sha256": "e4ec8dd8abc31eda79044424f0cdafc22c17802266dd79728ac32cf97c4092a6",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-sonnet-4-6|fresh|binjeemi|real_idea|05",
+        "response_sha256": "294555e2119ff6edefc17c8b4200fb1f90420d01bd078a04fd56df686d769c79",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-sonnet-4-6|fresh|brenulo|neutral|02",
+        "response_sha256": "190cbbae910433bb63bcee937c2687009b1a3d83888caaddf9a3370b669365a5",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-sonnet-4-6|fresh|falbrux|imaginary_object|03",
+        "response_sha256": "8b500a1285d0a39f6270276ad7d1bb563156270efce58dd1aa879c847a3a04cf",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-sonnet-4-6|fresh|havorik|imaginary_idea|04",
+        "response_sha256": "7ab594dea6b0855f2bd2f3bf7a14065ccea6e4d9dbe68f5926343ceb14ef566e",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-sonnet-4-6|fresh|kalgarooy|imaginary_animal|05",
+        "response_sha256": "7c15f0c4d763c39729ea5ce2cdf20a0d9a956bc560e3bac6d33ed8012001f5a2",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-sonnet-4-6|fresh|kalgarooy|imaginary_object|02",
+        "response_sha256": "68e6931180259e0f9423b69b943a24b80b1573103af12a48434dc98da1636c25",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-sonnet-4-6|fresh|lusavon|neutral|04",
+        "response_sha256": "3ea3340db1122087a58a3c13a3fccb26ef62fbc1994af0d75ce6090b0f287cf5",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-sonnet-4-6|fresh|mispaveld|imaginary_object|01",
+        "response_sha256": "da5a26176956a8feda1694129b348d7fcf24766661b85d2a22f7e5780797232a",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-sonnet-4-6|fresh|nevoral|real_animal|03",
+        "response_sha256": "5fd4efd45ff8d8bb96b91b93b4da4c240d0f82b641db7533abef8e9bf4cdc7e3",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-sonnet-4-6|fresh|nurbleck|real_animal|04",
+        "response_sha256": "c3bed0268984b7b608cf264b142bd086a91ab3737f82a8126eba46e61c31a9cb",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-sonnet-4-6|fresh|tavulen|real_animal|01",
+        "response_sha256": "3e38fa9829370fdef2a72a1f15010ae2727298e403b927a6ceb23fdc148652ed",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-sonnet-4-6|fresh|tortisinole|real_animal|05",
+        "response_sha256": "296d898beac1d126d85d04e24c8d79cf7334179761ccd48ada4d67b5f606892d",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-sonnet-4-6|fresh|trunsavel|type_of_object|05",
+        "response_sha256": "bf3773ad08ddb62604434ba75ac1d8871a6320a4e4315477b9b96f1f9d5cc491",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-sonnet-4-6|fresh|ullaprisk|imaginary_idea|04",
+        "response_sha256": "7a9f4c950f8bebfe26cd8b3e3f49e9077da9c734f808eec0ef44ab80e7886ece",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-sonnet-4-6|fresh|wenvuto|type_of_object|03",
+        "response_sha256": "ec6e3b1a9e08b3c31142573e741adfea6931c23b096dd4cd55f24b2633c228f7",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-sonnet-4-6|fresh|yyiperatrops|real_idea|04",
+        "response_sha256": "19ac1ba9272aab13d4540089ebda23499aa84751827f05fb0f3a55440888a3b9",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-sonnet-5-5|fresh|binjeemi|neutral|01",
+        "response_sha256": "60c6e3589de6db3848a67a6d5e17c1208aba977a46565a0334f0fddaf0a371f7",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-sonnet-5-5|fresh|brenulo|neutral|02",
+        "response_sha256": "32d85b384c76d51a6025096b56c72e5ab3bf3b006dedaa7c610c720131abf6c1",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-sonnet-5-5|fresh|gorvindle|real_animal|04",
+        "response_sha256": "46fa836bf167e67b953a3984b37e9de70f51d77ed0f1af4863f196d80cd32e00",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-sonnet-5-5|fresh|hambroqet|real_animal|03",
+        "response_sha256": "633b112595489cfe4e0ebe07e9adee20b4af9ba02afe57c00785a92557833f34",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-sonnet-5-5|fresh|hambroqet|real_idea|05",
+        "response_sha256": "5f5c88663971c1e52257b8e0158a2a300c4dc1ed5b607b389b8d639f0db0c37b",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-sonnet-5-5|fresh|havorik|real_animal|01",
+        "response_sha256": "adc7790d34b68c63d8aa47a747711a56c52cd81d73803d185c65b2299ac6e17b",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-sonnet-5-5|fresh|havorik|type_of_idea|01",
+        "response_sha256": "0e588b12cec8be70f1c70a1d1839a67c7be72849f16f0042dda9ccfd4e108440",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-sonnet-5-5|fresh|kalgarooy|imaginary_animal|03",
+        "response_sha256": "0a3482ee22d399c99d18d88332cb850a2ff04d87c339795296f7a7c4dc45a904",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-sonnet-5-5|fresh|mahoggiralf|real_idea|03",
+        "response_sha256": "a087b75c5328390cd30e94d804fdfca8af86af1f2c51eefd3391fc5e17bfdd20",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-sonnet-5-5|fresh|mispaveld|real_animal|01",
+        "response_sha256": "cba812c6cd44f0cffcd7596f92c284523c7a3fe32c25a07092b31a2959506e5b",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-sonnet-5-5|fresh|nevoral|imaginary_object|04",
+        "response_sha256": "964704b1dbc1d03d6a89cbff99283e687b31b678e410f6633a323c83f07afcf7",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-sonnet-5-5|fresh|nevoral|type_of_animal|02",
+        "response_sha256": "e8e02a4b2be2c2f4e0e39d89ed73d22fb527a6aebcefe8a0b8bef0598041664a",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-sonnet-5-5|fresh|nurbleck|neutral|01",
+        "response_sha256": "1efda930a0a1c5fa9d7e0ea0088c2b8a49007c1f425368940a52ef86a7b691cd",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-sonnet-5-5|fresh|tavulen|real_animal|02",
+        "response_sha256": "dde0102d7a801f0ff10cc7e8ec23863e12ab872c741d140354f8c3bff169549d",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-sonnet-5-5|fresh|tavulen|real_idea|02",
+        "response_sha256": "5383b1b7696dbdddd97ad1cd7d0b0ee6531f4346a6e2a845afcfe17a53c929ca",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-sonnet-5-5|fresh|ullaprisk|neutral|04",
+        "response_sha256": "c1332271ab020b17d1fb3e032e3275c85ed4341944f737ef37bb209e398f342c",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-sonnet-5-5|fresh|wenvuto|real_animal|05",
+        "response_sha256": "edcaa052d5518b8155ec02cc55d8ba1c039fe2682b3b19f45b47d8ae563fee50",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|claude-sonnet-5-5|fresh|yyiperatrops|neutral|03",
+        "response_sha256": "5a2bd91e959204366add61f9ff7312d6e12cdf5bb8852ecb28130bd653c8745d",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-5.4-mini|fresh|alfontrosii|imaginary_idea|01",
+        "response_sha256": "a34361bb8da86ef527c41c92a2e3e426efd46f2aeead25eae3f3fb9ec058378d",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-5.4-mini|fresh|alfontrosii|neutral|01",
+        "response_sha256": "412b7af21ccb18aaa6a0a0a624f408271ad1f7a0504881da778a6f36608d7e4d",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-5.4-mini|fresh|alfontrosii|type_of_idea|01",
+        "response_sha256": "449eef8b3b4784435851cb99543b442f68a612a870a0a38270d4f7e9c607a212",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-5.4-mini|fresh|binjeemi|neutral|04",
+        "response_sha256": "8490cb91c86f0d7645649d9d83bef69dc8babc117dcf132e68ba22e365b1298a",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-5.4-mini|fresh|crendolf|real_animal|03",
+        "response_sha256": "edc5786aa3f6e8115607b0c322a866e825d517b21ba7c96b8cb8b86c1600a5e8",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-5.4-mini|fresh|havorik|imaginary_animal|03",
+        "response_sha256": "7b9d3428a6143e50241d3a07f78e2924b94c52082bc57eb9dd89a4a55a412c6b",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-5.4-mini|fresh|kalgarooy|neutral|02",
+        "response_sha256": "92ef51f019caef11b42761327d0d598527a7bc621bf1e4c9c7183a40ac57d3d9",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-5.4-mini|fresh|lueyschwale|real_object|05",
+        "response_sha256": "fa28d8caedf9ebc75f89d3e1115849000155168ec7730847e47844e1a838ef42",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-5.4-mini|fresh|lusavon|imaginary_animal|02",
+        "response_sha256": "378baba07010f3c354ac68c36a1f4acad1facef4babca0db4c5955fc1c725d35",
+        "sources": [
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-5.4-mini|fresh|mahoggiralf|real_idea|05",
+        "response_sha256": "4bde4fa05d0098042c1a116c47eeb146524d13a29d25eabec54afa6191ca8cd3",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-5.4-mini|fresh|nevoral|imaginary_idea|03",
+        "response_sha256": "6d39612a162c1a4872efb936839b277db5a6464a6220b339233d85de7ca6a422",
+        "sources": [
+          "context-heuristic-v1/fixtures/development_allowlist.json",
+          "context-heuristic-v1/fixtures/development_texts.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-5.4-mini|fresh|nevoral|type_of_idea|01",
+        "response_sha256": "03209f36e09b0148a67f40ed9888d32fe7ecaf9659f3ae1f70a1c1d5417d692f",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-5.4-mini|fresh|tavulen|neutral|03",
+        "response_sha256": "ed6ab2d97d9df328cbea613d2414ed258816cf4af6154b0b4b10d5be5c4cbbe8",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-5.4-mini|fresh|tortisinole|real_animal|01",
+        "response_sha256": "e310fc70d8eaf0a3fd2ccaec6bc8b7d0773ca5e054dcf7e9840e8e68efdec70b",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-5.4-mini|fresh|vubelan|neutral|02",
+        "response_sha256": "efcafe53112a2e1582ded37d198e0ab25676c4daf5a65d7e2c867cf6b6334f5d",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-5.4-nano|fresh|brenulo|neutral|05",
+        "response_sha256": "7e02d5574977be2ddf5b7b6276e0e13f1579c9a2371366cddba9c4e4c8833641",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-5.4-nano|fresh|crendolf|real_idea|01",
+        "response_sha256": "d6a28f78933d279599a8082ae13081b36b59479de0e78aa1baa36af43142e7f6",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-5.4-nano|fresh|falbrux|real_idea|05",
+        "response_sha256": "f6b32260487b15180c90f5c1b56a1e15d2eaf79b9c1e242363576c4b2db5f693",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-5.4-nano|fresh|falbrux|real_object|05",
+        "response_sha256": "8629196e7f4eba616c56113322d971f6abc98fa3936fce3cab483154ecd1cad6",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-5.4-nano|fresh|gorvindle|imaginary_animal|02",
+        "response_sha256": "bd63597d972bb5843cbc2ac47b931fa34fd72a8f3a0ff1ada6bb4d53a5acdc4a",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-5.4-nano|fresh|hambroqet|real_animal|04",
+        "response_sha256": "af927e220ae636326cb17514bee375e4b447780ddb3aac667dec552e06d8cb2b",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-5.4-nano|fresh|kalgarooy|real_idea|05",
+        "response_sha256": "8cf2b85931456cc00a8a897ca582015d4d3af5ba0f8d39d5968095a42f60913c",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-5.4-nano|fresh|kalgarooy|type_of_object|05",
+        "response_sha256": "3ef316430d50cd9527dc48c55ddee0f23bc815767cfb3d8835b3df1a46a12a86",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-5.4-nano|fresh|kavanesh|neutral|03",
+        "response_sha256": "98b9253b2b58346f0d12a9d5fe7017e02d68381d01b73e6c15b41c1be7697210",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-5.4-nano|fresh|kavanesh|type_of_idea|04",
+        "response_sha256": "a2737d770e0fe3743b2fc8a604b7144ba3e532e7a120e1970d1bcd4e1aa58c09",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-5.4-nano|fresh|lueyschwale|imaginary_idea|03",
+        "response_sha256": "cb4962f8f6fdf3b8b430a5cf5ae2caf21e1419b87537b75c63b8a7614cb64eea",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-5.4-nano|fresh|lusavon|imaginary_object|01",
+        "response_sha256": "62dc090e1ec8b306296bf727eb6d71cca123f85a1f5f16bce7b14e866e785005",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-5.4-nano|fresh|mahoggiralf|imaginary_object|02",
+        "response_sha256": "04398b20dc25a7056ae696345f1544a659033357cfce53b4b9b8d951cac9c148",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-5.4-nano|fresh|mispaveld|neutral|02",
+        "response_sha256": "92d08128bc09f40d93396a2faf44a008e726a4bb443ef60b409209b4450bf696",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-5.4-nano|fresh|mispaveld|type_of_idea|02",
+        "response_sha256": "a922e59c5938048cedf16330ce0fb86de5a81be7cee6ea8ffb9d7dd9a57ee12d",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-5.4-nano|fresh|nurbleck|type_of_idea|04",
+        "response_sha256": "49a13313643572fbb204e21f377d2d36e28737b5662337088250a07d0e6a195a",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-5.4-nano|fresh|tavulen|type_of_idea|04",
+        "response_sha256": "b28aee6f72c0799db900d64c04eb5aeecd9fda4c183c0be6718e8946999bd825",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-5.4-nano|fresh|trunsavel|imaginary_object|01",
+        "response_sha256": "518a5a6dabe628eda5671962dfd6993a8700cecf8e2ce250d6c7ce6223c0e85c",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-5.4-nano|fresh|ullaprisk|real_animal|02",
+        "response_sha256": "e17036df646a6d901d29155afaa4ffe3f46704eede015f086bf5b76688449e36",
+        "sources": [
+          "context-heuristic-v1/fixtures/boundary_texts.json",
+          "context-heuristic-v1/fixtures/development_allowlist.json",
+          "context-heuristic-v1/fixtures/development_texts.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-5.4-nano|fresh|yyiperatrops|neutral|03",
+        "response_sha256": "3501548e6594aca113a1c8e8972e82c4954563ecd4f447e385d301207f7f42d5",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-5.4-nano|fresh|yyiperatrops|real_object|05",
+        "response_sha256": "74cff0444ded457ffe1f180a34e5a75e44d3d284d02d8996d1c49a72407d7fcc",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-6-luna|fresh|binjeemi|type_of_animal|03",
+        "response_sha256": "e60f755499a006fb40403304a6e91acf40a423422508da009601da68a6bffc34",
+        "sources": [
+          "context-heuristic-v1/fixtures/boundary_texts.json",
+          "context-heuristic-v1/fixtures/development_allowlist.json",
+          "context-heuristic-v1/fixtures/development_texts.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-6-luna|fresh|brenulo|imaginary_animal|02",
+        "response_sha256": "7ddde42b51e169cba4b73938106ccabc0a8344e13bf7cd0b8b224f4568395e1e",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-6-luna|fresh|brenulo|imaginary_idea|04",
+        "response_sha256": "916739ddff1290c0a54ebe4eb68e184f305eb61b57e9f9e882b3692846ca8830",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-6-luna|fresh|crendolf|type_of_idea|04",
+        "response_sha256": "cd808e20c1de48860f334d79ffc2f4527b65f5925ea634724968c19f78bde15b",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-6-luna|fresh|kalgarooy|neutral|05",
+        "response_sha256": "edc278026c26eed89f1fac4c5e423057e6f035401f82f585681af8c533d9c7f0",
+        "sources": [
+          "context-heuristic-v1/fixtures/boundary_texts.json",
+          "context-heuristic-v1/fixtures/development_allowlist.json",
+          "context-heuristic-v1/fixtures/development_texts.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-6-luna|fresh|lusavon|real_idea|04",
+        "response_sha256": "3c0accb9e691caeea021e1bb55a8de1424ee93ded50e281cf0aaedd1bab6bec5",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-6-luna|fresh|nevoral|real_idea|05",
+        "response_sha256": "85cf868ac55730ce3e2e209dc3e4a4e0ea70b504cb776cae1a7cde63a62f8498",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-6-luna|fresh|nurbleck|neutral|05",
+        "response_sha256": "90a724fe7ddf6131ff10aa500faa109ec4a19c6d7b94bf69770e558b1dd8d28f",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-6-luna|fresh|nurbleck|type_of_idea|03",
+        "response_sha256": "fb44f772720db6155bc17c914f47b6f81955cc3ea3c9c4aea04208b2e494be40",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-6-luna|fresh|tavulen|neutral|02",
+        "response_sha256": "ef34004febe4183e945817e2031b154b3be768e4843fd7ac9656e6b4abc0febc",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-6-luna|fresh|tortisinole|type_of_idea|02",
+        "response_sha256": "7247059912ee01875c08385e1b2411161b3a15dde03e35d37ffc44c9b76a0820",
+        "sources": [
+          "context-heuristic-v1/fixtures/development_allowlist.json",
+          "context-heuristic-v1/fixtures/development_texts.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-6-luna|fresh|trunsavel|real_animal|01",
+        "response_sha256": "91924b565fd86158668dc61c92fc88441568b3b5a6b5293ef96f18418b3b4d08",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-6-luna|fresh|vubelan|imaginary_object|04",
+        "response_sha256": "b9d9e89a3ad6d79bcddeb96970073e2141c1b9b003620e06e05ca541cc4fe91f",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-6-luna|fresh|vubelan|neutral|05",
+        "response_sha256": "bc6cfe4b80d8a043952fa65689e7f0f75118515abe8ecc780fe87ec4e27d9f7c",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-6-luna|fresh|vubelan|real_idea|05",
+        "response_sha256": "79689555d89ce382cd6fb2d682882b748bfc3d9f1155ae8709735e1691703ee3",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-6-luna|fresh|wenvuto|imaginary_animal|05",
+        "response_sha256": "ee530e8ab06bb9d912e181548fb5062bdc0da5ab4995c1ddc95f7ace4991be54",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-6-sol|fresh|alfontrosii|type_of_idea|01",
+        "response_sha256": "ed9611a7b2ebc2924136648ae9b6a6994270728e13c9d3b21f0b31e654e089bf",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-6-sol|fresh|brenulo|type_of_idea|02",
+        "response_sha256": "a1995899f7e819c1b8bb5790a05176a04f350df6137d9bbcad915edaaf1ebf95",
+        "sources": [
+          "context-heuristic-v1/fixtures/development_allowlist.json",
+          "context-heuristic-v1/fixtures/development_texts.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-6-sol|fresh|falbrux|imaginary_animal|04",
+        "response_sha256": "fa0e21eec5cbf7e1910a5a68015c2057b514a25ff8537c7330b24617c9c99887",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-6-sol|fresh|kavanesh|real_animal|02",
+        "response_sha256": "7dd668e3a19ea82ce63a49eef4106b8596263a61e66276dc73c0f3a0ac5e5c8a",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-6-sol|fresh|nurbleck|type_of_idea|05",
+        "response_sha256": "8f556be7ee1930ea832fdbad6caaa71fa6723c8e80b6e1346639b911f032745b",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-6-sol|fresh|tavulen|neutral|02",
+        "response_sha256": "8c3ec1bb187d2f2aed9df364695c998ea1ec1c6c73f83d8b5b16af236e143ca2",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-6-sol|fresh|ullaprisk|real_animal|03",
+        "response_sha256": "16bd48c47d785b96b5b85b2ada6deade4b9da60aa4765e168538374214a4c1a8",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-6-sol|fresh|vornaketh|real_idea|01",
+        "response_sha256": "02e042a20df39332e9ee33f971c74530f3ee45195b7ac230b0de23a6190d69cf",
+        "sources": [
+          "context-heuristic-v1/fixtures/development_allowlist.json",
+          "context-heuristic-v1/fixtures/development_texts.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-6-sol|fresh|vornaketh|real_idea|02",
+        "response_sha256": "0fe21251675f0e7dd832587d25d8f07388a54763c6a6c870c6a86390b97c3c3d",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "fresh|gpt-6-sol|fresh|yyiperatrops|imaginary_idea|02",
+        "response_sha256": "8b12758e3bd4f7e8e9a0a70493638935d38c5851bafb0a3af2fbc1b4ae5b13a6",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "known|claude-haiku-4-5|known|borthorpunius|type_of_idea|07",
+        "response_sha256": "a00b1d2813fd1d9d76f41b573e8455a580966605805f6789fcf332ab77209f54",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "known|claude-haiku-4-5|known|borthorpunius|type_of_idea|10",
+        "response_sha256": "61189e34f6eae775e50eba8fc7da459ea69a7726173619863035f76f67495533",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "known|claude-haiku-4-5|known|flembrast|real_animal|04",
+        "response_sha256": "bcecb41e5fa5cc62afcd4ad92e4855bfe92bf0a551f73aa17d998c4304236cc6",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "known|claude-haiku-4-5|known|halthibinny|type_of_animal|06",
+        "response_sha256": "669a609e6ab25a7bfe267713b1b0b5caccb1ec9645a1fdd561ff77f1897d4680",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "known|claude-haiku-4-5|known|kovashent|imaginary_animal|08",
+        "response_sha256": "dc4719d244e3d3a6882ca2c8ddc05174d7162e7af839599c23d765be3e724922",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "known|claude-haiku-4-5|known|kovashent|imaginary_object|09",
+        "response_sha256": "b6839e6696fb4d5dbeed25c3962004731de4791590acb3071cdf549fced56984",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "known|claude-haiku-4-5|known|plindorf|neutral|08",
+        "response_sha256": "ba854d29bc179c4c46ffeaa51c85a6e3bfc0b843d6621995f9787c11cb1b856c",
+        "sources": [
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "known|claude-haiku-4-5|known|plindorf|type_of_animal|08",
+        "response_sha256": "f405bd97ebc88b5ea5d853ef5180bb61d57dd7bda80ffba0cc0debe9934dda78",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "known|claude-haiku-4-5|known|trolnique|real_idea|03",
+        "response_sha256": "9b876e758f88152c366867e3187843d6fbc205f472b6313eab4ce26d6b1f7385",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "known|claude-haiku-5-5|known|borthorpunius|type_of_idea|09",
+        "response_sha256": "562429152334ef0be61c7e4ea6bc715cf46c23ec03b3838bd87d4a053710effa",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "known|claude-haiku-5-5|known|borthorpunius|type_of_object|05",
+        "response_sha256": "a3d18eeb4d6a6f97e29cf554d1e820b48857c088ef716fee27cd56c17ed24e9a",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "known|claude-haiku-5-5|known|flembrast|real_idea|06",
+        "response_sha256": "17de95dc59d8b0fc0fc94b4c054a67c250ee863629a9fb494177afd10b6c4f66",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "known|claude-haiku-5-5|known|halthibinny|neutral|01",
+        "response_sha256": "33aaa99125d853e8dc4ca8cfbf441d8b81d7e9c1d087fccde93bd475b839ca5e",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "known|claude-haiku-5-5|known|halthibinny|real_animal|07",
+        "response_sha256": "bc29dcf2f6a128719e22b74ef6b36ec6af4792a2b11a5772ec8da88351b2fe14",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "known|claude-haiku-5-5|known|halthibinny|type_of_animal|10",
+        "response_sha256": "5110cc58689d76d7e9fc80c2f05b68da35f445e8d886b67c9528fcc62a5b865c",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "known|claude-haiku-5-5|known|purtaneolotomous|type_of_idea|06",
+        "response_sha256": "4801d55caf8c7adf2e5467703dacbd56f2ca79243409300b0098b7564536094b",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "known|claude-haiku-5-5|known|trolnique|neutral|06",
+        "response_sha256": "63de4263626f290c70dff1444c0e817923025d3a1952fb80f054038e17a4c05d",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "known|claude-haiku-5-5|known|trolnique|type_of_animal|08",
+        "response_sha256": "44d01a6ae0feb15cc92cbb9de6b44919fce56858fea7d58887b948e5e53c696e",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "known|claude-haiku-5-5|known|wresanthamulf|imaginary_animal|07",
+        "response_sha256": "00f24929faadb0a545089c231f2f4176edb08b561a97ddba04e919a5f6ffc1f2",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "known|claude-haiku-5-5|known|wresanthamulf|imaginary_object|05",
+        "response_sha256": "82e71b2434234c67da8dd7e689aa56470ed33e734c4d008f1803113700f48e4a",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "known|claude-sonnet-4-6|known|borthorpunius|type_of_idea|07",
+        "response_sha256": "6bb3f25d0aefab5dfcb99722b6a4a426b0c6b8d6d590d8ea8bb2b40f4c87de81",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "known|claude-sonnet-4-6|known|halthibinny|neutral|03",
+        "response_sha256": "7dbca676048925b9351b2cd85c622af68b4d4bee2e3a27509a02d9667c0c97e0",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "known|claude-sonnet-4-6|known|halthibinny|neutral|04",
+        "response_sha256": "d5fdd8eef1f543abf502a1c8457d3ec135b7d48a0c34ac90714c512816505f60",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "known|claude-sonnet-4-6|known|halthibinny|type_of_animal|10",
+        "response_sha256": "a7433e90d53edbb80b5bf52a2fd9ec6e09482d8acdf86d38b2acb87d3d6a897d",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "known|claude-sonnet-4-6|known|kovashent|real_object|09",
+        "response_sha256": "a83d89c379050b55b4459d38b55749dfb81e2e23b605af3b681a104dc4a20aae",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "known|claude-sonnet-4-6|known|kovashent|type_of_animal|05",
+        "response_sha256": "733516acb2456aca6288ddf0fa925505d8fdb62665b98580381f3242baa2fccd",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "known|claude-sonnet-4-6|known|plindorf|imaginary_animal|07",
+        "response_sha256": "f2ed458e4706e0e56e86443e6b20e74551dfd96668b76e4f0b46ab856625972e",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "known|claude-sonnet-4-6|known|purtaneolotomous|real_animal|10",
+        "response_sha256": "950104bc7af7d5f13c601b43caeafb05d6aac37b8b8530477a7e722e91f6e149",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "known|claude-sonnet-4-6|known|purtaneolotomous|real_object|03",
+        "response_sha256": "95ce7b31d1e4668c186bc5d6e6f8a145feadc57f3fae7876c0ec42f9f2a597b5",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "known|claude-sonnet-4-6|known|purtaneolotomous|type_of_idea|03",
+        "response_sha256": "919666118384a00974431586ee09992e83cdd9d4c1e48afddb487d00139d4cdc",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "known|claude-sonnet-4-6|known|purtaneolotomous|type_of_idea|07",
+        "response_sha256": "a69f9b4ead1b2b55343a36be7ad612030e11f76ef56844026ca9b471750dc861",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "known|claude-sonnet-4-6|known|trolnique|type_of_animal|07",
+        "response_sha256": "f46b1309cdf8f138c50c58129f32764e17d28527d7fdf33355781c674ddf2255",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "known|claude-sonnet-4-6|known|trolnique|type_of_animal|08",
+        "response_sha256": "f46b1309cdf8f138c50c58129f32764e17d28527d7fdf33355781c674ddf2255",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "known|claude-sonnet-4-6|known|trolnique|type_of_object|10",
+        "response_sha256": "01ffcad92e5bbc705e472370a5b7e6f2f7f49227cb9d60e74a344be2f13806eb",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "known|claude-sonnet-5-5|known|borthorpunius|real_object|07",
+        "response_sha256": "9ebdb8b128abccbff808f5fb2d417fe28c6e67a37447e5d343635e1fa0960798",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "known|claude-sonnet-5-5|known|flembrast|imaginary_object|08",
+        "response_sha256": "2722e1426e33859e78959ac4e4f521f6a6aefed3aab3fafd09aaf7a6b2d12802",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "known|claude-sonnet-5-5|known|flembrast|type_of_object|09",
+        "response_sha256": "4a1e993278f4851a44b8af19b57a9eca259b242350e743e7f9f696abfa6e025b",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "known|claude-sonnet-5-5|known|halthibinny|imaginary_idea|10",
+        "response_sha256": "e65635a6363e3c171ef4abb41a944b29dcf8b569f47e27b6283515fc036c4778",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "known|claude-sonnet-5-5|known|kovashent|type_of_idea|07",
+        "response_sha256": "ff28767c05372b828d81b47b16a67961ab11cae26849e86d21256ca88c460924",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "known|claude-sonnet-5-5|known|kovashent|type_of_object|04",
+        "response_sha256": "3230915be47778b9ff4451747b5742c148c1c616665da578a7e5be4c791b6518",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "known|claude-sonnet-5-5|known|purtaneolotomous|imaginary_object|04",
+        "response_sha256": "48cd79d45a1610be3b69b0b45a31a4764e62d7d85eb5122340a126089eee52eb",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "known|claude-sonnet-5-5|known|purtaneolotomous|real_object|06",
+        "response_sha256": "7a26d3f600be2cfda502b8d0ae107929c4e7ffc3465a947d90fcb11145498504",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "known|claude-sonnet-5-5|known|trolnique|type_of_idea|02",
+        "response_sha256": "c819d874de5832d3e80fe06c4f848bbca0512cf8ff68140581fa725cbbca9220",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "known|claude-sonnet-5-5|known|wresanthamulf|imaginary_object|01",
+        "response_sha256": "2355dc7e7a56c131c0f398d0fbe45849c150b4ee34818f5c26d8330ef04ade64",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "known|gpt-5.4-mini|known|borthorpunius|imaginary_object|03",
+        "response_sha256": "93fef829232155e08e0f85c691968070462a577dcf791645d80dac8e80b84d3e",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "known|gpt-5.4-mini|known|borthorpunius|type_of_animal|09",
+        "response_sha256": "fe0ed0f62b8592566c42324d8578c535c3dc729fb27697cf8df79977543d8e51",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "known|gpt-5.4-mini|known|flembrast|real_animal|01",
+        "response_sha256": "b4d51c271ccab1e8b6ef30b85904ec8ba944c50368582872c7a8369acb3e3a2a",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "known|gpt-5.4-mini|known|flembrast|type_of_object|10",
+        "response_sha256": "afe578adc149f3e0462afdd0fac6523aadf69e89dbe71dc2e9ce0ce59b910b53",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "known|gpt-5.4-mini|known|halthibinny|real_idea|02",
+        "response_sha256": "f35d3041b4766236d4886504f225d6fe11ed6de3be874e7de75201c856e4e5e1",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "known|gpt-5.4-mini|known|kovashent|imaginary_animal|07",
+        "response_sha256": "d8955f78819f73aef5f2605e3bf3b1327616ad2aa18ec8ce6e4ae93c0b46b91f",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "known|gpt-5.4-mini|known|kovashent|real_idea|07",
+        "response_sha256": "1528a153ccb9935207714bb26f9c9592779bc7c6d94d965a115867d5e9df1bc3",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "known|gpt-5.4-mini|known|purtaneolotomous|imaginary_animal|09",
+        "response_sha256": "7e19d36f4c484ac2b1a749542008dfeca98ac015ac3f70271705c1bc4aef1141",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "known|gpt-5.4-mini|known|purtaneolotomous|neutral|05",
+        "response_sha256": "f9c42b4106cf4678db0612d2f41c2eb9d468c46d658b7ca8ca0677501b05594e",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "known|gpt-5.4-mini|known|purtaneolotomous|real_idea|06",
+        "response_sha256": "1c86aeb1b7f727f77b016cd1f2c957c17ad9b52d677934b1974b504a9b770fcc",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "known|gpt-5.4-mini|known|trolnique|imaginary_object|06",
+        "response_sha256": "48a030071eaf0c90ab45f4beff17a0fe7c09ed5e620f2f1b5ab0946fb20fdb17",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "known|gpt-5.4-mini|known|trolnique|type_of_idea|03",
+        "response_sha256": "a2d76012d5ecad12add13acce2daf02d51101443e0d7e60ccf4edc9f28d6c149",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "known|gpt-5.4-mini|known|wresanthamulf|imaginary_animal|10",
+        "response_sha256": "572ee70365a196591aa5f3262491ac3f819b2a57dfa517fc26ca8f3339c4994e",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "known|gpt-5.4-mini|known|wresanthamulf|real_idea|03",
+        "response_sha256": "1773369a76f15caec0cfa9a199db89464df22de6effb6fd829faa38e43273e9d",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "known|gpt-5.4-nano|known|kovashent|real_animal|08",
+        "response_sha256": "996249eb7a3d21ced4dddca8373e56651c0ad200353e82af2728744170c1b844",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "known|gpt-5.4-nano|known|kovashent|type_of_animal|08",
+        "response_sha256": "95d5cbdd94518a681dcd8bfc63b1e80f8368bc9121aed7c7e0ec3e981ff9383a",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "known|gpt-5.4-nano|known|plindorf|real_object|03",
+        "response_sha256": "ac5c317c2f4dd9777b8e6cb6231cff96730ffb1ceda18a259f47373c2fc8c4dc",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "known|gpt-5.4-nano|known|trolnique|imaginary_idea|09",
+        "response_sha256": "1f771154231946aa5358ac502f531d6b728166b9dfdda869624294f80c60ab8d",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "known|gpt-5.4-nano|known|trolnique|type_of_animal|10",
+        "response_sha256": "4894e5f13590095ab499545a36f15303760441b1e69e2c259122bb03df24f233",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "known|gpt-5.4-nano|known|trolnique|type_of_object|09",
+        "response_sha256": "10c4bae469b7a64e055f9bfcc6ed60b01fad08a9abc6ba311ad3c8896e465746",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "known|gpt-6-luna|known|borthorpunius|neutral|05",
+        "response_sha256": "00214052851dc620b02eab164b7fd3aedeee95e3079fa64c74a78b3062417500",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "known|gpt-6-luna|known|flembrast|type_of_idea|01",
+        "response_sha256": "04860494fc2f18544bf186d7de9a97b4c73da1d5a1fac36ecf75aa18ed09a3e7",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "known|gpt-6-luna|known|flembrast|type_of_object|10",
+        "response_sha256": "4531d7934af8bfe8cfdb57bf086ba81bb63963b77036a512d54113edc8af1d87",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "known|gpt-6-luna|known|halthibinny|type_of_animal|05",
+        "response_sha256": "5a8c970b9bd1abaeb98be607821306d73386f6ea42ff6d60e82738e6065b9b8d",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "known|gpt-6-luna|known|plindorf|real_object|05",
+        "response_sha256": "50f34d04cd1279e2c76a58a1da2f5a57f6ff9c84f88cb7aeda3dddfe2f825210",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "known|gpt-6-luna|known|purtaneolotomous|type_of_object|08",
+        "response_sha256": "bd558049b9bf8823f9f455a768b92d8979be20f8be81a4041c994caf24da2d13",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "known|gpt-6-luna|known|trolnique|real_animal|02",
+        "response_sha256": "23a7507ef15e51950fe7ac3c16ab512ca8b0f595d1a5f801156093a68044447a",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "known|gpt-6-luna|known|wresanthamulf|neutral|03",
+        "response_sha256": "f6a6978da57d5e4b74d60b0b7688de1b1fe26e793f6141d9a9244a84bda1779d",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "known|gpt-6-sol|known|borthorpunius|neutral|07",
+        "response_sha256": "6b8c5fe772ae8232228c7ee8a9065a5c23259c56615cb3f9aae6734884d85bab",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "known|gpt-6-sol|known|flembrast|neutral|01",
+        "response_sha256": "b6e3657e838887577b750c3a39163deb1ccda4da9931ef6cc075c085957c169f",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "known|gpt-6-sol|known|halthibinny|imaginary_animal|04",
+        "response_sha256": "a36614215778075f5f6d6a393d7e90968f75f139001d6cd8d2e04b425ca76538",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "known|gpt-6-sol|known|halthibinny|real_idea|04",
+        "response_sha256": "9985a4f066a741165b7063b3cf9b96314c27dbb1a0d6e3391f979ca71fec07f4",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "known|gpt-6-sol|known|kovashent|neutral|08",
+        "response_sha256": "01897ec6ea446a18b052552381d737c5ec8033a6b5e9e73d4200b7697e1505a7",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "known|gpt-6-sol|known|kovashent|real_idea|09",
+        "response_sha256": "330caafec1b5c589d82da68e885ef511afa252294b0f2617f3d16a488fd2607e",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "known|gpt-6-sol|known|kovashent|type_of_idea|10",
+        "response_sha256": "8e5b17c428a5d6652eee9db23eb0be2a2566a57dc395bc3b5b094e7434674e33",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "known|gpt-6-sol|known|plindorf|imaginary_idea|03",
+        "response_sha256": "450c1c62262aaeabdfda4ff6d7c7153919914eeb4d501a087f1dff72dba6cdd2",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "known|gpt-6-sol|known|plindorf|real_idea|01",
+        "response_sha256": "243912625dd810c4f2aa7302b43705b7afda9269c7725edcf89c148a373bb11d",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "known|gpt-6-sol|known|plindorf|type_of_idea|08",
+        "response_sha256": "4a50872d38e28f4a52c5a2266e69cb3629c1fa55f0ddcdef10a70408602136f9",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "known|gpt-6-sol|known|purtaneolotomous|imaginary_object|03",
+        "response_sha256": "70a9206ef1e4d154bdd915082a33711ceaafa03af5a6b09a4f6fa20a2f4dbd50",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "known|gpt-6-sol|known|purtaneolotomous|type_of_animal|02",
+        "response_sha256": "c8aef1a47432fb2d154b527ebf8f91f817a1402f9d76a8ac699bfff288758f16",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "known|gpt-6-sol|known|trolnique|neutral|07",
+        "response_sha256": "91e986c922366dbb66083e7a7b7a802976410b68063f7f149e2cbeb79823140a",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      },
+      {
+        "key": "known|gpt-6-sol|known|wresanthamulf|real_object|05",
+        "response_sha256": "20ffa7ef80b86fb5b4133933a35442ccb4ea2a1b05648c83293061cdcac154b4",
+        "sources": [
+          "human-pass/human_labels.json",
+          "human-pass/labelling-page.html",
+          "zoned-heuristic-v1/holdout_keys.json"
+        ]
+      },
+      {
+        "key": "known|gpt-6-sol|known|wresanthamulf|type_of_idea|07",
+        "response_sha256": "54331db3d4301a926386c6ebb20c4926741f8d5b1310c7b53e03f87c16e5a275",
+        "sources": [
+          "zoned-heuristic-v1/dev_keys.json"
+        ]
+      }
+    ],
+    "unrecoverable_history": [
+      "earlier audit64",
+      "earlier targeted4",
+      "earlier check32",
+      "informal snippet exposure without complete key logs"
+    ],
+    "freshness": "Disjoint from documented prior inspection; historical exposure is incompletely logged"
+  },
+  "instrument_masks": {
+    "1.0": {
+      "E": 41,
+      "R": 41,
+      "N": 41,
+      "U": 41,
+      "S": 41
+    },
+    "1.1": {
+      "E": 41,
+      "R": 41,
+      "N": 41,
+      "U": 41,
+      "S": 41
+    }
+  },
+  "items": [
+    {
+      "key": "known|gpt-5.4-nano|known|halthibinny|real_animal|05",
+      "stratum": "gpt-5.4-nano|known|changed",
+      "item_id": "item-005",
+      "response_sha256": "6ae74641f82da7dd5bcbe5fb5fe75929f12d117d503249c869be27dfaa04ef60",
+      "prompt_sha256": "11471fccaf53f1541d07b14c6370526a639809e7b7f19447a0238082503313c9",
+      "imaginary": false,
+      "predictions": {
+        "1.0": {
+          "E": 1,
+          "R": 0,
+          "N": 0,
+          "U": 1,
+          "S": 0
+        },
+        "1.1": {
+          "E": 0,
+          "R": 0,
+          "N": 0,
+          "U": 0,
+          "S": 1
+        }
+      }
+    },
+    {
+      "key": "fresh|gpt-5.4-mini|fresh|kalgarooy|real_object|02",
+      "stratum": "gpt-5.4-mini|fresh|changed",
+      "item_id": "item-007",
+      "response_sha256": "019d94cb8344b517232aba7acff87f84775099001283b9b58381573b409a6d41",
+      "prompt_sha256": "2e684f8016976eb52a02bb1693bd47daf098fc8f9d0a39da7e18863a1bb09039",
+      "imaginary": false,
+      "predictions": {
+        "1.0": {
+          "E": 0,
+          "R": 0,
+          "N": 0,
+          "U": 0,
+          "S": 0
+        },
+        "1.1": {
+          "E": 0,
+          "R": 1,
+          "N": 1,
+          "U": 0,
+          "S": 0
+        }
+      }
+    },
+    {
+      "key": "fresh|gpt-6-luna|fresh|tavulen|type_of_object|01",
+      "stratum": "gpt-6-luna|fresh|unchanged",
+      "item_id": "item-011",
+      "response_sha256": "3bf03497bebd134aa720c4ba6b14f1d62b976afd168a61e21b9a03169cdce512",
+      "prompt_sha256": "c8284612aa2ddcee435c7e34dadc5ebf7c29275dabaf0b5e81b9ceefbfe11e1a",
+      "imaginary": false,
+      "predictions": {
+        "1.0": {
+          "E": 0,
+          "R": 1,
+          "N": 1,
+          "U": 0,
+          "S": 0
+        },
+        "1.1": {
+          "E": 0,
+          "R": 1,
+          "N": 1,
+          "U": 0,
+          "S": 0
+        }
+      }
+    },
+    {
+      "key": "known|claude-haiku-4-5|known|wresanthamulf|real_animal|08",
+      "stratum": "claude-haiku-4-5|known|changed",
+      "item_id": "item-012",
+      "response_sha256": "56f5a4a77b1a07c5d91bd0057fea345de816d870faab1b1c7f9e61dd90506a1e",
+      "prompt_sha256": "6905d4ea3d97e8d11ccbaddd5fc866b38d6852999a84e144cd4a30f9bcb8832d",
+      "imaginary": false,
+      "predictions": {
+        "1.0": {
+          "E": 0,
+          "R": 0,
+          "N": 0,
+          "U": 0,
+          "S": 0
+        },
+        "1.1": {
+          "E": 0,
+          "R": 1,
+          "N": 1,
+          "U": 0,
+          "S": 0
+        }
+      }
+    },
+    {
+      "key": "fresh|gpt-5.4-nano|fresh|brenulo|real_object|04",
+      "stratum": "gpt-5.4-nano|fresh|changed",
+      "item_id": "item-014",
+      "response_sha256": "f4df263be670b524c7f3681d3b0d43c4360058ea13b74fed2dc838d5d63b03f3",
+      "prompt_sha256": "5839b2577aaef45eff98f6729ca5bb2ad4e95fc334a6941f9260fae8af2ebf63",
+      "imaginary": false,
+      "predictions": {
+        "1.0": {
+          "E": 1,
+          "R": 0,
+          "N": 0,
+          "U": 1,
+          "S": 0
+        },
+        "1.1": {
+          "E": 0,
+          "R": 0,
+          "N": 0,
+          "U": 0,
+          "S": 1
+        }
+      }
+    },
+    {
+      "key": "known|gpt-5.4-mini|known|wresanthamulf|real_animal|07",
+      "stratum": "gpt-5.4-mini|known|changed",
+      "item_id": "item-015",
+      "response_sha256": "c54c32cfd733b3ecf63d51b52a100f133d2b00381537d6a6a0155cdb563abca8",
+      "prompt_sha256": "6905d4ea3d97e8d11ccbaddd5fc866b38d6852999a84e144cd4a30f9bcb8832d",
+      "imaginary": false,
+      "predictions": {
+        "1.0": {
+          "E": 0,
+          "R": 0,
+          "N": 0,
+          "U": 0,
+          "S": 0
+        },
+        "1.1": {
+          "E": 0,
+          "R": 1,
+          "N": 1,
+          "U": 0,
+          "S": 0
+        }
+      }
+    },
+    {
+      "key": "fresh|gpt-6-sol|fresh|kalgarooy|type_of_animal|04",
+      "stratum": "gpt-6-sol|fresh|changed",
+      "item_id": "item-024",
+      "response_sha256": "d080d68c85d3d8032a249392085945738e5a1d1a4d070d77f3c01def2606f8b2",
+      "prompt_sha256": "c15c964a311a5e17f3c8e0506125ec6a74df521f5ca8bc5500ed7e70580ff40d",
+      "imaginary": false,
+      "predictions": {
+        "1.0": {
+          "E": 1,
+          "R": 1,
+          "N": 0,
+          "U": 0,
+          "S": 0
+        },
+        "1.1": {
+          "E": 0,
+          "R": 1,
+          "N": 1,
+          "U": 0,
+          "S": 1
+        }
+      }
+    },
+    {
+      "key": "fresh|gpt-5.4-mini|fresh|crendolf|imaginary_animal|05",
+      "stratum": "gpt-5.4-mini|fresh|unchanged",
+      "item_id": "item-025",
+      "response_sha256": "9762a062e9ceded3c03510b501d5a1f58eaae62adcebf3f5dbcde73d3c16053d",
+      "prompt_sha256": "323f20988bc9881175b0dba1ecb353c4863bdc3944cca0259ee0959e921282fb",
+      "imaginary": true,
+      "predictions": {
+        "1.0": {
+          "E": 1,
+          "R": 0,
+          "N": 0,
+          "U": 0,
+          "S": 0
+        },
+        "1.1": {
+          "E": 1,
+          "R": 0,
+          "N": 0,
+          "U": 0,
+          "S": 0
+        }
+      }
+    },
+    {
+      "key": "fresh|claude-haiku-4-5|fresh|tavulen|real_animal|05",
+      "stratum": "claude-haiku-4-5|fresh|changed",
+      "item_id": "item-027",
+      "response_sha256": "fdf1ad6c7286fb7b6ed3ee37c5a480a48a602c08fd9b98e5887e6553f8e62c73",
+      "prompt_sha256": "0d6c65065453bfa1ffed4e169d6cc7d29192fb79ec362ae7336c50d931ff0e63",
+      "imaginary": false,
+      "predictions": {
+        "1.0": {
+          "E": 0,
+          "R": 0,
+          "N": 0,
+          "U": 0,
+          "S": 0
+        },
+        "1.1": {
+          "E": 0,
+          "R": 1,
+          "N": 1,
+          "U": 0,
+          "S": 0
+        }
+      }
+    },
+    {
+      "key": "known|claude-sonnet-4-6|known|wresanthamulf|imaginary_idea|01",
+      "stratum": "claude-sonnet-4-6|known|unchanged",
+      "item_id": "item-030",
+      "response_sha256": "8d4dbb2775a7c29d776bd22de8df84128d943e20737d21642cd116563ccb109b",
+      "prompt_sha256": "bfcc5c16e839fc506421720e6bfc65d0e838f8157f9d7f8e8001a08b0db6a959",
+      "imaginary": true,
+      "predictions": {
+        "1.0": {
+          "E": 1,
+          "R": 0,
+          "N": 0,
+          "U": 0,
+          "S": 0
+        },
+        "1.1": {
+          "E": 1,
+          "R": 0,
+          "N": 0,
+          "U": 0,
+          "S": 0
+        }
+      }
+    },
+    {
+      "key": "fresh|claude-sonnet-5-5|fresh|kalgarooy|real_animal|01",
+      "stratum": "claude-sonnet-5-5|fresh|changed",
+      "item_id": "item-033",
+      "response_sha256": "5a0af7c99066c14fff0dac3460ae77806d679926e9e8fb285721c1abdbe99148",
+      "prompt_sha256": "2df7faadd755308f576dd682d757b357a1d0769315ef4789a29a51dbc34f5b45",
+      "imaginary": false,
+      "predictions": {
+        "1.0": {
+          "E": 1,
+          "R": 0,
+          "N": 0,
+          "U": 1,
+          "S": 0
+        },
+        "1.1": {
+          "E": 1,
+          "R": 1,
+          "N": 0,
+          "U": 0,
+          "S": 0
+        }
+      }
+    },
+    {
+      "key": "fresh|gpt-5.4-nano|fresh|crendolf|real_animal|03",
+      "stratum": "gpt-5.4-nano|fresh|changed",
+      "item_id": "item-037",
+      "response_sha256": "87e2fbac3945d9a613071a586716ba68cb5fe3a7986209758b89569505a48722",
+      "prompt_sha256": "ac76542ae1dad5d7f599cfa28beb5315ef2e6fba9d9d78b64432afb12e47f30f",
+      "imaginary": false,
+      "predictions": {
+        "1.0": {
+          "E": 1,
+          "R": 1,
+          "N": 0,
+          "U": 0,
+          "S": 0
+        },
+        "1.1": {
+          "E": 0,
+          "R": 1,
+          "N": 1,
+          "U": 0,
+          "S": 1
+        }
+      }
+    },
+    {
+      "key": "fresh|claude-haiku-5-5|fresh|kavanesh|real_idea|04",
+      "stratum": "claude-haiku-5-5|fresh|changed",
+      "item_id": "item-039",
+      "response_sha256": "ddca4431b11bf4578179abb9b6506e5273bff44ef219e4b774574e840349a8d7",
+      "prompt_sha256": "31234e483811dc062ca8420f8746770d3e73c223e44f1ebf86f00ff3bc7a1cd3",
+      "imaginary": false,
+      "predictions": {
+        "1.0": {
+          "E": 0,
+          "R": 0,
+          "N": 0,
+          "U": 0,
+          "S": 0
+        },
+        "1.1": {
+          "E": 0,
+          "R": 1,
+          "N": 1,
+          "U": 0,
+          "S": 0
+        }
+      }
+    },
+    {
+      "key": "fresh|claude-haiku-5-5|fresh|brenulo|imaginary_animal|03",
+      "stratum": "claude-haiku-5-5|fresh|unchanged",
+      "item_id": "item-040",
+      "response_sha256": "52829552d47656260a47475ccb9f00c045d505dec2b9ee9c36273d3cdb36f018",
+      "prompt_sha256": "e9acf37b5fdca62681d961da400805ed20b39c9d16aa5d61c201a4a27278c63b",
+      "imaginary": true,
+      "predictions": {
+        "1.0": {
+          "E": 1,
+          "R": 0,
+          "N": 0,
+          "U": 1,
+          "S": 0
+        },
+        "1.1": {
+          "E": 1,
+          "R": 0,
+          "N": 0,
+          "U": 1,
+          "S": 0
+        }
+      }
+    },
+    {
+      "key": "known|gpt-5.4-mini|known|wresanthamulf|real_object|06",
+      "stratum": "gpt-5.4-mini|known|changed",
+      "item_id": "item-042",
+      "response_sha256": "62cf27bb5e6347ec794aaea9f9cfc14ae7a933639441aed77e8d6b6288a7035b",
+      "prompt_sha256": "aed10737debd6b61e1de9ccd4895e8a50c17519ea7d7f4dadc2c109fac662344",
+      "imaginary": false,
+      "predictions": {
+        "1.0": {
+          "E": 1,
+          "R": 1,
+          "N": 0,
+          "U": 0,
+          "S": 0
+        },
+        "1.1": {
+          "E": 0,
+          "R": 1,
+          "N": 1,
+          "U": 0,
+          "S": 1
+        }
+      }
+    },
+    {
+      "key": "fresh|claude-haiku-4-5|fresh|kalgarooy|real_object|01",
+      "stratum": "claude-haiku-4-5|fresh|unchanged",
+      "item_id": "item-045",
+      "response_sha256": "0612e05248b0ab124be91f4bf78ddc6c8a84dc47c376672e10cd15cdaddcea40",
+      "prompt_sha256": "2e684f8016976eb52a02bb1693bd47daf098fc8f9d0a39da7e18863a1bb09039",
+      "imaginary": false,
+      "predictions": {
+        "1.0": {
+          "E": 0,
+          "R": 1,
+          "N": 1,
+          "U": 0,
+          "S": 0
+        },
+        "1.1": {
+          "E": 0,
+          "R": 1,
+          "N": 1,
+          "U": 0,
+          "S": 0
+        }
+      }
+    },
+    {
+      "key": "fresh|claude-haiku-4-5|fresh|lueyschwale|type_of_animal|01",
+      "stratum": "claude-haiku-4-5|fresh|changed",
+      "item_id": "item-048",
+      "response_sha256": "66895fd1702e9c195a6ba7355f8f9b8db3b31fc9ed60f59bb210eea1ac3beb62",
+      "prompt_sha256": "f573971d22c5abb78c5dc5b00908da57b5d21e345e3360a3208b78fe9084dd2e",
+      "imaginary": false,
+      "predictions": {
+        "1.0": {
+          "E": 0,
+          "R": 0,
+          "N": 0,
+          "U": 0,
+          "S": 0
+        },
+        "1.1": {
+          "E": 0,
+          "R": 1,
+          "N": 1,
+          "U": 0,
+          "S": 0
+        }
+      }
+    },
+    {
+      "key": "fresh|gpt-5.4-mini|fresh|lueyschwale|real_animal|03",
+      "stratum": "gpt-5.4-mini|fresh|changed",
+      "item_id": "item-052",
+      "response_sha256": "ef3ba7de4932e3a836a7d76295d6517cde4173e73d60513a4e8cb32419738d57",
+      "prompt_sha256": "db971fcc7a3cfc72757b583aee372cca6d2105693d8f881a2b81d08cde973b5e",
+      "imaginary": false,
+      "predictions": {
+        "1.0": {
+          "E": 0,
+          "R": 0,
+          "N": 0,
+          "U": 0,
+          "S": 0
+        },
+        "1.1": {
+          "E": 0,
+          "R": 1,
+          "N": 1,
+          "U": 0,
+          "S": 0
+        }
+      }
+    },
+    {
+      "key": "fresh|claude-sonnet-5-5|fresh|nurbleck|real_animal|03",
+      "stratum": "claude-sonnet-5-5|fresh|unchanged",
+      "item_id": "item-053",
+      "response_sha256": "830c85b2f19db8986d691ed142c67f776f22132424179d3f3cb5dd14f87622c6",
+      "prompt_sha256": "f4a77e18198f5dff69110fc3b1f8599a42ade08b3688d76657a44293b5e054bd",
+      "imaginary": false,
+      "predictions": {
+        "1.0": {
+          "E": 0,
+          "R": 1,
+          "N": 1,
+          "U": 0,
+          "S": 0
+        },
+        "1.1": {
+          "E": 0,
+          "R": 1,
+          "N": 1,
+          "U": 0,
+          "S": 0
+        }
+      }
+    },
+    {
+      "key": "known|gpt-6-luna|known|trolnique|type_of_object|07",
+      "stratum": "gpt-6-luna|known|unchanged",
+      "item_id": "item-054",
+      "response_sha256": "402e645d534c8871ba6a135f7e15b7d988eee2d51b2e3b8c13fda714d72e477c",
+      "prompt_sha256": "49cb0e42c8a736f48ee6be4cd26dd9179176730d4602fc05b0f3ad08de528887",
+      "imaginary": false,
+      "predictions": {
+        "1.0": {
+          "E": 0,
+          "R": 1,
+          "N": 1,
+          "U": 0,
+          "S": 0
+        },
+        "1.1": {
+          "E": 0,
+          "R": 1,
+          "N": 1,
+          "U": 0,
+          "S": 0
+        }
+      }
+    },
+    {
+      "key": "known|claude-sonnet-5-5|known|plindorf|type_of_idea|05",
+      "stratum": "claude-sonnet-5-5|known|unchanged",
+      "item_id": "item-058",
+      "response_sha256": "70c99154fa38d93634cec207fee9589bdb3380914ce8d3d7c11cc74ad0711c74",
+      "prompt_sha256": "6297d8025d11e6668174919025cc97b1763bf674cd56d2aa504f073b16459ebc",
+      "imaginary": false,
+      "predictions": {
+        "1.0": {
+          "E": 0,
+          "R": 1,
+          "N": 1,
+          "U": 0,
+          "S": 0
+        },
+        "1.1": {
+          "E": 0,
+          "R": 1,
+          "N": 1,
+          "U": 0,
+          "S": 0
+        }
+      }
+    },
+    {
+      "key": "fresh|gpt-5.4-nano|fresh|alfontrosii|imaginary_object|03",
+      "stratum": "gpt-5.4-nano|fresh|unchanged",
+      "item_id": "item-059",
+      "response_sha256": "bf9f36a4b31af9158c1268a47d46c6ddb9f8698cefc025d09af52b2ed9562391",
+      "prompt_sha256": "389839ea4b87a0f878e60369f1a3a1e34ba4c52f65500e18a11edf60bad878bb",
+      "imaginary": true,
+      "predictions": {
+        "1.0": {
+          "E": 1,
+          "R": 0,
+          "N": 0,
+          "U": 0,
+          "S": 0
+        },
+        "1.1": {
+          "E": 1,
+          "R": 0,
+          "N": 0,
+          "U": 0,
+          "S": 0
+        }
+      }
+    },
+    {
+      "key": "fresh|gpt-5.4-mini|fresh|mispaveld|real_animal|01",
+      "stratum": "gpt-5.4-mini|fresh|changed",
+      "item_id": "item-060",
+      "response_sha256": "7a9c80726cff579f53d155405e4015c842b54d5531ebae35cf97545fa7c04793",
+      "prompt_sha256": "eaa2dd1f72fdeb25e9b41c9b97472aad178de9d79b4aecd576d852d3a69d2628",
+      "imaginary": false,
+      "predictions": {
+        "1.0": {
+          "E": 0,
+          "R": 0,
+          "N": 0,
+          "U": 0,
+          "S": 0
+        },
+        "1.1": {
+          "E": 0,
+          "R": 1,
+          "N": 1,
+          "U": 0,
+          "S": 0
+        }
+      }
+    },
+    {
+      "key": "known|gpt-6-sol|known|borthorpunius|imaginary_idea|08",
+      "stratum": "gpt-6-sol|known|unchanged",
+      "item_id": "item-062",
+      "response_sha256": "6d82d3fc56c18e5935e935bb842e86113b1259c33cc9534982eb5985f23f5900",
+      "prompt_sha256": "b65ba52909d0f74ae4208392e828f4783cc9cc5da776446509f9d558e1eda6ce",
+      "imaginary": true,
+      "predictions": {
+        "1.0": {
+          "E": 1,
+          "R": 0,
+          "N": 0,
+          "U": 0,
+          "S": 0
+        },
+        "1.1": {
+          "E": 1,
+          "R": 0,
+          "N": 0,
+          "U": 0,
+          "S": 0
+        }
+      }
+    },
+    {
+      "key": "known|claude-haiku-4-5|known|flembrast|real_idea|05",
+      "stratum": "claude-haiku-4-5|known|changed",
+      "item_id": "item-063",
+      "response_sha256": "33a7f6f063490ca4912f9248a239f632e8c7d81444f1ca4b9618bf3e6bdf2521",
+      "prompt_sha256": "5f75d59e6a5b5e351891548da3fb1be91c8c5b52d915998f632fc582da65054a",
+      "imaginary": false,
+      "predictions": {
+        "1.0": {
+          "E": 0,
+          "R": 0,
+          "N": 0,
+          "U": 0,
+          "S": 0
+        },
+        "1.1": {
+          "E": 0,
+          "R": 1,
+          "N": 1,
+          "U": 0,
+          "S": 0
+        }
+      }
+    },
+    {
+      "key": "fresh|claude-haiku-4-5|fresh|vornaketh|real_idea|05",
+      "stratum": "claude-haiku-4-5|fresh|changed",
+      "item_id": "item-067",
+      "response_sha256": "c01c9abedc73da1d5b149b3258532a7a2f0d38398b8fe4a755287668bb1f763d",
+      "prompt_sha256": "8aa8ffbce92eb9190425da1a37bf8ee99734487148ea382775b2627710abe8dc",
+      "imaginary": false,
+      "predictions": {
+        "1.0": {
+          "E": 0,
+          "R": 0,
+          "N": 0,
+          "U": 0,
+          "S": 0
+        },
+        "1.1": {
+          "E": 0,
+          "R": 1,
+          "N": 1,
+          "U": 0,
+          "S": 0
+        }
+      }
+    },
+    {
+      "key": "known|gpt-5.4-nano|known|purtaneolotomous|real_animal|01",
+      "stratum": "gpt-5.4-nano|known|changed",
+      "item_id": "item-068",
+      "response_sha256": "5a8178f63d3765aae6d2d25773b372e67789543e713dd0170fa5a206282c4c96",
+      "prompt_sha256": "bcb940ff955318cb8b5e51e9be60475640dc4dfc85961255a3d3870934200e48",
+      "imaginary": false,
+      "predictions": {
+        "1.0": {
+          "E": 1,
+          "R": 0,
+          "N": 0,
+          "U": 1,
+          "S": 0
+        },
+        "1.1": {
+          "E": 0,
+          "R": 0,
+          "N": 0,
+          "U": 0,
+          "S": 1
+        }
+      }
+    },
+    {
+      "key": "fresh|gpt-5.4-nano|fresh|vubelan|real_animal|04",
+      "stratum": "gpt-5.4-nano|fresh|changed",
+      "item_id": "item-069",
+      "response_sha256": "83141f47da6a1caeafd81c23d2ef4abfac152672aaa0ea35c0201326fd2048c6",
+      "prompt_sha256": "1d809b2378ca132d1b21c5eabdf2b150c7cfdcf1fbcdcb5af003cc683c6ef9e3",
+      "imaginary": false,
+      "predictions": {
+        "1.0": {
+          "E": 1,
+          "R": 0,
+          "N": 0,
+          "U": 0,
+          "S": 0
+        },
+        "1.1": {
+          "E": 0,
+          "R": 0,
+          "N": 0,
+          "U": 0,
+          "S": 1
+        }
+      }
+    },
+    {
+      "key": "fresh|gpt-6-sol|fresh|ullaprisk|imaginary_animal|02",
+      "stratum": "gpt-6-sol|fresh|unchanged",
+      "item_id": "item-071",
+      "response_sha256": "46a0f8764adeb2acf9296c5c41546e86b2c4923ede08489d1810f473728bd77b",
+      "prompt_sha256": "14bfbe2dc914991314725eaf1748ece5bb2d1181bd9b63289f75425716de95f7",
+      "imaginary": true,
+      "predictions": {
+        "1.0": {
+          "E": 1,
+          "R": 0,
+          "N": 0,
+          "U": 1,
+          "S": 0
+        },
+        "1.1": {
+          "E": 1,
+          "R": 0,
+          "N": 0,
+          "U": 1,
+          "S": 0
+        }
+      }
+    },
+    {
+      "key": "known|gpt-5.4-mini|known|flembrast|real_idea|10",
+      "stratum": "gpt-5.4-mini|known|unchanged",
+      "item_id": "item-072",
+      "response_sha256": "2adcaee3ac8f07b56f80b452f494e7c5d2180f736f17b7b56b28ff1de8badfe4",
+      "prompt_sha256": "5f75d59e6a5b5e351891548da3fb1be91c8c5b52d915998f632fc582da65054a",
+      "imaginary": false,
+      "predictions": {
+        "1.0": {
+          "E": 1,
+          "R": 0,
+          "N": 0,
+          "U": 0,
+          "S": 0
+        },
+        "1.1": {
+          "E": 1,
+          "R": 0,
+          "N": 0,
+          "U": 0,
+          "S": 0
+        }
+      }
+    },
+    {
+      "key": "fresh|gpt-6-sol|fresh|kalgarooy|neutral|05",
+      "stratum": "gpt-6-sol|fresh|changed",
+      "item_id": "item-075",
+      "response_sha256": "1aab4c49ca96a8e53c4b3b6120046b02b977a123d0fb4e87880f4037005ca534",
+      "prompt_sha256": "a7d91f9be8cf7c4fc3a2f877364012090238415b284c41fd4795f622c73acef4",
+      "imaginary": false,
+      "predictions": {
+        "1.0": {
+          "E": 1,
+          "R": 1,
+          "N": 0,
+          "U": 0,
+          "S": 0
+        },
+        "1.1": {
+          "E": 0,
+          "R": 1,
+          "N": 1,
+          "U": 0,
+          "S": 1
+        }
+      }
+    },
+    {
+      "key": "fresh|gpt-6-sol|fresh|kalgarooy|type_of_animal|03",
+      "stratum": "gpt-6-sol|fresh|changed",
+      "item_id": "item-076",
+      "response_sha256": "bb258f2a6fda00447749695f57e05df793455c0d56e48b436ebcfecab3a20cd4",
+      "prompt_sha256": "c15c964a311a5e17f3c8e0506125ec6a74df521f5ca8bc5500ed7e70580ff40d",
+      "imaginary": false,
+      "predictions": {
+        "1.0": {
+          "E": 1,
+          "R": 1,
+          "N": 0,
+          "U": 0,
+          "S": 0
+        },
+        "1.1": {
+          "E": 0,
+          "R": 1,
+          "N": 1,
+          "U": 0,
+          "S": 1
+        }
+      }
+    },
+    {
+      "key": "fresh|claude-sonnet-5-5|fresh|kalgarooy|type_of_animal|03",
+      "stratum": "claude-sonnet-5-5|fresh|changed",
+      "item_id": "item-077",
+      "response_sha256": "7669b9891316fa32b02d246051af5981fb4e8242a672ca8dee0d54f03b18e882",
+      "prompt_sha256": "c15c964a311a5e17f3c8e0506125ec6a74df521f5ca8bc5500ed7e70580ff40d",
+      "imaginary": false,
+      "predictions": {
+        "1.0": {
+          "E": 1,
+          "R": 1,
+          "N": 0,
+          "U": 0,
+          "S": 0
+        },
+        "1.1": {
+          "E": 0,
+          "R": 1,
+          "N": 1,
+          "U": 0,
+          "S": 1
+        }
+      }
+    },
+    {
+      "key": "known|gpt-5.4-nano|known|halthibinny|real_animal|02",
+      "stratum": "gpt-5.4-nano|known|changed",
+      "item_id": "item-079",
+      "response_sha256": "d24064842c8a1c3cf425151fc21aee4b3e01b36bd89d765894c3d127997432ac",
+      "prompt_sha256": "11471fccaf53f1541d07b14c6370526a639809e7b7f19447a0238082503313c9",
+      "imaginary": false,
+      "predictions": {
+        "1.0": {
+          "E": 1,
+          "R": 1,
+          "N": 0,
+          "U": 0,
+          "S": 0
+        },
+        "1.1": {
+          "E": 0,
+          "R": 1,
+          "N": 1,
+          "U": 0,
+          "S": 1
+        }
+      }
+    },
+    {
+      "key": "known|claude-haiku-5-5|known|wresanthamulf|imaginary_idea|05",
+      "stratum": "claude-haiku-5-5|known|unchanged",
+      "item_id": "item-081",
+      "response_sha256": "950895bdd444e2aebf198772cb328d9be9f3dc9e515aacae0ec06363cd613755",
+      "prompt_sha256": "bfcc5c16e839fc506421720e6bfc65d0e838f8157f9d7f8e8001a08b0db6a959",
+      "imaginary": true,
+      "predictions": {
+        "1.0": {
+          "E": 1,
+          "R": 1,
+          "N": 0,
+          "U": 0,
+          "S": 0
+        },
+        "1.1": {
+          "E": 1,
+          "R": 1,
+          "N": 0,
+          "U": 0,
+          "S": 0
+        }
+      }
+    },
+    {
+      "key": "fresh|claude-sonnet-4-6|fresh|lueyschwale|type_of_object|02",
+      "stratum": "claude-sonnet-4-6|fresh|unchanged",
+      "item_id": "item-082",
+      "response_sha256": "8db989dada501cd375d04d19f72f89649c3da885421e134e69ff1d6b5377e26f",
+      "prompt_sha256": "be4e19dd13f040a6cb7c73e43f6ecaa0fbc58556e18ffe3317165c723cfbcbeb",
+      "imaginary": false,
+      "predictions": {
+        "1.0": {
+          "E": 0,
+          "R": 1,
+          "N": 1,
+          "U": 0,
+          "S": 0
+        },
+        "1.1": {
+          "E": 0,
+          "R": 1,
+          "N": 1,
+          "U": 0,
+          "S": 0
+        }
+      }
+    },
+    {
+      "key": "fresh|gpt-6-luna|fresh|kalgarooy|type_of_animal|02",
+      "stratum": "gpt-6-luna|fresh|changed",
+      "item_id": "item-085",
+      "response_sha256": "b3f4bc4b4f3f3ff88ec000397763485a7ea0f0ea7b87b1a30929b84929ad97bd",
+      "prompt_sha256": "c15c964a311a5e17f3c8e0506125ec6a74df521f5ca8bc5500ed7e70580ff40d",
+      "imaginary": false,
+      "predictions": {
+        "1.0": {
+          "E": 1,
+          "R": 1,
+          "N": 0,
+          "U": 0,
+          "S": 0
+        },
+        "1.1": {
+          "E": 0,
+          "R": 1,
+          "N": 1,
+          "U": 0,
+          "S": 1
+        }
+      }
+    },
+    {
+      "key": "known|gpt-5.4-mini|known|flembrast|real_idea|06",
+      "stratum": "gpt-5.4-mini|known|changed",
+      "item_id": "item-086",
+      "response_sha256": "2bc980847dd5515cf9c6787bf2b0325cf84683e63f34f59eaf9db3035b522f43",
+      "prompt_sha256": "5f75d59e6a5b5e351891548da3fb1be91c8c5b52d915998f632fc582da65054a",
+      "imaginary": false,
+      "predictions": {
+        "1.0": {
+          "E": 0,
+          "R": 0,
+          "N": 0,
+          "U": 0,
+          "S": 0
+        },
+        "1.1": {
+          "E": 0,
+          "R": 1,
+          "N": 1,
+          "U": 0,
+          "S": 0
+        }
+      }
+    },
+    {
+      "key": "known|claude-haiku-4-5|known|trolnique|type_of_object|02",
+      "stratum": "claude-haiku-4-5|known|unchanged",
+      "item_id": "item-088",
+      "response_sha256": "ee2d2cfabfca05b18b81f39458662cd9485d9318264a756989f366e91835fc99",
+      "prompt_sha256": "49cb0e42c8a736f48ee6be4cd26dd9179176730d4602fc05b0f3ad08de528887",
+      "imaginary": false,
+      "predictions": {
+        "1.0": {
+          "E": 0,
+          "R": 1,
+          "N": 1,
+          "U": 0,
+          "S": 0
+        },
+        "1.1": {
+          "E": 0,
+          "R": 1,
+          "N": 1,
+          "U": 0,
+          "S": 0
+        }
+      }
+    },
+    {
+      "key": "known|claude-haiku-4-5|known|plindorf|real_animal|08",
+      "stratum": "claude-haiku-4-5|known|changed",
+      "item_id": "item-091",
+      "response_sha256": "390f2f4961e62f0d2dcfe138038879e17cbfd42a94c736739e6fabb0a95f85fa",
+      "prompt_sha256": "41c1f4543f1ebe9903b4cdd680dd2db39c4c8d1ce3ce2a33c602d69e12c48eae",
+      "imaginary": false,
+      "predictions": {
+        "1.0": {
+          "E": 0,
+          "R": 0,
+          "N": 0,
+          "U": 0,
+          "S": 0
+        },
+        "1.1": {
+          "E": 0,
+          "R": 1,
+          "N": 1,
+          "U": 0,
+          "S": 0
+        }
+      }
+    },
+    {
+      "key": "known|gpt-5.4-nano|known|purtaneolotomous|type_of_idea|04",
+      "stratum": "gpt-5.4-nano|known|unchanged",
+      "item_id": "item-096",
+      "response_sha256": "928694e2fd5b2ec091e05e3c35a2e42a483213f81288f369e0310a266a6d3840",
+      "prompt_sha256": "5d8cd840b84b12b80740a8e12af5ac3255e097fa0cf0a521f68a856c710c1053",
+      "imaginary": false,
+      "predictions": {
+        "1.0": {
+          "E": 0,
+          "R": 1,
+          "N": 1,
+          "U": 0,
+          "S": 0
+        },
+        "1.1": {
+          "E": 0,
+          "R": 1,
+          "N": 1,
+          "U": 0,
+          "S": 0
+        }
+      }
+    }
+  ],
+  "labels_status": "Unlabelled; no model judgments supplied",
+  "substitution_reference": "Human D=S versus response_type=DESCRIBE_SUBSTITUTE; raw substitute flag is used only for sampling changed status",
+  "masking": "Page includes only opaque IDs, full prompt/response and prompt-imaginary flag",
+  "subset": {
+    "name": "core41",
+    "rule": "Every selected item in a changed stratum, plus, in each populated unchanged stratum, the one selected item with the lowest selection rank (SHA-256 of the frozen selection seed, newline, canonical key).",
+    "parent_manifest_sha256": "8cd88c8c7c5a09c9daa6dae0151cbb6ff4870d413f2019c8462a07096ab7f838",
+    "declared_in": "quick/STREAMLINE.md",
+    "note": "Same audit_id as the parent so labels from either page validate against both."
+  }
+}
