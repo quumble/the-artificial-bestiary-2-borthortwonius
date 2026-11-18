@@ -236,7 +236,8 @@ are unchanged.
 On 18 November 2026, after the 41-item human audit of zoned 1.1, zoned 1.1.0
 was declared the final instrument for this corpus. The declared list is
 rerun once with it, alongside the 1.0.0 baseline. See
-[declared-contrasts/FINAL_INSTRUMENT.md](declared-contrasts/FINAL_INSTRUMENT.md).
+[declared-contrasts/FINAL_INSTRUMENT.md](declared-contrasts/FINAL_INSTRUMENT.md). The rerun is reported in
+[declared-contrasts/rerun-v1-1/REPORT.md](declared-contrasts/rerun-v1-1/REPORT.md).
 
 ## Layout and what is not expanded
 
