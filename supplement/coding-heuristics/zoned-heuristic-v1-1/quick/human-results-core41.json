@@ -1,0 +1,391 @@
+{
+  "schema": "bestiary2-zoned-v1.1-human-audit-results/1",
+  "audit_id": "zoned-v1.1-5b04578625efb3581f25",
+  "human_labels_sha256": "3deba0a2b782a8beb35584034778cd941891bf8a6f3bdeee601e3c5ccd07b706",
+  "n": 41,
+  "unsure_count": 5,
+  "estimand": "Agreement with this human pass on the eligible corpus; inverse stratum inclusion weights N_h/n_h",
+  "limitations": "One informed investigator; historical exposure incompletely logged; unsure exclusion is a sensitivity on the retained labels, not a full-corpus accuracy estimate; no new hypothesis tests",
+  "main_outcomes": [
+    "E",
+    "R",
+    "N",
+    "U"
+  ],
+  "separate_substitution_outcome": "S",
+  "all_labels": {
+    "included_labels": 41,
+    "excluded_unsure": 0,
+    "weight_coverage": 1.0,
+    "outcomes": {
+      "E": {
+        "n": 41,
+        "weight_denominator": 15775.0,
+        "versions": {
+          "1.0": {
+            "correct": 29,
+            "raw_accuracy": 0.7073170731707317,
+            "weighted_accuracy": 0.947406233491812,
+            "false_positive": 11,
+            "false_negative": 1,
+            "unsure_truth_weighted_accuracy_bounds": [
+              0.8292023243528791,
+              0.9484838880084522
+            ]
+          },
+          "1.1": {
+            "correct": 37,
+            "raw_accuracy": 0.9024390243902439,
+            "weighted_accuracy": 0.9499207606973059,
+            "false_positive": 1,
+            "false_negative": 3,
+            "unsure_truth_weighted_accuracy_bounds": [
+              0.8312519809825675,
+              0.9505335446381405
+            ]
+          }
+        },
+        "paired_raw_correctness_difference": 0.1951219512195122,
+        "paired_weighted_correctness_difference": 0.0025145272054939256,
+        "new_only_correct": 10,
+        "old_only_correct": 2,
+        "unsure_truth_weighted_paired_difference_bounds": [
+          0.0003592181722134186,
+          0.0037400950871632334
+        ]
+      },
+      "R": {
+        "n": 41,
+        "weight_denominator": 15775.0,
+        "versions": {
+          "1.0": {
+            "correct": 25,
+            "raw_accuracy": 0.6097560975609756,
+            "weighted_accuracy": 0.9407501320655046,
+            "false_positive": 0,
+            "false_negative": 16,
+            "unsure_truth_weighted_accuracy_bounds": [
+              0.8687374537770736,
+              0.9880190174326468
+            ]
+          },
+          "1.1": {
+            "correct": 38,
+            "raw_accuracy": 0.926829268292683,
+            "weighted_accuracy": 0.9521183306920235,
+            "false_positive": 0,
+            "false_negative": 3,
+            "unsure_truth_weighted_accuracy_bounds": [
+              0.8801056524035923,
+              0.9993872160591654
+            ]
+          }
+        },
+        "paired_raw_correctness_difference": 0.3170731707317073,
+        "paired_weighted_correctness_difference": 0.011368198626518753,
+        "new_only_correct": 13,
+        "old_only_correct": 0,
+        "unsure_truth_weighted_paired_difference_bounds": [
+          0.011368198626518753,
+          0.011368198626518753
+        ]
+      },
+      "N": {
+        "n": 41,
+        "weight_denominator": 15775.0,
+        "versions": {
+          "1.0": {
+            "correct": 19,
+            "raw_accuracy": 0.4634146341463415,
+            "weighted_accuracy": 0.9370311674590597,
+            "false_positive": 1,
+            "false_negative": 21,
+            "unsure_truth_weighted_accuracy_bounds": [
+              0.8183623877443212,
+              0.9376439513998944
+            ]
+          },
+          "1.1": {
+            "correct": 37,
+            "raw_accuracy": 0.9024390243902439,
+            "weighted_accuracy": 0.949920760697306,
+            "false_positive": 2,
+            "false_negative": 2,
+            "unsure_truth_weighted_accuracy_bounds": [
+              0.8306391970417327,
+              0.9499207606973059
+            ]
+          }
+        },
+        "paired_raw_correctness_difference": 0.43902439024390244,
+        "paired_weighted_correctness_difference": 0.01288959323824617,
+        "new_only_correct": 19,
+        "old_only_correct": 1,
+        "unsure_truth_weighted_paired_difference_bounds": [
+          0.011664025356576863,
+          0.01288959323824617
+        ]
+      },
+      "U": {
+        "n": 41,
+        "weight_denominator": 15775.0,
+        "versions": {
+          "1.0": {
+            "correct": 37,
+            "raw_accuracy": 0.9024390243902439,
+            "weighted_accuracy": 0.9983940834653988,
+            "false_positive": 4,
+            "false_negative": 0,
+            "unsure_truth_weighted_accuracy_bounds": [
+              0.8795773903856313,
+              0.9988589540412044
+            ]
+          },
+          "1.1": {
+            "correct": 41,
+            "raw_accuracy": 1.0,
+            "weighted_accuracy": 1.0,
+            "false_positive": 0,
+            "false_negative": 0,
+            "unsure_truth_weighted_accuracy_bounds": [
+              0.880718436344427,
+              1.0000000000000002
+            ]
+          }
+        },
+        "paired_raw_correctness_difference": 0.0975609756097561,
+        "paired_weighted_correctness_difference": 0.0016059165346011622,
+        "new_only_correct": 4,
+        "old_only_correct": 0,
+        "unsure_truth_weighted_paired_difference_bounds": [
+          0.0006761753829899631,
+          0.0016059165346011622
+        ]
+      },
+      "S": {
+        "n": 41,
+        "weight_denominator": 15775.0,
+        "versions": {
+          "1.0": {
+            "correct": 31,
+            "raw_accuracy": 0.7560975609756098,
+            "weighted_accuracy": 0.9974009508716323,
+            "false_positive": 0,
+            "false_negative": 10,
+            "unsure_truth_weighted_accuracy_bounds": [
+              0.8791970417326994,
+              0.9984786053882726
+            ]
+          },
+          "1.1": {
+            "correct": 37,
+            "raw_accuracy": 0.9024390243902439,
+            "weighted_accuracy": 0.9978024300052827,
+            "false_positive": 3,
+            "false_negative": 1,
+            "unsure_truth_weighted_accuracy_bounds": [
+              0.8791336502905442,
+              0.9984152139461174
+            ]
+          }
+        },
+        "paired_raw_correctness_difference": 0.14634146341463414,
+        "paired_weighted_correctness_difference": 0.00040147913365029054,
+        "new_only_correct": 9,
+        "old_only_correct": 3,
+        "unsure_truth_weighted_paired_difference_bounds": [
+          -0.0017538298996302164,
+          0.0016270470153195984
+        ]
+      }
+    }
+  },
+  "excluding_unsure_sensitivity": {
+    "included_labels": 36,
+    "excluded_unsure": 5,
+    "weight_coverage": 0.8807184363444269,
+    "outcomes": {
+      "E": {
+        "n": 36,
+        "weight_denominator": 13893.333333333334,
+        "versions": {
+          "1.0": {
+            "correct": 26,
+            "raw_accuracy": 0.7222222222222222,
+            "weighted_accuracy": 0.9415067178502879,
+            "false_positive": 9,
+            "false_negative": 1,
+            "unsure_truth_weighted_accuracy_bounds": [
+              0.9415067178502879,
+              0.9415067178502879
+            ]
+          },
+          "1.1": {
+            "correct": 33,
+            "raw_accuracy": 0.9166666666666666,
+            "weighted_accuracy": 0.943833973128599,
+            "false_positive": 1,
+            "false_negative": 2,
+            "unsure_truth_weighted_accuracy_bounds": [
+              0.943833973128599,
+              0.943833973128599
+            ]
+          }
+        },
+        "paired_raw_correctness_difference": 0.19444444444444445,
+        "paired_weighted_correctness_difference": 0.002327255278310941,
+        "new_only_correct": 8,
+        "old_only_correct": 1,
+        "unsure_truth_weighted_paired_difference_bounds": [
+          0.002327255278310941,
+          0.002327255278310941
+        ]
+      },
+      "R": {
+        "n": 36,
+        "weight_denominator": 13893.333333333334,
+        "versions": {
+          "1.0": {
+            "correct": 22,
+            "raw_accuracy": 0.6111111111111112,
+            "weighted_accuracy": 0.9863963531669867,
+            "false_positive": 0,
+            "false_negative": 14,
+            "unsure_truth_weighted_accuracy_bounds": [
+              0.9863963531669867,
+              0.9863963531669867
+            ]
+          },
+          "1.1": {
+            "correct": 35,
+            "raw_accuracy": 0.9722222222222222,
+            "weighted_accuracy": 0.9993042226487524,
+            "false_positive": 0,
+            "false_negative": 1,
+            "unsure_truth_weighted_accuracy_bounds": [
+              0.9993042226487524,
+              0.9993042226487524
+            ]
+          }
+        },
+        "paired_raw_correctness_difference": 0.3611111111111111,
+        "paired_weighted_correctness_difference": 0.012907869481765834,
+        "new_only_correct": 13,
+        "old_only_correct": 0,
+        "unsure_truth_weighted_paired_difference_bounds": [
+          0.012907869481765834,
+          0.012907869481765834
+        ]
+      },
+      "N": {
+        "n": 36,
+        "weight_denominator": 13893.333333333334,
+        "versions": {
+          "1.0": {
+            "correct": 15,
+            "raw_accuracy": 0.4166666666666667,
+            "weighted_accuracy": 0.9291986564299425,
+            "false_positive": 1,
+            "false_negative": 20,
+            "unsure_truth_weighted_accuracy_bounds": [
+              0.9291986564299425,
+              0.9291986564299425
+            ]
+          },
+          "1.1": {
+            "correct": 32,
+            "raw_accuracy": 0.8888888888888888,
+            "weighted_accuracy": 0.9431381957773513,
+            "false_positive": 2,
+            "false_negative": 2,
+            "unsure_truth_weighted_accuracy_bounds": [
+              0.9431381957773513,
+              0.9431381957773513
+            ]
+          }
+        },
+        "paired_raw_correctness_difference": 0.4722222222222222,
+        "paired_weighted_correctness_difference": 0.01393953934740883,
+        "new_only_correct": 18,
+        "old_only_correct": 1,
+        "unsure_truth_weighted_paired_difference_bounds": [
+          0.01393953934740883,
+          0.01393953934740883
+        ]
+      },
+      "U": {
+        "n": 36,
+        "weight_denominator": 13893.333333333334,
+        "versions": {
+          "1.0": {
+            "correct": 33,
+            "raw_accuracy": 0.9166666666666666,
+            "weighted_accuracy": 0.9987044145873321,
+            "false_positive": 3,
+            "false_negative": 0,
+            "unsure_truth_weighted_accuracy_bounds": [
+              0.9987044145873321,
+              0.9987044145873321
+            ]
+          },
+          "1.1": {
+            "correct": 36,
+            "raw_accuracy": 1.0,
+            "weighted_accuracy": 1.0000000000000002,
+            "false_positive": 0,
+            "false_negative": 0,
+            "unsure_truth_weighted_accuracy_bounds": [
+              1.0000000000000002,
+              1.0000000000000002
+            ]
+          }
+        },
+        "paired_raw_correctness_difference": 0.08333333333333333,
+        "paired_weighted_correctness_difference": 0.0012955854126679462,
+        "new_only_correct": 3,
+        "old_only_correct": 0,
+        "unsure_truth_weighted_paired_difference_bounds": [
+          0.0012955854126679462,
+          0.0012955854126679462
+        ]
+      },
+      "S": {
+        "n": 36,
+        "weight_denominator": 13893.333333333334,
+        "versions": {
+          "1.0": {
+            "correct": 28,
+            "raw_accuracy": 0.7777777777777778,
+            "weighted_accuracy": 0.9982725527831094,
+            "false_positive": 0,
+            "false_negative": 8,
+            "unsure_truth_weighted_accuracy_bounds": [
+              0.9982725527831094,
+              0.9982725527831094
+            ]
+          },
+          "1.1": {
+            "correct": 33,
+            "raw_accuracy": 0.9166666666666666,
+            "weighted_accuracy": 0.9982005758157391,
+            "false_positive": 2,
+            "false_negative": 1,
+            "unsure_truth_weighted_accuracy_bounds": [
+              0.9982005758157391,
+              0.9982005758157391
+            ]
+          }
+        },
+        "paired_raw_correctness_difference": 0.1388888888888889,
+        "paired_weighted_correctness_difference": -7.197696737044158e-05,
+        "new_only_correct": 7,
+        "old_only_correct": 2,
+        "unsure_truth_weighted_paired_difference_bounds": [
+          -7.197696737044158e-05,
+          -7.197696737044158e-05
+        ]
+      }
+    }
+  },
+  "scored_set": "core"
+}
