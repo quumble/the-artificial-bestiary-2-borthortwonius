@@ -233,6 +233,11 @@ and interpretation was committed before computing the new contrasts.
 All results remain exploratory; the frozen packages and registered outputs
 are unchanged.
 
+On 18 November 2026, after the 41-item human audit of zoned 1.1, zoned 1.1.0
+was declared the final instrument for this corpus. The declared list is
+rerun once with it, alongside the 1.0.0 baseline. See
+[declared-contrasts/FINAL_INSTRUMENT.md](declared-contrasts/FINAL_INSTRUMENT.md).
+
 ## Layout and what is not expanded
 
 ```
