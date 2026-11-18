@@ -1,0 +1,118 @@
+{
+  "changed": 25,
+  "controls": 16,
+  "limits": "One reader; items selected on zoned disagreement, not on the registered scorer; not a corpus error rate.",
+  "n": 41,
+  "registered_N_misses_by_frame": {
+    "real|registered_E=0|registered_R=0": 5,
+    "real|registered_E=1|registered_R=0": 1,
+    "real|registered_E=1|registered_R=1": 2,
+    "type_of|registered_E=1|registered_R=1": 2
+  },
+  "schema": "bestiary2-registered-on-core41/1",
+  "status": "undeclared descriptive check",
+  "table": {
+    "E": {
+      "registered": {
+        "correct_changed_of_25": 18,
+        "correct_controls_of_16": 15,
+        "correct_of_41": 33,
+        "false_negative": 1,
+        "false_positive": 7
+      },
+      "zoned_1.0": {
+        "correct_changed_of_25": 14,
+        "correct_controls_of_16": 15,
+        "correct_of_41": 29,
+        "false_negative": 1,
+        "false_positive": 11
+      },
+      "zoned_1.1": {
+        "correct_changed_of_25": 22,
+        "correct_controls_of_16": 15,
+        "correct_of_41": 37,
+        "false_negative": 3,
+        "false_positive": 1
+      }
+    },
+    "N": {
+      "registered": {
+        "correct_changed_of_25": 15,
+        "correct_controls_of_16": 15,
+        "correct_of_41": 30,
+        "false_negative": 10,
+        "false_positive": 1
+      },
+      "zoned_1.0": {
+        "correct_changed_of_25": 4,
+        "correct_controls_of_16": 15,
+        "correct_of_41": 19,
+        "false_negative": 21,
+        "false_positive": 1
+      },
+      "zoned_1.1": {
+        "correct_changed_of_25": 22,
+        "correct_controls_of_16": 15,
+        "correct_of_41": 37,
+        "false_negative": 2,
+        "false_positive": 2
+      }
+    },
+    "R": {
+      "registered": {
+        "correct_changed_of_25": 18,
+        "correct_controls_of_16": 15,
+        "correct_of_41": 33,
+        "false_negative": 8,
+        "false_positive": 0
+      },
+      "zoned_1.0": {
+        "correct_changed_of_25": 10,
+        "correct_controls_of_16": 15,
+        "correct_of_41": 25,
+        "false_negative": 16,
+        "false_positive": 0
+      },
+      "zoned_1.1": {
+        "correct_changed_of_25": 23,
+        "correct_controls_of_16": 15,
+        "correct_of_41": 38,
+        "false_negative": 3,
+        "false_positive": 0
+      }
+    },
+    "U": {
+      "registered": {
+        "correct_changed_of_25": 24,
+        "correct_controls_of_16": 16,
+        "correct_of_41": 40,
+        "false_negative": 0,
+        "false_positive": 1
+      },
+      "zoned_1.0": {
+        "correct_changed_of_25": 21,
+        "correct_controls_of_16": 16,
+        "correct_of_41": 37,
+        "false_negative": 0,
+        "false_positive": 4
+      },
+      "zoned_1.1": {
+        "correct_changed_of_25": 25,
+        "correct_controls_of_16": 16,
+        "correct_of_41": 41,
+        "false_negative": 0,
+        "false_positive": 0
+      }
+    }
+  },
+  "v1_1_recoveries_also_detected_by_registered": {
+    "N": {
+      "registered_also_detects": 11,
+      "v1.1_recovered_and_human_agrees": 19
+    },
+    "R": {
+      "registered_also_detects": 8,
+      "v1.1_recovered_and_human_agrees": 13
+    }
+  }
+}

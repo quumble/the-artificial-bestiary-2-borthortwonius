@@ -1,0 +1,242 @@
+{
+  "G1.E": {
+    "c_v1_0": {
+      "direction": "common_positive_direction",
+      "interpretation": "Exploratory unadjusted intervals; no equivalence or familywise claim.",
+      "mixed_point_estimate_directions": false,
+      "paired_differences_excluding_zero": [
+        "G1.E.A-B",
+        "G1.E.A-C",
+        "G1.E.B-C"
+      ],
+      "status": "direction_robust"
+    },
+    "c_v1_1": {
+      "direction": "common_positive_direction",
+      "interpretation": "Exploratory unadjusted intervals; no equivalence or familywise claim.",
+      "mixed_point_estimate_directions": false,
+      "paired_differences_excluding_zero": [
+        "G1.E.A-B",
+        "G1.E.A-C",
+        "G1.E.B-C"
+      ],
+      "status": "direction_robust"
+    }
+  },
+  "G1.N": {
+    "c_v1_0": {
+      "direction": "common_negative_direction",
+      "interpretation": "Exploratory unadjusted intervals; no equivalence or familywise claim.",
+      "mixed_point_estimate_directions": false,
+      "paired_differences_excluding_zero": [
+        "G1.N.A-B",
+        "G1.N.A-C",
+        "G1.N.B-C"
+      ],
+      "status": "direction_robust"
+    },
+    "c_v1_1": {
+      "direction": "common_negative_direction",
+      "interpretation": "Exploratory unadjusted intervals; no equivalence or familywise claim.",
+      "mixed_point_estimate_directions": false,
+      "paired_differences_excluding_zero": [
+        "G1.N.A-B",
+        "G1.N.A-C",
+        "G1.N.B-C"
+      ],
+      "status": "direction_robust"
+    }
+  },
+  "G1.U": {
+    "c_v1_0": {
+      "direction": "common_positive_direction",
+      "interpretation": "Exploratory unadjusted intervals; no equivalence or familywise claim.",
+      "mixed_point_estimate_directions": false,
+      "paired_differences_excluding_zero": [
+        "G1.U.A-B",
+        "G1.U.A-C"
+      ],
+      "status": "direction_robust"
+    },
+    "c_v1_1": {
+      "direction": "common_positive_direction",
+      "interpretation": "Exploratory unadjusted intervals; no equivalence or familywise claim.",
+      "mixed_point_estimate_directions": false,
+      "paired_differences_excluding_zero": [
+        "G1.U.A-B",
+        "G1.U.A-C"
+      ],
+      "status": "direction_robust"
+    }
+  },
+  "G2.E": {
+    "c_v1_0": {
+      "direction": "common_positive_direction",
+      "interpretation": "Exploratory unadjusted intervals; no equivalence or familywise claim.",
+      "mixed_point_estimate_directions": false,
+      "paired_differences_excluding_zero": [
+        "G2.E.A-B",
+        "G2.E.A-C",
+        "G2.E.B-C"
+      ],
+      "status": "direction_robust"
+    },
+    "c_v1_1": {
+      "direction": "common_positive_direction",
+      "interpretation": "Exploratory unadjusted intervals; no equivalence or familywise claim.",
+      "mixed_point_estimate_directions": false,
+      "paired_differences_excluding_zero": [
+        "G2.E.A-B",
+        "G2.E.A-C",
+        "G2.E.B-C"
+      ],
+      "status": "direction_robust"
+    }
+  },
+  "G2.N": {
+    "c_v1_0": {
+      "direction": "common_negative_direction",
+      "interpretation": "Exploratory unadjusted intervals; no equivalence or familywise claim.",
+      "mixed_point_estimate_directions": false,
+      "paired_differences_excluding_zero": [
+        "G2.N.A-B",
+        "G2.N.A-C"
+      ],
+      "status": "direction_robust"
+    },
+    "c_v1_1": {
+      "direction": "common_negative_direction",
+      "interpretation": "Exploratory unadjusted intervals; no equivalence or familywise claim.",
+      "mixed_point_estimate_directions": false,
+      "paired_differences_excluding_zero": [
+        "G2.N.A-B",
+        "G2.N.A-C",
+        "G2.N.B-C"
+      ],
+      "status": "direction_robust"
+    }
+  },
+  "G2.U": {
+    "c_v1_0": {
+      "direction": "common_positive_direction",
+      "interpretation": "Exploratory unadjusted intervals; no equivalence or familywise claim.",
+      "mixed_point_estimate_directions": false,
+      "paired_differences_excluding_zero": [
+        "G2.U.A-C",
+        "G2.U.B-C"
+      ],
+      "status": "direction_robust"
+    },
+    "c_v1_1": {
+      "direction": "common_positive_direction",
+      "interpretation": "Exploratory unadjusted intervals; no equivalence or familywise claim.",
+      "mixed_point_estimate_directions": false,
+      "paired_differences_excluding_zero": [
+        "G2.U.A-C",
+        "G2.U.B-C"
+      ],
+      "status": "direction_robust"
+    }
+  },
+  "H2.N": {
+    "c_v1_0": {
+      "direction": "common_negative_direction",
+      "interpretation": "Exploratory unadjusted intervals; no equivalence or familywise claim.",
+      "mixed_point_estimate_directions": false,
+      "paired_differences_excluding_zero": [
+        "H2.N.A-B",
+        "H2.N.A-C"
+      ],
+      "status": "direction_robust"
+    },
+    "c_v1_1": {
+      "direction": "common_negative_direction",
+      "interpretation": "Exploratory unadjusted intervals; no equivalence or familywise claim.",
+      "mixed_point_estimate_directions": false,
+      "paired_differences_excluding_zero": [
+        "H2.N.A-B",
+        "H2.N.A-C",
+        "H2.N.B-C"
+      ],
+      "status": "direction_robust"
+    }
+  },
+  "H3.U": {
+    "c_v1_0": {
+      "direction": "common_direction_not_established",
+      "interpretation": "Exploratory unadjusted intervals; no equivalence or familywise claim.",
+      "mixed_point_estimate_directions": false,
+      "paired_differences_excluding_zero": [],
+      "status": "direction_unresolved"
+    },
+    "c_v1_1": {
+      "direction": "common_direction_not_established",
+      "interpretation": "Exploratory unadjusted intervals; no equivalence or familywise claim.",
+      "mixed_point_estimate_directions": false,
+      "paired_differences_excluding_zero": [],
+      "status": "direction_unresolved"
+    }
+  },
+  "H4.N": {
+    "c_v1_0": {
+      "direction": "mixed_point_estimate_directions",
+      "interpretation": "Exploratory unadjusted intervals; no equivalence or familywise claim.",
+      "mixed_point_estimate_directions": true,
+      "paired_differences_excluding_zero": [
+        "H4.N.A-B",
+        "H4.N.A-C"
+      ],
+      "status": "direction_unresolved"
+    },
+    "c_v1_1": {
+      "direction": "mixed_point_estimate_directions",
+      "interpretation": "Exploratory unadjusted intervals; no equivalence or familywise claim.",
+      "mixed_point_estimate_directions": true,
+      "paired_differences_excluding_zero": [
+        "H4.N.A-B",
+        "H4.N.A-C"
+      ],
+      "status": "direction_unresolved"
+    }
+  },
+  "H5.U": {
+    "c_v1_0": {
+      "direction": "common_direction_not_established",
+      "interpretation": "Exploratory unadjusted intervals; no equivalence or familywise claim.",
+      "mixed_point_estimate_directions": false,
+      "paired_differences_excluding_zero": [
+        "H5.U.A-B",
+        "H5.U.A-C",
+        "H5.U.B-C"
+      ],
+      "status": "direction_unresolved"
+    },
+    "c_v1_1": {
+      "direction": "common_direction_not_established",
+      "interpretation": "Exploratory unadjusted intervals; no equivalence or familywise claim.",
+      "mixed_point_estimate_directions": false,
+      "paired_differences_excluding_zero": [
+        "H5.U.A-B",
+        "H5.U.A-C",
+        "H5.U.B-C"
+      ],
+      "status": "direction_unresolved"
+    }
+  },
+  "H6.N": {
+    "c_v1_0": {
+      "direction": "common_direction_not_established",
+      "interpretation": "Exploratory unadjusted intervals; no equivalence or familywise claim.",
+      "mixed_point_estimate_directions": false,
+      "paired_differences_excluding_zero": [],
+      "status": "direction_unresolved"
+    },
+    "c_v1_1": {
+      "direction": "common_direction_not_established",
+      "interpretation": "Exploratory unadjusted intervals; no equivalence or familywise claim.",
+      "mixed_point_estimate_directions": false,
+      "paired_differences_excluding_zero": [],
+      "status": "direction_unresolved"
+    }
+  }
+}

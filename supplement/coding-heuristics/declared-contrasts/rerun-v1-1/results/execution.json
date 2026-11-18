@@ -1,0 +1,104 @@
+{
+  "bootstrap": {
+    "draws": 10000,
+    "endpoint_sampling": "fixed endpoints; no endpoint resampling",
+    "interval": "95% percentile, numpy.quantile(method='linear')",
+    "resampling_unit": "whole word within source/intent stratum",
+    "rng": "numpy.Generator(PCG64)",
+    "seed": 20261115,
+    "shared_draws_sha256": "bb52220d24285d90efe2fbf04f017162ceead1bd843c97085b206e5aa2e6037c",
+    "source_order": [
+      "fresh-animal-intent",
+      "fresh-no-intent-claude",
+      "fresh-no-intent-gpt",
+      "known-animal-intent",
+      "known-no-intent"
+    ],
+    "word_order": {
+      "fresh-animal-intent": [
+        "alfontrosii",
+        "binjeemi",
+        "falbrux",
+        "kalgarooy",
+        "lueyschwale",
+        "mahoggiralf",
+        "tortisinole",
+        "yyiperatrops"
+      ],
+      "fresh-no-intent-claude": [
+        "crendolf",
+        "gorvindle",
+        "hambroqet",
+        "mispaveld",
+        "nurbleck",
+        "trunsavel",
+        "ullaprisk",
+        "vornaketh"
+      ],
+      "fresh-no-intent-gpt": [
+        "brenulo",
+        "havorik",
+        "kavanesh",
+        "lusavon",
+        "nevoral",
+        "tavulen",
+        "vubelan",
+        "wenvuto"
+      ],
+      "known-animal-intent": [
+        "borthorpunius",
+        "halthibinny",
+        "purtaneolotomous",
+        "wresanthamulf"
+      ],
+      "known-no-intent": [
+        "flembrast",
+        "kovashent",
+        "plindorf",
+        "trolnique"
+      ]
+    }
+  },
+  "c_only_rows_compared": 132,
+  "c_v1_1_codes": {
+    "freeze_commit": "3d8b4c35961fbdfb6ca88084dab3c63b9d4df03b",
+    "path": "supplement/coding-heuristics/zoned-heuristic-v1-1/results/response_codes.csv",
+    "sha256": "ea071089abc9467e721d0e2d3cea25b25e646263ce3eed6ed737737bbc4dd237",
+    "version": "bestiary2-zoned-heuristic/1.1.0"
+  },
+  "completed_utc": "2026-11-18T21:32:56.388631+00:00",
+  "declaration": "FINAL_INSTRUMENT.md",
+  "declaration_sha256": "86f45d418823fdebf833a666dc1ebefc4a99d0034a240ce16eaf57b729a4ba8f",
+  "elapsed_seconds": 5.168,
+  "gates": {
+    "paired_instrument_differences_match_native_estimators": true,
+    "rows_without_C_identical_across_runs": true,
+    "v1_0_run_reproduces_merged_estimates_and_intervals": true
+  },
+  "git_head": "80dda923b62445882e4502cdce185eb1e01df489",
+  "numpy": "2.5.3",
+  "output_files": {
+    "c_v1_1_minus_v1_0.json": "5f9d9f6d7f78b10b4f0ea55723b6c956b925c88f37abda3f7c09c7cfe7c6b5c4",
+    "estimates_c_v1_1.json": "db5529a12133f7db237f56a08e9fee213f1a687e3c146f7dca883b9925e71cfd",
+    "interpretation_c_v1_1.json": "0293353fc33c7424d8062bdf22d3a8a66c9551cafd0a47d7e5146b7362d8e200",
+    "tables_v1_1.md": "d9ed4f080214828da7493f9294aea0d93d72e6c354778e7ffccd2a781ac0f897"
+  },
+  "platform": "Linux-6.18.44-fc-v595-x86_64-with-glibc2.39",
+  "provider_calls": 0,
+  "python": "3.13.18 (main, Oct 26 2026, 14:08:19) [Clang 23.1.3 ]",
+  "response_text_read": false,
+  "rows": 225,
+  "schema": "bestiary2-declared-exploratory-rerun-v1-1/1",
+  "shared_draws_sha256_equal": true,
+  "source_files": {
+    "check_selected_estimates.py": "61aba8d948de62c855cd9dcfbdd02a83871c4d2bac1ac0a2ef4321a192b4448e",
+    "contrasts.py": "5a44e9f981a1a42058ace1c5dc2a67f8e0e3a1f1c8bfdf56cf2d629c325e8ae2",
+    "estimation.py": "bfb8a1060cf2f9e39842ae34a9bccfaea2ef04226a680f6234d41b8d2a010a10",
+    "inputs.py": "af3b9b76e10759b82b3b0f3c60e8f5e19d052294a735d8260e74169f40c592e0",
+    "questions.py": "ba06f8e55f3b924c1aea96864ba0461c9925ddc86775ea74949c24f56a70c471",
+    "reproduce_comparisons.py": "5090317b2fd864ffcfb12949af602864adb3731b3c2da54f535f70b6f99e2bc8",
+    "rerun-v1-1/rerun_v1_1.py": "0ac4e7063b31ff3269c841d77d999dea0a62390099c4e18da13132b34a25e859",
+    "run_analysis.py": "242d06d93dd8d73d7a802233c38546436b096261b75585c4b9d0a732cf40d9e4"
+  },
+  "worktree_has_changes": true
+}
