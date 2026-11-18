@@ -87,8 +87,37 @@ The 1.1 repairs that drive this added detected nonrecognition. The 41-item
 human audit supported them over 1.0. If the registered Fable scorer misses the
 same phrasings, the registered N-based effects, including H2, understate their
 magnitudes by a few points. Their directions and Holm decisions would not
-change. This is an inference: the registered scorer was not scored against the
-41 labels.
+change.
+
+### Check against the 41 labels (undeclared, run after the rerun)
+
+At the investigator's request, the registered Fable v1.1 outputs (B) were
+scored against the same 41 human labels
+([`check_registered_on_core41.py`](check_registered_on_core41.py),
+[output](results/registered_on_core41.json)). This was not part of the
+declaration and adds no estimate to it.
+
+| Outcome, correct of 41 (25 changed + 16 controls) | Registered | Zoned 1.0 | Zoned 1.1 |
+|---|---:|---:|---:|
+| E description | 33 | 29 | 37 |
+| R any nonrecognition | 33 | 25 | 38 |
+| N nonrecognition without description | 30 | 19 | 37 |
+| U unmarked description | 40 | 37 | 41 |
+
+The registered scorer sits between the two zoned versions. On the 19 responses
+where 1.1 newly detected N and the reader agreed, the registered scorer had
+already detected 11 and missed 8. Over all 28 responses the reader labelled N,
+it missed 10: eight on real prompts and two on type-of prompts. Five of those
+ten were plain misses of the nonrecognition statement. In the other five it
+counted a description that the reader did not see.
+
+Because the misses fall mostly on real prompts, they lower the registered N
+rate there more than in the other frames. That shrinks the real-versus-imaginary
+and real-versus-type-of gaps, which is the direction the inference predicts.
+The check supports the direction. It cannot size the effect: the 41 were
+selected on zoned disagreement, not on the registered scorer, and were read by
+one person. The B minus C 1.1 gaps above remain the best available indication
+of size, conditional on 1.1 being right about those responses.
 
 ## Bottom line
 
